@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr"><head><title>工具 26 - Svelte 框架入门与读书笔记实战 · 后端开发笔记</title><meta charset="utf-8"/><link rel="preload" href="../../index-b754f97d.css" as="style"/><link rel="preload" href="../../prescript-2bfc6315.js" as="script"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="技术知识库"/><meta property="og:title" content="工具 26 - Svelte 框架入门与读书笔记实战 · 后端开发笔记"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="工具 26 - Svelte 框架入门与读书笔记实战 · 后端开发笔记"/><meta name="twitter:description" content="工具 26 - Svelte 框架入门与读书笔记实战 Svelte 是一款通过静态编译实现「无 runtime、无 Virtual DOM」的响应式前端框架，本文讲解它的核心特性，并手把手用它开发一个可增删、可导出 Markdown 的读书笔记小网站。 Svelte 是什么 Svelte 是近年崛起的构建用户界面的前端框架，与 Vue、React、Angular 三大主流框架并列的新选择，目前 GitHub 已有近 4w star，且增速很快。 框架自身具有反应性，帮助开发者书写更精简的代码，开发出体积更小、更迅速的 App 使用 Svelte 开发需要遵循其特定语法，编写 .svelte 后..."/><meta property="og:description" content="工具 26 - Svelte 框架入门与读书笔记实战 Svelte 是一款通过静态编译实现「无 runtime、无 Virtual DOM」的响应式前端框架，本文讲解它的核心特性，并手把手用它开发一个可增删、可导出 Markdown 的读书笔记小网站。 Svelte 是什么 Svelte 是近年崛起的构建用户界面的前端框架，与 Vue、React、Angular 三大主流框架并列的新选择，目前 GitHub 已有近 4w star，且增速很快。 框架自身具有反应性，帮助开发者书写更精简的代码，开发出体积更小、更迅速的 App 使用 Svelte 开发需要遵循其特定语法，编写 .svelte 后..."/><meta property="og:image:alt" content="工具 26 - Svelte 框架入门与读书笔记实战 Svelte 是一款通过静态编译实现「无 runtime、无 Virtual DOM」的响应式前端框架，本文讲解它的核心特性，并手把手用它开发一个可增删、可导出 Markdown 的读书笔记小网站。 Svelte 是什么 Svelte 是近年崛起的构建用户界面的前端框架，与 Vue、React、Angular 三大主流框架并列的新选择，目前 GitHub 已有近 4w star，且增速很快。 框架自身具有反应性，帮助开发者书写更精简的代码，开发出体积更小、更迅速的 App 使用 Svelte 开发需要遵循其特定语法，编写 .svelte 后..."/><meta property="twitter:domain" content="xyf1111.github.io/tech-notes"/><meta property="og:url" content="https://xyf1111.github.io/tech-notes/tools/前端/工具-26---svelte-框架入门与读书笔记实战"/><meta property="twitter:url" content="https://xyf1111.github.io/tech-notes/tools/前端/工具-26---svelte-框架入门与读书笔记实战"/><link rel="icon" href="../../static/icon.png"/><meta name="description" content="工具 26 - Svelte 框架入门与读书笔记实战 Svelte 是一款通过静态编译实现「无 runtime、无 Virtual DOM」的响应式前端框架，本文讲解它的核心特性，并手把手用它开发一个可增删、可导出 Markdown 的读书笔记小网站。 Svelte 是什么 Svelte 是近年崛起的构建用户界面的前端框架，与 Vue、React、Angular 三大主流框架并列的新选择，目前 GitHub 已有近 4w star，且增速很快。 框架自身具有反应性，帮助开发者书写更精简的代码，开发出体积更小、更迅速的 App 使用 Svelte 开发需要遵循其特定语法，编写 .svelte 后..."/><meta name="generator" content="Quartz"/><link href="../../index-b754f97d.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-735924e0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-589c1cea.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-bbc3f7c0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-2911f5d1.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-e427079e.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-53b25b2b.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-c93c6a44.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-8a06014f.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-77d6a441.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-6ee21cee.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-1ea6ad18.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-788c9ca3.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-642859cd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-4abc06bd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-274a3dfe.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-94cb6c84.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-58d5ff56.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-7262b5a7.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../static/resource-style-a5c806d2.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../static/resource-style-6bd36952.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" data-persist="true"/><script src="../../prescript-2bfc6315.js" type="application/javascript" data-persist="true"></script><script type="application/javascript" data-persist="true">const fetchData = fetch("../../static/contentIndex.json").then(data => data.json())</script><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://xyf1111.github.io/tech-notes/tools/前端/工具-26---svelte-框架入门与读书笔记实战-og-image.webp"/><meta property="og:image:url" content="https://xyf1111.github.io/tech-notes/tools/前端/工具-26---svelte-框架入门与读书笔记实战-og-image.webp"/><meta name="twitter:image" content="https://xyf1111.github.io/tech-notes/tools/前端/工具-26---svelte-框架入门与读书笔记实战-og-image.webp"/><meta property="og:image:type" content="image/webp"/></head><body data-slug="tools/前端/工具-26---svelte-框架入门与读书笔记实战" data-basepath="/tech-notes"><div id="quartz-root" class="page" data-frame="default"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="../..">技术知识库</a></h2><div class="mobile-only"><div class="spacer"></div></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 0.5rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button" aria-label="搜索" aria-expanded="false"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>搜索</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="搜索内容..." placeholder="搜索内容..."/><div class="search-layout" data-preview="true" data-field-priority="[&quot;title&quot;,&quot;content&quot;,&quot;tags&quot;]"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode" aria-label="暗色模式"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="暗色模式"><title>暗色模式</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="亮色模式"><title>亮色模式</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode" aria-label="阅读模式"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="阅读模式"><title>阅读模式</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer nav-files-container" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a2, b2) => {\n    if (!a2.isFolder &amp;&amp; !b2.isFolder || a2.isFolder &amp;&amp; b2.isFolder) {\n      return (a2.displayName || \&quot;\&quot;).localeCompare(b2.displayName || \&quot;\&quot;, void 0, {\n        numeric: true,\n        sensitivity: \&quot;base\&quot;\n      });\n    }\n    if (!a2.isFolder &amp;&amp; b2.isFolder) {\n      return 1;\n    }\n    return -1;\n  }&quot;,&quot;filterFn&quot;:&quot;(node) => node.slugSegment !== \&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;(node) => {\n    return node;\n  }&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-465" aria-label="探索"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>探索</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-465" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#" class="nav-file-title tree-item-self"></a></li></template><template id="template-folder"><li><div class="folder-container nav-folder-title tree-item-self"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon nav-folder-collapse-indicator collapse-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content tree-item-children"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../tools/">tools</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../tools/前端/">前端</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>工具 26 - Svelte 框架入门与读书笔记实战</a></div></nav><h1 class="article-title">工具 26 - Svelte 框架入门与读书笔记实战</h1><details class="note-properties metadata-container" open data-collapsed="false"><summary class="note-properties-header"><span class="note-properties-title">Properties</span><span class="note-properties-count">1</span></summary><table class="note-properties-table"><tbody><tr class="note-properties-row metadata-property"><td class="note-properties-key metadata-property-key">tags</td><td class="note-properties-value metadata-property-value"><span class="note-properties-tags"><a href="../../tags/svelte" class="internal internal-link tag-link">svelte</a><span class="note-properties-separator">, </span><a href="../../tags/前端框架" class="internal internal-link tag-link">前端框架</a><span class="note-properties-separator">, </span><a href="../../tags/响应式" class="internal internal-link tag-link">响应式</a><span class="note-properties-separator">, </span><a href="../../tags/读书笔记" class="internal internal-link tag-link">读书笔记</a><span class="note-properties-separator">, </span><a href="../../tags/实战" class="internal internal-link tag-link">实战</a></span></td></tr></tbody></table></details><p show-comma="true" class="content-meta"><time datetime="2026-08-22T16:00:00.000Z">2026年8月23日</time><span>12分钟阅读</span></p></div></div><article class="popover-hint"><div class="markdown-preview-view markdown-rendered"><h1 id="工具-26---svelte-框架入门与读书笔记实战">工具 26 - Svelte 框架入门与读书笔记实战<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#工具-26---svelte-框架入门与读书笔记实战" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<blockquote>
+<p>Svelte 是一款通过静态编译实现「无 runtime、无 Virtual DOM」的响应式前端框架，本文讲解它的核心特性，并手把手用它开发一个可增删、可导出 Markdown 的读书笔记小网站。</p>
+</blockquote>
+<h2 id="svelte-是什么">Svelte 是什么<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#svelte-是什么" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Svelte 是近年崛起的构建用户界面的前端框架，与 Vue、React、Angular 三大主流框架并列的新选择，目前 GitHub 已有近 4w star，且增速很快。</p>
+<ul>
+<li>框架自身具有<strong>反应性</strong>，帮助开发者书写更精简的代码，开发出体积更小、更迅速的 App</li>
+<li>使用 Svelte 开发需要遵循其特定语法，编写 <code>.svelte</code> 后缀的文件</li>
+</ul>
+<p>一个 <code>.svelte</code> 文件的 Hello World 结构如下：</p>
+<pre><code>&lt;script>
+ // 编写网页交互行为
+&lt;/script>
+
+&lt;div>
+ &lt;!-- 编写页面内容结构 -->
+&lt;/div>
+
+&lt;style>
+ /* 编写 CSS 样式 */
+&lt;/style>
+</code></pre>
+<h2 id="svelte-新在哪儿">Svelte 新在哪儿<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#svelte-新在哪儿" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="不依赖-runtime无-virtual-dom">不依赖 runtime，无 Virtual DOM<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#不依赖-runtime无-virtual-dom" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>在 20 多种前端框架 Demo 项目的对比评测中，Svelte 在项目<strong>尺寸</strong>和 <strong>Lighthouse 性能评分</strong>两方面都表现卓越，一个 Svelte Demo 项目仅有 <strong>15 KB</strong>。</p>
+<p>传统框架（如 Vue、React）在项目运行时依赖框架本身的代码，即把框架作为 runtime 引入，框架代码会被打进项目包。例如 Vue 的 <code>package.json</code>：</p>
+<pre><code>&quot;dependencies&quot;: {
+  &quot;vue&quot;: &quot;^2.6.11&quot;
+}
+</code></pre>
+<p>而 Svelte 的核心思想是<strong>通过静态编译减少框架运行时的代码量</strong>（尤雨溪语）：它不会把自己打包进项目，而是在编译打包阶段将 Svelte 组件转换为<strong>原生 DOM 操作</strong>。因此项目不依赖 runtime，也没有 Vue/React 中的 Virtual DOM，体积非常小。Svelte 在 <code>package.json</code> 中只是作为开发时依赖：</p>
+<pre><code>&quot;devDependencies&quot;: {
+  &quot;svelte&quot;: &quot;^3.0.0&quot;
+}
+</code></pre>
+<p>与其说是「新」，不如说是回归原始、返璞归真。</p>
+<h3 id="自带反应性无需状态管理库">自带反应性，无需状态管理库<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#自带反应性无需状态管理库" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Svelte 自身具有<strong>反应性</strong>，可以轻松实现状态管理，无需像 Vue/React 那样额外引入 Vuex、Redux 之类的状态管理库，给开发者提供了极大的便利。</p>
+<h2 id="十分钟开发读书笔记小项目">十分钟开发读书笔记小项目<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#十分钟开发读书笔记小项目" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="需求分析">需求分析<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#需求分析" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>开发一个读书笔记网站，记录每日学习内容，基本功能：</p>
+<ol>
+<li>添加读书笔记</li>
+<li>展示已添加的读书笔记</li>
+<li>删除某一条读书笔记</li>
+<li>导出读书笔记为 Markdown 格式文件并下载到本地</li>
+</ol>
+<p>成品体验地址：<a href="https://read-note.now.sh/" class="external external-link">https://read-note.now.sh/<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<h3 id="1-启动模板项目">1. 启动模板项目<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#1-启动模板项目" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>两种方式获取 Svelte 官方模板项目：</p>
+<p><strong>方式一</strong>：直接下载压缩包并解压
+<a href="https://github.com/sveltejs/template/archive/master.zip" class="external external-link">https://github.com/sveltejs/template/archive/master.zip<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<p><strong>方式二</strong>：用 degit 命令创建：</p>
+<pre><code>npx degit sveltejs/template svelte-app
+</code></pre>
+<p>进入项目目录安装依赖并启动：</p>
+<pre><code>npm install
+npm run dev
+</code></pre>
+<ul>
+<li>Svelte 使用 Rollup 作为 JS 模块打包工具</li>
+<li>启动成功后浏览器访问 <code>localhost:5000</code> 即可看到模板页面</li>
+</ul>
+<h3 id="2-开发界面">2. 开发界面<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#2-开发界面" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>读书笔记只有一个主页面，布局分上下两部分：上方是相同样式卡片组成的列表，下方是固定在底部的操作面板。因此只需开发两个组件：<strong>卡片 Card</strong> 和<strong>操作面板 AddCard</strong>。</p>
+<p>在 <code>src</code> 目录下新建 <code>.svelte</code> 文件（<code>App.svelte</code> 为模板自带的主页面）。<code>.svelte</code> 文件的语法结构与 Vue 类似，由 JavaScript、HTML、CSS 三部分组成。</p>
+<h4 id="21-卡片组件-cardsvelte">2.1 卡片组件 Card.svelte<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#21-卡片组件-cardsvelte" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>每张卡片包含标题、内容、创建日期，带编号和不同颜色，鼠标移到卡片上时显示删除按钮。先用 <code>script</code> 定义属性变量（<code>export let</code> 声明对外属性）和删除函数：</p>
+<pre><code>&lt;script>
+  // 定义变量
+  export let title; // 标题
+  export let content; // 内容
+  export let creationTime; // 创建日期
+  export let index = 0; // 卡片序号
+  
+  // 删除卡片
+  function doDelete() { }
+&lt;/script>
+</code></pre>
+<p>用尖括号输出变量值，用 <code>on:click</code> 绑定鼠标点击事件：</p>
+<pre><code>&lt;div class={`card bg-color-${index % 5}`}>
+  &lt;div class=&quot;title&quot;>
+    {title} &lt;span class=&quot;del-btn&quot; on:click={doDelete}>x&lt;/span>
+  &lt;/div>
+  &lt;div class=&quot;content&quot;>{content}&lt;/div>
+  &lt;div class=&quot;creationTime&quot;>{creationTime}&lt;/div>
+&lt;/div>
+</code></pre>
+<p>样式直接写在组件 <code>style</code> 标签中（Svelte 会自动做样式隔离）：</p>
+<pre><code>&lt;style>
+  .card {
+    padding: 1rem;
+    margin: 1rem;
+    color: #fff;
+    border-radius: 0.5rem;
+  }
+  
+  /* 省略... */
+  
+  /* 当鼠标移到卡片上，展示删除按钮 */
+  .card:hover .del-btn {
+    opacity: 1;
+  }
+&lt;/style>
+</code></pre>
+<h4 id="22-操作面板组件-addcardsvelte">2.2 操作面板组件 AddCard.svelte<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#22-操作面板组件-addcardsvelte" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>操作面板包含标题/内容两个输入框和「添加」「导出」两个按钮。Svelte 通过 <code>bind:value</code> 指令实现表单数据的<strong>双向绑定</strong>：</p>
+<pre><code>&lt;script>
+  // 在 src 目录下新建 utils 工具类，编写获取当前日期的函数
+  import {getNowDateFormat} from &quot;./utils&quot;;
+
+  // 定义变量
+  let title = ''; // 标题
+  let content = ''; // 内容
+
+  // 添加卡片
+  function doAdd() { }
+
+  // 导出笔记
+  function doExport() { }
+&lt;/script>
+
+&lt;div class=&quot;add-card&quot;>
+  &lt;div class=&quot;input-wrapper&quot;>
+    &lt;input class=&quot;input-title&quot; type=&quot;text&quot; placeholder=&quot;输入标题&quot; bind:value={title} />
+    &lt;textarea class=&quot;input-content&quot; placeholder=&quot;输入内容&quot; bind:value={content}>&lt;/textarea>
+  &lt;/div>
+  &lt;button class=&quot;add-btn&quot; on:click={doAdd}>添加&lt;/button>
+  &lt;button class=&quot;export-btn&quot; on:click={doExport}>导出&lt;/button>
+&lt;/div>
+</code></pre>
+<p>样式使用 Flex 布局，操作面板固定在页面底部：</p>
+<pre><code>&lt;style>
+  /* 操作面板固定在页面底部 */
+  .add-card {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1rem;
+    background-image: linear-gradient(135deg, #FEC163 10%, #DE4313 100%);
+    display: flex;
+  }
+
+  .input-wrapper {
+    flex: 4; /* 使用 Flex 布局 */
+  }
+
+  /* 省略... */
+  
+  .add-btn, .export-btn {
+    flex: 1;
+    margin-left: 1rem;
+    color: #666;
+  }
+&lt;/style>
+</code></pre>
+<h4 id="23-将组件放入主页面">2.3 将组件放入主页面<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#23-将组件放入主页面" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>在 <code>App.svelte</code> 中用 <code>import</code> 引入组件，通过 <code>{#each ...}{/each}</code> 循环语句渲染卡片列表，直接以组件名使用组件：</p>
+<pre><code>&lt;script>
+  import {cards} from './store'; // 引入 cards（状态）
+  import Card from &quot;./Card.svelte&quot;;
+  import AddCard from &quot;./AddCard.svelte&quot;;
+&lt;/script>
+
+&lt;div id=&quot;app&quot;>
+  {#each $cards as card, i}
+    &lt;Card {...card} index={i}/>
+  {/each}
+  &lt;AddCard/>
+&lt;/div>
+</code></pre>
+<h3 id="3-实现功能">3. 实现功能<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#3-实现功能" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>读书笔记本质上是一个简单的增删改查项目。这里没有后端和数据库，直接使用 <strong>Svelte 自带的状态管理 API</strong> 实现本地数据管理，无需引入任何新依赖。</p>
+<h4 id="31-管理卡片数据">3.1 管理卡片数据<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#31-管理卡片数据" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>在 <code>src</code> 目录新建 <code>store.js</code> 作为数据管理文件，通过 <code>writable</code> 函数定义可写的 <code>cards</code> 状态变量：</p>
+<pre><code>import {writable} from &quot;svelte/store&quot;;
+
+export const cards = writable([]);
+</code></pre>
+<p><code>cards</code> 即可当作全局变量使用。在组件中想要使用状态变量，需要在变量名前加 <code>$</code> 符号（如 <code>$cards</code>）。</p>
+<h4 id="32-添加卡片">3.2 添加卡片<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#32-添加卡片" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>实现 <code>AddCard.svelte</code> 的添加函数：校验输入后，调用状态变量的 <code>update</code> 函数在原数组后追加一个新卡片。</p>
+<pre><code>&lt;script>
+  // 引入状态
+  import {cards} from './store';
+  import {getNowDateFormat} from &quot;./utils&quot;;
+
+  let title = '';
+  let content = '';
+
+  function doAdd() {
+    // 校验
+    if (!title || !content) {
+      alert('标题和内容必须都填！');
+      return;
+    }
+    
+    // 更新卡片状态，追加一个新卡片
+    cards.update(item => {
+      item = [...item, {
+        title,
+        content,
+        creationTime: getNowDateFormat()
+      }];
+      return item;
+    })
+  }
+&lt;/script>
+</code></pre>
+<h4 id="33-删除卡片">3.3 删除卡片<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#33-删除卡片" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>实现 <code>Card.svelte</code> 的删除函数：同样调用 <code>cards.update</code>，从数组中移除当前下标的元素。</p>
+<pre><code>&lt;script>
+  import {cards} from &quot;./store&quot;;
+ 
+  // 删除卡片
+  function doDelete() {
+    cards.update(item => {
+      item.splice(index, 1);
+      return item;
+    })
+  }
+&lt;/script>
+</code></pre>
+<h4 id="34-导出-markdown-笔记">3.4 导出 Markdown 笔记<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#34-导出-markdown-笔记" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>先安装 <code>file-saver</code> 库用于实现文件下载：</p>
+<pre><code>npm i file-saver
+</code></pre>
+<p>实现导出函数：遍历 <code>$cards</code> 状态数组拼装 Markdown 文本，用 <code>Blob</code> 包装后调用 <code>saveAs</code> 触发下载。</p>
+<pre><code>&lt;script>
+  import {cards} from './store';
+  // 引入 file-saver
+  import {saveAs} from 'file-saver';
+  
+ // 导出为 read_note.md 文件
+  function doExport() {
+    const texts = [];
+    // 读取 cards 状态数组
+    for (const card of $cards) {
+      let text = `### ${card.title}\n${card.content}\n${card.creationTime}\n`;
+      texts.push(text);
+    }
+    // 写入文件
+    const blob = new Blob(texts, {type: &quot;text/plain;charset=utf-8&quot;});
+    saveAs(blob, &quot;read_note.md&quot;);
+  }
+&lt;/script>
+</code></pre>
+<h4 id="35-改进方向">3.5 改进方向<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#35-改进方向" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>目前只实现了最基本功能，还可以继续完善：</p>
+<ol>
+<li>给卡片添加不同颜色（可在 <code>public/global.css</code> 中补充颜色样式）</li>
+<li>刷新后卡片数据会丢失，可借助浏览器 Cookie 实现持久化：卡片更新时保存到 Cookie，再次打开网站时从 Cookie 恢复数据并写回状态</li>
+</ol>
+<h3 id="4-发布上线">4. 发布上线<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#4-发布上线" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>本地开发完成后打包项目：</p>
+<pre><code>npm run build
+</code></pre>
+<p>会在 <code>public</code> 目录下生成 <code>bundle.js</code> 文件（部署到子路径时注意配置好对外 base path）。</p>
+<p>无需自己买服务器，可用 <strong>Vercel</strong>（免费网站托管平台）部署并生成可访问网址：</p>
+<pre><code>npm install -g vercel
+cd public
+vercel deploy --name read-note
+</code></pre>
+<p>发布成功后即可获得访问网址。用开发者工具（F12）查看网页加载信息，整个读书笔记网站仅 <strong>16 KB</strong>。</p>
+<h2 id="对-svelte-的评价与展望">对 Svelte 的评价与展望<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#对-svelte-的评价与展望" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>社区对 Svelte 的看法褒贬不一：</p>
+<ul>
+<li>反对者认为：为了减少几十 KB 的体积而放弃 runtime 设计和成熟生态，得不偿失——如今一张图片都要几百 KB，一个页面可能好几 MB，没必要纠结这点大小</li>
+<li>支持者认为：Svelte 的强大之处正在于没有 runtime，可以像原生 JS 一样融入任何框架和组件，非常适合<strong>微前端</strong>架构</li>
+</ul>
+<p>抛开生态之争，作者打破思维定式、返璞归真的探索精神值得肯定。<strong>脱离业务场景的技术选型都是耍流氓</strong>——在配置较低、网络较差的小设备上，减小几十 KB 包大小确实很有必要。Svelte 在保证高效极简开发体验的同时保留了原生项目的轻小体积和高性能，这是它吸引开发者的核心爽点；但无 Virtual DOM 的设计在大型生产项目中的表现还有待更多实践检验。多一种技术选型，何乐而不为？</p>
+<p>进一步学习推荐 Svelte 官方教程：<a href="https://svelte.dev/tutorial" class="external external-link">https://svelte.dev/tutorial<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> （简洁清晰、容易上手，还提供在线编辑器可实时练习调试）。</p>
+<blockquote>
+<p>来源：鱼皮·编程导航 / codefather</p>
+</blockquote></div></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="toc"><button type="button" class="toc-header" aria-controls="toc-465" aria-expanded="true"><h3>目录</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-0" class="toc-content overflow"><li class="depth-0"><a href="#工具-26---svelte-框架入门与读书笔记实战" data-for="工具-26---svelte-框架入门与读书笔记实战">工具 26 - Svelte 框架入门与读书笔记实战</a></li><li class="depth-1"><a href="#svelte-是什么" data-for="svelte-是什么">Svelte 是什么</a></li><li class="depth-1"><a href="#svelte-新在哪儿" data-for="svelte-新在哪儿">Svelte 新在哪儿</a></li><li class="depth-2"><a href="#不依赖-runtime无-virtual-dom" data-for="不依赖-runtime无-virtual-dom">不依赖 runtime，无 Virtual DOM</a></li><li class="depth-2"><a href="#自带反应性无需状态管理库" data-for="自带反应性无需状态管理库">自带反应性，无需状态管理库</a></li><li class="depth-1"><a href="#十分钟开发读书笔记小项目" data-for="十分钟开发读书笔记小项目">十分钟开发读书笔记小项目</a></li><li class="depth-2"><a href="#需求分析" data-for="需求分析">需求分析</a></li><li class="depth-2"><a href="#1-启动模板项目" data-for="1-启动模板项目">1. 启动模板项目</a></li><li class="depth-2"><a href="#2-开发界面" data-for="2-开发界面">2. 开发界面</a></li><li class="depth-2"><a href="#3-实现功能" data-for="3-实现功能">3. 实现功能</a></li><li class="depth-2"><a href="#4-发布上线" data-for="4-发布上线">4. 发布上线</a></li><li class="depth-1"><a href="#对-svelte-的评价与展望" data-for="对-svelte-的评价与展望">对 Svelte 的评价与展望</a></li><li class="overflow-end"></li></ul></div><div class="backlinks"><h3>反向链接</h3><ul id="list-0" class="overflow"><li><a href="../../tools/前端/工具-40---solid.js-框架介绍（无虚拟-dom-的编译型框架）" class="internal">工具 40 - Solid.js 框架介绍（无虚拟 DOM 的编译型框架）</a></li><li class="overflow-end"></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v5.0.0</a> © 2026</p><ul><li><a href="https://github.com/xyf1111">GitHub</a></li></ul></footer></div></div></body><script src="../../static/resource-after-e13fffa1.js" type="application/javascript" data-persist="true"></script><script src="../../static/resource-after-8b336f9a.js" type="application/javascript" data-persist="true"></script><script src="../../static/resource-after-baba652b.js" type="application/javascript" data-persist="true"></script><script src="../../static/resource-after-5eb75950.js" type="module" data-persist="true"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript" data-persist="true"></script><script src="../../postscript-17915799.js" type="module" data-persist="true"></script></html>

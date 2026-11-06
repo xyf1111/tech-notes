@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr"><head><title>AI 大模型应用开发学习路线 · 后端开发笔记</title><meta charset="utf-8"/><link rel="preload" href="../index-b754f97d.css" as="style"/><link rel="preload" href="../prescript-2bfc6315.js" as="script"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="技术知识库"/><meta property="og:title" content="AI 大模型应用开发学习路线 · 后端开发笔记"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="AI 大模型应用开发学习路线 · 后端开发笔记"/><meta name="twitter:description" content="AI 大模型应用开发学习路线 AI 大模型应用开发的核心不是从头训练模型，而是通过工程化手段释放现成模型的潜力——组合 Prompt 工程、向量数据库、业务逻辑等模块，将通用大模型定制为特定场景的解决方案。 后端开发者转型 AI 的优势 后端开发者的系统架构、数据处理、性能优化能力在 AI 应用落地中天然适用。AI 应用仍然需要 WebSocket/SSE 实时通信、MySQL 存储、TTS 语音等传统后端能力，只是核心逻辑变成了调用大模型。 需要新学的： 理解大模型的能力边界（上下文限制、幻觉问题、稳定性） 掌握 Prompt 设计 熟悉 LangChain、RAG、向量数据库 学习路线总览..."/><meta property="og:description" content="AI 大模型应用开发学习路线 AI 大模型应用开发的核心不是从头训练模型，而是通过工程化手段释放现成模型的潜力——组合 Prompt 工程、向量数据库、业务逻辑等模块，将通用大模型定制为特定场景的解决方案。 后端开发者转型 AI 的优势 后端开发者的系统架构、数据处理、性能优化能力在 AI 应用落地中天然适用。AI 应用仍然需要 WebSocket/SSE 实时通信、MySQL 存储、TTS 语音等传统后端能力，只是核心逻辑变成了调用大模型。 需要新学的： 理解大模型的能力边界（上下文限制、幻觉问题、稳定性） 掌握 Prompt 设计 熟悉 LangChain、RAG、向量数据库 学习路线总览..."/><meta property="og:image:alt" content="AI 大模型应用开发学习路线 AI 大模型应用开发的核心不是从头训练模型，而是通过工程化手段释放现成模型的潜力——组合 Prompt 工程、向量数据库、业务逻辑等模块，将通用大模型定制为特定场景的解决方案。 后端开发者转型 AI 的优势 后端开发者的系统架构、数据处理、性能优化能力在 AI 应用落地中天然适用。AI 应用仍然需要 WebSocket/SSE 实时通信、MySQL 存储、TTS 语音等传统后端能力，只是核心逻辑变成了调用大模型。 需要新学的： 理解大模型的能力边界（上下文限制、幻觉问题、稳定性） 掌握 Prompt 设计 熟悉 LangChain、RAG、向量数据库 学习路线总览..."/><meta property="twitter:domain" content="xyf1111.github.io/tech-notes"/><meta property="og:url" content="https://xyf1111.github.io/tech-notes/ai/ai-大模型-01---应用开发学习路线"/><meta property="twitter:url" content="https://xyf1111.github.io/tech-notes/ai/ai-大模型-01---应用开发学习路线"/><link rel="icon" href="../static/icon.png"/><meta name="description" content="AI 大模型应用开发学习路线 AI 大模型应用开发的核心不是从头训练模型，而是通过工程化手段释放现成模型的潜力——组合 Prompt 工程、向量数据库、业务逻辑等模块，将通用大模型定制为特定场景的解决方案。 后端开发者转型 AI 的优势 后端开发者的系统架构、数据处理、性能优化能力在 AI 应用落地中天然适用。AI 应用仍然需要 WebSocket/SSE 实时通信、MySQL 存储、TTS 语音等传统后端能力，只是核心逻辑变成了调用大模型。 需要新学的： 理解大模型的能力边界（上下文限制、幻觉问题、稳定性） 掌握 Prompt 设计 熟悉 LangChain、RAG、向量数据库 学习路线总览..."/><meta name="generator" content="Quartz"/><link href="../index-b754f97d.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-735924e0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-589c1cea.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-bbc3f7c0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-2911f5d1.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-e427079e.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-53b25b2b.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-c93c6a44.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-8a06014f.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-77d6a441.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-6ee21cee.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-1ea6ad18.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-788c9ca3.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-642859cd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-4abc06bd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-274a3dfe.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-94cb6c84.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-58d5ff56.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-7262b5a7.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../static/resource-style-a5c806d2.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../static/resource-style-6bd36952.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" data-persist="true"/><script src="../prescript-2bfc6315.js" type="application/javascript" data-persist="true"></script><script type="application/javascript" data-persist="true">const fetchData = fetch("../static/contentIndex.json").then(data => data.json())</script><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://xyf1111.github.io/tech-notes/ai/ai-大模型-01---应用开发学习路线-og-image.webp"/><meta property="og:image:url" content="https://xyf1111.github.io/tech-notes/ai/ai-大模型-01---应用开发学习路线-og-image.webp"/><meta name="twitter:image" content="https://xyf1111.github.io/tech-notes/ai/ai-大模型-01---应用开发学习路线-og-image.webp"/><meta property="og:image:type" content="image/webp"/></head><body data-slug="ai/ai-大模型-01---应用开发学习路线" data-basepath="/tech-notes"><div id="quartz-root" class="page" data-frame="default"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="..">技术知识库</a></h2><div class="mobile-only"><div class="spacer"></div></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 0.5rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button" aria-label="搜索" aria-expanded="false"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>搜索</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="搜索内容..." placeholder="搜索内容..."/><div class="search-layout" data-preview="true" data-field-priority="[&quot;title&quot;,&quot;content&quot;,&quot;tags&quot;]"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode" aria-label="暗色模式"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="暗色模式"><title>暗色模式</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="亮色模式"><title>亮色模式</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode" aria-label="阅读模式"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="阅读模式"><title>阅读模式</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer nav-files-container" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a2, b2) => {\n    if (!a2.isFolder &amp;&amp; !b2.isFolder || a2.isFolder &amp;&amp; b2.isFolder) {\n      return (a2.displayName || \&quot;\&quot;).localeCompare(b2.displayName || \&quot;\&quot;, void 0, {\n        numeric: true,\n        sensitivity: \&quot;base\&quot;\n      });\n    }\n    if (!a2.isFolder &amp;&amp; b2.isFolder) {\n      return 1;\n    }\n    return -1;\n  }&quot;,&quot;filterFn&quot;:&quot;(node) => node.slugSegment !== \&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;(node) => {\n    return node;\n  }&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-3" aria-label="探索"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>探索</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-3" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#" class="nav-file-title tree-item-self"></a></li></template><template id="template-folder"><li><div class="folder-container nav-folder-title tree-item-self"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon nav-folder-collapse-indicator collapse-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content tree-item-children"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../ai/">ai</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>AI 大模型应用开发学习路线</a></div></nav><h1 class="article-title">AI 大模型应用开发学习路线</h1><details class="note-properties metadata-container" open data-collapsed="false"><summary class="note-properties-header"><span class="note-properties-title">Properties</span><span class="note-properties-count">1</span></summary><table class="note-properties-table"><tbody><tr class="note-properties-row metadata-property"><td class="note-properties-key metadata-property-key">tags</td><td class="note-properties-value metadata-property-value"><span class="note-properties-tags"><a href="../tags/learning" class="internal internal-link tag-link">learning</a><span class="note-properties-separator">, </span><a href="../tags/ai" class="internal internal-link tag-link">ai</a><span class="note-properties-separator">, </span><a href="../tags/llm" class="internal internal-link tag-link">llm</a><span class="note-properties-separator">, </span><a href="../tags/roadmap" class="internal internal-link tag-link">roadmap</a></span></td></tr></tbody></table></details><p show-comma="true" class="content-meta"><time datetime="2026-07-17T16:00:00.000Z">2026年7月18日</time><span>8分钟阅读</span></p></div></div><article class="popover-hint"><div class="markdown-preview-view markdown-rendered"><h1 id="ai-大模型应用开发学习路线">AI 大模型应用开发学习路线<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#ai-大模型应用开发学习路线" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<blockquote>
+<p>AI 大模型应用开发的核心不是从头训练模型，而是通过工程化手段释放现成模型的潜力——组合 Prompt 工程、向量数据库、业务逻辑等模块，将通用大模型定制为特定场景的解决方案。</p>
+</blockquote>
+<h2 id="后端开发者转型-ai-的优势">后端开发者转型 AI 的优势<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#后端开发者转型-ai-的优势" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>后端开发者的系统架构、数据处理、性能优化能力在 AI 应用落地中天然适用。AI 应用仍然需要 WebSocket/SSE 实时通信、MySQL 存储、TTS 语音等传统后端能力，只是核心逻辑变成了调用大模型。</p>
+<p><strong>需要新学的：</strong></p>
+<ul>
+<li>理解大模型的能力边界（上下文限制、幻觉问题、稳定性）</li>
+<li>掌握 Prompt 设计</li>
+<li>熟悉 LangChain、RAG、向量数据库</li>
+</ul>
+<h2 id="学习路线总览">学习路线总览<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习路线总览" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>阶段</th><th>内容</th><th>建议时长</th></tr></thead><tbody><tr><td>阶段 1</td><td>大模型基础</td><td>~83 天</td></tr><tr><td>阶段 2</td><td>RAG 应用开发工程</td><td>~37 天</td></tr><tr><td>阶段 3</td><td>大模型 Agent 应用架构</td><td>~50 天</td></tr><tr><td>阶段 4</td><td>大模型微调和私有化部署</td><td>~105 天</td></tr></tbody></table></div>
+<h2 id="阶段-1大模型基础">阶段 1：大模型基础<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-1大模型基础" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="11-大模型基本信息5天">1.1 大模型基本信息（5天）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#11-大模型基本信息5天" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>知识：</strong></p>
+<ul>
+<li>AI 演进（AI 1.0 → AI 2.0）、大模型与 AGI</li>
+<li>国外大模型：GPT 系列、Claude、Gemini、Llama、Mistral</li>
+<li>国产大模型：DeepSeek、通义千问、豆包、Kimi、文心一言、讯飞星火、ChatGLM、百川、腾讯元宝</li>
+</ul>
+<h3 id="12-大模型的原理60天">1.2 大模型的原理（60天）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#12-大模型的原理60天" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>知识：</strong></p>
+<ul>
+<li>生成式模型 vs 大语言模型</li>
+<li>主流模型系列：GPT（1-4）、LLaMA、BLOOM、ChatGLM</li>
+<li>Transformer 架构（Self-Attention、Encoder-Decoder、Multi-head Attention）</li>
+<li>NLP 基础：数学基础（线性代数、概率统计）、机器学习（TF-IDF、朴素贝叶斯、SVM）、神经网络（RNN/LSTM、CNN、PyTorch）</li>
+<li>关键技术：预训练（分词器 BPE/WordPiece/SentencePiece）、分布式训练、推理规划（CoT、Least-to-Most）、LLM 加速（FlashAttention、PagedAttention）</li>
+<li>强化学习：PPO、RLHF</li>
+</ul>
+<p><strong>学习建议：</strong> 不必死磕数学证明，重点理解模型结构和工作原理。理论结合实践，尝试本地部署小型模型。</p>
+<h3 id="13-prompt-engineering10天">1.3 Prompt Engineering（10天）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#13-prompt-engineering10天" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>知识：</strong></p>
+<ul>
+<li>Python 环境、IDE 搭建</li>
+<li>提示词基础：零样本、少样本提示、上下文学习</li>
+<li>进阶技巧：思维链（CoT）、自洽性（Self-Consistency）、思维树（ToT）</li>
+<li>提示词攻击和防范：注入攻击、防范策略</li>
+<li>Prompt 与 RAG、Agent、微调的关系</li>
+</ul>
+<h3 id="14-大模型-api3天">1.4 大模型 API（3天）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#14-大模型-api3天" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>知识：</strong></p>
+<ul>
+<li>专业术语：Endpoints、Token、Prompt、API Key</li>
+<li>流式输出（WebSocket、SSE）</li>
+<li>Token 计算和费用控制</li>
+</ul>
+<h2 id="阶段-2rag-应用开发工程">阶段 2：RAG 应用开发工程<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-2rag-应用开发工程" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="21-rag-基础15天">2.1 RAG 基础（15天）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#21-rag-基础15天" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>核心概念：</strong></p>
+<ul>
+<li>RAG（检索增强生成）：让大模型先查资料再回答问题</li>
+<li>三大范式：Naive RAG、Advanced RAG、Modular RAG</li>
+<li>三大部件：Retriever（检索器）、Generator（生成器）、Augmentation Method（增强方法）</li>
+</ul>
+<p><strong>Naive RAG Pipeline：</strong></p>
+<ol>
+<li>知识库构建（文档加载和分块、分块方案）</li>
+<li>Embeddings 向量化（OpenAI/GLM/bge 等模型）</li>
+<li>向量相似度算法（余弦距离、点积、欧氏距离）</li>
+<li>向量数据库（作用、类型、主流产品对比）</li>
+</ol>
+<h3 id="22-rag-三大范式和优化10天">2.2 RAG 三大范式和优化（10天）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#22-rag-三大范式和优化10天" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>知识：</strong></p>
+<ul>
+<li>Naive RAG：索引→检索→生成</li>
+<li>Advanced RAG：预检索、检索增强、后检索</li>
+<li>Modular RAG：混合检索、智能编排、技术融合</li>
+<li>优化方向：索引优化、检索前优化（Embedding 微调、混合检索、问题转换）、检索后优化（召回重排、信息压缩、知识融合）</li>
+</ul>
+<h3 id="23-rag-项目评估5天">2.3 RAG 项目评估（5天）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#23-rag-项目评估5天" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>评估指标：</strong></p>
+<ul>
+<li>质量指标：上下文相关性、答案忠实度、答案相关性</li>
+<li>能力指标：对噪声的鲁棒性、负面信息排除能力、信息整合能力</li>
+<li>评估工具：RAGAS、ARES、Trulens</li>
+</ul>
+<h3 id="24-rag-开源项目7天">2.4 RAG 开源项目（7天）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#24-rag-开源项目7天" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>项目</th><th>说明</th></tr></thead><tbody><tr><td>RAGFlow</td><td>开源 RAG 引擎</td></tr><tr><td>FastGPT</td><td>知识库问答系统</td></tr><tr><td>QAnything</td><td>网易有道出品</td></tr><tr><td>LangChain-Chatchat</td><td>LangChain 生态</td></tr><tr><td>GraphRAG</td><td>微软图增强 RAG</td></tr></tbody></table></div>
+<h2 id="阶段-3大模型-agent-应用架构">阶段 3：大模型 Agent 应用架构<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-3大模型-agent-应用架构" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="31-langchain15天">3.1 LangChain（15天）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#31-langchain15天" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>核心组件：</strong></p>
+<ul>
+<li>Chat Models vs LLMs（流式输出、结构性输出）</li>
+<li>模型 I/O 封装：Prompts 模板、自定义模板、序列化</li>
+<li>数据连接：文本向量化、向量数据库（Chroma/ES/FAISS/Milvus）、文档切割</li>
+<li>Memory 记忆封装：内置链、工具使用、多轮对话</li>
+<li>Chain（链）：LCEL 表达式、Runnable 协议、多链组合</li>
+</ul>
+<p><strong>学习建议：</strong> 先跑通 Demo（如本地知识库问答），再逐步深入。</p>
+<h3 id="32-llamaindex5天">3.2 LlamaIndex（5天）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#32-llamaindex5天" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>数据框架，专注于将 LLM 与特定领域数据相结合。适合构建文档索引和问答系统。</p>
+<h3 id="33-agent20天">3.3 Agent（20天）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#33-agent20天" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>核心知识：</strong> 规划（子任务拆解、反思改进）、记忆（Memory）、工具使用（Function Calling）、执行（Action）</p>
+<p><strong>认知框架：</strong> ReAct（思考-行动-观察）、Plan-and-Execute、Self-Ask、Thinking and Self-Reflection</p>
+<p><strong>多 Agent 系统：</strong> AutoGPT、CAMEL、AutoGen、MetaGPT</p>
+<h3 id="34-可视化开发框架--agent-ide10天">3.4 可视化开发框架 / Agent IDE（10天）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#34-可视化开发框架--agent-ide10天" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>GPTs &amp; Assistants API</strong>：OpenAI 官方</li>
+<li><strong>Coze（扣子）</strong>：字节跳动出品的 AI Bot 开发平台</li>
+<li><strong>Dify</strong>：开源 LLM 应用编排工具</li>
+</ul>
+<h2 id="阶段-4大模型微调和私有化部署">阶段 4：大模型微调和私有化部署<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-4大模型微调和私有化部署" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="41-transformer-深入10天">4.1 Transformer 深入（10天）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#41-transformer-深入10天" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>理解 Self-Attention、Encoder-Decoder 架构、Multi-head Attention、不同 Decoding 方法。</p>
+<h3 id="42-开源模型20天">4.2 开源模型（20天）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#42-开源模型20天" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>国外：Llama、Falcon、vLLM、Ollama、Mistral</li>
+<li>国内：ChatGLM、Qwen、DeepSeek、Baichuan、MOSS、InternLM</li>
+</ul>
+<p><strong>学习建议：</strong> 用 Ollama 跑 Llama3，用 vLLM 部署 ChatGLM。</p>
+<h3 id="43-fine-tuning15天">4.3 Fine-Tuning（15天）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#43-fine-tuning15天" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>流程：</strong> 选择基座模型 → 数据收集和预处理（清洗、去重、增强）→ 微调训练</p>
+<p><strong>训练框架：</strong> Hugging Face Transformers、PyTorch、DeepSpeed</p>
+<p><strong>学习建议：</strong> 从简单分类任务开始，用 ChatGLM3 + LoRA 微调工单分类器，几百条高质量数据可见效果。</p>
+<h3 id="44-peft参数高效微调20天">4.4 PEFT（参数高效微调，20天）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#44-peft参数高效微调20天" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>技术：</strong></p>
+<ul>
+<li>Adapter Tuning、Prompt Tuning、Prefix Tuning</li>
+<li>LoRA（低秩适配微调）</li>
+<li>LoRA 变体：AdaLoRA、QLoRA、LongLoRA、SLoRA</li>
+<li>P-Tuning V2</li>
+</ul>
+<h3 id="45-quantization量化10天">4.5 Quantization（量化，10天）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#45-quantization量化10天" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>技术：</strong> PTQ（训练后量化）、QAT（量化感知训练）、AWQ、GPTQ</p>
+<p>量化可显著减少模型内存占用和计算需求，同时尽量保持模型性能。</p>
+<h3 id="46-语言模型训练数据5天">4.6 语言模型训练数据（5天）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#46-语言模型训练数据5天" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>数据来源（通用/专业）、数据处理（过滤、去重、隐私消除）、数据影响分析。</p>
+<h3 id="47-大语言模型评估5天">4.7 大语言模型评估（5天）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#47-大语言模型评估5天" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>评估指标（BLEU、ROUGE、METEOR、准确率、召回率、F1）、伦理和安全、垂直领域评估。</p>
+<h3 id="48-multimodal多模态20天">4.8 Multimodal（多模态，20天）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#48-multimodal多模态20天" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>多模态模型处理文本、图像、音频、视频。AIGC、图像生成（DALL-E 3、Midjourney、Stable Diffusion + ControlNet）、语音生成（TTS）。</p>
+<hr/>
+<blockquote>
+<p>来源：鱼皮·编程导航 / codefather</p>
+</blockquote></div></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="toc"><button type="button" class="toc-header" aria-controls="toc-3" aria-expanded="true"><h3>目录</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-0" class="toc-content overflow"><li class="depth-0"><a href="#ai-大模型应用开发学习路线" data-for="ai-大模型应用开发学习路线">AI 大模型应用开发学习路线</a></li><li class="depth-1"><a href="#后端开发者转型-ai-的优势" data-for="后端开发者转型-ai-的优势">后端开发者转型 AI 的优势</a></li><li class="depth-1"><a href="#学习路线总览" data-for="学习路线总览">学习路线总览</a></li><li class="depth-1"><a href="#阶段-1大模型基础" data-for="阶段-1大模型基础">阶段 1：大模型基础</a></li><li class="depth-2"><a href="#11-大模型基本信息5天" data-for="11-大模型基本信息5天">1.1 大模型基本信息（5天）</a></li><li class="depth-2"><a href="#12-大模型的原理60天" data-for="12-大模型的原理60天">1.2 大模型的原理（60天）</a></li><li class="depth-2"><a href="#13-prompt-engineering10天" data-for="13-prompt-engineering10天">1.3 Prompt Engineering（10天）</a></li><li class="depth-2"><a href="#14-大模型-api3天" data-for="14-大模型-api3天">1.4 大模型 API（3天）</a></li><li class="depth-1"><a href="#阶段-2rag-应用开发工程" data-for="阶段-2rag-应用开发工程">阶段 2：RAG 应用开发工程</a></li><li class="depth-2"><a href="#21-rag-基础15天" data-for="21-rag-基础15天">2.1 RAG 基础（15天）</a></li><li class="depth-2"><a href="#22-rag-三大范式和优化10天" data-for="22-rag-三大范式和优化10天">2.2 RAG 三大范式和优化（10天）</a></li><li class="depth-2"><a href="#23-rag-项目评估5天" data-for="23-rag-项目评估5天">2.3 RAG 项目评估（5天）</a></li><li class="depth-2"><a href="#24-rag-开源项目7天" data-for="24-rag-开源项目7天">2.4 RAG 开源项目（7天）</a></li><li class="depth-1"><a href="#阶段-3大模型-agent-应用架构" data-for="阶段-3大模型-agent-应用架构">阶段 3：大模型 Agent 应用架构</a></li><li class="depth-2"><a href="#31-langchain15天" data-for="31-langchain15天">3.1 LangChain（15天）</a></li><li class="depth-2"><a href="#32-llamaindex5天" data-for="32-llamaindex5天">3.2 LlamaIndex（5天）</a></li><li class="depth-2"><a href="#33-agent20天" data-for="33-agent20天">3.3 Agent（20天）</a></li><li class="depth-2"><a href="#34-可视化开发框架--agent-ide10天" data-for="34-可视化开发框架--agent-ide10天">3.4 可视化开发框架 / Agent IDE（10天）</a></li><li class="depth-1"><a href="#阶段-4大模型微调和私有化部署" data-for="阶段-4大模型微调和私有化部署">阶段 4：大模型微调和私有化部署</a></li><li class="depth-2"><a href="#41-transformer-深入10天" data-for="41-transformer-深入10天">4.1 Transformer 深入（10天）</a></li><li class="depth-2"><a href="#42-开源模型20天" data-for="42-开源模型20天">4.2 开源模型（20天）</a></li><li class="depth-2"><a href="#43-fine-tuning15天" data-for="43-fine-tuning15天">4.3 Fine-Tuning（15天）</a></li><li class="depth-2"><a href="#44-peft参数高效微调20天" data-for="44-peft参数高效微调20天">4.4 PEFT（参数高效微调，20天）</a></li><li class="depth-2"><a href="#45-quantization量化10天" data-for="45-quantization量化10天">4.5 Quantization（量化，10天）</a></li><li class="depth-2"><a href="#46-语言模型训练数据5天" data-for="46-语言模型训练数据5天">4.6 语言模型训练数据（5天）</a></li><li class="depth-2"><a href="#47-大语言模型评估5天" data-for="47-大语言模型评估5天">4.7 大语言模型评估（5天）</a></li><li class="depth-2"><a href="#48-multimodal多模态20天" data-for="48-multimodal多模态20天">4.8 Multimodal（多模态，20天）</a></li><li class="overflow-end"></li></ul></div><div class="backlinks"><h3>反向链接</h3><ul id="list-0" class="overflow"><li><a href="../ai/ai-大模型-04---ai-文档助手实战（向量数据库-+-百川大模型）" class="internal">AI 大模型 04 - AI 文档助手实战（向量数据库 + 百川大模型）</a></li><li><a href="../ai/ai-大模型-05---ai-编程助手实战（codegeex）" class="internal">AI - AI 编程助手实战（CodeGeeX）</a></li><li><a href="../ai/ai-大模型-06---ai-热点监控工具实战（多源采集-+-ai-分析与实时推送）" class="internal">AI 大模型 06 - AI 热点监控工具实战（多源采集 + AI 分析与实时推送）</a></li><li><a href="../ai/prompt-engineering-01---学习路线" class="internal">Prompt Engineering 01 - 学习路线</a></li><li class="overflow-end"></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v5.0.0</a> © 2026</p><ul><li><a href="https://github.com/xyf1111">GitHub</a></li></ul></footer></div></div></body><script src="../static/resource-after-e13fffa1.js" type="application/javascript" data-persist="true"></script><script src="../static/resource-after-8b336f9a.js" type="application/javascript" data-persist="true"></script><script src="../static/resource-after-baba652b.js" type="application/javascript" data-persist="true"></script><script src="../static/resource-after-5eb75950.js" type="module" data-persist="true"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript" data-persist="true"></script><script src="../postscript-17915799.js" type="module" data-persist="true"></script></html>

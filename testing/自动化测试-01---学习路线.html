@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr"><head><title>自动化测试 01 - 学习路线 · 后端开发笔记</title><meta charset="utf-8"/><link rel="preload" href="../index-b754f97d.css" as="style"/><link rel="preload" href="../prescript-2bfc6315.js" as="script"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="技术知识库"/><meta property="og:title" content="自动化测试 01 - 学习路线 · 后端开发笔记"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="自动化测试 01 - 学习路线 · 后端开发笔记"/><meta name="twitter:description" content="自动化测试 01 - 学习路线 自动化测试是软件测试领域最重要的技能方向，通过编写脚本和使用工具，让原本需要手工执行的测试工作实现自动化。本篇路线从 Python 编程基础出发，依次涵盖 Web 自动化（Selenium/Playwright）、移动端自动化（Appium）、接口自动化（requests + pytest）、自动化测试框架设计、项目实战与求职备战 7 个阶段，适合零基础到精通循序渐进地学习。 开篇介绍 自动化测试是软件测试领域最重要的技能方向之一，通过编写脚本和使用工具，让原本需要手工执行的测试工作实现自动化。随着敏捷开发和 DevOps 的普及，自动化测试的重要性越来越高。 ..."/><meta property="og:description" content="自动化测试 01 - 学习路线 自动化测试是软件测试领域最重要的技能方向，通过编写脚本和使用工具，让原本需要手工执行的测试工作实现自动化。本篇路线从 Python 编程基础出发，依次涵盖 Web 自动化（Selenium/Playwright）、移动端自动化（Appium）、接口自动化（requests + pytest）、自动化测试框架设计、项目实战与求职备战 7 个阶段，适合零基础到精通循序渐进地学习。 开篇介绍 自动化测试是软件测试领域最重要的技能方向之一，通过编写脚本和使用工具，让原本需要手工执行的测试工作实现自动化。随着敏捷开发和 DevOps 的普及，自动化测试的重要性越来越高。 ..."/><meta property="og:image:alt" content="自动化测试 01 - 学习路线 自动化测试是软件测试领域最重要的技能方向，通过编写脚本和使用工具，让原本需要手工执行的测试工作实现自动化。本篇路线从 Python 编程基础出发，依次涵盖 Web 自动化（Selenium/Playwright）、移动端自动化（Appium）、接口自动化（requests + pytest）、自动化测试框架设计、项目实战与求职备战 7 个阶段，适合零基础到精通循序渐进地学习。 开篇介绍 自动化测试是软件测试领域最重要的技能方向之一，通过编写脚本和使用工具，让原本需要手工执行的测试工作实现自动化。随着敏捷开发和 DevOps 的普及，自动化测试的重要性越来越高。 ..."/><meta property="twitter:domain" content="xyf1111.github.io/tech-notes"/><meta property="og:url" content="https://xyf1111.github.io/tech-notes/testing/自动化测试-01---学习路线"/><meta property="twitter:url" content="https://xyf1111.github.io/tech-notes/testing/自动化测试-01---学习路线"/><link rel="icon" href="../static/icon.png"/><meta name="description" content="自动化测试 01 - 学习路线 自动化测试是软件测试领域最重要的技能方向，通过编写脚本和使用工具，让原本需要手工执行的测试工作实现自动化。本篇路线从 Python 编程基础出发，依次涵盖 Web 自动化（Selenium/Playwright）、移动端自动化（Appium）、接口自动化（requests + pytest）、自动化测试框架设计、项目实战与求职备战 7 个阶段，适合零基础到精通循序渐进地学习。 开篇介绍 自动化测试是软件测试领域最重要的技能方向之一，通过编写脚本和使用工具，让原本需要手工执行的测试工作实现自动化。随着敏捷开发和 DevOps 的普及，自动化测试的重要性越来越高。 ..."/><meta name="generator" content="Quartz"/><link href="../index-b754f97d.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-735924e0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-589c1cea.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-bbc3f7c0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-2911f5d1.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-e427079e.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-53b25b2b.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-c93c6a44.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-8a06014f.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-77d6a441.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-6ee21cee.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-1ea6ad18.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-788c9ca3.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-642859cd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-4abc06bd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-274a3dfe.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-94cb6c84.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-58d5ff56.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-7262b5a7.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../static/resource-style-a5c806d2.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../static/resource-style-6bd36952.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" data-persist="true"/><script src="../prescript-2bfc6315.js" type="application/javascript" data-persist="true"></script><script type="application/javascript" data-persist="true">const fetchData = fetch("../static/contentIndex.json").then(data => data.json())</script><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://xyf1111.github.io/tech-notes/testing/自动化测试-01---学习路线-og-image.webp"/><meta property="og:image:url" content="https://xyf1111.github.io/tech-notes/testing/自动化测试-01---学习路线-og-image.webp"/><meta name="twitter:image" content="https://xyf1111.github.io/tech-notes/testing/自动化测试-01---学习路线-og-image.webp"/><meta property="og:image:type" content="image/webp"/></head><body data-slug="testing/自动化测试-01---学习路线" data-basepath="/tech-notes"><div id="quartz-root" class="page" data-frame="default"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="..">技术知识库</a></h2><div class="mobile-only"><div class="spacer"></div></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 0.5rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button" aria-label="搜索" aria-expanded="false"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>搜索</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="搜索内容..." placeholder="搜索内容..."/><div class="search-layout" data-preview="true" data-field-priority="[&quot;title&quot;,&quot;content&quot;,&quot;tags&quot;]"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode" aria-label="暗色模式"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="暗色模式"><title>暗色模式</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="亮色模式"><title>亮色模式</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode" aria-label="阅读模式"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="阅读模式"><title>阅读模式</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer nav-files-container" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a2, b2) => {\n    if (!a2.isFolder &amp;&amp; !b2.isFolder || a2.isFolder &amp;&amp; b2.isFolder) {\n      return (a2.displayName || \&quot;\&quot;).localeCompare(b2.displayName || \&quot;\&quot;, void 0, {\n        numeric: true,\n        sensitivity: \&quot;base\&quot;\n      });\n    }\n    if (!a2.isFolder &amp;&amp; b2.isFolder) {\n      return 1;\n    }\n    return -1;\n  }&quot;,&quot;filterFn&quot;:&quot;(node) => node.slugSegment !== \&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;(node) => {\n    return node;\n  }&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-436" aria-label="探索"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>探索</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-436" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#" class="nav-file-title tree-item-self"></a></li></template><template id="template-folder"><li><div class="folder-container nav-folder-title tree-item-self"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon nav-folder-collapse-indicator collapse-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content tree-item-children"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../testing/">testing</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>自动化测试 01 - 学习路线</a></div></nav><h1 class="article-title">自动化测试 01 - 学习路线</h1><details class="note-properties metadata-container" open data-collapsed="false"><summary class="note-properties-header"><span class="note-properties-title">Properties</span><span class="note-properties-count">1</span></summary><table class="note-properties-table"><tbody><tr class="note-properties-row metadata-property"><td class="note-properties-key metadata-property-key">tags</td><td class="note-properties-value metadata-property-value"><span class="note-properties-tags"><a href="../tags/自动化测试" class="internal internal-link tag-link">自动化测试</a><span class="note-properties-separator">, </span><a href="../tags/软件测试" class="internal internal-link tag-link">软件测试</a><span class="note-properties-separator">, </span><a href="../tags/学习路线" class="internal internal-link tag-link">学习路线</a></span></td></tr></tbody></table></details><p show-comma="true" class="content-meta"><time datetime="2026-08-15T16:00:00.000Z">2026年8月16日</time><span>21分钟阅读</span></p></div></div><article class="popover-hint"><div class="markdown-preview-view markdown-rendered"><h1 id="自动化测试-01---学习路线">自动化测试 01 - 学习路线<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#自动化测试-01---学习路线" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<blockquote>
+<p>自动化测试是软件测试领域最重要的技能方向，通过编写脚本和使用工具，让原本需要手工执行的测试工作实现自动化。本篇路线从 Python 编程基础出发，依次涵盖 Web 自动化（Selenium/Playwright）、移动端自动化（Appium）、接口自动化（requests + pytest）、自动化测试框架设计、项目实战与求职备战 7 个阶段，适合零基础到精通循序渐进地学习。</p>
+</blockquote>
+<h2 id="开篇介绍">开篇介绍<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#开篇介绍" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>自动化测试是软件测试领域最重要的技能方向之一，通过编写脚本和使用工具，让原本需要手工执行的测试工作实现自动化。随着敏捷开发和 DevOps 的普及，自动化测试的重要性越来越高。</p>
+<p><strong>为什么要学自动化测试？</strong></p>
+<p>1）自动化测试是测试工程师的核心技能。根据市场调研，掌握自动化测试技能的测试工程师薪资比只会手工测试的高 30-50%。</p>
+<p>2）自动化测试能够提升工作效率。通过自动化，可以帮你从繁重的重复工作中解放出来，专注于更有价值的测试工作。它可以大幅提高测试效率、降低人力成本、提升测试覆盖率、保证回归测试的稳定性。</p>
+<p>目前，自动化测试是测试开发工程师的必备技能，广泛应用于各种场景：回归测试、冒烟测试、兼容性测试、性能测试、持续集成等。再加上如今 AI 的爆炸式发展，也进一步提高了自动化测试的上限。</p>
+<h3 id="就业方向">就业方向<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#就业方向" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>学习自动化测试可以从事多个方向的工作：</p>
+<ol>
+<li>自动化测试工程师：负责自动化测试脚本的开发和维护，执行自动化测试，分析测试结果。</li>
+<li>测试开发工程师：不仅会测试，还能开发测试工具和测试平台，是测试和开发的结合。</li>
+<li>性能测试工程师：专注于性能测试，使用自动化工具进行压力测试、负载测试等。</li>
+<li>质量保障工程师（QA）：负责整体的质量保障工作，包括测试策略制定、自动化测试推广等。</li>
+<li>DevOps 工程师：将自动化测试集成到 CI/CD 流程中，实现持续测试和持续交付。</li>
+</ol>
+<h2 id="阶段-1编程基础15-30-天仅供参考">阶段 1：编程基础（15-30 天，仅供参考）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-1编程基础15-30-天仅供参考" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Python 是自动化测试最常用的编程语言，简单易学，库丰富。如果你完全零基础，建议系统地学习 Python，能够独立编写脚本；如果已掌握其他编程语言，可以快速过一遍 Python 语法。</p>
+<h3 id="学习目标">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>掌握 Python 编程基础，为编写自动化测试脚本打下基础。</p>
+<h3 id="知识点">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>Python 基础【必学】：</strong></p>
+<ul>
+<li>Python 语法</li>
+<li>数据类型和操作</li>
+<li>控制流程</li>
+<li>函数和模块</li>
+<li>面向对象编程</li>
+<li>异常处理</li>
+<li>文件操作</li>
+</ul>
+<p><strong>常用库【必学】：</strong></p>
+<ul>
+<li>re（正则表达式）</li>
+<li>json（JSON 处理）</li>
+<li>requests（HTTP 请求）</li>
+<li>pytest（测试框架）</li>
+</ul>
+<p><strong>版本控制【必学】：</strong></p>
+<ul>
+<li>Git 基础</li>
+<li>GitHub/GitLab 使用</li>
+</ul>
+<h3 id="学习建议">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>1）自动化测试不需要掌握 Python 的全部特性，重点掌握基础语法、面向对象、常用库即可。高级特性（如装饰器、元类）可以在需要时再学习。</p>
+<p>2）pytest 是 Python 最流行的测试框架，必须掌握。pytest 的特点是简单灵活，支持参数化、fixture、插件等功能。后续的自动化测试都会基于 pytest。</p>
+<h3 id="学习资源">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><a href="https://www.bilibili.com/video/BV1qW4y1a7fU" class="external external-link">黑马程序员 Python 教程<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：适合零基础</li>
+<li><a href="https://docs.pytest.org/" class="external external-link">pytest 官方文档<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：官方文档</li>
+</ul>
+<h2 id="阶段-2web-自动化测试20-40-天仅供参考">阶段 2：Web 自动化测试（20-40 天，仅供参考）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-2web-自动化测试20-40-天仅供参考" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>通过 Selenium、Playwright 等工具模拟用户操作，实现 Web 应用的自动化测试。</p>
+<h3 id="学习目标-1">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标-1" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>掌握 Web 自动化测试技术，能够使用 Selenium 等工具编写 Web 测试脚本。</p>
+<h3 id="知识点-1">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-1" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>Selenium 基础【必学】：</strong></p>
+<ul>
+<li>Selenium 架构</li>
+<li>WebDriver 安装和配置</li>
+<li>浏览器驱动</li>
+<li>元素定位（ID、Name、XPath、CSS Selector）</li>
+<li>常用操作（点击、输入、下拉框、弹窗）</li>
+</ul>
+<p><strong>Selenium 高级特性【必学】：</strong></p>
+<ul>
+<li>等待机制（显式等待、隐式等待）</li>
+<li>多窗口处理</li>
+<li>Frame 切换</li>
+<li>JavaScript 执行</li>
+<li>截图和日志</li>
+</ul>
+<p><strong>自动化测试框架【必学】：</strong></p>
+<ul>
+<li>POM（Page Object Model）</li>
+<li>数据驱动测试</li>
+<li>关键字驱动测试</li>
+<li>测试用例管理</li>
+</ul>
+<p><strong>其他 Web 自动化工具【建议学】：</strong></p>
+<ul>
+<li>Playwright（新一代 Web 自动化工具）</li>
+<li>Cypress（前端开发者友好）</li>
+<li>工具对比和选型</li>
+</ul>
+<h3 id="学习建议-1">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-1" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>1）Selenium 是 Web 自动化测试的行业标准，必须熟练掌握。Selenium 4 带来了很多新特性，建议学习最新版本。元素定位是 Selenium 的核心，要掌握多种定位方法，优先使用稳定的定位方式（如 ID、Name），XPath 和 CSS Selector 作为备选。</p>
+<p>2）页面加载需要时间，如果不等待就操作元素，会导致测试失败。要理解显式等待和隐式等待的区别，合理使用等待。推荐使用显式等待（WebDriverWait），更加灵活可控。</p>
+<p>3）POM（页面对象模型）是组织 Selenium 代码的最佳实践。将页面元素和操作封装到 Page 类中，测试用例只调用 Page 类的方法。这样可以提高代码的可维护性和复用性。</p>
+<p>4）Playwright 是新一代 Web 自动化工具，比 Selenium 更快、更稳定，支持多浏览器、自动等待、录制功能等。<strong>如果是新项目，建议优先考虑 Playwright。</strong></p>
+<p>5）建议从简单的页面开始练习，比如登录页面、搜索页面等。逐步增加难度，处理复杂的交互、多窗口、Frame 等场景，在实践中积累经验。</p>
+<h3 id="学习资源-1">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-1" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><a href="https://www.bilibili.com/video/BV1HXYGz3EBn/" class="external external-link">Web 自动化测试教程<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：Selenium + Appium</li>
+<li><a href="https://www.bilibili.com/video/BV1Y9UPYAEqN" class="external external-link">Selenium 教程<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><a href="https://www.selenium.dev/documentation/" class="external external-link">Selenium 官方文档<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：官方文档</li>
+<li><a href="https://playwright.dev/" class="external external-link">Playwright 官方文档<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：新一代工具</li>
+</ul>
+<h2 id="阶段-3移动端自动化测试15-30-天仅供参考">阶段 3：移动端自动化测试（15-30 天，仅供参考）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-3移动端自动化测试15-30-天仅供参考" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="学习目标-2">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标-2" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>掌握移动端自动化测试技术，能够使用 Appium 编写移动应用测试脚本。</p>
+<h3 id="知识点-2">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-2" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>Appium 基础【必学】：</strong></p>
+<ul>
+<li>Appium 架构</li>
+<li>环境搭建（Android SDK、Xcode）</li>
+<li>Desired Capabilities 配置</li>
+<li>元素定位（ID、XPath、Accessibility ID）</li>
+<li>常用操作（点击、滑动、输入）</li>
+</ul>
+<p><strong>Android 自动化【必学】：</strong></p>
+<ul>
+<li>Android 应用结构</li>
+<li>uiautomatorviewer</li>
+<li>元素定位技巧</li>
+<li>手势操作</li>
+</ul>
+<p><strong>iOS 自动化【建议学】：</strong></p>
+<ul>
+<li>iOS 应用结构</li>
+<li>Xcode Instruments</li>
+<li>元素定位技巧</li>
+</ul>
+<p><strong>Appium 高级特性【必学】：</strong></p>
+<ul>
+<li>多设备并行测试</li>
+<li>混合应用（Hybrid App）测试</li>
+<li>WebView 测试</li>
+<li>真机测试 vs 模拟器测试</li>
+</ul>
+<h3 id="学习建议-2">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-2" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>1）Appium 是移动端自动化测试的主流工具，支持 Android 和 iOS。Appium 基于 WebDriver 协议，和 Selenium 类似，学过 Selenium 可以快速上手 Appium。</p>
+<p>2）环境搭建是 Appium 的第一个难点。Android 需要安装 JDK、Android SDK、配置环境变量；iOS 需要 Mac 电脑和 Xcode。建议先在 Android 上学习，环境搭建相对简单。</p>
+<p>3）移动端的元素定位比 Web 更复杂。要学会使用 uiautomatorviewer（Android）或 Appium Inspector 查看元素属性，选择合适的定位方式。优先使用 resource-id，XPath 作为备选。</p>
+<p>4）手势操作是移动端特有的交互方式。要掌握滑动、长按、拖拽等手势操作的实现方法。Appium 提供了 TouchAction 类用于实现各种手势。</p>
+<p>5）Appium 2.0 是最新版本，架构有较大变化，建议学习 Appium 2.0。要理解 Driver 和 Plugin 的概念，掌握新的配置方式。</p>
+<h3 id="学习资源-2">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-2" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><a href="https://www.bilibili.com/video/BV1445Xz1Ejg" class="external external-link">Appium 自动化测试教程<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><a href="https://www.cnblogs.com/hebendexiaomao/p/19063336" class="external external-link">2025 五大自动化测试工具<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：Selenium、Playwright、Appium 等</li>
+<li><a href="https://appium.io/docs/en/latest/" class="external external-link">Appium 官方文档<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：官方文档</li>
+</ul>
+<h2 id="阶段-4接口自动化测试15-30-天仅供参考">阶段 4：接口自动化测试（15-30 天，仅供参考）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-4接口自动化测试15-30-天仅供参考" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>接口测试是自动化测试中最重要的一部分，投入产出比最高。接口相对稳定，自动化后维护成本低，执行速度快。建议重点学习接口自动化测试。</p>
+<h3 id="学习目标-3">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标-3" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>掌握接口自动化测试技术，能够使用 requests、pytest 等工具编写接口测试脚本。</p>
+<h3 id="知识点-3">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-3" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>接口测试基础【必学】：</strong></p>
+<ul>
+<li>HTTP 协议</li>
+<li>RESTful API</li>
+<li>接口文档阅读</li>
+<li>接口测试方法</li>
+</ul>
+<p><strong>requests 库【必学】：</strong></p>
+<ul>
+<li>GET、POST 请求</li>
+<li>请求头和请求体</li>
+<li>响应处理</li>
+<li>Session 管理</li>
+<li>文件上传下载</li>
+</ul>
+<p><strong>pytest 进阶【必学】：</strong></p>
+<ul>
+<li>参数化测试</li>
+<li>Fixture</li>
+<li>断言</li>
+<li>测试报告</li>
+<li>插件使用</li>
+</ul>
+<p><strong>接口自动化框架【必学】：</strong></p>
+<ul>
+<li>框架设计</li>
+<li>数据驱动</li>
+<li>关键字驱动</li>
+<li>配置管理</li>
+<li>日志管理</li>
+</ul>
+<h3 id="学习建议-3">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-3" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>1）requests 是 Python 最流行的 HTTP 库，API 简洁易用。要掌握各种请求方法、参数传递、响应处理等。结合 pytest，可以快速搭建接口自动化测试框架。</p>
+<p>2）参数化测试是 pytest 的强大功能，可以用相同的测试逻辑测试多组数据。要掌握 @pytest.mark.parametrize 的使用，实现数据驱动测试。</p>
+<h3 id="学习资源-3">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-3" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><a href="https://requests.readthedocs.io/" class="external external-link">requests 官方文档<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：官方文档</li>
+</ul>
+<h2 id="阶段-5自动化测试框架20-40-天仅供参考">阶段 5：自动化测试框架（20-40 天，仅供参考）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-5自动化测试框架20-40-天仅供参考" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="学习目标-4">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标-4" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>掌握自动化测试框架的设计和实现，能够搭建企业级自动化测试框架。</p>
+<h3 id="知识点-4">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-4" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>框架设计【必学】：</strong></p>
+<ul>
+<li>分层架构（测试层、业务层、驱动层）</li>
+<li>目录结构设计</li>
+<li>配置管理</li>
+<li>数据管理</li>
+<li>日志管理</li>
+</ul>
+<p><strong>POM 设计模式【必学】：</strong></p>
+<ul>
+<li>Page Object Model</li>
+<li>页面类设计</li>
+<li>元素封装</li>
+<li>方法封装</li>
+</ul>
+<p><strong>数据驱动【必学】：</strong></p>
+<ul>
+<li>Excel 数据驱动</li>
+<li>CSV 数据驱动</li>
+<li>YAML/JSON 配置</li>
+<li>参数化测试</li>
+</ul>
+<p><strong>测试报告【必学】：</strong></p>
+<ul>
+<li>Allure 报告</li>
+<li>HTML 报告</li>
+<li>测试结果统计</li>
+<li>失败截图</li>
+</ul>
+<p><strong>CI/CD 集成【必学】：</strong></p>
+<ul>
+<li>Jenkins 集成</li>
+<li>GitLab CI 集成</li>
+<li>GitHub Actions 集成</li>
+<li>定时执行</li>
+</ul>
+<h3 id="学习重点">学习重点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习重点" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>1）自动化测试框架是自动化测试的核心。好的框架可以提高开发效率、降低维护成本、提升测试稳定性。要学习如何设计一个易用、稳定、可扩展的自动化测试框架。</p>
+<p>2）分层架构是框架设计的重要原则。测试层负责测试用例，业务层负责业务逻辑封装，驱动层负责工具调用。分层后，各层职责清晰，代码更易维护。</p>
+<p>3）Allure 是最流行的测试报告框架，报告美观、功能强大。要掌握 Allure 的使用，包括添加描述、添加附件、失败重试等功能。Allure 报告可以很好地展示测试结果。</p>
+<p>4）CI/CD 集成是自动化测试的重要环节。要学会将自动化测试集成到 Jenkins、GitLab CI 等平台，实现代码提交后自动执行测试。这样可以及时发现问题，保证代码质量。</p>
+<p>5）建议参考开源的自动化测试框架，学习别人的设计思路。也可以参加一些自动化测试的技术分享会，了解业界的最佳实践。</p>
+<h3 id="学习资源-4">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-4" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><a href="https://docs.qameta.io/allure/" class="external external-link">Allure 官方文档<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：测试报告框架</li>
+<li><a href="https://www.jenkins.io/doc/" class="external external-link">Jenkins 官方文档<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：CI/CD 工具</li>
+</ul>
+<h2 id="阶段-6项目实战25-50-天仅供参考">阶段 6：项目实战（25-50 天，仅供参考）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-6项目实战25-50-天仅供参考" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="学习目标-5">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标-5" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>通过完整的项目实践，综合运用所学知识，积累自动化测试经验。</p>
+<h3 id="学习建议-4">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-4" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>1）搭建一个完整的自动化测试项目。可以选择一个开源的 Web 应用或移动应用作为测试对象，编写完整的自动化测试用例，覆盖主要功能。</p>
+<p>2）项目要包含完整的框架：分层架构、POM 设计、数据驱动、测试报告、CI/CD 集成。不要只写测试用例，要设计好框架结构，提高代码质量。</p>
+<p>3）关注测试覆盖率和稳定性。测试覆盖率要达到 80% 以上，测试用例的成功率要达到 95% 以上。不稳定的测试用例（Flaky Tests）要及时修复。</p>
+<p>4）将项目开源到 GitHub，写好 README，提供运行指南。这样可以作为你的作品展示给面试官，大大提升你的竞争力。</p>
+<p>5）建议加入自动化测试社区，和其他测试工程师交流。可以在技术论坛、微信群、QQ 群等平台提问和分享经验。</p>
+<h3 id="项目推荐">项目推荐<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#项目推荐" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>Web 电商平台自动化测试</li>
+<li>移动应用自动化测试</li>
+<li>接口自动化测试框架</li>
+<li>混合型自动化测试平台</li>
+</ul>
+<p><strong>优质开源项目：</strong></p>
+<ul>
+<li><a href="https://github.com/microsoft/playwright" class="external external-link">Playwright<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：68k+ stars，Microsoft 现代化 Web 自动化测试框架</li>
+<li><a href="https://github.com/cypress-io/cypress" class="external external-link">Cypress<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：47k+ stars，前端自动化测试框架</li>
+<li><a href="https://github.com/SeleniumHQ/selenium" class="external external-link">Selenium<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：30k+ stars，经典 Web 自动化测试框架</li>
+<li><a href="https://github.com/appium/appium" class="external external-link">Appium<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：19k+ stars，移动端自动化测试框架</li>
+</ul>
+<h3 id="学习资源-5">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-5" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><a href="https://cloud.tencent.com/developer/article/2561684" class="external external-link">2025 自动化测试工具对比<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：工具选型指南</li>
+<li><a href="https://cloud.tencent.com/developer/article/2558049" class="external external-link">UI 自动化测试工具解析<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：2025 年度推荐</li>
+</ul>
+<h2 id="阶段-7求职备战面试前-15-天突击">阶段 7：求职备战（面试前 15 天突击）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-7求职备战面试前-15-天突击" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="学习目标-6">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标-6" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>熟练掌握自动化测试常见面试题，准备好简历和项目经历，顺利通过面试。</p>
+<h3 id="学习建议-5">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-5" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>1）准备测试项目：简历上一定要有自动化测试项目经历，包括使用的工具、框架设计、测试覆盖率、发现的缺陷数等，<strong>最好提供可量化的指标</strong>，能够大大增加真实性。此外，面试时可能会要求演示你的自动化测试项目或现场编写测试脚本，建议提前准备好演示环境和代码。</p>
+<p>2）准备简历：写简历时要突出自动化测试项目和量化成果，参考高质量的简历模板。</p>
+<p>3）多刷面试题：自动化测试的面试题主要包括工具使用、框架设计、项目经验等，可以针对性地练习。</p>
+<h3 id="经典面试题">经典面试题<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#经典面试题" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>基础概念：</strong></p>
+<ol>
+<li>什么是自动化测试？自动化测试和手工测试有什么区别？</li>
+<li>哪些测试适合自动化？哪些不适合？</li>
+<li>自动化测试的投入产出比如何计算？</li>
+<li>自动化测试的常见误区有哪些？</li>
+</ol>
+<p><strong>工具使用：</strong></p>
+<ol>
+<li>Selenium 的工作原理是什么？</li>
+<li>如何定位元素？有哪些定位方法？</li>
+<li>如何处理动态加载的元素？</li>
+<li>Selenium 和 Playwright 有什么区别？</li>
+<li>Appium 的架构是怎样的？</li>
+</ol>
+<p><strong>框架设计：</strong></p>
+<ol>
+<li>如何设计一个自动化测试框架？</li>
+<li>什么是 POM？有什么优势？</li>
+<li>如何实现数据驱动测试？</li>
+<li>如何生成测试报告？</li>
+<li>如何将自动化测试集成到 CI/CD？</li>
+</ol>
+<p><strong>项目经验：</strong></p>
+<ol>
+<li>你做过哪些自动化测试项目？详细说说。</li>
+<li>项目中遇到过什么技术难点？如何解决的？</li>
+<li>如何提高自动化测试的稳定性？</li>
+<li>如何提高测试覆盖率？</li>
+<li>自动化测试发现了多少缺陷？</li>
+</ol>
+<h2 id="持续学习资源">持续学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#持续学习资源" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="自动化测试资源">自动化测试资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#自动化测试资源" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><a href="https://www.selenium.dev/" class="external external-link">Selenium 官网<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：官方网站</li>
+<li><a href="https://appium.io/" class="external external-link">Appium 官网<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：官方网站</li>
+<li><a href="https://playwright.dev/" class="external external-link">Playwright 官网<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：新一代工具</li>
+</ul>
+<h3 id="技术博客">技术博客<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#技术博客" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><a href="https://testing.googleblog.com/" class="external external-link">Google Testing Blog<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：谷歌自动化测试</li>
+<li><a href="https://www.selenium.dev/blog/" class="external external-link">Selenium Blog<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：Selenium 官方博客</li>
+<li><a href="https://netflixtechblog.com/" class="external external-link">Netflix TechBlog<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：Netflix 自动化实践</li>
+<li><a href="https://www.uber.com/blog/engineering/" class="external external-link">Uber Engineering Blog<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：Uber 测试自动化</li>
+</ul>
+<h2 id="总结一下">总结一下<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#总结一下" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>自动化测试是软件测试领域最重要的技能方向，掌握自动化测试能够让你在测试领域获得更好的发展。从 Python 编程到 Selenium Web 测试，从 Appium 移动端测试到接口自动化测试，从框架设计到 CI/CD 集成，自动化测试的技术体系完整且实用。</p>
+<p>学习自动化测试要先打好编程基础，掌握 Python 语言和 pytest 框架；深入学习 Web 自动化测试，掌握 Selenium 或 Playwright 的使用；学习移动端自动化测试，掌握 Appium 的使用；掌握接口自动化测试技术；设计和实现完整的自动化测试框架；将自动化测试集成到 CI/CD 流程；通过完整的项目实践，积累开发经验。</p>
+<p>记住，自动化测试不是万能的，要根据项目特点选择合适的测试策略。自动化测试的成本包括脚本开发成本和维护成本，要权衡投入产出比。选择合适的测试对象、使用合适的工具、设计好的框架，才能发挥自动化测试的最大价值。</p>
+<blockquote>
+<p>来源：鱼皮·编程导航 / codefather</p>
+</blockquote></div></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="toc"><button type="button" class="toc-header" aria-controls="toc-436" aria-expanded="true"><h3>目录</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-0" class="toc-content overflow"><li class="depth-0"><a href="#自动化测试-01---学习路线" data-for="自动化测试-01---学习路线">自动化测试 01 - 学习路线</a></li><li class="depth-1"><a href="#开篇介绍" data-for="开篇介绍">开篇介绍</a></li><li class="depth-2"><a href="#就业方向" data-for="就业方向">就业方向</a></li><li class="depth-1"><a href="#阶段-1编程基础15-30-天仅供参考" data-for="阶段-1编程基础15-30-天仅供参考">阶段 1：编程基础（15-30 天，仅供参考）</a></li><li class="depth-2"><a href="#学习目标" data-for="学习目标">学习目标</a></li><li class="depth-2"><a href="#知识点" data-for="知识点">知识点</a></li><li class="depth-2"><a href="#学习建议" data-for="学习建议">学习建议</a></li><li class="depth-2"><a href="#学习资源" data-for="学习资源">学习资源</a></li><li class="depth-1"><a href="#阶段-2web-自动化测试20-40-天仅供参考" data-for="阶段-2web-自动化测试20-40-天仅供参考">阶段 2：Web 自动化测试（20-40 天，仅供参考）</a></li><li class="depth-2"><a href="#学习目标-1" data-for="学习目标-1">学习目标</a></li><li class="depth-2"><a href="#知识点-1" data-for="知识点-1">知识点</a></li><li class="depth-2"><a href="#学习建议-1" data-for="学习建议-1">学习建议</a></li><li class="depth-2"><a href="#学习资源-1" data-for="学习资源-1">学习资源</a></li><li class="depth-1"><a href="#阶段-3移动端自动化测试15-30-天仅供参考" data-for="阶段-3移动端自动化测试15-30-天仅供参考">阶段 3：移动端自动化测试（15-30 天，仅供参考）</a></li><li class="depth-2"><a href="#学习目标-2" data-for="学习目标-2">学习目标</a></li><li class="depth-2"><a href="#知识点-2" data-for="知识点-2">知识点</a></li><li class="depth-2"><a href="#学习建议-2" data-for="学习建议-2">学习建议</a></li><li class="depth-2"><a href="#学习资源-2" data-for="学习资源-2">学习资源</a></li><li class="depth-1"><a href="#阶段-4接口自动化测试15-30-天仅供参考" data-for="阶段-4接口自动化测试15-30-天仅供参考">阶段 4：接口自动化测试（15-30 天，仅供参考）</a></li><li class="depth-2"><a href="#学习目标-3" data-for="学习目标-3">学习目标</a></li><li class="depth-2"><a href="#知识点-3" data-for="知识点-3">知识点</a></li><li class="depth-2"><a href="#学习建议-3" data-for="学习建议-3">学习建议</a></li><li class="depth-2"><a href="#学习资源-3" data-for="学习资源-3">学习资源</a></li><li class="depth-1"><a href="#阶段-5自动化测试框架20-40-天仅供参考" data-for="阶段-5自动化测试框架20-40-天仅供参考">阶段 5：自动化测试框架（20-40 天，仅供参考）</a></li><li class="depth-2"><a href="#学习目标-4" data-for="学习目标-4">学习目标</a></li><li class="depth-2"><a href="#知识点-4" data-for="知识点-4">知识点</a></li><li class="depth-2"><a href="#学习重点" data-for="学习重点">学习重点</a></li><li class="depth-2"><a href="#学习资源-4" data-for="学习资源-4">学习资源</a></li><li class="depth-1"><a href="#阶段-6项目实战25-50-天仅供参考" data-for="阶段-6项目实战25-50-天仅供参考">阶段 6：项目实战（25-50 天，仅供参考）</a></li><li class="depth-2"><a href="#学习目标-5" data-for="学习目标-5">学习目标</a></li><li class="depth-2"><a href="#学习建议-4" data-for="学习建议-4">学习建议</a></li><li class="depth-2"><a href="#项目推荐" data-for="项目推荐">项目推荐</a></li><li class="depth-2"><a href="#学习资源-5" data-for="学习资源-5">学习资源</a></li><li class="depth-1"><a href="#阶段-7求职备战面试前-15-天突击" data-for="阶段-7求职备战面试前-15-天突击">阶段 7：求职备战（面试前 15 天突击）</a></li><li class="depth-2"><a href="#学习目标-6" data-for="学习目标-6">学习目标</a></li><li class="depth-2"><a href="#学习建议-5" data-for="学习建议-5">学习建议</a></li><li class="depth-2"><a href="#经典面试题" data-for="经典面试题">经典面试题</a></li><li class="depth-1"><a href="#持续学习资源" data-for="持续学习资源">持续学习资源</a></li><li class="depth-2"><a href="#自动化测试资源" data-for="自动化测试资源">自动化测试资源</a></li><li class="depth-2"><a href="#技术博客" data-for="技术博客">技术博客</a></li><li class="depth-1"><a href="#总结一下" data-for="总结一下">总结一下</a></li><li class="overflow-end"></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v5.0.0</a> © 2026</p><ul><li><a href="https://github.com/xyf1111">GitHub</a></li></ul></footer></div></div></body><script src="../static/resource-after-e13fffa1.js" type="application/javascript" data-persist="true"></script><script src="../static/resource-after-8b336f9a.js" type="application/javascript" data-persist="true"></script><script src="../static/resource-after-baba652b.js" type="application/javascript" data-persist="true"></script><script src="../static/resource-after-5eb75950.js" type="module" data-persist="true"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript" data-persist="true"></script><script src="../postscript-17915799.js" type="module" data-persist="true"></script></html>

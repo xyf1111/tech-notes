@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr"><head><title>概念 - 设计模式学习路线 · 后端开发笔记</title><meta charset="utf-8"/><link rel="preload" href="../index-b754f97d.css" as="style"/><link rel="preload" href="../prescript-2bfc6315.js" as="script"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="技术知识库"/><meta property="og:title" content="概念 - 设计模式学习路线 · 后端开发笔记"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="概念 - 设计模式学习路线 · 后端开发笔记"/><meta name="twitter:description" content="概念 - 设计模式学习路线 设计模式是软件开发中常见问题的通用解决方案，共 23 种，分为创建型、结构型、行为型三大类。本路线按「基础学习 → 编码实现 → 项目实战 → 求职备战」四阶段推进：先理解每种模式的应用场景、特点与 UML 类图，再用任意面向对象语言逐个实现，然后结合 Spring / MyBatis / Netty 等框架源码实战，最后备战面试（高频题 + 手写代码）。⭐ 推荐先观看 鱼皮的设计模式导学视频，快速掌握设计模式的高效学习法。 设计模式是什么 设计模式是软件开发人员在软件开发过程中面临的一般问题的通用解决方案，是众多开发者经过相当长一段时间的试验和错误总结出来的。通俗..."/><meta property="og:description" content="概念 - 设计模式学习路线 设计模式是软件开发中常见问题的通用解决方案，共 23 种，分为创建型、结构型、行为型三大类。本路线按「基础学习 → 编码实现 → 项目实战 → 求职备战」四阶段推进：先理解每种模式的应用场景、特点与 UML 类图，再用任意面向对象语言逐个实现，然后结合 Spring / MyBatis / Netty 等框架源码实战，最后备战面试（高频题 + 手写代码）。⭐ 推荐先观看 鱼皮的设计模式导学视频，快速掌握设计模式的高效学习法。 设计模式是什么 设计模式是软件开发人员在软件开发过程中面临的一般问题的通用解决方案，是众多开发者经过相当长一段时间的试验和错误总结出来的。通俗..."/><meta property="og:image:alt" content="概念 - 设计模式学习路线 设计模式是软件开发中常见问题的通用解决方案，共 23 种，分为创建型、结构型、行为型三大类。本路线按「基础学习 → 编码实现 → 项目实战 → 求职备战」四阶段推进：先理解每种模式的应用场景、特点与 UML 类图，再用任意面向对象语言逐个实现，然后结合 Spring / MyBatis / Netty 等框架源码实战，最后备战面试（高频题 + 手写代码）。⭐ 推荐先观看 鱼皮的设计模式导学视频，快速掌握设计模式的高效学习法。 设计模式是什么 设计模式是软件开发人员在软件开发过程中面临的一般问题的通用解决方案，是众多开发者经过相当长一段时间的试验和错误总结出来的。通俗..."/><meta property="twitter:domain" content="xyf1111.github.io/tech-notes"/><meta property="og:url" content="https://xyf1111.github.io/tech-notes/concepts/概念-08---设计模式学习路线"/><meta property="twitter:url" content="https://xyf1111.github.io/tech-notes/concepts/概念-08---设计模式学习路线"/><link rel="icon" href="../static/icon.png"/><meta name="description" content="概念 - 设计模式学习路线 设计模式是软件开发中常见问题的通用解决方案，共 23 种，分为创建型、结构型、行为型三大类。本路线按「基础学习 → 编码实现 → 项目实战 → 求职备战」四阶段推进：先理解每种模式的应用场景、特点与 UML 类图，再用任意面向对象语言逐个实现，然后结合 Spring / MyBatis / Netty 等框架源码实战，最后备战面试（高频题 + 手写代码）。⭐ 推荐先观看 鱼皮的设计模式导学视频，快速掌握设计模式的高效学习法。 设计模式是什么 设计模式是软件开发人员在软件开发过程中面临的一般问题的通用解决方案，是众多开发者经过相当长一段时间的试验和错误总结出来的。通俗..."/><meta name="generator" content="Quartz"/><link href="../index-b754f97d.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-735924e0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-589c1cea.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-bbc3f7c0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-2911f5d1.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-e427079e.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-53b25b2b.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-c93c6a44.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-8a06014f.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-77d6a441.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-6ee21cee.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-1ea6ad18.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-788c9ca3.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-642859cd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-4abc06bd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-274a3dfe.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-94cb6c84.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-58d5ff56.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-7262b5a7.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../static/resource-style-a5c806d2.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../static/resource-style-6bd36952.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" data-persist="true"/><script src="../prescript-2bfc6315.js" type="application/javascript" data-persist="true"></script><script type="application/javascript" data-persist="true">const fetchData = fetch("../static/contentIndex.json").then(data => data.json())</script><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://xyf1111.github.io/tech-notes/concepts/概念-08---设计模式学习路线-og-image.webp"/><meta property="og:image:url" content="https://xyf1111.github.io/tech-notes/concepts/概念-08---设计模式学习路线-og-image.webp"/><meta name="twitter:image" content="https://xyf1111.github.io/tech-notes/concepts/概念-08---设计模式学习路线-og-image.webp"/><meta property="og:image:type" content="image/webp"/></head><body data-slug="concepts/概念-08---设计模式学习路线" data-basepath="/tech-notes"><div id="quartz-root" class="page" data-frame="default"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="..">技术知识库</a></h2><div class="mobile-only"><div class="spacer"></div></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 0.5rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button" aria-label="搜索" aria-expanded="false"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>搜索</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="搜索内容..." placeholder="搜索内容..."/><div class="search-layout" data-preview="true" data-field-priority="[&quot;title&quot;,&quot;content&quot;,&quot;tags&quot;]"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode" aria-label="暗色模式"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="暗色模式"><title>暗色模式</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="亮色模式"><title>亮色模式</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode" aria-label="阅读模式"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="阅读模式"><title>阅读模式</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer nav-files-container" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a2, b2) => {\n    if (!a2.isFolder &amp;&amp; !b2.isFolder || a2.isFolder &amp;&amp; b2.isFolder) {\n      return (a2.displayName || \&quot;\&quot;).localeCompare(b2.displayName || \&quot;\&quot;, void 0, {\n        numeric: true,\n        sensitivity: \&quot;base\&quot;\n      });\n    }\n    if (!a2.isFolder &amp;&amp; b2.isFolder) {\n      return 1;\n    }\n    return -1;\n  }&quot;,&quot;filterFn&quot;:&quot;(node) => node.slugSegment !== \&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;(node) => {\n    return node;\n  }&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-44" aria-label="探索"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>探索</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-44" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#" class="nav-file-title tree-item-self"></a></li></template><template id="template-folder"><li><div class="folder-container nav-folder-title tree-item-self"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon nav-folder-collapse-indicator collapse-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content tree-item-children"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../concepts/">concepts</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>概念 - 设计模式学习路线</a></div></nav><h1 class="article-title">概念 - 设计模式学习路线</h1><details class="note-properties metadata-container" open data-collapsed="false"><summary class="note-properties-header"><span class="note-properties-title">Properties</span><span class="note-properties-count">1</span></summary><table class="note-properties-table"><tbody><tr class="note-properties-row metadata-property"><td class="note-properties-key metadata-property-key">tags</td><td class="note-properties-value metadata-property-value"><span class="note-properties-tags"><a href="../tags/设计模式" class="internal internal-link tag-link">设计模式</a><span class="note-properties-separator">, </span><a href="../tags/学习路线" class="internal internal-link tag-link">学习路线</a></span></td></tr></tbody></table></details><p show-comma="true" class="content-meta"><time datetime="2026-08-16T16:00:00.000Z">2026年8月17日</time><span>23分钟阅读</span></p></div></div><article class="popover-hint"><div class="markdown-preview-view markdown-rendered"><h1 id="概念---设计模式学习路线">概念 - 设计模式学习路线<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#概念---设计模式学习路线" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<blockquote>
+<p>设计模式是软件开发中常见问题的通用解决方案，共 23 种，分为创建型、结构型、行为型三大类。本路线按「基础学习 → 编码实现 → 项目实战 → 求职备战」四阶段推进：先理解每种模式的应用场景、特点与 UML 类图，再用任意面向对象语言逐个实现，然后结合 Spring / MyBatis / Netty 等框架源码实战，最后备战面试（高频题 + 手写代码）。⭐ 推荐先观看 <a href="https://www.bilibili.com/video/BV1za411p7Ny" class="external external-link">鱼皮的设计模式导学视频<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>，快速掌握设计模式的高效学习法。</p>
+</blockquote>
+<h2 id="设计模式是什么">设计模式是什么<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#设计模式是什么" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>设计模式是软件开发人员在软件开发过程中面临的一般问题的<strong>通用解决方案</strong>，是众多开发者经过相当长一段时间的试验和错误总结出来的。通俗地说，就是前辈们在写代码时摸索出的一些不错的方法，可以用于解决一类问题、更好地开发和维护项目，久而久之形成了一套优秀的软件开发方法总结。</p>
+<p>目前最为经典的设计模式有 23 种。学习之后，不仅能帮助开拓思路、写出更优质的代码、提高项目的开发和维护效率；还能够更好地阅读和理解源码，甚至可以根据文件名称直接推断出源码的架构设计。</p>
+<p>此外，<strong>设计模式也是软件开发相关岗位面试的重点</strong>（尤其是大厂、后端开发岗位）。在 AI 时代，虽然 AI 能帮我们生成代码，但好的设计模式能让代码更易维护、更易扩展，这是 AI 无法完全替代的。</p>
+<h3 id="学习前提">学习前提<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习前提" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>至少学过一门编程语言（学设计模式时需要多写代码实践）</li>
+<li>使用过至少一门开发框架（这样在学习设计模式时能结合框架的设计来理解）</li>
+</ol>
+<h3 id="前端要不要学设计模式">前端要不要学设计模式？<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#前端要不要学设计模式" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>先学习基础的界面开发、组件库和框架的使用，之后可以将设计模式作为进阶知识来学习，想进大厂建议学习。设计模式是软件开发的通用思想 / 技能，独立于编程语言。</p>
+<h2 id="整体学习建议">整体学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#整体学习建议" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>1）<strong>先理解再实现</strong>：先了解每种设计模式是什么、作用是什么、能够解决什么问题、适用于什么场景、有什么特点，再去考虑编码实现。建议结合 UML 类图来理解类和对象的关系。</p>
+<p>2）<strong>一定要多写代码实践</strong>：最好每个设计模式都实现一遍，不要去背代码，用的多了自然就能写出代码。可以用任何熟悉的支持面向对象的编程语言来实现（Java、C++、Python、Go 等都可以）。</p>
+<p>3）<strong>每个设计模式都可以独立学习</strong>：23 种设计模式互相之间联系不大，可以根据自己的时间选择性学习（比如先学重点的单例模式、工厂模式等），不用按顺序全部学完。</p>
+<p>4）<strong>结合框架源码学习</strong>：学会基础的设计模式后，可以分析之前学过的框架源码（比如 Spring、MyBatis 等），参考别人是如何应用设计模式的。这样能加深理解，也能提升阅读源码的能力。</p>
+<p>5）<strong>善用 AI 辅助学习</strong>：遇到不理解的设计模式，可以问 AI 工具（如 ChatGPT、DeepSeek）让它用通俗的语言解释，或者让它举个生活中的例子；AI 还可以帮你生成设计模式的示例代码，方便理解和学习。</p>
+<p>6）<strong>不要过度依赖设计模式</strong>：设计模式并不是银弹，过分使用可能只会增加系统的复杂度。实际开发中要根据具体场景选择是否使用，适合的才是最好的。</p>
+<h2 id="设计模式知识体系">设计模式知识体系<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#设计模式知识体系" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ul>
+<li>软件开发原则
+<ul>
+<li>单一职责原则（SRP）</li>
+<li>开闭原则（OCP）</li>
+<li>里氏替换原则（LSP）</li>
+<li>依赖倒置原则（DIP）</li>
+<li>接口隔离原则（ISP）</li>
+<li>迪米特法则（最少知道原则）</li>
+<li>合成 / 聚合复用原则（CARP）</li>
+</ul>
+</li>
+<li>设计模式分类
+<ul>
+<li>根据作用范围：类 / 对象模式</li>
+<li>根据目的分类：创建型 / 结构型 / 行为型模式</li>
+</ul>
+</li>
+<li>创建型模式：如何创建对象
+<ul>
+<li>单例模式（懒汉式、饿汉式、双检锁、线程唯一单例）</li>
+<li>工厂方法模式（类）</li>
+<li>抽象工厂模式</li>
+<li>建造者模式</li>
+<li>原型模式</li>
+</ul>
+</li>
+<li>结构型模式：如何将类或对象结合在一起形成一个更强大的结构
+<ul>
+<li>适配器模式（类 / 对象）</li>
+<li>组合模式</li>
+<li>装饰器模式</li>
+<li>代理模式</li>
+<li>享元模式</li>
+<li>外观模式</li>
+<li>桥接模式</li>
+</ul>
+</li>
+<li>行为型模式：类或对象间如何交互、如何划分职责，从而更好地完成任务
+<ul>
+<li>迭代器模式</li>
+<li>模板方法模式（类）</li>
+<li>策略模式</li>
+<li>命令模式</li>
+<li>状态模式</li>
+<li>责任链模式</li>
+<li>备忘录模式</li>
+<li>观察者模式</li>
+<li>访问者模式</li>
+<li>中介者模式</li>
+<li>解释器模式（类）</li>
+</ul>
+</li>
+</ul>
+<h3 id="知识表">知识表<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识表" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>设计模式</th><th>适用层次</th><th>引入时机</th><th>复杂度</th><th>变化</th><th>实现</th><th>体现的原则</th></tr></thead><tbody><tr><td>工厂方法</td><td>代码级</td><td>编码时</td><td>简单</td><td>子类的实例化</td><td>对象的创建工作延迟到子类</td><td>开闭原则</td></tr><tr><td>单例</td><td>代码级、应用级</td><td>设计时、编码时</td><td>简单</td><td>唯一实例</td><td>封装对象产生的个数</td><td></td></tr><tr><td>门面</td><td>应用级、构架级</td><td>设计时、编码时</td><td>简单</td><td>子系统的高层接口</td><td>封装子系统</td><td>开闭原则</td></tr><tr><td>模板方法</td><td>代码级</td><td>编码时、重构时</td><td>简单</td><td>算法子步骤的变化</td><td>封装算法结构</td><td>依赖倒置原则</td></tr><tr><td>抽象工厂</td><td>应用级</td><td>设计时</td><td>较复杂</td><td>产品家族的扩展</td><td>封装产品族系列内容的创建</td><td>开闭原则</td></tr><tr><td>组合</td><td>代码级</td><td>编码时、重构时</td><td>较复杂</td><td>复杂对象接口的统一</td><td>统一复杂对象的接口</td><td>里氏代换原则</td></tr><tr><td>代理</td><td>应用级、构架级</td><td>设计时、编码时</td><td>简单</td><td>对象访问的变化</td><td>封装对象的访问过程</td><td>里氏代换原则</td></tr><tr><td>命令</td><td>应用级</td><td>设计时、编码时</td><td>较简单</td><td>请求的变化</td><td>封装行为对对象</td><td>开闭原则</td></tr><tr><td>观察者</td><td>应用级、构架级</td><td>设计时、编码时</td><td>较简单</td><td>通讯对象的变化</td><td>封装对象通知</td><td>开闭原则</td></tr><tr><td>策略</td><td>应用级</td><td>设计时</td><td>一般</td><td>算法的变化</td><td>封装算法</td><td>里氏代换原则</td></tr><tr><td>建造者</td><td>代码级</td><td>编码时</td><td>一般</td><td>对象组建的变化</td><td>封装对象的组建过程</td><td>开闭原则</td></tr><tr><td>Adapter</td><td>代码级</td><td>重构时</td><td>一般</td><td>对象接口的变化</td><td>接口的转换</td><td></td></tr><tr><td>桥接</td><td>代码级</td><td>设计时、编码时</td><td>一般</td><td>对象的多维度变化</td><td>分离接口以及实现</td><td>开闭原则</td></tr><tr><td>装饰器</td><td>代码级</td><td>重构时</td><td>较复杂</td><td>对象的组合职责</td><td>在稳定接口上扩展</td><td>开闭原则</td></tr><tr><td>迭代器</td><td>代码级、应用级</td><td>编码时、重构时</td><td>较简单</td><td>对象内部集合的变化</td><td>封装对象内部集合的使用</td><td>单一职责原则</td></tr><tr><td>中介者</td><td>应用级、构架级</td><td>编码时、重构时</td><td>一般</td><td>对象交互的变化</td><td>封装对象间的交互</td><td>开闭原则</td></tr><tr><td>备忘录</td><td>代码级</td><td>编码时</td><td>较简单</td><td>状态的辅助保存</td><td>封装对象状态的变化</td><td>接口隔离原则</td></tr><tr><td>状态</td><td>应用级</td><td>设计时、编码时</td><td>一般</td><td>对象状态的变化</td><td>封装与状态相关的行为</td><td>单一职责原则</td></tr><tr><td>访问者</td><td>应用级</td><td>设计时</td><td>较复杂</td><td>对象操作变化</td><td>封装对象操作变化</td><td>开闭原则</td></tr><tr><td>原型</td><td>应用级</td><td>编码时、重构时</td><td>较简单</td><td>实例化的类</td><td>封装对原型的拷贝</td><td>依赖倒置原则</td></tr><tr><td>享元</td><td>代码级、应用级</td><td>设计时</td><td>一般</td><td>系统开销的优化</td><td>封装对象的获取</td><td></td></tr><tr><td>责任链</td><td>应用级、构架级</td><td>设计时、编码时</td><td>较复杂</td><td>对象的请求过程</td><td>封装对象的责任范围</td><td></td></tr><tr><td>解释器</td><td>应用级</td><td>设计时</td><td>较复杂</td><td>领域问题的变化</td><td>封装特定领域的变化</td><td></td></tr></tbody></table></div>
+<p>主流的设计模式共有 23 种，建议按照以下四个阶段学习：</p>
+<ol>
+<li>基础学习</li>
+<li>编码实现</li>
+<li>项目实战</li>
+<li>求职备战</li>
+</ol>
+<p>其中阶段 1 和阶段 2 <strong>可以同时进行</strong>，即对每个设计模式的学习都是：先了解、再编码实现。</p>
+<h2 id="阶段-1基础学习10-20-天仅供参考">阶段 1：基础学习（10-20 天，仅供参考）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-1基础学习10-20-天仅供参考" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>学习目标：依次了解每一种设计模式的应用场景、特点、UML 类图，能够对设计模式有个基础的印象。</p>
+<h3 id="学习顺序">学习顺序<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习顺序" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>根据使用频率、难易度、面试考察率等综合排序，仅供参考。</p>
+<p><strong>优先学习（高频重点）：</strong></p>
+<ol>
+<li>单例模式【必学】</li>
+<li>工厂方法模式【必学】</li>
+<li>代理模式【必学，面试重点】</li>
+<li>策略模式【必学】</li>
+<li>观察者模式【必学】</li>
+<li>建造者模式【建议学】</li>
+<li>模板方法模式【建议学】</li>
+<li>责任链模式【建议学】</li>
+<li>抽象工厂模式【建议学】</li>
+<li>适配器模式【建议学】</li>
+<li>外观模式【建议学】</li>
+<li>迭代器模式【建议学】</li>
+</ol>
+<p><strong>一般（按需学习）：</strong></p>
+<ol>
+<li>桥接模式</li>
+<li>组合模式</li>
+<li>装饰器模式</li>
+<li>状态模式</li>
+<li>访问者模式</li>
+<li>中介者模式</li>
+<li>命令模式</li>
+<li>备忘录模式</li>
+</ol>
+<p><strong>低优先（了解即可）：</strong></p>
+<ol>
+<li>原型模式</li>
+<li>享元模式</li>
+<li>解释器模式</li>
+</ol>
+<p>除了这 23 种主流设计模式外，还有一些其他设计模式，比如 Immutable 不可变模式等，了解即可。</p>
+<h3 id="学习资源">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>⭐ <a href="https://github.com/liyupi/design-pattern-guide" class="external external-link">鱼皮的设计模式学习项目<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：GitHub 开源，包含 23 种设计模式的示例代码和讲解</li>
+<li>⭐ <a href="https://www.bilibili.com/video/BV1G4411c7N4" class="external external-link">尚硅谷图解 Java 设计模式<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：讲的很棒也很全面，结合主流框架源码分析</li>
+<li><a href="https://www.bilibili.com/video/BV1Np4y1z7BU" class="external external-link">黑马程序员 Java 设计模式详解<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：23 种 Java 设计模式（图解 + 框架源码分析 + 实战）</li>
+<li><a href="https://www.bilibili.com/video/BV1swVazEEaX/" class="external external-link">2025 版 2 小时彻底搞定 23 种设计模式<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：快速入门版本</li>
+<li><a href="https://book.douban.com/subject/26933281/" class="external external-link">《图解设计模式》<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：图多、有示例代码、有习题和答案，强烈推荐</li>
+<li><a href="https://book.douban.com/subject/2243615/" class="external external-link">《Head First 设计模式》<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：经典书籍，通俗易懂</li>
+<li><a href="https://book.douban.com/subject/2334288/" class="external external-link">《大话设计模式》<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：比较有趣</li>
+<li><a href="https://design-patterns.readthedocs.io/zh_CN/latest/" class="external external-link">C++ 图说设计模式<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：C++ 实现版本</li>
+</ul>
+<h2 id="阶段-2编码实现和阶段-1-同步进行">阶段 2：编码实现（和阶段 1 同步进行）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-2编码实现和阶段-1-同步进行" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>学习目标：依次编码实现每个设计模式，用任何支持面向对象的编程语言都可以，最好能够独立（不借助任何资料）从 0 写出每个设计模式的代码。</p>
+<h3 id="学习资源-1">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-1" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>一些源码示例，仅供参考，更多内容可以直接在 GitHub 搜索关键词 <code>Design Pattern</code> 或 <code>设计模式</code>：</p>
+<ul>
+<li>⭐ <a href="https://github.com/liyupi/design-pattern-guide" class="external external-link">鱼皮的设计模式学习项目<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：包含 23 种设计模式的 Java 实现</li>
+<li><a href="https://github.com/wx-chevalier/design-pattern-examples" class="external external-link">各语言设计模式示例代码<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：多语言实现</li>
+<li><a href="https://github.com/youlookwhat/DesignPattern" class="external external-link">Java 23 种设计模式全归纳<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：教程 + 源码</li>
+<li><a href="https://github.com/liu-jianhao/Cpp-Design-Patterns" class="external external-link">C++ 设计模式源码<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：设计模式介绍 + 源码</li>
+<li><a href="https://github.com/wchaowu/javascript" class="external external-link">JavaScript 设计模式示例<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：前端实现</li>
+<li><a href="https://github.com/wklken/py-patterns" class="external external-link">Python 设计模式示例<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：Python 实现</li>
+<li><a href="https://github.com/mohuishou/go-design-pattern" class="external external-link">Go 设计模式示例<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：Go 实现</li>
+</ul>
+<h2 id="阶段-3项目实战10-15-天仅供参考">阶段 3：项目实战（10-15 天，仅供参考）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-3项目实战10-15-天仅供参考" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>学习目标：通过做项目或阅读项目源码来进一步强化每个设计模式的实际应用。做到能根据某个场景主动选出合适的设计模式来优化代码、灵活运用，并且能够通过文件命名、项目目录结构等途径快速判断出某个框架是否使用了设计模式。</p>
+<h3 id="学习建议">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>1）<strong>结合框架源码学习</strong>：学完设计模式后，一定要去看看主流框架（Spring、MyBatis、Netty 等）是如何应用设计模式的，这样能加深理解，也能提升阅读源码的能力。</p>
+<p>2）<strong>在自己的项目中尝试应用</strong>：不要只看不练，尝试在自己的项目中应用设计模式来优化代码。但要注意，不要为了用设计模式而用设计模式，要根据实际场景来选择。</p>
+<p>3）<strong>善用 AI 分析项目</strong>：现在有了 AI，可以利用 AI 分析你的项目，并且给出如何自然巧妙地运用设计模式来优化项目的建议。</p>
+<h3 id="学习资源-2">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-2" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><a href="https://www.bilibili.com/video/BV1tK4y1s7Uo" class="external external-link">实际工作中如何运用 Java 设计模式<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：实战经验分享</li>
+<li><a href="https://www.bilibili.com/video/BV1Np4y1z7BU" class="external external-link">黑马 23 种 Java 设计模式详解（图解+框架源码分析+实战）<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：可按照个人喜好学习</li>
+<li><a href="https://www.bilibili.com/video/BV1vNN4zaEo7" class="external external-link">2 小时快速学习 23 种设计模式<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：适合复习</li>
+<li><a href="https://www.bilibili.com/video/BV1G4411c7N4" class="external external-link">Java 设计模式视频教程（图解+框架源码）<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：虽然比较老，但讲的还不错</li>
+</ul>
+<h3 id="github-实战项目">GitHub 实战项目<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#github-实战项目" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>Java 实现：</strong></p>
+<ul>
+<li>⭐ <a href="https://github.com/iluwatar/java-design-patterns" class="external external-link">iluwatar/java-design-patterns<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：93k+ stars，23 种设计模式的 Java 实现，包含详细文档和示例代码，代码质量极高</li>
+</ul>
+<p><strong>Python 实现：</strong></p>
+<ul>
+<li><a href="https://github.com/faif/python-patterns" class="external external-link">faif/python-patterns<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：42k+ stars，Python 实现的设计模式集合，含创建型、结构型、行为型模式</li>
+</ul>
+<p><strong>Go 实现：</strong></p>
+<ul>
+<li><a href="https://github.com/tmrts/go-patterns" class="external external-link">tmrts/go-patterns<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：27k+ stars，Go 语言设计模式、并发模式和同步模式实现</li>
+</ul>
+<p><strong>其他资源：</strong></p>
+<ul>
+<li><a href="https://github.com/DovAmir/awesome-design-patterns" class="external external-link">DovAmir/awesome-design-patterns<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：45k+ stars，软件和架构设计模式资源大全</li>
+<li><a href="https://github.com/DesignPatternsPHP/DesignPatternsPHP" class="external external-link">DesignPatternsPHP/DesignPatternsPHP<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：22k+ stars，PHP 8.x 中的设计模式示例代码</li>
+<li><a href="https://github.com/ochococo/Design-Patterns-In-Swift" class="external external-link">ochococo/Design-Patterns-In-Swift<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：15k+ stars，Swift 5.0 实现的设计模式</li>
+</ul>
+<h3 id="框架源码中的设计模式应用">框架源码中的设计模式应用<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#框架源码中的设计模式应用" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>1）Spring</strong></p>
+<ul>
+<li>工厂模式：通过 BeanFactory 和 ApplicationContext 来创建对象</li>
+<li>单例模式：Spring Bean 默认为单例模式</li>
+<li>策略模式：例如 Resource 的实现类，针对不同的资源文件，实现了不同方式的资源获取策略</li>
+<li>代理模式：Spring 的 AOP 功能用到了 JDK 的动态代理和 CGLIB 字节码生成技术</li>
+<li>模板方法：可以将相同部分的代码放在父类中，而将不同的代码放入不同的子类中，用来解决代码重复的问题。比如 RestTemplate、JmsTemplate、JpaTemplate</li>
+<li>适配器模式：Spring AOP 的增强或通知（Advice）使用到了适配器模式</li>
+<li>观察者模式：Spring 事件驱动模型</li>
+<li>桥接模式：可以根据客户的需求动态切换不同的数据源。比如项目需要连接多个数据库，客户在每次访问中根据需要会去访问不同的数据库</li>
+</ul>
+<p><strong>2）Spring MVC</strong></p>
+<ul>
+<li>组合模式：WebMvcConfigurerComposite，树枝和树叶都实现了相同的抽象类或接口 WebMvcConfigurer</li>
+<li>责任链模式：DispatcherServlet 依次拦截和处理请求</li>
+<li>适配器模式：HandlerAdapter 处理器适配</li>
+</ul>
+<p><strong>3）MyBatis</strong></p>
+<ul>
+<li>Builder + Factory 模式：创建 SqlSession 工厂和 SqlSession</li>
+<li>模板方法模式：BaseExecutor 定义执行器基本流程</li>
+<li>解释器模式：SqlNode 动态解析 SQL</li>
+<li>单例模式：ErrorContext 线程唯一</li>
+<li>装饰器模式：Cache 的实现用组合而非继承，实现更灵活的缓存方式结合</li>
+<li>迭代器模式：PropertyTokenizer 利用迭代器模式实现属性解析器</li>
+<li>适配器模式：Log 适配不同的日志框架</li>
+</ul>
+<p><strong>4）Google Guava</strong></p>
+<ul>
+<li>Builder 模式：更方便地构建内存缓存</li>
+<li>Wrapper 模式（代理模式、装饰器、适配器模式）：轻松实现对类的扩展</li>
+<li>Immutable 模式：不可变集合实现，如 ImmutableList、ImmutableSet、ImmutableMap 等</li>
+</ul>
+<p>更多框架可以自行学习：Netty、SpringBoot、Tomcat、Dubbo、Spring Cloud</p>
+<h2 id="阶段-4求职备战面试前-1-个月突击">阶段 4：求职备战（面试前 1 个月突击）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-4求职备战面试前-1-个月突击" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>设计模式是软件开发相关岗位面试的高频考点，尤其是大厂和后端开发岗位。</p>
+<p>学习目标：熟练掌握常见设计模式的面试题，能够流畅回答面试官的提问，能够手写常用设计模式的代码，顺利通过设计模式相关的面试环节。</p>
+<h3 id="学习建议-1">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-1" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>1）<strong>理解比死记硬背重要</strong>：设计模式的面试题主要考察对设计模式的理解和应用能力，而不是背概念。建议先理解每个设计模式的核心思想和应用场景，再去看面试题。</p>
+<p>2）<strong>准备简历上的项目经历</strong>：如果简历上的项目用到了设计模式，一定要提前准备好如何讲解。面试官很可能会问你为什么选择这个设计模式、如何实现的、有什么好处等。</p>
+<p>3）<strong>准备手写代码</strong>：单例模式、工厂模式、代理模式等高频设计模式，要能够熟练手写代码。建议提前练习几遍，面试时才不会紧张。</p>
+<p>4）<strong>多看真实面经</strong>：了解不同公司对设计模式的考察重点。</p>
+<p>5）<strong>看面试题讲解视频</strong>：推荐关注 B 站上设计模式相关的面试题讲解视频。</p>
+<h3 id="面试考察形式">面试考察形式<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#面试考察形式" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>面试时对设计模式的考察主要有 4 种形式：</p>
+<ol>
+<li>直接问你某个设计模式的作用和大致的原理，考察你对设计模式的了解程度</li>
+<li>让你手写某个设计模式的代码，考察你对设计模式的熟悉程度和编码能力</li>
+<li>给你一个实际的业务场景，让你去设计系统，考察你对设计模式的理解应用能力和逻辑思维</li>
+<li>问你某个框架（轮子）的核心设计和源码细节，考察你对设计模式的理解应用能力</li>
+</ol>
+<h3 id="经典面试题">经典面试题<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#经典面试题" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>简单介绍一下软件开发原则？</li>
+<li>设计模式如何分类？</li>
+<li>你用过哪些设计模式？举例说明设计模式在你的项目或是某个框架源码中的应用。</li>
+<li>说出某个设计模式的优缺点？什么时候使用它？</li>
+<li>单例模式有哪些实现方式？分别有哪些优缺点？请手写其中一种【高频】</li>
+<li>原型模式和单例模式的区别是什么？</li>
+<li>简单工厂、工厂方法和抽象工厂三者有什么区别？</li>
+<li>介绍一下代理模式，说一下静态代理和动态代理（比如 Spring AOP）的区别？【高频】</li>
+</ol>
+<h3 id="面试题讲解视频">面试题讲解视频<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#面试题讲解视频" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><a href="https://www.bilibili.com/video/BV1fR4y1N74H" class="external external-link">面试官最爱问的 13 道”设计模式”题<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：面试题详细讲解</li>
+</ul>
+<hr/>
+<blockquote>
+<p>来源：鱼皮·编程导航 / codefather</p>
+</blockquote></div></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="toc"><button type="button" class="toc-header" aria-controls="toc-44" aria-expanded="true"><h3>目录</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-0" class="toc-content overflow"><li class="depth-0"><a href="#概念---设计模式学习路线" data-for="概念---设计模式学习路线">概念 - 设计模式学习路线</a></li><li class="depth-1"><a href="#设计模式是什么" data-for="设计模式是什么">设计模式是什么</a></li><li class="depth-2"><a href="#学习前提" data-for="学习前提">学习前提</a></li><li class="depth-2"><a href="#前端要不要学设计模式" data-for="前端要不要学设计模式">前端要不要学设计模式？</a></li><li class="depth-1"><a href="#整体学习建议" data-for="整体学习建议">整体学习建议</a></li><li class="depth-1"><a href="#设计模式知识体系" data-for="设计模式知识体系">设计模式知识体系</a></li><li class="depth-2"><a href="#知识表" data-for="知识表">知识表</a></li><li class="depth-1"><a href="#阶段-1基础学习10-20-天仅供参考" data-for="阶段-1基础学习10-20-天仅供参考">阶段 1：基础学习（10-20 天，仅供参考）</a></li><li class="depth-2"><a href="#学习顺序" data-for="学习顺序">学习顺序</a></li><li class="depth-2"><a href="#学习资源" data-for="学习资源">学习资源</a></li><li class="depth-1"><a href="#阶段-2编码实现和阶段-1-同步进行" data-for="阶段-2编码实现和阶段-1-同步进行">阶段 2：编码实现（和阶段 1 同步进行）</a></li><li class="depth-2"><a href="#学习资源-1" data-for="学习资源-1">学习资源</a></li><li class="depth-1"><a href="#阶段-3项目实战10-15-天仅供参考" data-for="阶段-3项目实战10-15-天仅供参考">阶段 3：项目实战（10-15 天，仅供参考）</a></li><li class="depth-2"><a href="#学习建议" data-for="学习建议">学习建议</a></li><li class="depth-2"><a href="#学习资源-2" data-for="学习资源-2">学习资源</a></li><li class="depth-2"><a href="#github-实战项目" data-for="github-实战项目">GitHub 实战项目</a></li><li class="depth-2"><a href="#框架源码中的设计模式应用" data-for="框架源码中的设计模式应用">框架源码中的设计模式应用</a></li><li class="depth-1"><a href="#阶段-4求职备战面试前-1-个月突击" data-for="阶段-4求职备战面试前-1-个月突击">阶段 4：求职备战（面试前 1 个月突击）</a></li><li class="depth-2"><a href="#学习建议-1" data-for="学习建议-1">学习建议</a></li><li class="depth-2"><a href="#面试考察形式" data-for="面试考察形式">面试考察形式</a></li><li class="depth-2"><a href="#经典面试题" data-for="经典面试题">经典面试题</a></li><li class="depth-2"><a href="#面试题讲解视频" data-for="面试题讲解视频">面试题讲解视频</a></li><li class="overflow-end"></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v5.0.0</a> © 2026</p><ul><li><a href="https://github.com/xyf1111">GitHub</a></li></ul></footer></div></div></body><script src="../static/resource-after-e13fffa1.js" type="application/javascript" data-persist="true"></script><script src="../static/resource-after-8b336f9a.js" type="application/javascript" data-persist="true"></script><script src="../static/resource-after-baba652b.js" type="application/javascript" data-persist="true"></script><script src="../static/resource-after-5eb75950.js" type="module" data-persist="true"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript" data-persist="true"></script><script src="../postscript-17915799.js" type="module" data-persist="true"></script></html>

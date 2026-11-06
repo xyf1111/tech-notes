@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr"><head><title>Java 45 - Spring Cloud 微服务学习路线 · 后端开发笔记</title><meta charset="utf-8"/><link rel="preload" href="../../index-b754f97d.css" as="style"/><link rel="preload" href="../../prescript-2bfc6315.js" as="script"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="技术知识库"/><meta property="og:title" content="Java 45 - Spring Cloud 微服务学习路线 · 后端开发笔记"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Java 45 - Spring Cloud 微服务学习路线 · 后端开发笔记"/><meta name="twitter:description" content="Java 45 - Spring Cloud 微服务学习路线 Spring Cloud 是基于 Spring Boot 的微服务开发框架，提供服务注册发现、配置管理、服务网关、负载均衡、熔断限流、分布式追踪等微服务架构核心组件。本文梳理从微服务架构基础、服务注册发现（Nacos）、服务调用与负载均衡、API 网关、服务治理（Sentinel/Seata）、项目实战到求职备战的完整学习路线，共 7 个阶段。 开篇介绍 Spring Cloud 是目前 Java 微服务架构的首选技术栈，被广泛应用于互联网公司和传统企业。为什么要学 Spring Cloud？ 主流架构：微服务是企业级应用的主流架构..."/><meta property="og:description" content="Java 45 - Spring Cloud 微服务学习路线 Spring Cloud 是基于 Spring Boot 的微服务开发框架，提供服务注册发现、配置管理、服务网关、负载均衡、熔断限流、分布式追踪等微服务架构核心组件。本文梳理从微服务架构基础、服务注册发现（Nacos）、服务调用与负载均衡、API 网关、服务治理（Sentinel/Seata）、项目实战到求职备战的完整学习路线，共 7 个阶段。 开篇介绍 Spring Cloud 是目前 Java 微服务架构的首选技术栈，被广泛应用于互联网公司和传统企业。为什么要学 Spring Cloud？ 主流架构：微服务是企业级应用的主流架构..."/><meta property="og:image:alt" content="Java 45 - Spring Cloud 微服务学习路线 Spring Cloud 是基于 Spring Boot 的微服务开发框架，提供服务注册发现、配置管理、服务网关、负载均衡、熔断限流、分布式追踪等微服务架构核心组件。本文梳理从微服务架构基础、服务注册发现（Nacos）、服务调用与负载均衡、API 网关、服务治理（Sentinel/Seata）、项目实战到求职备战的完整学习路线，共 7 个阶段。 开篇介绍 Spring Cloud 是目前 Java 微服务架构的首选技术栈，被广泛应用于互联网公司和传统企业。为什么要学 Spring Cloud？ 主流架构：微服务是企业级应用的主流架构..."/><meta property="twitter:domain" content="xyf1111.github.io/tech-notes"/><meta property="og:url" content="https://xyf1111.github.io/tech-notes/java/路线/java-45---spring-cloud-微服务学习路线"/><meta property="twitter:url" content="https://xyf1111.github.io/tech-notes/java/路线/java-45---spring-cloud-微服务学习路线"/><link rel="icon" href="../../static/icon.png"/><meta name="description" content="Java 45 - Spring Cloud 微服务学习路线 Spring Cloud 是基于 Spring Boot 的微服务开发框架，提供服务注册发现、配置管理、服务网关、负载均衡、熔断限流、分布式追踪等微服务架构核心组件。本文梳理从微服务架构基础、服务注册发现（Nacos）、服务调用与负载均衡、API 网关、服务治理（Sentinel/Seata）、项目实战到求职备战的完整学习路线，共 7 个阶段。 开篇介绍 Spring Cloud 是目前 Java 微服务架构的首选技术栈，被广泛应用于互联网公司和传统企业。为什么要学 Spring Cloud？ 主流架构：微服务是企业级应用的主流架构..."/><meta name="generator" content="Quartz"/><link href="../../index-b754f97d.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-735924e0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-589c1cea.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-bbc3f7c0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-2911f5d1.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-e427079e.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-53b25b2b.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-c93c6a44.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-8a06014f.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-77d6a441.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-6ee21cee.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-1ea6ad18.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-788c9ca3.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-642859cd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-4abc06bd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-274a3dfe.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-94cb6c84.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-58d5ff56.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-7262b5a7.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../static/resource-style-a5c806d2.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../static/resource-style-6bd36952.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" data-persist="true"/><script src="../../prescript-2bfc6315.js" type="application/javascript" data-persist="true"></script><script type="application/javascript" data-persist="true">const fetchData = fetch("../../static/contentIndex.json").then(data => data.json())</script><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://xyf1111.github.io/tech-notes/java/路线/java-45---spring-cloud-微服务学习路线-og-image.webp"/><meta property="og:image:url" content="https://xyf1111.github.io/tech-notes/java/路线/java-45---spring-cloud-微服务学习路线-og-image.webp"/><meta name="twitter:image" content="https://xyf1111.github.io/tech-notes/java/路线/java-45---spring-cloud-微服务学习路线-og-image.webp"/><meta property="og:image:type" content="image/webp"/></head><body data-slug="java/路线/java-45---spring-cloud-微服务学习路线" data-basepath="/tech-notes"><div id="quartz-root" class="page" data-frame="default"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="../..">技术知识库</a></h2><div class="mobile-only"><div class="spacer"></div></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 0.5rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button" aria-label="搜索" aria-expanded="false"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>搜索</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="搜索内容..." placeholder="搜索内容..."/><div class="search-layout" data-preview="true" data-field-priority="[&quot;title&quot;,&quot;content&quot;,&quot;tags&quot;]"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode" aria-label="暗色模式"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="暗色模式"><title>暗色模式</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="亮色模式"><title>亮色模式</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode" aria-label="阅读模式"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="阅读模式"><title>阅读模式</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer nav-files-container" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a2, b2) => {\n    if (!a2.isFolder &amp;&amp; !b2.isFolder || a2.isFolder &amp;&amp; b2.isFolder) {\n      return (a2.displayName || \&quot;\&quot;).localeCompare(b2.displayName || \&quot;\&quot;, void 0, {\n        numeric: true,\n        sensitivity: \&quot;base\&quot;\n      });\n    }\n    if (!a2.isFolder &amp;&amp; b2.isFolder) {\n      return 1;\n    }\n    return -1;\n  }&quot;,&quot;filterFn&quot;:&quot;(node) => node.slugSegment !== \&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;(node) => {\n    return node;\n  }&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-295" aria-label="探索"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>探索</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-295" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#" class="nav-file-title tree-item-self"></a></li></template><template id="template-folder"><li><div class="folder-container nav-folder-title tree-item-self"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon nav-folder-collapse-indicator collapse-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content tree-item-children"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../java/">java</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../java/路线/">路线</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Java 45 - Spring Cloud 微服务学习路线</a></div></nav><h1 class="article-title">Java 45 - Spring Cloud 微服务学习路线</h1><details class="note-properties metadata-container" open data-collapsed="false"><summary class="note-properties-header"><span class="note-properties-title">Properties</span><span class="note-properties-count">1</span></summary><table class="note-properties-table"><tbody><tr class="note-properties-row metadata-property"><td class="note-properties-key metadata-property-key">tags</td><td class="note-properties-value metadata-property-value"><span class="note-properties-tags"><a href="../../tags/spring-cloud" class="internal internal-link tag-link">spring-cloud</a><span class="note-properties-separator">, </span><a href="../../tags/java" class="internal internal-link tag-link">java</a><span class="note-properties-separator">, </span><a href="../../tags/微服务" class="internal internal-link tag-link">微服务</a><span class="note-properties-separator">, </span><a href="../../tags/学习路线" class="internal internal-link tag-link">学习路线</a></span></td></tr></tbody></table></details><p show-comma="true" class="content-meta"><time datetime="2026-08-04T16:00:00.000Z">2026年8月05日</time><span>17分钟阅读</span></p></div></div><article class="popover-hint"><div class="markdown-preview-view markdown-rendered"><h1 id="java-45---spring-cloud-微服务学习路线">Java 45 - Spring Cloud 微服务学习路线<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#java-45---spring-cloud-微服务学习路线" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<blockquote>
+<p>Spring Cloud 是基于 Spring Boot 的微服务开发框架，提供服务注册发现、配置管理、服务网关、负载均衡、熔断限流、分布式追踪等微服务架构核心组件。本文梳理从微服务架构基础、服务注册发现（Nacos）、服务调用与负载均衡、API 网关、服务治理（Sentinel/Seata）、项目实战到求职备战的完整学习路线，共 7 个阶段。</p>
+</blockquote>
+<h2 id="开篇介绍">开篇介绍<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#开篇介绍" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Spring Cloud 是目前 Java 微服务架构的首选技术栈，被广泛应用于互联网公司和传统企业。<strong>为什么要学 Spring Cloud？</strong></p>
+<ol>
+<li><strong>主流架构</strong>：微服务是企业级应用的主流架构，几乎所有互联网公司都在使用。掌握 Spring Cloud 是 Java 后端工程师的必备技能，也是进入大厂的敲门砖</li>
+<li><strong>薪资可观</strong>：一线城市资深 Java 工程师平均薪资 25-50K，微服务架构师可达 50-100K+</li>
+<li><strong>国内生态</strong>：Spring Cloud Alibaba 是阿里巴巴开源的 Spring Cloud 实现，提供 Nacos、Sentinel、Seata 等组件，国内应用非常广泛；云原生时代 Spring Cloud 也在积极拥抱 Kubernetes、Docker、Service Mesh 等技术</li>
+</ol>
+<h3 id="学习前提">学习前提<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习前提" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li><strong>Java 基础</strong>：熟练掌握 Java 编程</li>
+<li><strong>Spring Boot</strong>：熟练使用 Spring Boot 开发 Web 应用【必学】</li>
+<li><strong>MySQL</strong>：理解关系型数据库【建议】</li>
+<li><strong>Redis</strong>：理解缓存【建议】</li>
+</ol>
+<h3 id="就业方向">就业方向<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#就业方向" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li><strong>Java 后端工程师</strong>：使用 Spring Cloud 开发微服务应用</li>
+<li><strong>微服务架构师</strong>：设计和实施微服务架构</li>
+<li><strong>全栈工程师</strong>：Spring Cloud 后端 + 前端</li>
+<li><strong>DevOps 工程师</strong>：微服务的部署和运维</li>
+</ol>
+<h2 id="整体学习建议">整体学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#整体学习建议" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ol>
+<li><strong>先熟练掌握 Spring Boot</strong>：Spring Cloud 基于 Spring Boot，自动配置、Starter、Actuator 等核心概念在 Spring Cloud 中同样适用</li>
+<li><strong>先理解微服务思想</strong>：理解微服务的优缺点、为什么要拆分服务、什么时候该拆分、什么时候不该拆分</li>
+<li><strong>优先学 Spring Cloud Alibaba</strong>：传统的 Spring Cloud Netflix（Eureka、Hystrix 等）已进入维护模式；Nacos、Sentinel 等组件中文文档更完善，更适合国内开发者</li>
+<li><strong>一定要结合实际项目</strong>：搭建一个完整的微服务项目，体验服务拆分、服务通信、服务治理的完整过程，否则很难真正理解微服务</li>
+</ol>
+<h2 id="阶段总览">阶段总览<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段总览" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>阶段</th><th>内容</th><th>建议时长</th></tr></thead><tbody><tr><td>阶段 1</td><td>微服务架构基础</td><td>3-15 天</td></tr><tr><td>阶段 2</td><td>服务注册和发现</td><td>7-15 天</td></tr><tr><td>阶段 3</td><td>服务调用和负载均衡</td><td>2-5 天</td></tr><tr><td>阶段 4</td><td>API 网关</td><td>3-7 天</td></tr><tr><td>阶段 5</td><td>服务治理</td><td>3-10 天</td></tr><tr><td>阶段 6</td><td>项目实战</td><td>30-60 天</td></tr><tr><td>阶段 7</td><td>求职备战</td><td>面试前 1 个月突击</td></tr></tbody></table></div>
+<hr/>
+<h2 id="阶段-1微服务架构基础3-15-天">阶段 1：微服务架构基础（3-15 天）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-1微服务架构基础3-15-天" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="学习目标">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>理解微服务架构的核心概念，掌握系统架构的演进过程。</p>
+<h3 id="知识点">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>系统架构演进【必学】</strong></p>
+<ul>
+<li>单体架构</li>
+<li>垂直架构</li>
+<li>SOA 架构</li>
+<li>微服务架构</li>
+</ul>
+<p><strong>微服务架构【必学】</strong></p>
+<ul>
+<li>微服务的定义和特点</li>
+<li>微服务的优缺点</li>
+<li>微服务的设计原则</li>
+<li>服务拆分策略</li>
+</ul>
+<p><strong>Spring Boot 基础【必学】</strong></p>
+<ul>
+<li>Spring Boot 的核心概念</li>
+<li>Spring Boot 自动配置</li>
+<li>Spring Boot Starter</li>
+<li>RESTful API 开发</li>
+</ul>
+<h3 id="学习重点">学习重点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习重点" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>Spring Boot 是 Spring Cloud 的基础，要熟练掌握创建项目、开发 RESTful API、集成数据库等用法</li>
+<li>微服务不是银弹：优点是可维护性、可扩展性、容错性好；缺点是分布式系统的复杂性、数据一致性、运维难度等。要理解微服务的适用场景</li>
+<li>服务拆分要遵循单一职责原则，一个服务只做一件事。服务粒度不宜过大（变成小单体）也不宜过小（过度拆分）</li>
+</ol>
+<hr/>
+<h2 id="阶段-2服务注册和发现7-15-天">阶段 2：服务注册和发现（7-15 天）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-2服务注册和发现7-15-天" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>服务注册中心是微服务架构的核心组件，所有服务都要注册到注册中心，服务之间的调用通过注册中心获取服务地址。Nacos 是阿里巴巴开源的服务注册中心，支持服务注册、配置管理、DNS 等功能，是目前国内最流行的服务注册中心，强烈推荐学习。</p>
+<h3 id="学习目标-1">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标-1" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>掌握服务注册和发现机制，能够使用 Nacos 实现服务注册。</p>
+<h3 id="知识点-1">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-1" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>服务注册和发现【必学】</strong></p>
+<ul>
+<li>服务注册和发现的原理</li>
+<li>CAP 理论（一致性、可用性、分区容错性）</li>
+<li>AP 和 CP 的区别</li>
+</ul>
+<p><strong>Nacos【必学，推荐】</strong></p>
+<ul>
+<li>Nacos 的安装和启动</li>
+<li>服务注册和发现</li>
+<li>Nacos 的控制台</li>
+</ul>
+<p><strong>Eureka【建议学】</strong></p>
+<ul>
+<li>Eureka 的原理</li>
+<li>Eureka Server 和 Eureka Client</li>
+<li>Eureka 的自我保护机制【可不学】</li>
+</ul>
+<p><strong>Consul【可不学】</strong></p>
+<ul>
+<li>Consul 的基本使用</li>
+</ul>
+<h3 id="学习建议">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>Eureka 是 Netflix 开源的服务注册中心、Spring Cloud 早期的默认选择，但已进入维护模式不再更新，了解即可，实际项目建议使用 Nacos</li>
+<li>CAP 理论是分布式系统的重要理论，要理解一致性、可用性、分区容错性的含义和权衡</li>
+</ol>
+<h3 id="学习资源">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>⭐ <a href="https://www.bilibili.com/video/BV14XxNzkEAB/" class="external external-link">Spring Cloud Alibaba 教程<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：2025 最新，92 集完整教程</li>
+<li><a href="https://www.bilibili.com/video/BV1Fi4y1s7up/" class="external external-link">Spring Cloud 微服务教程<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：2024 入门到精通</li>
+<li><a href="https://nacos.io/zh-cn/docs/what-is-nacos.html" class="external external-link">Nacos 官方文档<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+<hr/>
+<h2 id="阶段-3服务调用和负载均衡2-5-天">阶段 3：服务调用和负载均衡（2-5 天）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-3服务调用和负载均衡2-5-天" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="学习目标-2">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标-2" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>掌握服务间调用方法，能够实现负载均衡。</p>
+<h3 id="知识点-2">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-2" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>负载均衡【必学】</strong></p>
+<ul>
+<li>负载均衡的原理</li>
+<li>客户端负载均衡 vs 服务端负载均衡</li>
+<li>负载均衡算法（轮询、随机、加权等）</li>
+</ul>
+<p><strong>LoadBalancer【必学，推荐】</strong></p>
+<ul>
+<li>Spring Cloud LoadBalancer 的使用</li>
+<li>自定义负载均衡策略</li>
+</ul>
+<p><strong>Ribbon【建议学】</strong></p>
+<ul>
+<li>Ribbon 的原理</li>
+<li>Ribbon 的负载均衡策略</li>
+</ul>
+<p><strong>服务调用【必学】</strong></p>
+<ul>
+<li>RestTemplate</li>
+<li>OpenFeign【重点】</li>
+<li>Feign 的声明式调用</li>
+</ul>
+<h3 id="学习建议-1">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-1" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>LoadBalancer 是 Spring Cloud 官方推荐的负载均衡组件，取代了 Ribbon，更轻量、更简单</li>
+<li>OpenFeign 是声明式 HTTP 客户端，可以像调用本地方法一样调用远程服务，是微服务间调用的首选方式，一定要熟练掌握</li>
+<li>Ribbon 是 Netflix 开源的客户端负载均衡器，已进入维护模式，了解即可，实际项目建议使用 LoadBalancer</li>
+</ol>
+<h3 id="学习资源-1">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-1" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><a href="https://docs.spring.io/spring-cloud-openfeign/docs/current/reference/html/" class="external external-link">OpenFeign 官方文档<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+<hr/>
+<h2 id="阶段-4api-网关3-7-天">阶段 4：API 网关（3-7 天）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-4api-网关3-7-天" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>API 网关是微服务架构的入口，所有请求都要经过网关，可实现路由转发、负载均衡、限流、鉴权、日志等功能。Spring Cloud Gateway 是 Spring Cloud 官方推荐的网关组件，基于 WebFlux 实现、性能优秀，已取代 Zuul 成为主流网关。</p>
+<h3 id="学习目标-3">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标-3" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>掌握 API 网关的使用，能够使用 Gateway 实现路由和过滤。</p>
+<h3 id="知识点-3">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-3" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>API 网关【必学】</strong></p>
+<ul>
+<li>API 网关的作用</li>
+<li>网关的核心功能（路由、过滤、限流等）</li>
+</ul>
+<p><strong>Spring Cloud Gateway【必学】</strong></p>
+<ul>
+<li>Gateway 的基本使用</li>
+<li>路由配置（Route）</li>
+<li>断言（Predicate）</li>
+<li>过滤器（Filter）</li>
+<li>全局过滤器和局部过滤器</li>
+<li>网关整合 Nacos【重点】</li>
+</ul>
+<p><strong>限流和鉴权【建议学】</strong></p>
+<ul>
+<li>网关限流</li>
+<li>网关鉴权</li>
+</ul>
+<h3 id="学习建议-2">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-2" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>Gateway 的三大核心概念是 Route（路由）、Predicate（断言）、Filter（过滤器），要理解这三个概念的作用和配置方法</li>
+<li>网关可以整合 Nacos 实现动态路由，根据服务注册信息自动生成路由规则</li>
+<li>AI 时代出现了一类新技术 —— AI 网关，给网关赋予了更强大的能力，比如 AI 大模型统一调用、统一监控大模型调用情况等，可通过 <a href="https://www.bilibili.com/video/BV14NyrBTEeB/" class="external external-link">AI 网关讲解视频<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> 快速了解</li>
+</ol>
+<hr/>
+<h2 id="阶段-5服务治理3-10-天">阶段 5：服务治理（3-10 天）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-5服务治理3-10-天" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>服务熔断和降级是微服务架构的重要保护机制：当某个服务出现故障时，熔断器可以快速失败、避免级联故障；降级可以返回兜底数据、保证系统部分可用。</p>
+<h3 id="学习目标-4">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标-4" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>掌握服务治理的核心技术，能够实现服务熔断、配置管理、分布式事务等。</p>
+<h3 id="知识点-4">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-4" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>服务熔断和降级【必学】</strong></p>
+<ul>
+<li>熔断器的原理</li>
+<li>Sentinel【重点，推荐】</li>
+<li>Hystrix【建议学】</li>
+<li>降级策略</li>
+</ul>
+<p><strong>配置中心【必学】</strong></p>
+<ul>
+<li>配置中心的作用</li>
+<li>Nacos Config【推荐】</li>
+<li>Spring Cloud Config【建议学】</li>
+<li>配置的动态刷新</li>
+</ul>
+<p><strong>分布式事务【建议学】</strong></p>
+<ul>
+<li>分布式事务的问题</li>
+<li>Seata 的使用</li>
+<li>AT、TCC、Saga 模式【可不学】</li>
+</ul>
+<p><strong>分布式追踪【建议学】</strong></p>
+<ul>
+<li>分布式追踪的作用</li>
+<li>Sleuth + Zipkin</li>
+<li>SkyWalking【可不学】</li>
+</ul>
+<h3 id="学习建议-3">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-3" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>Sentinel 是阿里巴巴开源的熔断限流组件，支持熔断、降级、限流、热点参数限流等，是目前最流行的服务保护组件，强烈推荐学习</li>
+<li>配置中心可以统一管理所有服务的配置、支持配置的动态刷新。Nacos 既可以做服务注册中心，也可以做配置中心，非常方便</li>
+<li>分布式事务是微服务架构的难点，Seata 提供了解决方案，但使用场景有限，了解即可</li>
+<li>实战练习建议：自己搭建项目实践 Sentinel 熔断限流和 Nacos 配置中心的实际应用</li>
+</ol>
+<h3 id="学习资源-2">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-2" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><a href="https://sentinelguard.io/zh-cn/" class="external external-link">Sentinel 官方文档<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><a href="https://seata.io/zh-cn/docs/overview/what-is-seata.html" class="external external-link">Seata 官方文档<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+<hr/>
+<h2 id="阶段-6项目实战30-60-天">阶段 6：项目实战（30-60 天）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-6项目实战30-60-天" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="学习目标-5">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标-5" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>通过实际项目巩固所学知识，积累微服务项目经验。</p>
+<h3 id="学习建议-4">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-4" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li><strong>搭建完整微服务项目</strong>：从零开始搭建，包括服务注册、服务调用、网关、熔断、配置管理等</li>
+<li><strong>服务拆分实践</strong>：将一个单体应用拆分成多个微服务，体验服务拆分的过程和挑战</li>
+<li><strong>学习优秀开源项目</strong>：GitHub 上有很多优秀的 Spring Cloud 开源项目，可以学习其架构设计和实现细节</li>
+<li><strong>关注性能和监控</strong>：学习如何优化微服务性能、如何监控微服务健康状态</li>
+</ol>
+<h3 id="项目推荐">项目推荐<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#项目推荐" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>微服务项目方向（可参考以下经典项目形态）：</strong></p>
+<ul>
+<li><strong>API 开放平台</strong>：实战 Dubbo + Gateway 微服务架构，学习 API 签名认证、SDK 开发、网关鉴权等</li>
+<li><strong>OJ 判题系统</strong>：实战 Spring Cloud 微服务架构，学习代码沙箱、消息队列、服务拆分等</li>
+<li><strong>AI 应用生成平台</strong>：实战 Spring Cloud + Dubbo 微服务架构，学习 AI 智能体、工作流编排、设计模式、多维度系统优化</li>
+<li><strong>智能面试刷题平台</strong>：实战 Sentinel 熔断限流 + Nacos 配置中心</li>
+</ul>
+<p><strong>其他项目方向：</strong></p>
+<ul>
+<li>电商微服务（商品、订单、用户等服务）</li>
+<li>博客系统微服务</li>
+<li>在线教育平台微服务</li>
+<li>完整的电商平台（包括秒杀、支付等复杂场景）</li>
+</ul>
+<h3 id="学习资源-3">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-3" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><a href="https://www.bilibili.com/video/BV1i8x4etEsR/" class="external external-link">Spring Cloud 实战项目<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：2024 入门到进阶</li>
+</ul>
+<hr/>
+<h2 id="阶段-7求职备战面试前-1-个月突击">阶段 7：求职备战（面试前 1 个月突击）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-7求职备战面试前-1-个月突击" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="学习目标-6">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标-6" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>熟练掌握 Spring Cloud 常见面试题，准备好简历和项目经历，顺利通过面试。</p>
+<h3 id="学习建议-5">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-5" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li><strong>准备微服务项目</strong>：如果企业招聘要求明确写了微服务，简历上一定要有微服务项目经历。面试时要能清楚介绍项目的服务拆分、技术选型、遇到的问题和解决方案</li>
+<li><strong>准备简历</strong>：突出微服务项目经验、核心技术栈和量化成果，用 STAR 法则描述项目亮点</li>
+<li><strong>多刷面试题</strong>：Spring Cloud 面试题主要包括微服务架构、服务注册、服务调用、网关、熔断等主题，可通过技术社区、GitHub 面试题仓库等渠道刷题</li>
+<li><strong>夯实分布式基础</strong>：微服务是分布式系统，要理解 CAP 理论、一致性问题、分布式锁等核心概念，这些都是架构师面试的必考内容</li>
+</ol>
+<h3 id="经典面试题">经典面试题<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#经典面试题" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>微服务架构</strong></p>
+<ol>
+<li>什么是微服务？微服务有什么优缺点？</li>
+<li>如何拆分微服务？有什么原则？</li>
+<li>微服务和单体架构有什么区别？</li>
+<li>如何保证微服务的数据一致性？</li>
+</ol>
+<p><strong>服务注册和发现</strong></p>
+<ol>
+<li>服务注册和发现的原理是什么？</li>
+<li>Nacos 和 Eureka 有什么区别？</li>
+<li>CAP 理论是什么？</li>
+<li>Nacos 如何实现服务健康检查？</li>
+</ol>
+<p><strong>服务调用</strong></p>
+<ol>
+<li>OpenFeign 是什么？如何使用？</li>
+<li>LoadBalancer 的负载均衡算法有哪些？</li>
+<li>如何自定义负载均衡策略？</li>
+</ol>
+<p><strong>API 网关</strong></p>
+<ol>
+<li>API 网关的作用是什么？</li>
+<li>Spring Cloud Gateway 的三大核心概念是什么？</li>
+<li>Gateway 的过滤器有哪些类型？</li>
+<li>如何通过 Gateway 实现限流？</li>
+</ol>
+<p><strong>服务治理</strong></p>
+<ol>
+<li>什么是服务熔断？什么是服务降级？</li>
+<li>Sentinel 和 Hystrix 有什么区别？</li>
+<li>如何使用 Nacos 作为配置中心？</li>
+<li>什么是分布式事务？Seata 的工作原理是什么？</li>
+</ol>
+<h3 id="面试题库">面试题库<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#面试题库" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><a href="https://www.bilibili.com/video/BV1px4y1B7xN/" class="external external-link">Java 微服务面试题<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+<hr/>
+<h2 id="官方文档与技术博客">官方文档与技术博客<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#官方文档与技术博客" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="官方文档">官方文档<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#官方文档" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><a href="https://spring.io/projects/spring-cloud" class="external external-link">Spring Cloud 官方文档<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><a href="https://sca.aliyun.com/" class="external external-link">Spring Cloud Alibaba 官方文档<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><a href="https://nacos.io/zh-cn/" class="external external-link">Nacos 官网<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><a href="https://sentinelguard.io/zh-cn/" class="external external-link">Sentinel 官网<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+<h3 id="技术博客">技术博客<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#技术博客" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><a href="https://spring.io/blog" class="external external-link">Spring 官方博客<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：Spring Cloud 官方博客</li>
+<li><a href="https://netflixtechblog.com/" class="external external-link">Netflix TechBlog<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：Netflix 微服务架构先驱</li>
+<li><a href="https://www.uber.com/blog/engineering/" class="external external-link">Uber Engineering Blog<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：Uber 微服务实践</li>
+<li><a href="https://medium.com/airbnb-engineering" class="external external-link">Airbnb Tech Blog<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：Airbnb 服务化架构</li>
+</ul>
+<h2 id="总结一下">总结一下<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#总结一下" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>学习 Spring Cloud 要先打好 Spring Boot 基础，理解微服务架构的核心思想。从服务注册和发现开始，逐步学习服务调用、网关、熔断、配置管理等核心组件，多做实战项目，体验完整的微服务开发流程。</p>
+<p>在云原生时代，Spring Cloud 结合 Kubernetes、Docker、Service Mesh 等技术，将为微服务架构带来更强大的能力。掌握 Spring Cloud，不仅能开发微服务应用，还能理解云原生架构的核心思想。</p></div></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="toc"><button type="button" class="toc-header" aria-controls="toc-295" aria-expanded="true"><h3>目录</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-0" class="toc-content overflow"><li class="depth-0"><a href="#java-45---spring-cloud-微服务学习路线" data-for="java-45---spring-cloud-微服务学习路线">Java 45 - Spring Cloud 微服务学习路线</a></li><li class="depth-1"><a href="#开篇介绍" data-for="开篇介绍">开篇介绍</a></li><li class="depth-2"><a href="#学习前提" data-for="学习前提">学习前提</a></li><li class="depth-2"><a href="#就业方向" data-for="就业方向">就业方向</a></li><li class="depth-1"><a href="#整体学习建议" data-for="整体学习建议">整体学习建议</a></li><li class="depth-1"><a href="#阶段总览" data-for="阶段总览">阶段总览</a></li><li class="depth-1"><a href="#阶段-1微服务架构基础3-15-天" data-for="阶段-1微服务架构基础3-15-天">阶段 1：微服务架构基础（3-15 天）</a></li><li class="depth-2"><a href="#学习目标" data-for="学习目标">学习目标</a></li><li class="depth-2"><a href="#知识点" data-for="知识点">知识点</a></li><li class="depth-2"><a href="#学习重点" data-for="学习重点">学习重点</a></li><li class="depth-1"><a href="#阶段-2服务注册和发现7-15-天" data-for="阶段-2服务注册和发现7-15-天">阶段 2：服务注册和发现（7-15 天）</a></li><li class="depth-2"><a href="#学习目标-1" data-for="学习目标-1">学习目标</a></li><li class="depth-2"><a href="#知识点-1" data-for="知识点-1">知识点</a></li><li class="depth-2"><a href="#学习建议" data-for="学习建议">学习建议</a></li><li class="depth-2"><a href="#学习资源" data-for="学习资源">学习资源</a></li><li class="depth-1"><a href="#阶段-3服务调用和负载均衡2-5-天" data-for="阶段-3服务调用和负载均衡2-5-天">阶段 3：服务调用和负载均衡（2-5 天）</a></li><li class="depth-2"><a href="#学习目标-2" data-for="学习目标-2">学习目标</a></li><li class="depth-2"><a href="#知识点-2" data-for="知识点-2">知识点</a></li><li class="depth-2"><a href="#学习建议-1" data-for="学习建议-1">学习建议</a></li><li class="depth-2"><a href="#学习资源-1" data-for="学习资源-1">学习资源</a></li><li class="depth-1"><a href="#阶段-4api-网关3-7-天" data-for="阶段-4api-网关3-7-天">阶段 4：API 网关（3-7 天）</a></li><li class="depth-2"><a href="#学习目标-3" data-for="学习目标-3">学习目标</a></li><li class="depth-2"><a href="#知识点-3" data-for="知识点-3">知识点</a></li><li class="depth-2"><a href="#学习建议-2" data-for="学习建议-2">学习建议</a></li><li class="depth-1"><a href="#阶段-5服务治理3-10-天" data-for="阶段-5服务治理3-10-天">阶段 5：服务治理（3-10 天）</a></li><li class="depth-2"><a href="#学习目标-4" data-for="学习目标-4">学习目标</a></li><li class="depth-2"><a href="#知识点-4" data-for="知识点-4">知识点</a></li><li class="depth-2"><a href="#学习建议-3" data-for="学习建议-3">学习建议</a></li><li class="depth-2"><a href="#学习资源-2" data-for="学习资源-2">学习资源</a></li><li class="depth-1"><a href="#阶段-6项目实战30-60-天" data-for="阶段-6项目实战30-60-天">阶段 6：项目实战（30-60 天）</a></li><li class="depth-2"><a href="#学习目标-5" data-for="学习目标-5">学习目标</a></li><li class="depth-2"><a href="#学习建议-4" data-for="学习建议-4">学习建议</a></li><li class="depth-2"><a href="#项目推荐" data-for="项目推荐">项目推荐</a></li><li class="depth-2"><a href="#学习资源-3" data-for="学习资源-3">学习资源</a></li><li class="depth-1"><a href="#阶段-7求职备战面试前-1-个月突击" data-for="阶段-7求职备战面试前-1-个月突击">阶段 7：求职备战（面试前 1 个月突击）</a></li><li class="depth-2"><a href="#学习目标-6" data-for="学习目标-6">学习目标</a></li><li class="depth-2"><a href="#学习建议-5" data-for="学习建议-5">学习建议</a></li><li class="depth-2"><a href="#经典面试题" data-for="经典面试题">经典面试题</a></li><li class="depth-2"><a href="#面试题库" data-for="面试题库">面试题库</a></li><li class="depth-1"><a href="#官方文档与技术博客" data-for="官方文档与技术博客">官方文档与技术博客</a></li><li class="depth-2"><a href="#官方文档" data-for="官方文档">官方文档</a></li><li class="depth-2"><a href="#技术博客" data-for="技术博客">技术博客</a></li><li class="depth-1"><a href="#总结一下" data-for="总结一下">总结一下</a></li><li class="overflow-end"></li></ul></div><div class="backlinks"><h3>反向链接</h3><ul id="list-0" class="overflow"><li><a href="../../java/路线/java-47---java-学习资源与项目汇总" class="internal">Java 47 - Java 学习资源与项目汇总</a></li><li class="overflow-end"></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v5.0.0</a> © 2026</p><ul><li><a href="https://github.com/xyf1111">GitHub</a></li></ul></footer></div></div></body><script src="../../static/resource-after-e13fffa1.js" type="application/javascript" data-persist="true"></script><script src="../../static/resource-after-8b336f9a.js" type="application/javascript" data-persist="true"></script><script src="../../static/resource-after-baba652b.js" type="application/javascript" data-persist="true"></script><script src="../../static/resource-after-5eb75950.js" type="module" data-persist="true"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript" data-persist="true"></script><script src="../../postscript-17915799.js" type="module" data-persist="true"></script></html>

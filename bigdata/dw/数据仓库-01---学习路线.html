@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr"><head><title>数据仓库学习路线 · 后端开发笔记</title><meta charset="utf-8"/><link rel="preload" href="../../index-b754f97d.css" as="style"/><link rel="preload" href="../../prescript-2bfc6315.js" as="script"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="技术知识库"/><meta property="og:title" content="数据仓库学习路线 · 后端开发笔记"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="数据仓库学习路线 · 后端开发笔记"/><meta name="twitter:description" content="数据仓库学习路线 数据仓库（Data Warehouse）是面向主题、集成、相对稳定、反映历史变化的数据集合，用于支持管理决策；本路线覆盖从零基础到精通的完整路径：数仓基础 → 数据建模 → ETL → Hive 开发 → 数据治理 → 项目实战 → 求职备战。 核心概念 定义：面向主题、集成、相对稳定、反映历史变化的数据集合，将各业务系统数据集中存储，经清洗、转换、整合后以统一格式提供给数据分析和 BI 系统使用，是企业数据管理的核心基础设施 OLTP vs OLAP：数据库（OLTP）用于事务处理，强调增删改查性能；数据仓库（OLAP）用于分析处理，强调查询分析性能，定期从数据库抽取数据后..."/><meta property="og:description" content="数据仓库学习路线 数据仓库（Data Warehouse）是面向主题、集成、相对稳定、反映历史变化的数据集合，用于支持管理决策；本路线覆盖从零基础到精通的完整路径：数仓基础 → 数据建模 → ETL → Hive 开发 → 数据治理 → 项目实战 → 求职备战。 核心概念 定义：面向主题、集成、相对稳定、反映历史变化的数据集合，将各业务系统数据集中存储，经清洗、转换、整合后以统一格式提供给数据分析和 BI 系统使用，是企业数据管理的核心基础设施 OLTP vs OLAP：数据库（OLTP）用于事务处理，强调增删改查性能；数据仓库（OLAP）用于分析处理，强调查询分析性能，定期从数据库抽取数据后..."/><meta property="og:image:alt" content="数据仓库学习路线 数据仓库（Data Warehouse）是面向主题、集成、相对稳定、反映历史变化的数据集合，用于支持管理决策；本路线覆盖从零基础到精通的完整路径：数仓基础 → 数据建模 → ETL → Hive 开发 → 数据治理 → 项目实战 → 求职备战。 核心概念 定义：面向主题、集成、相对稳定、反映历史变化的数据集合，将各业务系统数据集中存储，经清洗、转换、整合后以统一格式提供给数据分析和 BI 系统使用，是企业数据管理的核心基础设施 OLTP vs OLAP：数据库（OLTP）用于事务处理，强调增删改查性能；数据仓库（OLAP）用于分析处理，强调查询分析性能，定期从数据库抽取数据后..."/><meta property="twitter:domain" content="xyf1111.github.io/tech-notes"/><meta property="og:url" content="https://xyf1111.github.io/tech-notes/bigdata/dw/数据仓库-01---学习路线"/><meta property="twitter:url" content="https://xyf1111.github.io/tech-notes/bigdata/dw/数据仓库-01---学习路线"/><link rel="icon" href="../../static/icon.png"/><meta name="description" content="数据仓库学习路线 数据仓库（Data Warehouse）是面向主题、集成、相对稳定、反映历史变化的数据集合，用于支持管理决策；本路线覆盖从零基础到精通的完整路径：数仓基础 → 数据建模 → ETL → Hive 开发 → 数据治理 → 项目实战 → 求职备战。 核心概念 定义：面向主题、集成、相对稳定、反映历史变化的数据集合，将各业务系统数据集中存储，经清洗、转换、整合后以统一格式提供给数据分析和 BI 系统使用，是企业数据管理的核心基础设施 OLTP vs OLAP：数据库（OLTP）用于事务处理，强调增删改查性能；数据仓库（OLAP）用于分析处理，强调查询分析性能，定期从数据库抽取数据后..."/><meta name="generator" content="Quartz"/><link href="../../index-b754f97d.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-735924e0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-589c1cea.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-bbc3f7c0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-2911f5d1.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-e427079e.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-53b25b2b.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-c93c6a44.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-8a06014f.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-77d6a441.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-6ee21cee.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-1ea6ad18.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-788c9ca3.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-642859cd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-4abc06bd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-274a3dfe.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-94cb6c84.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-58d5ff56.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-7262b5a7.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../static/resource-style-a5c806d2.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../static/resource-style-6bd36952.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" data-persist="true"/><script src="../../prescript-2bfc6315.js" type="application/javascript" data-persist="true"></script><script type="application/javascript" data-persist="true">const fetchData = fetch("../../static/contentIndex.json").then(data => data.json())</script><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://xyf1111.github.io/tech-notes/bigdata/dw/数据仓库-01---学习路线-og-image.webp"/><meta property="og:image:url" content="https://xyf1111.github.io/tech-notes/bigdata/dw/数据仓库-01---学习路线-og-image.webp"/><meta name="twitter:image" content="https://xyf1111.github.io/tech-notes/bigdata/dw/数据仓库-01---学习路线-og-image.webp"/><meta property="og:image:type" content="image/webp"/></head><body data-slug="bigdata/dw/数据仓库-01---学习路线" data-basepath="/tech-notes"><div id="quartz-root" class="page" data-frame="default"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="../..">技术知识库</a></h2><div class="mobile-only"><div class="spacer"></div></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 0.5rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button" aria-label="搜索" aria-expanded="false"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>搜索</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="搜索内容..." placeholder="搜索内容..."/><div class="search-layout" data-preview="true" data-field-priority="[&quot;title&quot;,&quot;content&quot;,&quot;tags&quot;]"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode" aria-label="暗色模式"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="暗色模式"><title>暗色模式</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="亮色模式"><title>亮色模式</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode" aria-label="阅读模式"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="阅读模式"><title>阅读模式</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer nav-files-container" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a2, b2) => {\n    if (!a2.isFolder &amp;&amp; !b2.isFolder || a2.isFolder &amp;&amp; b2.isFolder) {\n      return (a2.displayName || \&quot;\&quot;).localeCompare(b2.displayName || \&quot;\&quot;, void 0, {\n        numeric: true,\n        sensitivity: \&quot;base\&quot;\n      });\n    }\n    if (!a2.isFolder &amp;&amp; b2.isFolder) {\n      return 1;\n    }\n    return -1;\n  }&quot;,&quot;filterFn&quot;:&quot;(node) => node.slugSegment !== \&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;(node) => {\n    return node;\n  }&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-27" aria-label="探索"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>探索</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-27" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#" class="nav-file-title tree-item-self"></a></li></template><template id="template-folder"><li><div class="folder-container nav-folder-title tree-item-self"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon nav-folder-collapse-indicator collapse-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content tree-item-children"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../bigdata/">bigdata</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../bigdata/dw/">dw</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>数据仓库学习路线</a></div></nav><h1 class="article-title">数据仓库学习路线</h1><details class="note-properties metadata-container" open data-collapsed="false"><summary class="note-properties-header"><span class="note-properties-title">Properties</span><span class="note-properties-count">1</span></summary><table class="note-properties-table"><tbody><tr class="note-properties-row metadata-property"><td class="note-properties-key metadata-property-key">tags</td><td class="note-properties-value metadata-property-value"><span class="note-properties-tags"><a href="../../tags/learning" class="internal internal-link tag-link">learning</a><span class="note-properties-separator">, </span><a href="../../tags/data-warehouse" class="internal internal-link tag-link">data-warehouse</a><span class="note-properties-separator">, </span><a href="../../tags/bigdata" class="internal internal-link tag-link">bigdata</a><span class="note-properties-separator">, </span><a href="../../tags/roadmap" class="internal internal-link tag-link">roadmap</a></span></td></tr></tbody></table></details><p show-comma="true" class="content-meta"><time datetime="2026-08-14T16:00:00.000Z">2026年8月15日</time><span>12分钟阅读</span></p></div></div><article class="popover-hint"><div class="markdown-preview-view markdown-rendered"><h1 id="数据仓库学习路线">数据仓库学习路线<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#数据仓库学习路线" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<blockquote>
+<p>数据仓库（Data Warehouse）是面向主题、集成、相对稳定、反映历史变化的数据集合，用于支持管理决策；本路线覆盖从零基础到精通的完整路径：数仓基础 → 数据建模 → ETL → Hive 开发 → 数据治理 → 项目实战 → 求职备战。</p>
+</blockquote>
+<h2 id="核心概念">核心概念<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#核心概念" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ul>
+<li><strong>定义</strong>：面向主题、集成、相对稳定、反映历史变化的数据集合，将各业务系统数据集中存储，经清洗、转换、整合后以统一格式提供给数据分析和 BI 系统使用，是企业数据管理的核心基础设施</li>
+<li><strong>OLTP vs OLAP</strong>：数据库（OLTP）用于事务处理，强调增删改查性能；数据仓库（OLAP）用于分析处理，强调查询分析性能，定期从数据库抽取数据后清洗整合存储</li>
+<li><strong>数仓分层</strong>：ODS（操作数据层/贴源层）→ DW（数据仓库层：DWD、DWS、DWT）→ DM（数据集市层/应用层）；分层可提高数据质量、简化 ETL 逻辑、提升查询性能</li>
+<li><strong>核心技术</strong>：数据建模（维度建模、范式建模）、ETL（抽取-转换-加载）、OLAP、数据分层、数据治理、元数据管理</li>
+<li><strong>事实表 vs 维度表</strong>：事实表存业务过程的度量值（销售额、数量），维度表存描述性信息（时间、地点、产品）</li>
+<li><strong>技术演进</strong>：传统关系型数仓（Oracle、Teradata）→ 大数据数仓（Hive、ClickHouse）→ 批处理/实时数仓 → 数据湖仓（Data Lakehouse，2025 年趋势，结合数据湖与数仓优势）</li>
+<li><strong>数仓 vs 数据湖 vs 数据湖仓</strong>：三者的区别和联系（湖仓架构可选学）</li>
+<li><strong>就业方向</strong>：数仓工程师、ETL 工程师、大数据开发工程师（Hive/Spark）、数据架构师、数据治理工程师；一线城市数仓工程师平均薪资 20-40K，资深专家 40-80K+</li>
+</ul>
+<p><strong>学习前提：</strong></p>
+<ol>
+<li>SQL 基础：熟练使用 SQL 进行查询和分析【必学】</li>
+<li>数据库基础：理解关系型数据库【建议】</li>
+<li>大数据基础：了解 Hadoop、Hive 等【建议】</li>
+</ol>
+<p><strong>整体学习建议：</strong></p>
+<ol>
+<li>SQL 是基础：重点掌握复杂查询、窗口函数、多表关联等高级特性</li>
+<li>数据建模是核心：重点学习维度建模（星型模型、雪花模型）</li>
+<li>理论结合实践：边学边做项目，搭建一个简单数仓体验完整开发流程</li>
+<li>关注大数据技术：现代数仓主要基于 Hive、Spark 等大数据技术</li>
+<li>善用 AI 工具：辅助编写 SQL、理解概念</li>
+</ol>
+<h2 id="学习路径">学习路径<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习路径" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>阶段</th><th>内容</th><th>建议时长</th></tr></thead><tbody><tr><td>阶段 1</td><td>数据仓库基础（概念、架构、分层）</td><td>10-20 天</td></tr><tr><td>阶段 2</td><td>数据建模（维度建模、范式建模）</td><td>15-25 天</td></tr><tr><td>阶段 3</td><td>ETL 开发（抽取、转换、加载、调度）</td><td>10-25 天</td></tr><tr><td>阶段 4</td><td>Hive 数据仓库开发</td><td>15-25 天</td></tr><tr><td>阶段 5</td><td>数据治理（质量、元数据、安全）</td><td>10-20 天</td></tr><tr><td>阶段 6</td><td>项目实战</td><td>30-45 天</td></tr><tr><td>阶段 7</td><td>求职备战</td><td>面试前 1 个月</td></tr></tbody></table></div>
+<h3 id="阶段-1数据仓库基础">阶段 1：数据仓库基础<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-1数据仓库基础" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>必学知识点：</strong></p>
+<ul>
+<li>数仓定义和特点、OLTP 和 OLAP 的区别、数仓架构、事实表和维度表</li>
+<li>数仓分层：ODS / DW（DWD、DWS、DWT）/ DM 及各层意义</li>
+<li>可选学：数仓 vs 数据湖 vs 数据湖仓的区别和联系</li>
+</ul>
+<p><strong>学习重点：</strong></p>
+<ol>
+<li>数仓面向主题，按业务主题（销售、库存、客户）组织数据，而非按业务系统</li>
+<li>分层设计提高数据质量、简化 ETL 逻辑、提升查询性能；ODS 贴源层、DW 加工层、DM 应用层</li>
+<li>事实表存度量值，维度表存描述性信息</li>
+</ol>
+<h3 id="阶段-2数据建模">阶段 2：数据建模<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-2数据建模" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>必学知识点：</strong></p>
+<ul>
+<li>维度建模【必学，核心重点】：星型模型、雪花模型、事实表类型（事务型、周期快照型、累积快照型）、维度表设计（SCD 缓慢变化维）、维度建模步骤</li>
+<li>范式建模【建议学】：第一/二/三范式、与维度建模的对比</li>
+<li>数据建模工具【建议学】：PowerDesigner、ERwin、在线建模工具</li>
+</ul>
+<p><strong>学习建议：</strong></p>
+<ol>
+<li>维度建模（Ralph Kimball 提出）是数仓最流行的建模方法；星型模型将事实表放中心、维度表环绕，查询性能好</li>
+<li>SCD 处理维度数据的历史变化（客户地址变更、产品价格变更等）：SCD1 覆盖、SCD2 增加新行、SCD3 增加新列</li>
+<li>建模要结合业务理解，从业务需求出发设计合理的数据模型，不同业务场景建模方法不同</li>
+</ol>
+<h3 id="阶段-3etl-开发">阶段 3：ETL 开发<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-3etl-开发" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>必学知识点：</strong></p>
+<ul>
+<li>ETL 基础：Extract（抽取）、Transform（转换）、Load（加载）、全量同步和增量同步</li>
+<li>数据抽取：从数据库抽取（Sqoop、DataX）、从日志抽取（Flume、Logstash）、从 API 抽取</li>
+<li>数据转换：数据清洗、数据整合、数据标准化、数据质量</li>
+<li>调度工具：Azkaban、Airflow、DolphinScheduler【建议学】</li>
+</ul>
+<p><strong>学习建议：</strong></p>
+<ol>
+<li>ETL 是数仓核心工作，负责将各业务系统数据抽取到数仓，清洗转换后加载</li>
+<li>增量同步是重点：识别新增和变更的数据，避免全量同步的性能问题</li>
+<li>数据质量是 ETL 的重要目标：过程中做数据校验、去重、格式化</li>
+</ol>
+<h3 id="阶段-4hive-数据仓库开发">阶段 4：Hive 数据仓库开发<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-4hive-数据仓库开发" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>必学知识点：</strong></p>
+<ul>
+<li>Hive 基础：Hive 架构、HiveSQL 语法、内部表和外部表、分区表和分桶表</li>
+<li>Hive 高级特性：窗口函数、自定义函数（UDF）、性能优化</li>
+<li>Hive 数仓实践：数仓分层实现、维度建模实现、ETL 流程开发</li>
+</ul>
+<p><strong>学习建议：</strong></p>
+<ol>
+<li>Hive 是大数据数仓的主流技术，基于 Hadoop 构建，用 SQL 语法（HiveSQL）处理大规模数据，熟悉 SQL 即可快速上手</li>
+<li>分区表（按天、按月）提高查询性能，分桶表实现抽样查询</li>
+<li>窗口函数是 Hive 的强大特性，可实现排名、累计、环比等复杂计算</li>
+</ol>
+<h3 id="阶段-5数据治理">阶段 5：数据治理<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-5数据治理" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>必学知识点：</strong></p>
+<ul>
+<li>数据质量【必学】：质量维度（准确性、完整性、一致性、及时性）、数据质量检查、数据清洗</li>
+<li>元数据管理【建议学】：元数据类型、管理工具、数据血缘</li>
+<li>数据安全【建议学】：数据权限管理、数据脱敏、数据备份</li>
+</ul>
+<p><strong>学习建议：</strong></p>
+<ol>
+<li>数据质量是数仓的生命线，建立数据质量监控机制，及时发现和处理数据问题</li>
+<li>元数据管理记录数据的来源、转换逻辑、使用情况，帮助理解和管理数据</li>
+</ol>
+<h2 id="项目实战">项目实战<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#项目实战" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="阶段-6项目实战">阶段 6：项目实战<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-6项目实战" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>学习建议：</strong></p>
+<ol>
+<li>搭建完整数仓：从数据建模开始，设计分层架构，开发 ETL 流程，最终提供数据服务</li>
+<li>选择业务场景：电商数仓、金融数仓、物流数仓等，结合实际业务设计数据模型</li>
+<li>性能优化：优化 SQL、优化分区、优化存储格式等</li>
+</ol>
+<p><strong>项目推荐：</strong></p>
+<ul>
+<li>电商数据仓库</li>
+<li>用户行为数据仓库</li>
+<li>物流数据仓库</li>
+<li>金融数据仓库</li>
+</ul>
+<p><strong>优质开源项目：</strong></p>
+<ul>
+<li><a href="https://github.com/san089/goodreads_etl_pipeline" class="external external-link">GoodReads Data Pipeline<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：端到端数据湖、数据仓库和分析平台项目</li>
+<li><a href="https://github.com/supratim94336/DataEngineeringCapstoneProject" class="external external-link">ETL Pipeline with Airflow &amp; AWS<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：Spark、Airflow 和 AWS Redshift 的完整 ETL 管道</li>
+<li><a href="https://github.com/donjude/cloud-data-warehouse" class="external external-link">Cloud Data Warehouse with Redshift<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：基于 Amazon Redshift 的云数据仓库 ETL 管道</li>
+</ul>
+<h2 id="求职准备">求职准备<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#求职准备" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="阶段-7求职备战">阶段 7：求职备战<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-7求职备战" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>面试重点（经典面试题）：</strong></p>
+<ul>
+<li>数仓基础：什么是数据仓库？与数据库的区别？OLTP 和 OLAP 的区别？数仓分层及各层作用？什么是数据集市？</li>
+<li>数据建模：维度建模的优势？星型模型和雪花模型的区别与选择？事实表的类型？维度表如何设计？SCD 的类型？如何设计电商数仓订单主题模型？</li>
+<li>ETL：包含哪些步骤？全量同步和增量同步的区别？如何实现增量数据抽取？如何保证数据质量？调度工具有哪些？</li>
+<li>Hive：架构是怎样的？内部表和外部表的区别？分区表和分桶表的区别？如何优化查询性能？文件存储格式有哪些，Parquet 和 ORC 的区别？</li>
+<li>数据治理：包含哪些内容？如何保证数据质量？什么是元数据及其作用？什么是数据血缘？</li>
+</ul>
+<p><strong>备考建议：</strong></p>
+<ol>
+<li>打磨简历和项目：简历上要有数仓项目经历（设计过的数据模型、开发过的 ETL 流程、优化过的性能问题等）</li>
+<li>准备项目经历：能清楚介绍数据模型设计思路、ETL 实现方案、数据质量保证措施、性能优化方法</li>
+<li>理解业务：能说出常见业务场景（电商、金融）的数据模型设计</li>
+</ol>
+<h2 id="推荐资源">推荐资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#推荐资源" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p><strong>视频教程：</strong></p>
+<ul>
+<li><a href="https://www.bilibili.com/video/BV1Xvnoz7EKJ/" class="external external-link">鱼皮的数据同步教程视频<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：10 分钟搞懂数据同步</li>
+<li><a href="https://www.bilibili.com/video/BV1vW421N7uD/" class="external external-link">数据仓库数据治理<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：2024 最新项目</li>
+<li><a href="https://www.bilibili.com/video/BV1vW421N7uD/" class="external external-link">大数据项目快餐数仓<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：2024 最新，附源码</li>
+</ul>
+<p><strong>文章与官方文档：</strong></p>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/1961851601707852777" class="external external-link">从分层架构到数据湖仓架构<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：2025 数据仓库分层</li>
+<li><a href="https://zhuanlan.zhihu.com/p/1947055688045007934" class="external external-link">数仓工程师发展路线<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：月薪 10K 到 50K</li>
+<li><a href="https://help.aliyun.com/zh/dataworks/use-cases/perform-dimensional-modeling" class="external external-link">使用维度建模搭建电商数仓<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：阿里云实践</li>
+<li><a href="https://www.fanruan.com/finepedia/article/68b53a540bd240a239f50f75" class="external external-link">Hive 在 2025 年企业中的应用<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：数据仓库能力提升</li>
+<li><a href="https://www.fanruan.com/finepedia/article/68b53cfa0bd240a239f576c7" class="external external-link">2025 年 Hive 适合哪些场景<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：企业级应用指南</li>
+</ul>
+<p><strong>GitHub 开源资料：</strong></p>
+<ul>
+<li><a href="https://github.com/wangzhiwubigdata/God-Of-BigData" class="external external-link">大数据成神之路<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：Hive/Spark/Hadoop</li>
+</ul>
+<p><strong>技术博客：</strong></p>
+<ul>
+<li><a href="https://netflixtechblog.com/" class="external external-link">Netflix TechBlog<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：Netflix 数据仓库实践</li>
+<li><a href="https://www.uber.com/blog/engineering/" class="external external-link">Uber Engineering Blog<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：Uber 数据平台架构</li>
+<li><a href="https://medium.com/airbnb-engineering" class="external external-link">Airbnb Tech Blog<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：Airbnb 数据仓库</li>
+<li><a href="https://www.snowflake.com/blog/" class="external external-link">Snowflake Blog<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：云数据仓库技术</li>
+</ul>
+<blockquote>
+<p>来源：鱼皮·编程导航 / codefather</p>
+</blockquote></div></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="toc"><button type="button" class="toc-header" aria-controls="toc-27" aria-expanded="true"><h3>目录</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-0" class="toc-content overflow"><li class="depth-0"><a href="#数据仓库学习路线" data-for="数据仓库学习路线">数据仓库学习路线</a></li><li class="depth-1"><a href="#核心概念" data-for="核心概念">核心概念</a></li><li class="depth-1"><a href="#学习路径" data-for="学习路径">学习路径</a></li><li class="depth-2"><a href="#阶段-1数据仓库基础" data-for="阶段-1数据仓库基础">阶段 1：数据仓库基础</a></li><li class="depth-2"><a href="#阶段-2数据建模" data-for="阶段-2数据建模">阶段 2：数据建模</a></li><li class="depth-2"><a href="#阶段-3etl-开发" data-for="阶段-3etl-开发">阶段 3：ETL 开发</a></li><li class="depth-2"><a href="#阶段-4hive-数据仓库开发" data-for="阶段-4hive-数据仓库开发">阶段 4：Hive 数据仓库开发</a></li><li class="depth-2"><a href="#阶段-5数据治理" data-for="阶段-5数据治理">阶段 5：数据治理</a></li><li class="depth-1"><a href="#项目实战" data-for="项目实战">项目实战</a></li><li class="depth-2"><a href="#阶段-6项目实战" data-for="阶段-6项目实战">阶段 6：项目实战</a></li><li class="depth-1"><a href="#求职准备" data-for="求职准备">求职准备</a></li><li class="depth-2"><a href="#阶段-7求职备战" data-for="阶段-7求职备战">阶段 7：求职备战</a></li><li class="depth-1"><a href="#推荐资源" data-for="推荐资源">推荐资源</a></li><li class="overflow-end"></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v5.0.0</a> © 2026</p><ul><li><a href="https://github.com/xyf1111">GitHub</a></li></ul></footer></div></div></body><script src="../../static/resource-after-e13fffa1.js" type="application/javascript" data-persist="true"></script><script src="../../static/resource-after-8b336f9a.js" type="application/javascript" data-persist="true"></script><script src="../../static/resource-after-baba652b.js" type="application/javascript" data-persist="true"></script><script src="../../static/resource-after-5eb75950.js" type="module" data-persist="true"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript" data-persist="true"></script><script src="../../postscript-17915799.js" type="module" data-persist="true"></script></html>

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr"><head><title>区块链 01 - 开发学习路线 · 后端开发笔记</title><meta charset="utf-8"/><link rel="preload" href="../index-b754f97d.css" as="style"/><link rel="preload" href="../prescript-2bfc6315.js" as="script"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="技术知识库"/><meta property="og:title" content="区块链 01 - 开发学习路线 · 后端开发笔记"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="区块链 01 - 开发学习路线 · 后端开发笔记"/><meta name="twitter:description" content="区块链开发学习路线 区块链是一种分布式账本技术，通过密码学和共识算法实现数据的安全存储和不可篡改。本路线聚焦区块链应用开发（智能合约 + DApp），以以太坊和 Solidity 为核心，从零基础到独立开发区块链应用。 开篇介绍 区块链最初是为比特币设计的底层技术，随着以太坊智能合约的出现，应用场景扩展到金融、供应链、医疗、政务等各个领域。区块链发展可分为三个阶段： 区块链 1.0：以比特币为代表，实现去中心化的数字货币 区块链 2.0：以以太坊为代表，通过智能合约实现可编程的区块链 区块链 3.0：新型区块链（Solana、Polkadot、Cosmos）与 Layer 2 扩容方案，追求更..."/><meta property="og:description" content="区块链开发学习路线 区块链是一种分布式账本技术，通过密码学和共识算法实现数据的安全存储和不可篡改。本路线聚焦区块链应用开发（智能合约 + DApp），以以太坊和 Solidity 为核心，从零基础到独立开发区块链应用。 开篇介绍 区块链最初是为比特币设计的底层技术，随着以太坊智能合约的出现，应用场景扩展到金融、供应链、医疗、政务等各个领域。区块链发展可分为三个阶段： 区块链 1.0：以比特币为代表，实现去中心化的数字货币 区块链 2.0：以以太坊为代表，通过智能合约实现可编程的区块链 区块链 3.0：新型区块链（Solana、Polkadot、Cosmos）与 Layer 2 扩容方案，追求更..."/><meta property="og:image:alt" content="区块链开发学习路线 区块链是一种分布式账本技术，通过密码学和共识算法实现数据的安全存储和不可篡改。本路线聚焦区块链应用开发（智能合约 + DApp），以以太坊和 Solidity 为核心，从零基础到独立开发区块链应用。 开篇介绍 区块链最初是为比特币设计的底层技术，随着以太坊智能合约的出现，应用场景扩展到金融、供应链、医疗、政务等各个领域。区块链发展可分为三个阶段： 区块链 1.0：以比特币为代表，实现去中心化的数字货币 区块链 2.0：以以太坊为代表，通过智能合约实现可编程的区块链 区块链 3.0：新型区块链（Solana、Polkadot、Cosmos）与 Layer 2 扩容方案，追求更..."/><meta property="twitter:domain" content="xyf1111.github.io/tech-notes"/><meta property="og:url" content="https://xyf1111.github.io/tech-notes/blockchain/区块链-01---开发学习路线"/><meta property="twitter:url" content="https://xyf1111.github.io/tech-notes/blockchain/区块链-01---开发学习路线"/><link rel="icon" href="../static/icon.png"/><meta name="description" content="区块链开发学习路线 区块链是一种分布式账本技术，通过密码学和共识算法实现数据的安全存储和不可篡改。本路线聚焦区块链应用开发（智能合约 + DApp），以以太坊和 Solidity 为核心，从零基础到独立开发区块链应用。 开篇介绍 区块链最初是为比特币设计的底层技术，随着以太坊智能合约的出现，应用场景扩展到金融、供应链、医疗、政务等各个领域。区块链发展可分为三个阶段： 区块链 1.0：以比特币为代表，实现去中心化的数字货币 区块链 2.0：以以太坊为代表，通过智能合约实现可编程的区块链 区块链 3.0：新型区块链（Solana、Polkadot、Cosmos）与 Layer 2 扩容方案，追求更..."/><meta name="generator" content="Quartz"/><link href="../index-b754f97d.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-735924e0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-589c1cea.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-bbc3f7c0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-2911f5d1.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-e427079e.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-53b25b2b.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-c93c6a44.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-8a06014f.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-77d6a441.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-6ee21cee.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-1ea6ad18.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-788c9ca3.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-642859cd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-4abc06bd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-274a3dfe.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-94cb6c84.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-58d5ff56.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-7262b5a7.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../static/resource-style-a5c806d2.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../static/resource-style-6bd36952.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" data-persist="true"/><script src="../prescript-2bfc6315.js" type="application/javascript" data-persist="true"></script><script type="application/javascript" data-persist="true">const fetchData = fetch("../static/contentIndex.json").then(data => data.json())</script><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://xyf1111.github.io/tech-notes/blockchain/区块链-01---开发学习路线-og-image.webp"/><meta property="og:image:url" content="https://xyf1111.github.io/tech-notes/blockchain/区块链-01---开发学习路线-og-image.webp"/><meta name="twitter:image" content="https://xyf1111.github.io/tech-notes/blockchain/区块链-01---开发学习路线-og-image.webp"/><meta property="og:image:type" content="image/webp"/></head><body data-slug="blockchain/区块链-01---开发学习路线" data-basepath="/tech-notes"><div id="quartz-root" class="page" data-frame="default"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="..">技术知识库</a></h2><div class="mobile-only"><div class="spacer"></div></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 0.5rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button" aria-label="搜索" aria-expanded="false"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>搜索</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="搜索内容..." placeholder="搜索内容..."/><div class="search-layout" data-preview="true" data-field-priority="[&quot;title&quot;,&quot;content&quot;,&quot;tags&quot;]"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode" aria-label="暗色模式"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="暗色模式"><title>暗色模式</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="亮色模式"><title>亮色模式</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode" aria-label="阅读模式"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="阅读模式"><title>阅读模式</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer nav-files-container" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a2, b2) => {\n    if (!a2.isFolder &amp;&amp; !b2.isFolder || a2.isFolder &amp;&amp; b2.isFolder) {\n      return (a2.displayName || \&quot;\&quot;).localeCompare(b2.displayName || \&quot;\&quot;, void 0, {\n        numeric: true,\n        sensitivity: \&quot;base\&quot;\n      });\n    }\n    if (!a2.isFolder &amp;&amp; b2.isFolder) {\n      return 1;\n    }\n    return -1;\n  }&quot;,&quot;filterFn&quot;:&quot;(node) => node.slugSegment !== \&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;(node) => {\n    return node;\n  }&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-34" aria-label="探索"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>探索</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-34" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#" class="nav-file-title tree-item-self"></a></li></template><template id="template-folder"><li><div class="folder-container nav-folder-title tree-item-self"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon nav-folder-collapse-indicator collapse-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content tree-item-children"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../blockchain/">blockchain</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>区块链 01 - 开发学习路线</a></div></nav><h1 class="article-title">区块链 01 - 开发学习路线</h1><details class="note-properties metadata-container" open data-collapsed="false"><summary class="note-properties-header"><span class="note-properties-title">Properties</span><span class="note-properties-count">1</span></summary><table class="note-properties-table"><tbody><tr class="note-properties-row metadata-property"><td class="note-properties-key metadata-property-key">tags</td><td class="note-properties-value metadata-property-value"><span class="note-properties-tags"><a href="../tags/区块链" class="internal internal-link tag-link">区块链</a><span class="note-properties-separator">, </span><a href="../tags/开发" class="internal internal-link tag-link">开发</a><span class="note-properties-separator">, </span><a href="../tags/学习路线" class="internal internal-link tag-link">学习路线</a></span></td></tr></tbody></table></details><p show-comma="true" class="content-meta"><time datetime="2026-08-08T16:00:00.000Z">2026年8月09日</time><span>17分钟阅读</span></p></div></div><article class="popover-hint"><div class="markdown-preview-view markdown-rendered"><h1 id="区块链开发学习路线">区块链开发学习路线<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#区块链开发学习路线" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<blockquote>
+<p>区块链是一种分布式账本技术，通过密码学和共识算法实现数据的安全存储和不可篡改。本路线聚焦区块链应用开发（智能合约 + DApp），以以太坊和 Solidity 为核心，从零基础到独立开发区块链应用。</p>
+</blockquote>
+<h2 id="开篇介绍">开篇介绍<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#开篇介绍" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>区块链最初是为比特币设计的底层技术，随着以太坊智能合约的出现，应用场景扩展到金融、供应链、医疗、政务等各个领域。区块链发展可分为三个阶段：</p>
+<ul>
+<li><strong>区块链 1.0</strong>：以比特币为代表，实现去中心化的数字货币</li>
+<li><strong>区块链 2.0</strong>：以以太坊为代表，通过智能合约实现可编程的区块链</li>
+<li><strong>区块链 3.0</strong>：新型区块链（Solana、Polkadot、Cosmos）与 Layer 2 扩容方案，追求更高性能和可扩展性</li>
+</ul>
+<p><strong>为什么要学区块链开发？</strong></p>
+<ul>
+<li>从 DeFi（去中心化金融）到 NFT（非同质化代币），从 DAO（去中心化自治组织）到 GameFi（游戏金融），区块链应用层出不穷，是当前最具创新性的技术领域之一</li>
+<li>区块链开发工程师薪资高：一线城市平均 20-50K，资深专家可达 60-150K+</li>
+</ul>
+<p>区块链开发包括底层开发（开发新的区块链）和应用开发（基于现有区块链开发应用）。本路线主要聚焦<strong>应用开发</strong>：智能合约开发 + DApp（去中心化应用）开发。以太坊是目前最流行的智能合约平台，Solidity 是其合约语言，也是区块链开发的必学技术。</p>
+<p><strong>安全与合规提醒！</strong></p>
+<p>区块链和 Web3 领域存在安全与法律风险：智能合约漏洞（重入攻击、整数溢出等）可能导致资金损失，私钥泄露会导致资产被盗；部分国家和地区对加密货币和 ICO 有法律限制。学习时要注重安全意识和合规意识，<strong>不参加违法活动</strong>。</p>
+<h3 id="学习前提">学习前提<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习前提" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li><strong>编程基础【必学】</strong>：至少掌握一门编程语言（JavaScript、Python、Go 等）</li>
+<li><strong>密码学基础【建议】</strong>：理解哈希、加密、数字签名等概念</li>
+<li><strong>网络基础【建议】</strong>：理解 P2P 网络、HTTP 等</li>
+<li><strong>数据结构【建议】</strong>：理解链表、树等数据结构</li>
+</ol>
+<h3 id="就业方向">就业方向<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#就业方向" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>区块链开发工程师：开发区块链应用和智能合约</li>
+<li>智能合约工程师：专注智能合约开发与审计</li>
+<li>Web3 开发工程师：开发去中心化应用（DApp）</li>
+<li>区块链架构师：设计区块链系统架构</li>
+<li>区块链安全工程师：负责智能合约审计与安全</li>
+</ol>
+<h2 id="整体学习建议">整体学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#整体学习建议" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ol>
+<li><strong>先理解区块链原理</strong>：核心是分布式账本、密码学、共识算法，先理解基础概念，再学具体的区块链平台和开发技术</li>
+<li><strong>以太坊是重点</strong>：以太坊是最流行的智能合约平台，Solidity 是最流行的合约语言，重点学习以太坊生态</li>
+<li><strong>安全非常重要</strong>：合约漏洞可能导致巨额资金损失，要学习智能合约安全，了解常见漏洞（重入攻击、整数溢出等）</li>
+<li><strong>学习必须结合实践</strong>：在测试网上部署智能合约、开发 DApp，积累实战经验</li>
+<li><strong>善用 AI 工具</strong>：辅助理解概念、编写智能合约</li>
+</ol>
+<h2 id="阶段-1区块链基础10-25-天仅供参考">阶段 1：区块链基础（10-25 天，仅供参考）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-1区块链基础10-25-天仅供参考" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="学习目标">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>理解区块链的核心概念和工作原理。</p>
+<h3 id="知识点">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>区块链基础概念【必学】：</strong></p>
+<ul>
+<li>区块链的定义和特点</li>
+<li>分布式账本</li>
+<li>去中心化</li>
+<li>共识机制</li>
+<li>区块链的应用场景</li>
+</ul>
+<p><strong>区块链技术原理【必学】：</strong></p>
+<ul>
+<li>区块的结构</li>
+<li>链式结构</li>
+<li>Merkle 树</li>
+<li>工作量证明（PoW）</li>
+<li>权益证明（PoS）【建议学】</li>
+</ul>
+<p><strong>比特币【必学】：</strong></p>
+<ul>
+<li>比特币的原理</li>
+<li>UTXO 模型</li>
+<li>挖矿和奖励</li>
+</ul>
+<h3 id="学习建议">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>区块链通过密码学和共识算法实现数据的安全存储和不可篡改，核心特性是去中心化、不可篡改、可追溯</li>
+<li>比特币是区块链的第一个成功应用，理解其工作原理有助于理解区块链本质</li>
+<li>共识机制是区块链核心，保证分布式网络中数据一致性：PoW 用于比特币，PoS 用于以太坊 2.0</li>
+</ol>
+<h3 id="学习资源">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><a href="https://github.com/Eternaldeath/BlockchainHome" class="external external-link">区块链知识体系（BlockchainHome）<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：GitHub 开源</li>
+<li><a href="https://www.bilibili.com/video/BV1Vt411X7JF" class="external external-link">北京大学《区块链技术与应用》公开课<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：B 站</li>
+</ul>
+<h2 id="阶段-2密码学基础5-15-天仅供参考">阶段 2：密码学基础（5-15 天，仅供参考）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-2密码学基础5-15-天仅供参考" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="学习目标-1">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标-1" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>理解区块链中使用的密码学技术。</p>
+<h3 id="知识点-1">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-1" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>哈希函数【必学】：</strong></p>
+<ul>
+<li>哈希的特性</li>
+<li>SHA-256</li>
+<li>哈希在区块链中的应用</li>
+</ul>
+<p><strong>非对称加密【必学】：</strong></p>
+<ul>
+<li>公钥和私钥</li>
+<li>数字签名</li>
+<li>ECDSA（椭圆曲线数字签名算法）</li>
+</ul>
+<p><strong>Merkle 树【必学】：</strong></p>
+<ul>
+<li>Merkle 树的结构</li>
+<li>Merkle 证明</li>
+</ul>
+<h3 id="学习建议-1">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-1" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>密码学是区块链的基础：哈希函数保证数据不可篡改，非对称加密保证身份验证和数据安全</li>
+<li>私钥控制账户所有权，一旦泄露资产就会被盗且无法找回——私钥安全至关重要</li>
+<li>理解这些概念即可，不需要深入研究密码学的数学原理</li>
+</ol>
+<h3 id="学习资源-1">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-1" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><a href="https://www.bilibili.com/video/BV1RFsfe5Ek5" class="external external-link">Web3 教程：ERC20、NFT、Hardhat、CCIP 跨链<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：B 站</li>
+</ul>
+<h2 id="阶段-3以太坊基础10-20-天仅供参考">阶段 3：以太坊基础（10-20 天，仅供参考）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-3以太坊基础10-20-天仅供参考" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="学习目标-2">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标-2" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>理解以太坊的架构和核心概念。</p>
+<h3 id="知识点-2">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-2" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>以太坊基础【必学】：</strong></p>
+<ul>
+<li>以太坊的架构</li>
+<li>账户模型（EOA 和合约账户）</li>
+<li>Gas 和 Gas Price</li>
+<li>交易和区块</li>
+</ul>
+<p><strong>以太坊虚拟机（EVM）【必学】：</strong></p>
+<ul>
+<li>EVM 的工作原理</li>
+<li>字节码</li>
+<li>操作码【可不学】</li>
+</ul>
+<p><strong>以太坊网络【必学】：</strong></p>
+<ul>
+<li>主网（Mainnet）</li>
+<li>测试网（Sepolia、Goerli）</li>
+<li>本地网络（Ganache、Hardhat Network）</li>
+</ul>
+<p><strong>钱包【必学】：</strong></p>
+<ul>
+<li>MetaMask 钱包的使用</li>
+<li>账户的创建和管理</li>
+<li>交易的发送</li>
+</ul>
+<h3 id="学习建议-2">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-2" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>以太坊是最流行的智能合约平台，智能合约让区块链可以运行可编程代码，要重点学习</li>
+<li>Gas 是以太坊的交易费用，价格会波动，交易费可能很高，要理解 Gas 的计算和优化</li>
+<li>测试网可免费获取测试币，建议在测试网上练习，不要在主网上浪费真实的 ETH</li>
+<li><a href="https://metamask.io/zh-CN" class="external external-link">MetaMask<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> 是最流行的以太坊钱包，DApp 开发的必备工具，要熟练使用</li>
+</ol>
+<h3 id="学习资源-2">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-2" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><a href="https://ethereum.org/zh/developers/docs/" class="external external-link">以太坊开发者文档<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：官方文档</li>
+<li><a href="https://www.bilibili.com/video/BV1yHAneFEVc/" class="external external-link">2025 Web3 入门教程<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：区块链 + DApp + DeFi</li>
+</ul>
+<h2 id="阶段-4智能合约开发15-30-天仅供参考">阶段 4：智能合约开发（15-30 天，仅供参考）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-4智能合约开发15-30-天仅供参考" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>智能合约开发是区块链应用的核心，通过 Solidity 编写运行在区块链上的自动化合约程序。</p>
+<h3 id="学习目标-3">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标-3" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>掌握智能合约开发，能够使用 Solidity 编写智能合约。</p>
+<h3 id="知识点-3">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-3" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>Solidity 基础【必学】：</strong></p>
+<ul>
+<li>Solidity 语法</li>
+<li>数据类型、函数、修饰符</li>
+<li>继承和接口</li>
+<li>事件和错误处理</li>
+</ul>
+<p><strong>智能合约开发【必学】：</strong></p>
+<ul>
+<li>编写智能合约</li>
+<li>Remix IDE</li>
+<li>Hardhat / Foundry 开发框架【建议学】</li>
+</ul>
+<p><strong>智能合约安全【必学，重点】：</strong></p>
+<ul>
+<li>常见漏洞（重入攻击、整数溢出、权限控制）</li>
+<li>安全最佳实践</li>
+<li>OpenZeppelin 安全库</li>
+</ul>
+<p><strong>智能合约测试和部署【必学】：</strong></p>
+<ul>
+<li>单元测试</li>
+<li>部署到测试网</li>
+<li>合约验证</li>
+</ul>
+<h3 id="学习建议-3">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-3" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>Solidity 语法类似 JavaScript，学习曲线相对平缓，有编程基础很快就能上手</li>
+<li><strong>合约安全极其重要</strong>：历史上发生过多次合约漏洞导致的资金损失事件（The DAO 事件、各类 DeFi 协议被黑等）。务必学习安全知识，使用 OpenZeppelin 等安全库</li>
+<li>常见合约漏洞：
+<ul>
+<li>重入攻击：攻击者在函数执行完成前再次调用函数</li>
+<li>整数溢出/下溢：Solidity 0.8+ 默认检查溢出</li>
+<li>权限控制不当：任何人都能调用敏感函数</li>
+<li>随机数不安全：使用可预测的随机数</li>
+</ul>
+</li>
+</ol>
+<h3 id="学习资源-3">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-3" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>⭐ <a href="https://docs.soliditylang.org/" class="external external-link">Solidity 官方文档<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：最权威的学习资料</li>
+<li><a href="https://github.com/AmazingAng/WTF-Solidity" class="external external-link">WTF Solidity<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：Solidity 教程（GitHub）</li>
+</ul>
+<h2 id="阶段-5dapp-开发10-25-天仅供参考">阶段 5：DApp 开发（10-25 天，仅供参考）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-5dapp-开发10-25-天仅供参考" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>DApp 开发是构建去中心化应用的过程，结合智能合约和前端技术实现完整的区块链应用。</p>
+<h3 id="学习目标-4">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标-4" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>掌握 DApp 开发，能够开发去中心化应用。</p>
+<h3 id="知识点-4">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-4" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>Web3.js / ethers.js【必学】：</strong></p>
+<ul>
+<li>连接以太坊网络</li>
+<li>读取区块链数据</li>
+<li>调用智能合约</li>
+<li>发送交易</li>
+</ul>
+<p><strong>DApp 前端开发【必学】：</strong></p>
+<ul>
+<li>React / Vue + Web3</li>
+<li>钱包连接（MetaMask）</li>
+<li>合约交互</li>
+<li>交易签名</li>
+</ul>
+<p><strong>IPFS【建议学】：</strong></p>
+<ul>
+<li>去中心化存储</li>
+<li>IPFS 的使用</li>
+</ul>
+<h3 id="学习建议-4">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-4" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>DApp = 智能合约（后端）+ Web3 前端，前端通过 Web3.js 或 ethers.js 与合约交互</li>
+<li>ethers.js 和 web3.js 是两大主流以太坊 JavaScript 库，ethers.js 更轻量、更现代，建议优先学习</li>
+<li>DApp 前端与传统 Web 开发类似，主要区别是连接钱包、调用智能合约，要学习集成 MetaMask</li>
+<li><strong>前端安全</strong>：防止钓鱼网站、保护用户私钥、验证交易参数；用户签名交易时，要确保交易内容是预期的</li>
+</ol>
+<h3 id="学习资源-4">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-4" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>⭐ <a href="https://learnblockchain.cn/article/10152" class="external external-link">2025 Web3 开发学习路线<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：登链社区完整指南</li>
+<li><a href="https://github.com/xjh22222228/ethers-tutorial" class="external external-link">ethers.js 教程<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：快速入门（GitHub）</li>
+</ul>
+<h2 id="阶段-6项目实战20-60-天仅供参考">阶段 6：项目实战（20-60 天，仅供参考）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-6项目实战20-60-天仅供参考" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="学习目标-5">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标-5" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>通过实际项目巩固所学知识，积累区块链项目经验。</p>
+<h3 id="学习建议-5">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-5" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>从简单项目开始：如 ERC-20 代币、简单的 NFT 合约等，熟悉智能合约开发流程</li>
+<li>开发完整的 DApp：如去中心化投票、NFT 市场、简单 DeFi 协议，体验前后端全流程</li>
+<li>参加开源项目：GitHub 上有很多优秀区块链开源项目，可以学习其代码和架构</li>
+<li>关注安全：开发智能合约时一定要进行安全审计，用测试覆盖所有场景，避免漏洞</li>
+<li>安全提醒：
+<ul>
+<li>主网部署前，一定要在测试网充分测试</li>
+<li>考虑进行专业的智能合约安全审计</li>
+<li>了解常见的攻击模式和防御方法</li>
+<li>永远不要在代码中硬编码私钥</li>
+<li>使用多签钱包管理重要资产</li>
+</ul>
+</li>
+</ol>
+<h3 id="项目推荐">项目推荐<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#项目推荐" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>入门级项目：</strong></p>
+<ul>
+<li>ERC-20 代币合约</li>
+<li>简单 NFT（ERC-721）</li>
+<li>简单投票系统</li>
+<li>众筹合约</li>
+</ul>
+<p><strong>进阶级项目：</strong></p>
+<ul>
+<li>NFT 市场（OpenSea 克隆）</li>
+<li>去中心化交易所（DEX）</li>
+<li>DeFi 借贷协议</li>
+<li>DAO 治理系统</li>
+</ul>
+<p><strong>优质开源项目：</strong></p>
+<ul>
+<li>⭐ <a href="https://github.com/0xisk/awesome-solidity-projects" class="external external-link">Awesome Solidity Projects<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：Solidity 智能合约优秀项目索引</li>
+<li><a href="https://github.com/smartcontractkit/full-blockchain-solidity-course-js" class="external external-link">Full Blockchain Solidity Course<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：32k+ stars，从零到专家的完整课程</li>
+<li><a href="https://github.com/zubairahm3d/Beginner-Level-Solidity-Projects" class="external external-link">Beginner Solidity Projects<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：100 个适合初学者的以太坊合约项目</li>
+<li><a href="https://gist.github.com/adrianhajdin/5f6cc61fa04de7b8fa250eb295db62fd" class="external external-link">Web3 Blockchain App<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：现代 Web 3.0 区块链应用开发实战</li>
+</ul>
+<h3 id="学习资源-5">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-5" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><a href="https://blog.chain.link/how-to-build-a-dapp-zh/" class="external external-link">DApp 开发教程<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：Chainlink 博客，三步构建</li>
+<li><a href="https://github.com/Eternaldeath/BlockchainHome" class="external external-link">区块链 DApp 学习路线<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：可执行路线</li>
+</ul>
+<h2 id="阶段-7求职备战面试前-1-个月突击">阶段 7：求职备战（面试前 1 个月突击）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-7求职备战面试前-1-个月突击" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="学习目标-6">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标-6" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>熟练掌握区块链开发常见面试题，准备好简历和项目经历，顺利通过面试。</p>
+<h3 id="学习建议-6">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-6" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li><strong>打磨简历和项目</strong>：简历上一定要有区块链项目经历（开发过的智能合约、DApp 等）</li>
+<li><strong>准备项目经历</strong>：面试必问项目，要能清楚介绍项目的架构、使用的技术、合约的设计、安全措施等</li>
+</ol>
+<h3 id="经典面试题">经典面试题<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#经典面试题" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>区块链基础：</strong></p>
+<ol>
+<li>什么是区块链？有什么特点？</li>
+<li>区块链和数据库有什么区别？</li>
+<li>什么是共识机制？PoW 和 PoS 有什么区别？</li>
+<li>什么是分叉？硬分叉和软分叉有什么区别？</li>
+</ol>
+<p><strong>密码学：</strong></p>
+<ol>
+<li>什么是哈希函数？有什么特性？</li>
+<li>什么是非对称加密？公钥和私钥有什么作用？</li>
+<li>什么是数字签名？如何验证？</li>
+<li>什么是 Merkle 树？</li>
+</ol>
+<p><strong>以太坊：</strong></p>
+<ol>
+<li>以太坊和比特币有什么区别？</li>
+<li>什么是智能合约？</li>
+<li>什么是 Gas？为什么需要 Gas？</li>
+<li>EOA 和合约账户有什么区别？</li>
+</ol>
+<p><strong>智能合约：</strong></p>
+<ol>
+<li>Solidity 有什么特点？</li>
+<li>智能合约的常见漏洞有哪些？</li>
+<li>如何防止重入攻击？</li>
+<li>如何优化 Gas 消耗？</li>
+</ol>
+<h3 id="学习资源-6">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-6" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><a href="https://space.bilibili.com/3546383483144655" class="external external-link">面试题讲解视频<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：B 站面试题解析</li>
+</ul>
+<h2 id="持续学习资源">持续学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#持续学习资源" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="区块链资源">区块链资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#区块链资源" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><a href="https://ethereum.org/zh/" class="external external-link">以太坊官网<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：官方网站</li>
+<li><a href="https://learnblockchain.cn/" class="external external-link">登链社区<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：中文区块链社区</li>
+</ul>
+<h3 id="技术博客">技术博客<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#技术博客" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><a href="https://blog.ethereum.org/" class="external external-link">Ethereum Foundation Blog<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：以太坊基金会官方博客</li>
+<li><a href="https://consensys.io/blog" class="external external-link">ConsenSys Blog<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：区块链技术公司博客</li>
+<li><a href="https://www.coinbase.com/blog" class="external external-link">Coinbase Blog<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：Coinbase 技术博客</li>
+<li><a href="https://blockchain.berkeley.edu/" class="external external-link">Blockchain at Berkeley<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：伯克利区块链研究</li>
+</ul>
+<h2 id="写在最后">写在最后<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#写在最后" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>区块链正在深刻改变互联网的架构和商业模式，从 DeFi 到 NFT、从 DAO 到 GameFi，应用层出不穷。学习路径建议：先理解区块链原理和密码学基础，再学习以太坊和智能合约开发；重点掌握 Solidity 与合约安全；多做实战项目，在测试网上练习，积累区块链开发经验。</p>
+<p>再次提醒：区块链和加密货币领域存在较高的安全风险和法律风险。要注重安全意识，保护好私钥，<strong>不参加非法活动</strong>；智能合约一旦部署无法修改，要充分测试和审计；同时了解当地法律法规，确保合规开发。</p></div></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="toc"><button type="button" class="toc-header" aria-controls="toc-34" aria-expanded="true"><h3>目录</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-0" class="toc-content overflow"><li class="depth-0"><a href="#区块链开发学习路线" data-for="区块链开发学习路线">区块链开发学习路线</a></li><li class="depth-1"><a href="#开篇介绍" data-for="开篇介绍">开篇介绍</a></li><li class="depth-2"><a href="#学习前提" data-for="学习前提">学习前提</a></li><li class="depth-2"><a href="#就业方向" data-for="就业方向">就业方向</a></li><li class="depth-1"><a href="#整体学习建议" data-for="整体学习建议">整体学习建议</a></li><li class="depth-1"><a href="#阶段-1区块链基础10-25-天仅供参考" data-for="阶段-1区块链基础10-25-天仅供参考">阶段 1：区块链基础（10-25 天，仅供参考）</a></li><li class="depth-2"><a href="#学习目标" data-for="学习目标">学习目标</a></li><li class="depth-2"><a href="#知识点" data-for="知识点">知识点</a></li><li class="depth-2"><a href="#学习建议" data-for="学习建议">学习建议</a></li><li class="depth-2"><a href="#学习资源" data-for="学习资源">学习资源</a></li><li class="depth-1"><a href="#阶段-2密码学基础5-15-天仅供参考" data-for="阶段-2密码学基础5-15-天仅供参考">阶段 2：密码学基础（5-15 天，仅供参考）</a></li><li class="depth-2"><a href="#学习目标-1" data-for="学习目标-1">学习目标</a></li><li class="depth-2"><a href="#知识点-1" data-for="知识点-1">知识点</a></li><li class="depth-2"><a href="#学习建议-1" data-for="学习建议-1">学习建议</a></li><li class="depth-2"><a href="#学习资源-1" data-for="学习资源-1">学习资源</a></li><li class="depth-1"><a href="#阶段-3以太坊基础10-20-天仅供参考" data-for="阶段-3以太坊基础10-20-天仅供参考">阶段 3：以太坊基础（10-20 天，仅供参考）</a></li><li class="depth-2"><a href="#学习目标-2" data-for="学习目标-2">学习目标</a></li><li class="depth-2"><a href="#知识点-2" data-for="知识点-2">知识点</a></li><li class="depth-2"><a href="#学习建议-2" data-for="学习建议-2">学习建议</a></li><li class="depth-2"><a href="#学习资源-2" data-for="学习资源-2">学习资源</a></li><li class="depth-1"><a href="#阶段-4智能合约开发15-30-天仅供参考" data-for="阶段-4智能合约开发15-30-天仅供参考">阶段 4：智能合约开发（15-30 天，仅供参考）</a></li><li class="depth-2"><a href="#学习目标-3" data-for="学习目标-3">学习目标</a></li><li class="depth-2"><a href="#知识点-3" data-for="知识点-3">知识点</a></li><li class="depth-2"><a href="#学习建议-3" data-for="学习建议-3">学习建议</a></li><li class="depth-2"><a href="#学习资源-3" data-for="学习资源-3">学习资源</a></li><li class="depth-1"><a href="#阶段-5dapp-开发10-25-天仅供参考" data-for="阶段-5dapp-开发10-25-天仅供参考">阶段 5：DApp 开发（10-25 天，仅供参考）</a></li><li class="depth-2"><a href="#学习目标-4" data-for="学习目标-4">学习目标</a></li><li class="depth-2"><a href="#知识点-4" data-for="知识点-4">知识点</a></li><li class="depth-2"><a href="#学习建议-4" data-for="学习建议-4">学习建议</a></li><li class="depth-2"><a href="#学习资源-4" data-for="学习资源-4">学习资源</a></li><li class="depth-1"><a href="#阶段-6项目实战20-60-天仅供参考" data-for="阶段-6项目实战20-60-天仅供参考">阶段 6：项目实战（20-60 天，仅供参考）</a></li><li class="depth-2"><a href="#学习目标-5" data-for="学习目标-5">学习目标</a></li><li class="depth-2"><a href="#学习建议-5" data-for="学习建议-5">学习建议</a></li><li class="depth-2"><a href="#项目推荐" data-for="项目推荐">项目推荐</a></li><li class="depth-2"><a href="#学习资源-5" data-for="学习资源-5">学习资源</a></li><li class="depth-1"><a href="#阶段-7求职备战面试前-1-个月突击" data-for="阶段-7求职备战面试前-1-个月突击">阶段 7：求职备战（面试前 1 个月突击）</a></li><li class="depth-2"><a href="#学习目标-6" data-for="学习目标-6">学习目标</a></li><li class="depth-2"><a href="#学习建议-6" data-for="学习建议-6">学习建议</a></li><li class="depth-2"><a href="#经典面试题" data-for="经典面试题">经典面试题</a></li><li class="depth-2"><a href="#学习资源-6" data-for="学习资源-6">学习资源</a></li><li class="depth-1"><a href="#持续学习资源" data-for="持续学习资源">持续学习资源</a></li><li class="depth-2"><a href="#区块链资源" data-for="区块链资源">区块链资源</a></li><li class="depth-2"><a href="#技术博客" data-for="技术博客">技术博客</a></li><li class="depth-1"><a href="#写在最后" data-for="写在最后">写在最后</a></li><li class="overflow-end"></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v5.0.0</a> © 2026</p><ul><li><a href="https://github.com/xyf1111">GitHub</a></li></ul></footer></div></div></body><script src="../static/resource-after-e13fffa1.js" type="application/javascript" data-persist="true"></script><script src="../static/resource-after-8b336f9a.js" type="application/javascript" data-persist="true"></script><script src="../static/resource-after-baba652b.js" type="application/javascript" data-persist="true"></script><script src="../static/resource-after-5eb75950.js" type="module" data-persist="true"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript" data-persist="true"></script><script src="../postscript-17915799.js" type="module" data-persist="true"></script></html>

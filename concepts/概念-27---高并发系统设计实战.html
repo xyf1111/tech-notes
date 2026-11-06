@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr"><head><title>概念 27 - 高并发系统设计实战 · 后端开发笔记</title><meta charset="utf-8"/><link rel="preload" href="../index-b754f97d.css" as="style"/><link rel="preload" href="../prescript-2bfc6315.js" as="script"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="技术知识库"/><meta property="og:title" content="概念 27 - 高并发系统设计实战 · 后端开发笔记"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="概念 27 - 高并发系统设计实战 · 后端开发笔记"/><meta name="twitter:description" content="概念 27 - 高并发系统设计实战 作者在腾讯实习期间与导师二人用一周紧急上线一套百万级高并发系统（状态流转系统 + 查询系统），本文复盘其设计思路、技术选型与 13 个线上问题的完整排查过程，是「先写方案、再写代码、上线前充分评估风险」的高并发系统实战范本。 项目背景 背景：年前完成一期后项目效果显著，年后加急开发二期，目标一周上线。业务逻辑复杂、工期紧、人手缺、对接方多，与导师二人 007 爆肝完成。 系统模型如下（本文剥离业务，仅保留关键系统模型）： 状态流转系统：按逻辑修改数据库中某条数据的状态字段，修改成功后依据状态向其他业务侧发送通知 查询系统：从数据库查询数据，包含最基础的鉴权、..."/><meta property="og:description" content="概念 27 - 高并发系统设计实战 作者在腾讯实习期间与导师二人用一周紧急上线一套百万级高并发系统（状态流转系统 + 查询系统），本文复盘其设计思路、技术选型与 13 个线上问题的完整排查过程，是「先写方案、再写代码、上线前充分评估风险」的高并发系统实战范本。 项目背景 背景：年前完成一期后项目效果显著，年后加急开发二期，目标一周上线。业务逻辑复杂、工期紧、人手缺、对接方多，与导师二人 007 爆肝完成。 系统模型如下（本文剥离业务，仅保留关键系统模型）： 状态流转系统：按逻辑修改数据库中某条数据的状态字段，修改成功后依据状态向其他业务侧发送通知 查询系统：从数据库查询数据，包含最基础的鉴权、..."/><meta property="og:image:alt" content="概念 27 - 高并发系统设计实战 作者在腾讯实习期间与导师二人用一周紧急上线一套百万级高并发系统（状态流转系统 + 查询系统），本文复盘其设计思路、技术选型与 13 个线上问题的完整排查过程，是「先写方案、再写代码、上线前充分评估风险」的高并发系统实战范本。 项目背景 背景：年前完成一期后项目效果显著，年后加急开发二期，目标一周上线。业务逻辑复杂、工期紧、人手缺、对接方多，与导师二人 007 爆肝完成。 系统模型如下（本文剥离业务，仅保留关键系统模型）： 状态流转系统：按逻辑修改数据库中某条数据的状态字段，修改成功后依据状态向其他业务侧发送通知 查询系统：从数据库查询数据，包含最基础的鉴权、..."/><meta property="twitter:domain" content="xyf1111.github.io/tech-notes"/><meta property="og:url" content="https://xyf1111.github.io/tech-notes/concepts/概念-27---高并发系统设计实战"/><meta property="twitter:url" content="https://xyf1111.github.io/tech-notes/concepts/概念-27---高并发系统设计实战"/><link rel="icon" href="../static/icon.png"/><meta name="description" content="概念 27 - 高并发系统设计实战 作者在腾讯实习期间与导师二人用一周紧急上线一套百万级高并发系统（状态流转系统 + 查询系统），本文复盘其设计思路、技术选型与 13 个线上问题的完整排查过程，是「先写方案、再写代码、上线前充分评估风险」的高并发系统实战范本。 项目背景 背景：年前完成一期后项目效果显著，年后加急开发二期，目标一周上线。业务逻辑复杂、工期紧、人手缺、对接方多，与导师二人 007 爆肝完成。 系统模型如下（本文剥离业务，仅保留关键系统模型）： 状态流转系统：按逻辑修改数据库中某条数据的状态字段，修改成功后依据状态向其他业务侧发送通知 查询系统：从数据库查询数据，包含最基础的鉴权、..."/><meta name="generator" content="Quartz"/><link href="../index-b754f97d.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-735924e0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-589c1cea.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-bbc3f7c0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-2911f5d1.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-e427079e.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-53b25b2b.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-c93c6a44.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-8a06014f.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-77d6a441.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-6ee21cee.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-1ea6ad18.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-788c9ca3.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-642859cd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-4abc06bd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-274a3dfe.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-94cb6c84.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-58d5ff56.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-7262b5a7.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../static/resource-style-a5c806d2.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../static/resource-style-6bd36952.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" data-persist="true"/><script src="../prescript-2bfc6315.js" type="application/javascript" data-persist="true"></script><script type="application/javascript" data-persist="true">const fetchData = fetch("../static/contentIndex.json").then(data => data.json())</script><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://xyf1111.github.io/tech-notes/concepts/概念-27---高并发系统设计实战-og-image.webp"/><meta property="og:image:url" content="https://xyf1111.github.io/tech-notes/concepts/概念-27---高并发系统设计实战-og-image.webp"/><meta name="twitter:image" content="https://xyf1111.github.io/tech-notes/concepts/概念-27---高并发系统设计实战-og-image.webp"/><meta property="og:image:type" content="image/webp"/></head><body data-slug="concepts/概念-27---高并发系统设计实战" data-basepath="/tech-notes"><div id="quartz-root" class="page" data-frame="default"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="..">技术知识库</a></h2><div class="mobile-only"><div class="spacer"></div></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 0.5rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button" aria-label="搜索" aria-expanded="false"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>搜索</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="搜索内容..." placeholder="搜索内容..."/><div class="search-layout" data-preview="true" data-field-priority="[&quot;title&quot;,&quot;content&quot;,&quot;tags&quot;]"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode" aria-label="暗色模式"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="暗色模式"><title>暗色模式</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="亮色模式"><title>亮色模式</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode" aria-label="阅读模式"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="阅读模式"><title>阅读模式</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer nav-files-container" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a2, b2) => {\n    if (!a2.isFolder &amp;&amp; !b2.isFolder || a2.isFolder &amp;&amp; b2.isFolder) {\n      return (a2.displayName || \&quot;\&quot;).localeCompare(b2.displayName || \&quot;\&quot;, void 0, {\n        numeric: true,\n        sensitivity: \&quot;base\&quot;\n      });\n    }\n    if (!a2.isFolder &amp;&amp; b2.isFolder) {\n      return 1;\n    }\n    return -1;\n  }&quot;,&quot;filterFn&quot;:&quot;(node) => node.slugSegment !== \&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;(node) => {\n    return node;\n  }&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-63" aria-label="探索"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>探索</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-63" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#" class="nav-file-title tree-item-self"></a></li></template><template id="template-folder"><li><div class="folder-container nav-folder-title tree-item-self"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon nav-folder-collapse-indicator collapse-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content tree-item-children"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../concepts/">concepts</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>概念 27 - 高并发系统设计实战</a></div></nav><h1 class="article-title">概念 27 - 高并发系统设计实战</h1><details class="note-properties metadata-container" open data-collapsed="false"><summary class="note-properties-header"><span class="note-properties-title">Properties</span><span class="note-properties-count">1</span></summary><table class="note-properties-table"><tbody><tr class="note-properties-row metadata-property"><td class="note-properties-key metadata-property-key">tags</td><td class="note-properties-value metadata-property-value"><span class="note-properties-tags"><a href="../tags/高并发" class="internal internal-link tag-link">高并发</a><span class="note-properties-separator">, </span><a href="../tags/系统设计" class="internal internal-link tag-link">系统设计</a><span class="note-properties-separator">, </span><a href="../tags/实战" class="internal internal-link tag-link">实战</a><span class="note-properties-separator">, </span><a href="../tags/排错" class="internal internal-link tag-link">排错</a></span></td></tr></tbody></table></details><p show-comma="true" class="content-meta"><time datetime="2026-08-29T16:00:00.000Z">2026年8月30日</time><span>24分钟阅读</span></p></div></div><article class="popover-hint"><div class="markdown-preview-view markdown-rendered"><h1 id="概念-27---高并发系统设计实战">概念 27 - 高并发系统设计实战<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#概念-27---高并发系统设计实战" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<blockquote>
+<p>作者在腾讯实习期间与导师二人用一周紧急上线一套百万级高并发系统（状态流转系统 + 查询系统），本文复盘其设计思路、技术选型与 13 个线上问题的完整排查过程，是「先写方案、再写代码、上线前充分评估风险」的高并发系统实战范本。</p>
+</blockquote>
+<h2 id="项目背景">项目背景<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#项目背景" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<blockquote>
+<p>背景：年前完成一期后项目效果显著，年后加急开发二期，目标一周上线。业务逻辑复杂、工期紧、人手缺、对接方多，与导师二人 007 爆肝完成。</p>
+</blockquote>
+<p>系统模型如下（本文剥离业务，仅保留关键系统模型）：</p>
+<p><img src=".././image/img_高并发系统_1.png" alt="系统模型"/></p>
+<ul>
+<li><strong>状态流转系统</strong>：按逻辑修改数据库中某条数据的状态字段，修改成功后依据状态向其他业务侧发送通知</li>
+<li><strong>查询系统</strong>：从数据库查询数据，包含最基础的鉴权、查询等功能，是高<strong>扇入</strong>服务（被各业务侧调用）</li>
+</ul>
+<h3 id="系统难点">系统难点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#系统难点" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li><strong>高并发</strong>：聚合各业务侧请求量，评估产生百万量级高并发请求</li>
+<li><strong>兼容性</strong>：如何设计一套 API 满足各业务侧需求且易于理解</li>
+<li><strong>对接复杂</strong>：需同时与多个业务侧的同学沟通讨论接口</li>
+<li>状态流转系统业务逻辑复杂；系统间存在交互（互相发通知和调用），对<strong>时延、容错性、一致性</strong>要求很高</li>
+</ol>
+<h3 id="总体原则">总体原则<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#总体原则" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>写代码前<strong>先编写可行的技术方案</strong>：考虑各种场景、评估风险、工作量估时、记录问题，既梳理思路也提供说服力。复杂系统中，方案设计 : 实际编码 ≈ <strong>8 : 2</strong>（二八定理）</li>
+<li>设计遵循 <strong>“贴合业务”</strong>：没有最好的架构，只有最适合业务的架构，<strong>切忌过度设计</strong></li>
+<li>考虑项目紧急程度和人力成本，<strong>先保证可用，再追求极致</strong></li>
+</ul>
+<h2 id="设计思路与技术选型">设计思路与技术选型<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#设计思路与技术选型" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="1-高并发缓存--负载均衡">1. 高并发：缓存 + 负载均衡<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#1-高并发缓存--负载均衡" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>负载均衡本质是「加机器」，但目标是<strong>尽可能利用每台机器的资源抗住最大并发</strong>（省机器、节约成本）：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>层次</th><th>选型</th></tr></thead><tbody><tr><td>编程框架</td><td>轻量级 Restful 框架 Jersey + 轻量级依赖注入库 Guice</td></tr><tr><td>Web 服务器</td><td>高性能轻量级 NIO 服务器 Grizzly</td></tr><tr><td>缓存</td><td>腾讯自研海量分布式存储系统 CKV+（支持 Redis 协议，有数据监控平台）</td></tr><tr><td>数据库</td><td>分库分表（公司自研基础设施）</td></tr><tr><td>负载均衡</td><td>Nginx + L5 负载均衡（百万并发需增加十余台机器）</td></tr><tr><td>文件下载</td><td>CDN 及预热（支持高效文件下载服务）</td></tr></tbody></table></div>
+<p>其中<strong>缓存是抗住高并发流量的关键</strong>，须重点设计。</p>
+<h4 id="缓存方案">缓存方案<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#缓存方案" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ol>
+<li><strong>数据结构（Key）设计</strong>：按业务设计，保证 key 之间不冲突、便于查找。用「请求参数 + 接口唯一 id」拼接 key；分页查询接口可复用全量查询接口的缓存</li>
+<li><strong>缓存降级</strong>：找不到对应 key 或 redis 连接失败时，直接查库</li>
+<li><strong>缓存更新</strong>：数据库修改时删除对应缓存。因存在非必填请求参数，缓存 key 可能是模糊值（如参数 a、b，key 可能为 “a” 也可能为 “ab”）：
+<ul>
+<li>请求字段固定（全部必填）的接口：直接拼接唯一 key 删除</li>
+<li>请求字段不固定（存在非必填）的接口：用 redis <strong>scan 命令范围扫描</strong>（不要用 keys 命令！）或循环拼接出所有可能的 key 依次删除</li>
+</ul>
+</li>
+<li><strong>缓存穿透</strong>：无论查询结果列表是否为空都写入缓存；但业务会返回多种错误码时不建议这样做（复杂度高、成本大）</li>
+</ol>
+<h3 id="2-兼容性api-设计">2. 兼容性：API 设计<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#2-兼容性api-设计" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>接口需兼容多个业务侧，请求/响应参数要尽可能灵活，<strong>切忌一定要和所有业务侧对齐</strong>（一个字段设计不当可能导致满盘皆输）。三个技巧：</p>
+<ol>
+<li>提供<strong>可访问链接的接口文档</strong>（如腾讯文档/公司知识库），供调用方即时查阅</li>
+<li>请求参数不能过多且要易于理解，不能为强制兼容设置过于复杂的参数，必要时可<strong>针对某一业务侧定制接口</strong></li>
+<li>响应参数尽量多（多不是滥）：每次增加返回字段都要改代码，适当冗余的字段可避免此问题</li>
+</ol>
+<h3 id="3-消息通知消息队列解耦">3. 消息通知：消息队列解耦<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#3-消息通知消息队列解耦" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>状态流转时需通知其他业务侧、并让查询系统立即更新缓存，对消息<strong>实时性要求很高</strong>。两种方案对比：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>方案</th><th>优点</th><th>缺点</th></tr></thead><tbody><tr><td>各系统提供回调接口</td><td>保证实时性</td><td>系统间紧耦合，不利于扩展</td></tr><tr><td>消息队列</td><td>应用解耦、异步消息</td><td>—</td></tr></tbody></table></div>
+<p>最终选<strong>消息队列</strong>方案，采用腾讯自研 TubeMQ（万亿级分布式消息中间件，已开源 Apache 孵化），原因：</p>
+<ol>
+<li>通知数据之后可能存在其他消费方，消息队列利于扩展、对代码侵入性小</li>
+<li>消息队列可持久化消息</li>
+<li>TubeMQ 支持消费方负载均衡，性能高</li>
+<li>容量大，可存放万亿数量级消息</li>
+<li>公司自研组件，便于形成统一规范</li>
+</ol>
+<blockquote>
+<p>技术选型时不仅要关注当前业务需求，也要有一定的前沿视角。</p>
+</blockquote>
+<h3 id="4-风险评估">4. 风险评估<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#4-风险评估" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>选用中间件/框架前要尽可能多了解并评估风险（利用公司内部知识库或搜索）。例如评估 TubeMQ 时从<strong>消息可靠性、消息顺序性、消息重复、监控告警</strong>等角度分析，发现的风险：消费方消费状态改变消息失败时缓存未被及时更新，导致<strong>数据库与缓存数据不一致</strong>。从生产方和消费方两个角度设计可靠性方案：</p>
+<h4 id="生产方消息可靠性">生产方消息可靠性<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#生产方消息可靠性" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ol>
+<li>TubeMQ 保证消息一定送达，发送失败时自动重发</li>
+<li>发送结束触发回调，在回调中判断消息发送及确认状态，将发送失败的消息放入队列，<strong>下次发送优先从队列里取</strong></li>
+</ol>
+<h4 id="消费方消息可靠性和数据一致性">消费方消息可靠性和数据一致性<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#消费方消息可靠性和数据一致性" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ol>
+<li>消费失败时<strong>最多重试三次</strong></li>
+<li>重试后仍失败则记录日志，确保消息不丢失</li>
+<li>通过<strong>定时任务读取日志</strong>，尝试再次消费失败消息，并进行告警</li>
+</ol>
+<h2 id="开发过程小技巧">开发过程小技巧<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#开发过程小技巧" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ol>
+<li>同时开发多个项目时，每个项目一个独立 Git 分支，<strong>合并时分批合并</strong>，便于他人阅读提交记录</li>
+<li>给每个请求做打点数据上报（请求量、请求时间、失败请求数），便于监控统计</li>
+<li><strong>多记录日志</strong>，详细清晰的日志可快速定位故障</li>
+</ol>
+<h2 id="线上问题排查实战13-个">线上问题排查实战（13 个）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#线上问题排查实战13-个" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>很多问题本地开发时察觉不到，在测试及线上环境才会暴露。以下按「现象 → 排查思路 → 根因 → 解决方案」整理 13 个真实问题。</p>
+<h3 id="1-事务提交时报错">1. 事务提交时报错<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#1-事务提交时报错" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>现象</strong>：执行事务提交时抛出异常</li>
+<li><strong>排查思路</strong>：检查事务调用链</li>
+<li><strong>根因</strong>：事务中调用的函数里也开启了事务，<strong>事务套事务，破坏了隔离性</strong></li>
+<li><strong>解决方案</strong>：修改代码，保证事务隔离性</li>
+</ul>
+<h3 id="2-依赖包存在项目启动却报错">2. 依赖包存在，项目启动却报错<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#2-依赖包存在项目启动却报错" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>现象</strong>：依赖包明明存在，项目启动仍报错</li>
+<li><strong>排查思路</strong>：检查类加载来源</li>
+<li><strong>根因</strong>：存在<strong>多版本 jar 包</strong>，Java 代码使用反射机制动态生成类时，不知道使用哪个 jar 包里的类</li>
+<li><strong>解决方案</strong>：删掉多余版本的 jar 包</li>
+</ul>
+<h3 id="3-缓存未即时更新">3. 缓存未即时更新<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#3-缓存未即时更新" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>现象</strong>：数据库修改后缓存没有及时更新</li>
+<li><strong>排查思路</strong>：分析缓存更新链路耗时</li>
+<li><strong>根因</strong>：实际缓存 key 数量达<strong>千万级</strong>，更新缓存时用 scan 命令扫描效率过低，耗时长达 20 多秒</li>
+<li><strong>解决方案</strong>：不再使用 scan 命令，改为<strong>在业务代码中拼凑出所有可能的 keys 依次删除</strong></li>
+</ul>
+<h3 id="4-缓存仍未即时更新">4. 缓存仍未即时更新<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#4-缓存仍未即时更新" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>现象</strong>：改了方案后缓存仍未满足业务预期</li>
+<li><strong>排查思路</strong>：核对业务一致性要求</li>
+<li><strong>根因</strong>：某业务侧要求<strong>强一致性</strong>，缓存和数据库状态必须完全一致；而缓存即使毫秒级更新，也无法做到实时一致</li>
+<li><strong>解决方案</strong>：为该业务侧<strong>定制一个不查缓存、直接查数据库的接口</strong>，保证查到的数据一定是最新值</li>
+</ul>
+<h3 id="5-请求卡死">5. 请求卡死<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#5-请求卡死" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>现象</strong>：服务运行一段时间后，所有请求都被阻塞</li>
+<li><strong>排查思路</strong>：使用 <code>jstack</code> 打印线程信息，分析 thread_dump 文件</li>
+<li><strong>根因</strong>：缓存类库 <strong>Jedis 未手动释放连接</strong>，连接数耗尽，新请求线程不断等待 Jedis 连接释放导致卡死</li>
+<li><strong>解决方案</strong>：补充释放 Jedis 连接的代码</li>
+</ul>
+<h3 id="6-磁盘-io-占用超过-99">6. 磁盘 IO 占用超过 99%<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#6-磁盘-io-占用超过-99" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>现象</strong>：线上分析日志时突然告警，磁盘 IO 刷爆</li>
+<li><strong>排查思路</strong>：检查刚执行过的 IO 密集型操作</li>
+<li><strong>根因</strong>：误用 <code>cat</code> 命令查看未分割的原始日志文件，日志文件太大（几十 GB），直接刷爆磁盘 IO</li>
+<li><strong>解决方案</strong>：改用 <code>less</code>、<code>tail</code>、<code>head</code> 等命令代替 <code>cat</code>，并删除已备份的大日志文件</li>
+</ul>
+<h3 id="7-进程闪退">7. 进程闪退<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#7-进程闪退" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>现象</strong>：服务进程无故消失</li>
+<li><strong>排查思路</strong>：JVM 进程闪退通常有错误日志，但翻遍日志未找到，排查陷入绝境；只能祈祷问题不再复现</li>
+<li><strong>根因</strong>：后来经询问，是<strong>有人手动 kill 掉了该进程</strong>（非程序问题）</li>
+<li><strong>解决方案</strong>：无代码修复（未再复现）；后续优化中通过进程监控 + 自动重启兜底（见「后续优化」）</li>
+</ul>
+<h3 id="8-消息通知发送成功却没有预期的数据更新效果">8. 消息通知发送成功，却没有预期的数据更新效果<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#8-消息通知发送成功却没有预期的数据更新效果" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>现象</strong>：线上消息通知发送成功，但数据没更新</li>
+<li><strong>排查思路</strong>：<strong>先看消息是否被消费，再看对消息的处理是否正确</strong>——查看线上日志发现消息并未被消费；但查看监控界面，发现消息被<strong>测试环境的机器</strong>消费了</li>
+<li><strong>根因</strong>：测试环境和线上环境属于<strong>同一个消费组</strong>。消息到达时同一个消费组内只有一个消费者能成功消费，被测试环境机器消费掉，导致线上数据没更新</li>
+<li><strong>解决方案</strong>：上线前夜来不及申请新消费组，先下掉测试环境服务；第二天申请好消费组后<strong>按环境区分消费组</strong>，每个消费组独立消费消息，避免消息竞争</li>
+</ul>
+<h3 id="9-流量太大撑不住">9. 流量太大，撑不住<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#9-流量太大撑不住" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>现象</strong>：线上流量超过预期，服务扛不住</li>
+<li><strong>排查思路</strong>：评估机器资源与并发度</li>
+<li><strong>根因</strong>：机器不够</li>
+<li><strong>解决方案</strong>：紧急新申请 10 台机器，完成初始化配置并部署，增大并发度</li>
+</ul>
+<p>小技巧：多台机器做相同操作的两个快捷做法：</p>
+<ol>
+<li>利用 SSH 连接工具自带的<strong>并行操作功能</strong>，自动给所有机器键入命令（如 XShell）</li>
+<li>配置好一台机器后，用 <code>rsync</code> 命令<strong>同步配置</strong>至其他机器</li>
+</ol>
+<h3 id="10-上线前一天被告知接口设计有问题">10. 上线前一天被告知接口设计有问题<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#10-上线前一天被告知接口设计有问题" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>现象</strong>：上线前夜才发现接口设计与业务侧预期不符</li>
+<li><strong>排查思路</strong>：复盘接口对齐过程——部分同事业务繁忙，核对接口设计方案时没注意，忙完后反复追问</li>
+<li><strong>根因</strong>：<strong>沟通出现严重问题</strong>，接口方案未在方案阶段真正对齐</li>
+<li><strong>解决方案</strong>：紧急电话会议、拉群核对方案</li>
+</ul>
+<h3 id="11-线上出-bug">11. 线上出 bug<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#11-线上出-bug" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>现象</strong>：线上环境出现 bug，必须紧急响应</li>
+<li><strong>排查思路</strong>：按「截图/问题 → 请求 → 复现 → 数据 → 数据源 → 数据处理」路径排查（详见下文），三分钟成功修复</li>
+<li><strong>根因</strong>：<strong>测试环境和线上环境未必完全一致</strong>，测试环境未必能测出所有问题</li>
+<li><strong>解决方案</strong>：紧急定位修复；验证时使用<strong>预发布环境</strong>（数据用线上数据，但独立服务器，保证不影响线上）</li>
+</ul>
+<p><strong>排错路径详解</strong>（修复 bug 的核心技巧）：</p>
+<ol>
+<li>通常发现问题的是运维、用户或测试，他们会抛出问题或截图 → 快速定位问题对应的功能（请求/接口），让描述者尽可能多提供信息（请求参数、问题时间等）</li>
+<li>问题时间较久、看日志监控不易排查时，询问<strong>是否可以造一个可复现的 case</strong>，只需观察最新日志即可，方便排错</li>
+<li>定位到请求后，分析请求及响应中哪些数据异常（定位关键数据），再定位<strong>数据来源</strong>（数据库还是缓存），观察响应数据与真实数据源是否一致</li>
+<li>不一致则可能是业务逻辑中对数据的处理出了问题，进一步分析</li>
+</ol>
+<blockquote>
+<p>高效沟通建议：描述问题尽量<strong>用数据说话</strong>，给出截图的同时提供完整的数据、请求等信息，有助他人分析。</p>
+</blockquote>
+<h3 id="12-线上出现部分错误数据">12. 线上出现部分错误数据<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#12-线上出现部分错误数据" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>现象</strong>：线上部分数据错误（可预见的问题），邮件告警报告了错误数据信息，且错误数据量不大</li>
+<li><strong>排查思路</strong>：依据告警中的错误信息定位数据</li>
+<li><strong>根因</strong>：业务逻辑 bug 导致部分数据写入错误</li>
+<li><strong>解决方案</strong>：修复导致错误数据的 bug 后，<strong>编写程序循环所有错误信息并生成请求代码，手动执行请求刷新线上不同步数据</strong></li>
+</ul>
+<blockquote>
+<p>建议：设计时尽可能考虑到风险，按问题严重程度做<strong>分级报警策略</strong>（短信 > 邮件 > 通讯软件）。</p>
+</blockquote>
+<h3 id="13-线上机器-oom">13. 线上机器 OOM<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#13-线上机器-oom" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>现象</strong>：上线三天后发现部分线上机器堆内存溢出（OOM），服务不可用</li>
+<li><strong>排查思路</strong>：排查所用中间件的版本与已知问题</li>
+<li><strong>根因</strong>：使用的<strong>第三方中间件当前版本存在 bug</strong></li>
+<li><strong>解决方案</strong>：更换/升级到正确版本。教训：使用组件前要充分调研和风险评估，<strong>选择正确的版本</strong></li>
+</ul>
+<h2 id="血泪教训">血泪教训<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#血泪教训" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ol>
+<li>有问题<strong>尽可能在测试环境解决</strong>，否则线上出问题对心脏很不友好</li>
+<li><strong>不要盲目乐观</strong>，以为上线就没问题；要多验证、保持警惕</li>
+<li>使用第三方依赖时<strong>严格核对依赖版本号</strong>，确保稳定版本；老版本或版本不一致可能导致严重 bug</li>
+</ol>
+<h3 id="上线后改-bug-的完整流程hapy-流程">上线后改 bug 的完整流程（hapy 流程）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#上线后改-bug-的完整流程hapy-流程" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>例如发现 DB 服务的 bug 后，只需改 DB 服务一行代码，<strong>然而还要做</strong>：</p>
+<ol>
+<li>修改 DB 服务的一行代码</li>
+<li>跑单元测试</li>
+<li>DB 服务打成依赖包</li>
+<li>修改「状态流转系统」「查询系统」对 DB 服务的依赖包（改版本号 / 更新本地缓存拉取最新包）</li>
+<li>重新发布两个系统至测试环境</li>
+<li>可能还要交给测试同学回归测试</li>
+<li>测试通过，再次提交代码，发起 CR（代码审查）</li>
+<li>找同事或 Leader 读代码，通过 CR</li>
+<li>合并分支</li>
+<li>发布至线上环境，<strong>每发一台机器验证一次（滚动部署）</strong></li>
+<li><strong>再次发现新 bug</strong>（循环）</li>
+</ol>
+<blockquote>
+<p>在等待 CR、回归测试等步骤存在空余等待时间，可趁机做其他工作、记录工作内容和问题。</p>
+</blockquote>
+<h2 id="总结">总结<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#总结" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="项目各阶段耗时占比">项目各阶段耗时占比<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#项目各阶段耗时占比" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>阶段</th><th>占比</th></tr></thead><tbody><tr><td>理解需求</td><td>5%</td></tr><tr><td>开发</td><td>15%</td></tr><tr><td>沟通确认问题</td><td>30%</td></tr><tr><td>测试及验证</td><td>30%</td></tr><tr><td>上线及验证</td><td>20%</td></tr></tbody></table></div>
+<blockquote>
+<p>修复 bug 贯穿后面几个流程，约占<strong>总时间的 60%</strong>。</p>
+</blockquote>
+<h3 id="项目过程存在的问题">项目过程存在的问题<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#项目过程存在的问题" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>前期未参与需求评审，了解信息较少</li>
+<li>上线前一天晚上还在临时对齐接口——这是沟通方案阶段应确认好的</li>
+<li>约 80% 时间花在沟通、查询数据、提供数据及验证上</li>
+<li>自己没测试完就串测，导致同一个 bug 被多方发现、反复被 @，改 bug 效率低下</li>
+<li>对自研中间件不熟悉，花费时间成本较高</li>
+<li>全局观不够，不能提前预见可能的问题</li>
+<li>对中间件调研不够，最初未核对依赖版本号导致线上机器 OOM</li>
+</ol>
+<h3 id="做得好的地方可借鉴">做得好的地方（可借鉴）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#做得好的地方可借鉴" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>与测试同学配合紧密、互相体谅，测试效率较高</li>
+<li>为查询系统编写详细接口文档，上传至公司知识库供实时查阅</li>
+<li>最快 3 分钟紧急修复线上 bug；最快 30 分钟从接受需求到上线</li>
+<li>发现中间件问题时即时与对接方沟通，设计出对其无影响的低成本解决方案</li>
+<li>编写脚本高效修复部分错误数据</li>
+</ol>
+<h2 id="后续优化">后续优化<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#后续优化" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="1-引入配置中心">1. 引入配置中心<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#1-引入配置中心" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>现状</strong>：两个系统有部分相同配置，用复制粘贴同步——简单但易漏改（改了一个忘了另一个）</li>
+<li><strong>方案</strong>：引入配置中心集中管理多系统配置，支持手动修改、多环境、灰度、配置版本回退等功能</li>
+<li><strong>选型</strong>：阿里 Nacos 或携程 Apollo（提供界面管理配置）</li>
+</ul>
+<h3 id="2-进程闪退监控与自动重启">2. 进程闪退监控与自动重启<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#2-进程闪退监控与自动重启" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>无法保证进程不闪退，但可<strong>实时监控并自动重启闪退进程</strong>：</p>
+<ol>
+<li>使用工具：<code>supervisor</code> 或 <code>monit</code>，管理进程并支持闪退重启</li>
+<li>编写 shell 脚本 + 定时任务，周期性观察进程状态并重启；定时任务很多时，建议<strong>接入分布式任务调度平台</strong>（可视化管理和方便控制调度）</li>
+</ol>
+<h3 id="3-消息队列可靠性保障">3. 消息队列可靠性保障<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#3-消息队列可靠性保障" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li><strong>消息重传机制</strong>：设计重传队列，再次发送时优先取重传队列中的消息；但要避免队列无限重传，<strong>给每条消息设置重传次数阈值</strong></li>
+<li><strong>邮件告警</strong>：消息重传次数超过阈值时直接发送邮件告警，不再将该消息入队</li>
+</ol>
+<hr/>
+<p>相关阅读：<a href="../devops/devops-09---本地运行正常上线出-bug-的原因与预防" class="internal internal-link alias" data-slug="devops/devops-09---本地运行正常上线出-bug-的原因与预防">DevOps 09 - 本地运行正常上线出 Bug 的原因与预防</a>（上线排错原因分类清单）、<a href="../devops/后端系统设计-01---学习路线" class="internal internal-link alias" data-slug="devops/后端系统设计-01---学习路线">后端系统设计 01 - 学习路线</a></p>
+<blockquote>
+<p>来源：鱼皮·编程导航 / codefather</p>
+</blockquote></div></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="toc"><button type="button" class="toc-header" aria-controls="toc-63" aria-expanded="true"><h3>目录</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-0" class="toc-content overflow"><li class="depth-0"><a href="#概念-27---高并发系统设计实战" data-for="概念-27---高并发系统设计实战">概念 27 - 高并发系统设计实战</a></li><li class="depth-1"><a href="#项目背景" data-for="项目背景">项目背景</a></li><li class="depth-2"><a href="#系统难点" data-for="系统难点">系统难点</a></li><li class="depth-2"><a href="#总体原则" data-for="总体原则">总体原则</a></li><li class="depth-1"><a href="#设计思路与技术选型" data-for="设计思路与技术选型">设计思路与技术选型</a></li><li class="depth-2"><a href="#1-高并发缓存--负载均衡" data-for="1-高并发缓存--负载均衡">1. 高并发：缓存 + 负载均衡</a></li><li class="depth-2"><a href="#2-兼容性api-设计" data-for="2-兼容性api-设计">2. 兼容性：API 设计</a></li><li class="depth-2"><a href="#3-消息通知消息队列解耦" data-for="3-消息通知消息队列解耦">3. 消息通知：消息队列解耦</a></li><li class="depth-2"><a href="#4-风险评估" data-for="4-风险评估">4. 风险评估</a></li><li class="depth-1"><a href="#开发过程小技巧" data-for="开发过程小技巧">开发过程小技巧</a></li><li class="depth-1"><a href="#线上问题排查实战13-个" data-for="线上问题排查实战13-个">线上问题排查实战（13 个）</a></li><li class="depth-2"><a href="#1-事务提交时报错" data-for="1-事务提交时报错">1. 事务提交时报错</a></li><li class="depth-2"><a href="#2-依赖包存在项目启动却报错" data-for="2-依赖包存在项目启动却报错">2. 依赖包存在，项目启动却报错</a></li><li class="depth-2"><a href="#3-缓存未即时更新" data-for="3-缓存未即时更新">3. 缓存未即时更新</a></li><li class="depth-2"><a href="#4-缓存仍未即时更新" data-for="4-缓存仍未即时更新">4. 缓存仍未即时更新</a></li><li class="depth-2"><a href="#5-请求卡死" data-for="5-请求卡死">5. 请求卡死</a></li><li class="depth-2"><a href="#6-磁盘-io-占用超过-99" data-for="6-磁盘-io-占用超过-99">6. 磁盘 IO 占用超过 99%</a></li><li class="depth-2"><a href="#7-进程闪退" data-for="7-进程闪退">7. 进程闪退</a></li><li class="depth-2"><a href="#8-消息通知发送成功却没有预期的数据更新效果" data-for="8-消息通知发送成功却没有预期的数据更新效果">8. 消息通知发送成功，却没有预期的数据更新效果</a></li><li class="depth-2"><a href="#9-流量太大撑不住" data-for="9-流量太大撑不住">9. 流量太大，撑不住</a></li><li class="depth-2"><a href="#10-上线前一天被告知接口设计有问题" data-for="10-上线前一天被告知接口设计有问题">10. 上线前一天被告知接口设计有问题</a></li><li class="depth-2"><a href="#11-线上出-bug" data-for="11-线上出-bug">11. 线上出 bug</a></li><li class="depth-2"><a href="#12-线上出现部分错误数据" data-for="12-线上出现部分错误数据">12. 线上出现部分错误数据</a></li><li class="depth-2"><a href="#13-线上机器-oom" data-for="13-线上机器-oom">13. 线上机器 OOM</a></li><li class="depth-1"><a href="#血泪教训" data-for="血泪教训">血泪教训</a></li><li class="depth-2"><a href="#上线后改-bug-的完整流程hapy-流程" data-for="上线后改-bug-的完整流程hapy-流程">上线后改 bug 的完整流程（hapy 流程）</a></li><li class="depth-1"><a href="#总结" data-for="总结">总结</a></li><li class="depth-2"><a href="#项目各阶段耗时占比" data-for="项目各阶段耗时占比">项目各阶段耗时占比</a></li><li class="depth-2"><a href="#项目过程存在的问题" data-for="项目过程存在的问题">项目过程存在的问题</a></li><li class="depth-2"><a href="#做得好的地方可借鉴" data-for="做得好的地方可借鉴">做得好的地方（可借鉴）</a></li><li class="depth-1"><a href="#后续优化" data-for="后续优化">后续优化</a></li><li class="depth-2"><a href="#1-引入配置中心" data-for="1-引入配置中心">1. 引入配置中心</a></li><li class="depth-2"><a href="#2-进程闪退监控与自动重启" data-for="2-进程闪退监控与自动重启">2. 进程闪退监控与自动重启</a></li><li class="depth-2"><a href="#3-消息队列可靠性保障" data-for="3-消息队列可靠性保障">3. 消息队列可靠性保障</a></li><li class="overflow-end"></li></ul></div><div class="backlinks"><h3>反向链接</h3><ul id="list-0" class="overflow"><li><a href="../concepts/概念-17---先设计再编码（详细设计）" class="internal">概念 17 - 先设计再编码（详细设计）</a></li><li><a href="../concepts/概念-29---系统稳定性设计（风险点与防御性方法）" class="internal">概念 29 - 系统稳定性设计（风险点与防御性方法）</a></li><li><a href="../concepts/概念-31---架构设计入门（方法与经典架构）" class="internal">概念 31 - 架构设计入门（方法与经典架构）</a></li><li><a href="../concepts/概念-33---背压（反向压力）" class="internal">概念 33 - 背压（反向压力）</a></li><li><a href="../concepts/概念-34---热数据探测（热-key）" class="internal">概念 34 - 热数据探测（热 key）</a></li><li><a href="../java/多线程/java-51---并发编程学什么（学习框架）" class="internal">Java 51 - 并发编程学什么（学习框架）</a></li><li><a href="../java/路线/java-47---java-学习资源与项目汇总" class="internal">Java 47 - Java 学习资源与项目汇总</a></li><li class="overflow-end"></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v5.0.0</a> © 2026</p><ul><li><a href="https://github.com/xyf1111">GitHub</a></li></ul></footer></div></div></body><script src="../static/resource-after-e13fffa1.js" type="application/javascript" data-persist="true"></script><script src="../static/resource-after-8b336f9a.js" type="application/javascript" data-persist="true"></script><script src="../static/resource-after-baba652b.js" type="application/javascript" data-persist="true"></script><script src="../static/resource-after-5eb75950.js" type="module" data-persist="true"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript" data-persist="true"></script><script src="../postscript-17915799.js" type="module" data-persist="true"></script></html>

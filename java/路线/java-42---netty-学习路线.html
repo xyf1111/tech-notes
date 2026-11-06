@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr"><head><title>Java 42 - Netty 学习路线 · 后端开发笔记</title><meta charset="utf-8"/><link rel="preload" href="../../index-b754f97d.css" as="style"/><link rel="preload" href="../../prescript-2bfc6315.js" as="script"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="技术知识库"/><meta property="og:title" content="Java 42 - Netty 学习路线 · 后端开发笔记"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Java 42 - Netty 学习路线 · 后端开发笔记"/><meta name="twitter:description" content="Java 42 - Netty 学习路线 Netty 是基于 Java NIO 的异步事件驱动网络应用框架，用于快速开发高性能、高可靠性的网络服务器和客户端。本文梳理从 Java NIO 基础到实战应用、求职备战的完整学习路线，共 6 个阶段。 开篇介绍 Netty 是目前最流行的 Java 网络编程框架，被广泛应用于分布式系统、微服务、游戏服务器、即时通讯、RPC 框架等领域。核心优势： 高性能：基于 NIO 的零拷贝、内存池等技术 高可靠：成熟的断线重连、心跳检测等机制 易用性：简洁的 API 设计 Dubbo、RocketMQ、Elasticsearch、Spark 等知名框架和中间件均..."/><meta property="og:description" content="Java 42 - Netty 学习路线 Netty 是基于 Java NIO 的异步事件驱动网络应用框架，用于快速开发高性能、高可靠性的网络服务器和客户端。本文梳理从 Java NIO 基础到实战应用、求职备战的完整学习路线，共 6 个阶段。 开篇介绍 Netty 是目前最流行的 Java 网络编程框架，被广泛应用于分布式系统、微服务、游戏服务器、即时通讯、RPC 框架等领域。核心优势： 高性能：基于 NIO 的零拷贝、内存池等技术 高可靠：成熟的断线重连、心跳检测等机制 易用性：简洁的 API 设计 Dubbo、RocketMQ、Elasticsearch、Spark 等知名框架和中间件均..."/><meta property="og:image:alt" content="Java 42 - Netty 学习路线 Netty 是基于 Java NIO 的异步事件驱动网络应用框架，用于快速开发高性能、高可靠性的网络服务器和客户端。本文梳理从 Java NIO 基础到实战应用、求职备战的完整学习路线，共 6 个阶段。 开篇介绍 Netty 是目前最流行的 Java 网络编程框架，被广泛应用于分布式系统、微服务、游戏服务器、即时通讯、RPC 框架等领域。核心优势： 高性能：基于 NIO 的零拷贝、内存池等技术 高可靠：成熟的断线重连、心跳检测等机制 易用性：简洁的 API 设计 Dubbo、RocketMQ、Elasticsearch、Spark 等知名框架和中间件均..."/><meta property="twitter:domain" content="xyf1111.github.io/tech-notes"/><meta property="og:url" content="https://xyf1111.github.io/tech-notes/java/路线/java-42---netty-学习路线"/><meta property="twitter:url" content="https://xyf1111.github.io/tech-notes/java/路线/java-42---netty-学习路线"/><link rel="icon" href="../../static/icon.png"/><meta name="description" content="Java 42 - Netty 学习路线 Netty 是基于 Java NIO 的异步事件驱动网络应用框架，用于快速开发高性能、高可靠性的网络服务器和客户端。本文梳理从 Java NIO 基础到实战应用、求职备战的完整学习路线，共 6 个阶段。 开篇介绍 Netty 是目前最流行的 Java 网络编程框架，被广泛应用于分布式系统、微服务、游戏服务器、即时通讯、RPC 框架等领域。核心优势： 高性能：基于 NIO 的零拷贝、内存池等技术 高可靠：成熟的断线重连、心跳检测等机制 易用性：简洁的 API 设计 Dubbo、RocketMQ、Elasticsearch、Spark 等知名框架和中间件均..."/><meta name="generator" content="Quartz"/><link href="../../index-b754f97d.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-735924e0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-589c1cea.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-bbc3f7c0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-2911f5d1.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-e427079e.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-53b25b2b.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-c93c6a44.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-8a06014f.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-77d6a441.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-6ee21cee.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-1ea6ad18.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-788c9ca3.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-642859cd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-4abc06bd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-274a3dfe.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-94cb6c84.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-58d5ff56.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-7262b5a7.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../static/resource-style-a5c806d2.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../static/resource-style-6bd36952.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" data-persist="true"/><script src="../../prescript-2bfc6315.js" type="application/javascript" data-persist="true"></script><script type="application/javascript" data-persist="true">const fetchData = fetch("../../static/contentIndex.json").then(data => data.json())</script><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://xyf1111.github.io/tech-notes/java/路线/java-42---netty-学习路线-og-image.webp"/><meta property="og:image:url" content="https://xyf1111.github.io/tech-notes/java/路线/java-42---netty-学习路线-og-image.webp"/><meta name="twitter:image" content="https://xyf1111.github.io/tech-notes/java/路线/java-42---netty-学习路线-og-image.webp"/><meta property="og:image:type" content="image/webp"/></head><body data-slug="java/路线/java-42---netty-学习路线" data-basepath="/tech-notes"><div id="quartz-root" class="page" data-frame="default"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="../..">技术知识库</a></h2><div class="mobile-only"><div class="spacer"></div></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 0.5rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button" aria-label="搜索" aria-expanded="false"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>搜索</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="搜索内容..." placeholder="搜索内容..."/><div class="search-layout" data-preview="true" data-field-priority="[&quot;title&quot;,&quot;content&quot;,&quot;tags&quot;]"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode" aria-label="暗色模式"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="暗色模式"><title>暗色模式</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="亮色模式"><title>亮色模式</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode" aria-label="阅读模式"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="阅读模式"><title>阅读模式</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer nav-files-container" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a2, b2) => {\n    if (!a2.isFolder &amp;&amp; !b2.isFolder || a2.isFolder &amp;&amp; b2.isFolder) {\n      return (a2.displayName || \&quot;\&quot;).localeCompare(b2.displayName || \&quot;\&quot;, void 0, {\n        numeric: true,\n        sensitivity: \&quot;base\&quot;\n      });\n    }\n    if (!a2.isFolder &amp;&amp; b2.isFolder) {\n      return 1;\n    }\n    return -1;\n  }&quot;,&quot;filterFn&quot;:&quot;(node) => node.slugSegment !== \&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;(node) => {\n    return node;\n  }&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-292" aria-label="探索"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>探索</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-292" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#" class="nav-file-title tree-item-self"></a></li></template><template id="template-folder"><li><div class="folder-container nav-folder-title tree-item-self"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon nav-folder-collapse-indicator collapse-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content tree-item-children"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../java/">java</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../java/路线/">路线</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Java 42 - Netty 学习路线</a></div></nav><h1 class="article-title">Java 42 - Netty 学习路线</h1><details class="note-properties metadata-container" open data-collapsed="false"><summary class="note-properties-header"><span class="note-properties-title">Properties</span><span class="note-properties-count">1</span></summary><table class="note-properties-table"><tbody><tr class="note-properties-row metadata-property"><td class="note-properties-key metadata-property-key">tags</td><td class="note-properties-value metadata-property-value"><span class="note-properties-tags"><a href="../../tags/netty" class="internal internal-link tag-link">netty</a><span class="note-properties-separator">, </span><a href="../../tags/java" class="internal internal-link tag-link">java</a><span class="note-properties-separator">, </span><a href="../../tags/网络编程" class="internal internal-link tag-link">网络编程</a><span class="note-properties-separator">, </span><a href="../../tags/学习路线" class="internal internal-link tag-link">学习路线</a></span></td></tr></tbody></table></details><p show-comma="true" class="content-meta"><time datetime="2026-07-30T16:00:00.000Z">2026年7月31日</time><span>14分钟阅读</span></p></div></div><article class="popover-hint"><div class="markdown-preview-view markdown-rendered"><h1 id="java-42---netty-学习路线">Java 42 - Netty 学习路线<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#java-42---netty-学习路线" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<blockquote>
+<p>Netty 是基于 Java NIO 的异步事件驱动网络应用框架，用于快速开发高性能、高可靠性的网络服务器和客户端。本文梳理从 Java NIO 基础到实战应用、求职备战的完整学习路线，共 6 个阶段。</p>
+</blockquote>
+<h2 id="开篇介绍">开篇介绍<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#开篇介绍" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Netty 是目前最流行的 Java 网络编程框架，被广泛应用于分布式系统、微服务、游戏服务器、即时通讯、RPC 框架等领域。核心优势：</p>
+<ul>
+<li><strong>高性能</strong>：基于 NIO 的零拷贝、内存池等技术</li>
+<li><strong>高可靠</strong>：成熟的断线重连、心跳检测等机制</li>
+<li><strong>易用性</strong>：简洁的 API 设计</li>
+</ul>
+<p>Dubbo、RocketMQ、Elasticsearch、Spark 等知名框架和中间件均以 Netty 作为底层网络通信组件。Netty 是 Java 网络编程的必备技能，掌握它不仅能开发高性能网络应用，还能理解很多开源框架的底层实现，相关岗位薪资普遍较高（一线城市 Java 高级工程师平均 25-50K）。</p>
+<p><strong>核心组件</strong>：Channel（网络通道）、EventLoop（事件循环）、ChannelHandler（处理器）、Pipeline（处理器链）、ByteBuf（字节缓冲区）。Netty 基于 Reactor 模式设计，通过事件驱动的方式处理网络 I/O，实现高性能和高并发。</p>
+<p>Java 网络编程领域还有 Vert.x、Mina 等框架，但 Netty 是目前最流行、生态最完善的，建议重点学习。</p>
+<h3 id="学习前提">学习前提<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习前提" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li><strong>Java 基础</strong>：熟练掌握 Java 编程、多线程（必学）</li>
+<li><strong>Java NIO</strong>：理解 NIO 的基本概念（Channel、Buffer、Selector）（必学）</li>
+<li><strong>网络协议</strong>：理解 TCP/IP、HTTP 等协议（建议）</li>
+<li><strong>设计模式</strong>：理解 Reactor 模式（建议）</li>
+</ol>
+<h3 id="就业方向">就业方向<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#就业方向" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>Java 高级工程师：使用 Netty 开发高性能网络应用</li>
+<li>中间件开发工程师：开发 RPC 框架、消息队列等中间件</li>
+<li>游戏服务器开发工程师：使用 Netty 开发游戏服务器</li>
+<li>即时通讯开发工程师：使用 Netty 开发 IM 系统</li>
+</ol>
+<h2 id="整体学习建议">整体学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#整体学习建议" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ol>
+<li><strong>先学 Java NIO</strong>：Netty 基于 Java NIO，先理解 Channel、Buffer、Selector 三大核心概念及非阻塞 I/O 模型和 Reactor 模式</li>
+<li><strong>理论结合实践</strong>：Netty 概念较多，建议边学边写代码，通过实际案例理解</li>
+<li><strong>多读源码</strong>：掌握基本使用后阅读 Netty 核心源码，学习设计思想与编程技巧</li>
+<li><strong>多做实战项目</strong>：尝试开发聊天室、RPC 框架、HTTP 服务器等项目，积累实战经验</li>
+<li><strong>善用 AI 工具</strong>：辅助理解概念、调试代码</li>
+</ol>
+<h2 id="阶段总览">阶段总览<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段总览" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>阶段</th><th>内容</th><th>建议时长</th></tr></thead><tbody><tr><td>阶段 1</td><td>Java NIO 基础</td><td>15-20 天</td></tr><tr><td>阶段 2</td><td>Netty 基础</td><td>15-20 天</td></tr><tr><td>阶段 3</td><td>Netty 核心组件</td><td>15-20 天</td></tr><tr><td>阶段 4</td><td>编解码器</td><td>10-15 天</td></tr><tr><td>阶段 5</td><td>实战应用</td><td>20-30 天</td></tr><tr><td>阶段 6</td><td>求职备战</td><td>面试前 1 个月突击</td></tr></tbody></table></div>
+<hr/>
+<h2 id="阶段-1java-nio-基础15-20-天">阶段 1：Java NIO 基础（15-20 天）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-1java-nio-基础15-20-天" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="学习目标">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>理解 Java NIO 的核心概念，掌握 NIO 的基本使用。</p>
+<h3 id="知识点">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>NIO 核心概念（必学）</strong></p>
+<ul>
+<li>NIO 和 BIO 的区别</li>
+<li>Channel（通道）、Buffer（缓冲区）、Selector（选择器）</li>
+<li>非阻塞 I/O</li>
+</ul>
+<p><strong>Buffer（必学）</strong></p>
+<ul>
+<li>Buffer 的基本操作（put、get、flip、clear）</li>
+<li>ByteBuffer、CharBuffer 等</li>
+<li>直接缓冲区和非直接缓冲区</li>
+</ul>
+<p><strong>Channel（必学）</strong></p>
+<ul>
+<li>FileChannel、SocketChannel</li>
+<li>ServerSocketChannel、DatagramChannel</li>
+</ul>
+<p><strong>Selector（必学）</strong></p>
+<ul>
+<li>Selector 的作用、SelectionKey</li>
+<li>Selector 的使用</li>
+</ul>
+<p><strong>NIO 编程模型（必学）</strong></p>
+<ul>
+<li>Reactor 模式</li>
+<li>单线程 Reactor、多线程 Reactor、主从 Reactor</li>
+</ul>
+<h3 id="学习建议">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>NIO 是非阻塞 I/O，基于 Channel 和 Buffer 传输数据，一个线程可处理多个连接，相比 BIO 性能更好</li>
+<li>理解 Buffer 的 position、limit、capacity 三个指针的含义及 flip、clear 等操作</li>
+<li>Selector 可监听多个 Channel 的事件（连接、读、写），一个 Selector 可管理成千上万个连接</li>
+<li>Netty 基于 Reactor 模式实现，理解 Reactor 模式对学习 Netty 非常重要</li>
+</ol>
+<h3 id="学习资源">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>⭐ <a href="https://developer.aliyun.com/article/1290289" class="external external-link">Netty 入门到超神 - Java NIO<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：NIO 三大核心</li>
+<li><a href="https://developer.aliyun.com/article/1290279" class="external external-link">Java NIO 零拷贝实战<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：深入理解</li>
+</ul>
+<hr/>
+<h2 id="阶段-2netty-基础15-20-天">阶段 2：Netty 基础（15-20 天）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-2netty-基础15-20-天" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="学习目标-1">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标-1" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>理解 Netty 的核心概念，掌握 Netty 的基本使用。</p>
+<h3 id="知识点-1">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-1" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>Netty 简介（必学）</strong></p>
+<ul>
+<li>Netty 的特点和优势</li>
+<li>Netty 和 Java NIO 的关系</li>
+<li>Netty 的应用场景</li>
+</ul>
+<p><strong>Netty 核心组件（必学）</strong></p>
+<ul>
+<li>Channel（通道）、EventLoop（事件循环）</li>
+<li>ChannelHandler（处理器）、Pipeline（处理器链）</li>
+<li>ChannelFuture（异步结果）</li>
+</ul>
+<p><strong>Netty 线程模型（必学）</strong></p>
+<ul>
+<li>Boss Group 和 Worker Group</li>
+<li>EventLoopGroup</li>
+<li>Netty 的 Reactor 模式实现</li>
+</ul>
+<p><strong>第一个 Netty 程序（必学）</strong></p>
+<ul>
+<li>Netty 服务端开发、客户端开发</li>
+<li>简单的 Echo 程序</li>
+</ul>
+<h3 id="学习重点">学习重点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习重点" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>Channel 是网络通道，EventLoop 是事件循环，负责处理 Channel 的 I/O 事件，一个 EventLoop 可处理多个 Channel</li>
+<li>ChannelHandler 是业务处理器，Pipeline 是处理器链，数据在 Pipeline 中流经多个 Handler 处理，类似责任链模式</li>
+<li>Netty 使用主从 Reactor 模式：Boss Group 负责接收连接，Worker Group 负责处理 I/O，可充分利用多核 CPU 实现高并发</li>
+<li>Netty 的 API 设计优雅，支持链式调用配置服务器，建议先跑通一个简单的 Echo 程序</li>
+</ol>
+<hr/>
+<h2 id="阶段-3netty-核心组件15-20-天">阶段 3：Netty 核心组件（15-20 天）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-3netty-核心组件15-20-天" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="学习目标-2">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标-2" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>深入理解 Netty 的核心组件，掌握各种 Handler 的使用。</p>
+<h3 id="知识点-2">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-2" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>ChannelHandler（必学）</strong></p>
+<ul>
+<li>ChannelInboundHandler（入站处理器）、ChannelOutboundHandler（出站处理器）</li>
+<li>SimpleChannelInboundHandler、ChannelHandlerAdapter</li>
+</ul>
+<p><strong>ByteBuf（必学）</strong></p>
+<ul>
+<li>ByteBuf 的基本操作、读写指针</li>
+<li>内存管理（堆内存、直接内存、内存池）</li>
+<li>ByteBuf 和 ByteBuffer 的区别</li>
+</ul>
+<p><strong>ChannelPipeline（必学）</strong></p>
+<ul>
+<li>Pipeline 的结构</li>
+<li>Handler 的添加和移除</li>
+<li>入站和出站的顺序</li>
+</ul>
+<p><strong>ChannelFuture（必学）</strong></p>
+<ul>
+<li>异步编程模型、ChannelFuture 的使用</li>
+<li>监听器（Listener）</li>
+</ul>
+<p><strong>Netty 的零拷贝（建议学）</strong></p>
+<ul>
+<li>零拷贝的原理</li>
+<li>Netty 的零拷贝实现</li>
+</ul>
+<h3 id="学习建议-1">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-1" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>ChannelHandler 是 Netty 的核心，所有业务逻辑都在 Handler 中实现，入站 Handler 处理读事件、出站 Handler 处理写事件，要理解入站和出站的概念</li>
+<li>ByteBuf 有读指针和写指针，无需 flip 操作，更易用，且支持内存池和引用计数，比 JDK 的 ByteBuffer 更强大</li>
+<li>Pipeline 是 Handler 的链表：入站数据从头到尾经过入站 Handler，出站数据从尾到头经过出站 Handler，要理解执行顺序</li>
+<li>Netty 大部分操作是异步的，ChannelFuture 表示异步操作的结果，可通过监听器在操作完成时执行回调</li>
+</ol>
+<h3 id="学习资源-1">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-1" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=qxfH-G3U4dQ" class="external external-link">Netty 核心组件教程<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：视频讲解</li>
+</ul>
+<hr/>
+<h2 id="阶段-4编解码器10-15-天">阶段 4：编解码器（10-15 天）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-4编解码器10-15-天" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>编解码器用于处理网络数据的序列化和反序列化，是网络通信中的重要环节。</p>
+<h3 id="学习目标-3">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标-3" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>掌握 Netty 的编解码器，能够处理各种协议。</p>
+<h3 id="知识点-3">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-3" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>编解码器基础（必学）</strong></p>
+<ul>
+<li>编码器和解码器的作用</li>
+<li>粘包和拆包问题及解决方法</li>
+</ul>
+<p><strong>Netty 内置编解码器（必学）</strong></p>
+<ul>
+<li>LineBasedFrameDecoder、DelimiterBasedFrameDecoder</li>
+<li>FixedLengthFrameDecoder、LengthFieldBasedFrameDecoder</li>
+</ul>
+<p><strong>自定义编解码器（必学）</strong></p>
+<ul>
+<li>MessageToByteEncoder、ByteToMessageDecoder</li>
+<li>自定义协议的设计</li>
+</ul>
+<p><strong>常用协议支持（建议学）</strong></p>
+<ul>
+<li>HTTP 协议（HttpServerCodec）</li>
+<li>WebSocket 协议</li>
+<li>Protobuf 编解码</li>
+</ul>
+<h3 id="学习建议-2">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-2" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>TCP 是流式协议，没有消息边界，会出现多个消息粘在一起或一个消息被拆分的粘包拆包问题，Netty 提供了多种解决方案</li>
+<li>LengthFieldBasedFrameDecoder 最常用，通过消息头部的长度字段确定消息边界，大部分自定义协议都采用这种方式</li>
+<li>编码器将业务对象编码为字节流，解码器将字节流解码为业务对象，可实现自定义协议</li>
+<li>Netty 对 HTTP、WebSocket、Protobuf 等常用协议有内置编解码器支持</li>
+</ol>
+<hr/>
+<h2 id="阶段-5实战应用20-30-天">阶段 5：实战应用（20-30 天）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-5实战应用20-30-天" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="学习目标-4">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标-4" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>通过实际项目巩固所学知识，积累 Netty 项目经验。</p>
+<h3 id="学习建议-3">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-3" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li><strong>从简单项目开始</strong>：先实现一个简单的聊天室，熟悉 Netty 的完整开发流程</li>
+<li><strong>实现常见功能</strong>：心跳检测（IdleStateHandler）、断线重连、消息重发等生产环境必备功能</li>
+<li><strong>开发 RPC 框架</strong>：用 Netty 开发一个简单的 RPC 框架，帮助理解 Dubbo 等 RPC 框架的底层实现</li>
+<li><strong>读优秀源码</strong>：阅读 Dubbo、RocketMQ 等框架中 Netty 的使用，学习最佳实践</li>
+</ol>
+<h3 id="项目推荐">项目推荐<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#项目推荐" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>入门级项目</strong></p>
+<ul>
+<li>Echo 服务器、简单的聊天室</li>
+<li>HTTP 服务器、文件传输</li>
+</ul>
+<p><strong>进阶级项目</strong></p>
+<ul>
+<li>功能完整的聊天室（群聊、私聊、文件传输）</li>
+<li>简单的 RPC 框架</li>
+<li>WebSocket 实时通讯</li>
+<li>游戏服务器</li>
+</ul>
+<h3 id="学习资源-2">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-2" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/401776252" class="external external-link">Java 学习路线 - Netty<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：实战教程</li>
+</ul>
+<hr/>
+<h2 id="阶段-6求职备战面试前-1-个月突击">阶段 6：求职备战（面试前 1 个月突击）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-6求职备战面试前-1-个月突击" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="学习目标-5">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标-5" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>熟练掌握 Netty 常见面试题，准备好简历和项目经历，顺利通过面试。</p>
+<h3 id="学习建议-4">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-4" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li><strong>打磨简历和项目</strong>：简历上一定要有 Netty 项目经历</li>
+<li><strong>多刷面试题</strong>：重点涵盖 NIO 基础、Netty 组件、线程模型、编解码器等</li>
+<li><strong>准备项目经历</strong>：能回答 Netty 在项目中的使用，如如何处理粘包拆包、如何优化性能</li>
+<li><strong>理解源码</strong>：Netty 面试可能问到源码，建议阅读核心源码，理解其设计思想</li>
+</ol>
+<h3 id="经典面试题">经典面试题<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#经典面试题" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>NIO 基础</strong></p>
+<ol>
+<li>NIO 和 BIO 有什么区别？</li>
+<li>NIO 的三大核心组件是什么？</li>
+<li>Selector 的作用是什么？</li>
+<li>什么是 Reactor 模式？</li>
+</ol>
+<p><strong>Netty 基础</strong></p>
+<ol>
+<li>Netty 是什么？有什么特点？</li>
+<li>Netty 的线程模型是怎样的？</li>
+<li>Netty 为什么性能高？</li>
+<li>Netty 的应用场景有哪些？</li>
+</ol>
+<p><strong>核心组件</strong></p>
+<ol>
+<li>ChannelHandler 有哪些类型？</li>
+<li>ByteBuf 和 ByteBuffer 有什么区别？</li>
+<li>ChannelPipeline 是什么？Handler 的执行顺序是怎样的？</li>
+<li>ChannelFuture 是什么？</li>
+</ol>
+<p><strong>编解码器</strong></p>
+<ol>
+<li>什么是粘包和拆包？如何解决？</li>
+<li>Netty 有哪些内置的解码器？</li>
+<li>如何自定义编解码器？</li>
+</ol>
+<p><strong>高级特性</strong></p>
+<ol>
+<li>Netty 的零拷贝是什么？</li>
+<li>Netty 的内存池是什么？</li>
+<li>如何实现心跳检测？</li>
+<li>如何实现断线重连？</li>
+</ol>
+<hr/>
+<h2 id="持续学习资源">持续学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#持续学习资源" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="官方文档与源码">官方文档与源码<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#官方文档与源码" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><a href="https://netty.io/" class="external external-link">Netty 官网<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：官方网站</li>
+<li><a href="https://netty.io/wiki/user-guide.html" class="external external-link">Netty 用户指南<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：官方指南</li>
+<li><a href="https://github.com/netty/netty" class="external external-link">netty/netty<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：Netty 官方源码和示例（33k+ stars）</li>
+<li>⭐ <a href="https://github.com/normanmaurer/netty-in-action" class="external external-link">netty-in-action<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：《Netty in Action》书籍配套源码，包含所有章节示例（4k+ stars）</li>
+</ul>
+<h3 id="技术博客">技术博客<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#技术博客" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><a href="https://netflixtechblog.com/" class="external external-link">Netflix TechBlog<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：Netflix 网络编程实践</li>
+<li><a href="https://www.linkedin.com/blog/engineering" class="external external-link">LinkedIn Engineering<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：LinkedIn 高性能网络</li>
+<li><a href="https://tech.meituan.com/" class="external external-link">美团技术团队<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：大厂技术博客</li>
+</ul>
+<h3 id="其他框架">其他框架<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#其他框架" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><a href="https://vertx.io/" class="external external-link">Vert.x<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：另一个事件驱动框架</li>
+<li><a href="https://mina.apache.org/" class="external external-link">Mina<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：Apache 的网络框架</li>
+</ul>
+<hr/>
+<h2 id="写在最后">写在最后<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#写在最后" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Netty 是 Java 网络编程的必备技能，是开发高性能网络应用的首选框架。学习时先打好 Java NIO 基础，理解核心概念和 Reactor 模式，再从 Netty 基础逐步深入核心组件、编解码器与实战应用。多读源码、多做项目，积累实战经验。</p>
+<p>Netty 的学习曲线相对陡峭，但其设计优雅、源码质量高，是学习 Java 高级编程的好材料。</p>
+<blockquote>
+<p>来源：鱼皮·编程导航 / codefather — Netty 学习路线</p>
+</blockquote></div></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="toc"><button type="button" class="toc-header" aria-controls="toc-292" aria-expanded="true"><h3>目录</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-0" class="toc-content overflow"><li class="depth-0"><a href="#java-42---netty-学习路线" data-for="java-42---netty-学习路线">Java 42 - Netty 学习路线</a></li><li class="depth-1"><a href="#开篇介绍" data-for="开篇介绍">开篇介绍</a></li><li class="depth-2"><a href="#学习前提" data-for="学习前提">学习前提</a></li><li class="depth-2"><a href="#就业方向" data-for="就业方向">就业方向</a></li><li class="depth-1"><a href="#整体学习建议" data-for="整体学习建议">整体学习建议</a></li><li class="depth-1"><a href="#阶段总览" data-for="阶段总览">阶段总览</a></li><li class="depth-1"><a href="#阶段-1java-nio-基础15-20-天" data-for="阶段-1java-nio-基础15-20-天">阶段 1：Java NIO 基础（15-20 天）</a></li><li class="depth-2"><a href="#学习目标" data-for="学习目标">学习目标</a></li><li class="depth-2"><a href="#知识点" data-for="知识点">知识点</a></li><li class="depth-2"><a href="#学习建议" data-for="学习建议">学习建议</a></li><li class="depth-2"><a href="#学习资源" data-for="学习资源">学习资源</a></li><li class="depth-1"><a href="#阶段-2netty-基础15-20-天" data-for="阶段-2netty-基础15-20-天">阶段 2：Netty 基础（15-20 天）</a></li><li class="depth-2"><a href="#学习目标-1" data-for="学习目标-1">学习目标</a></li><li class="depth-2"><a href="#知识点-1" data-for="知识点-1">知识点</a></li><li class="depth-2"><a href="#学习重点" data-for="学习重点">学习重点</a></li><li class="depth-1"><a href="#阶段-3netty-核心组件15-20-天" data-for="阶段-3netty-核心组件15-20-天">阶段 3：Netty 核心组件（15-20 天）</a></li><li class="depth-2"><a href="#学习目标-2" data-for="学习目标-2">学习目标</a></li><li class="depth-2"><a href="#知识点-2" data-for="知识点-2">知识点</a></li><li class="depth-2"><a href="#学习建议-1" data-for="学习建议-1">学习建议</a></li><li class="depth-2"><a href="#学习资源-1" data-for="学习资源-1">学习资源</a></li><li class="depth-1"><a href="#阶段-4编解码器10-15-天" data-for="阶段-4编解码器10-15-天">阶段 4：编解码器（10-15 天）</a></li><li class="depth-2"><a href="#学习目标-3" data-for="学习目标-3">学习目标</a></li><li class="depth-2"><a href="#知识点-3" data-for="知识点-3">知识点</a></li><li class="depth-2"><a href="#学习建议-2" data-for="学习建议-2">学习建议</a></li><li class="depth-1"><a href="#阶段-5实战应用20-30-天" data-for="阶段-5实战应用20-30-天">阶段 5：实战应用（20-30 天）</a></li><li class="depth-2"><a href="#学习目标-4" data-for="学习目标-4">学习目标</a></li><li class="depth-2"><a href="#学习建议-3" data-for="学习建议-3">学习建议</a></li><li class="depth-2"><a href="#项目推荐" data-for="项目推荐">项目推荐</a></li><li class="depth-2"><a href="#学习资源-2" data-for="学习资源-2">学习资源</a></li><li class="depth-1"><a href="#阶段-6求职备战面试前-1-个月突击" data-for="阶段-6求职备战面试前-1-个月突击">阶段 6：求职备战（面试前 1 个月突击）</a></li><li class="depth-2"><a href="#学习目标-5" data-for="学习目标-5">学习目标</a></li><li class="depth-2"><a href="#学习建议-4" data-for="学习建议-4">学习建议</a></li><li class="depth-2"><a href="#经典面试题" data-for="经典面试题">经典面试题</a></li><li class="depth-1"><a href="#持续学习资源" data-for="持续学习资源">持续学习资源</a></li><li class="depth-2"><a href="#官方文档与源码" data-for="官方文档与源码">官方文档与源码</a></li><li class="depth-2"><a href="#技术博客" data-for="技术博客">技术博客</a></li><li class="depth-2"><a href="#其他框架" data-for="其他框架">其他框架</a></li><li class="depth-1"><a href="#写在最后" data-for="写在最后">写在最后</a></li><li class="overflow-end"></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v5.0.0</a> © 2026</p><ul><li><a href="https://github.com/xyf1111">GitHub</a></li></ul></footer></div></div></body><script src="../../static/resource-after-e13fffa1.js" type="application/javascript" data-persist="true"></script><script src="../../static/resource-after-8b336f9a.js" type="application/javascript" data-persist="true"></script><script src="../../static/resource-after-baba652b.js" type="application/javascript" data-persist="true"></script><script src="../../static/resource-after-5eb75950.js" type="module" data-persist="true"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript" data-persist="true"></script><script src="../../postscript-17915799.js" type="module" data-persist="true"></script></html>

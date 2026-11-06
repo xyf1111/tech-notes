@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr"><head><title>智能合约 01 - 开发学习路线 · 后端开发笔记</title><meta charset="utf-8"/><link rel="preload" href="../index-b754f97d.css" as="style"/><link rel="preload" href="../prescript-2bfc6315.js" as="script"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="技术知识库"/><meta property="og:title" content="智能合约 01 - 开发学习路线 · 后端开发笔记"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="智能合约 01 - 开发学习路线 · 后端开发笔记"/><meta name="twitter:description" content="智能合约开发学习路线 智能合约是运行在区块链上的可编程代码，可自动执行、控制或记录相关事件与行为。本路线从 Solidity 语法、合约开发、安全、测试部署到项目实战，带你零基础掌握智能合约开发，并给出就业方向与面试准备建议。 核心要点 智能合约是什么：运行在区块链上的图灵完备程序，去中心化、不可篡改、自动执行；DApp、DeFi、NFT、DAO 均基于它构建。 语言选型：Solidity 是主流（语法类 JavaScript）；另有 Vyper（类 Python）、Rust（Solana）等。 安全第一：合约一经部署不可修改，漏洞永久存在；The DAO 事件（2016，重入攻击，损失 60..."/><meta property="og:description" content="智能合约开发学习路线 智能合约是运行在区块链上的可编程代码，可自动执行、控制或记录相关事件与行为。本路线从 Solidity 语法、合约开发、安全、测试部署到项目实战，带你零基础掌握智能合约开发，并给出就业方向与面试准备建议。 核心要点 智能合约是什么：运行在区块链上的图灵完备程序，去中心化、不可篡改、自动执行；DApp、DeFi、NFT、DAO 均基于它构建。 语言选型：Solidity 是主流（语法类 JavaScript）；另有 Vyper（类 Python）、Rust（Solana）等。 安全第一：合约一经部署不可修改，漏洞永久存在；The DAO 事件（2016，重入攻击，损失 60..."/><meta property="og:image:alt" content="智能合约开发学习路线 智能合约是运行在区块链上的可编程代码，可自动执行、控制或记录相关事件与行为。本路线从 Solidity 语法、合约开发、安全、测试部署到项目实战，带你零基础掌握智能合约开发，并给出就业方向与面试准备建议。 核心要点 智能合约是什么：运行在区块链上的图灵完备程序，去中心化、不可篡改、自动执行；DApp、DeFi、NFT、DAO 均基于它构建。 语言选型：Solidity 是主流（语法类 JavaScript）；另有 Vyper（类 Python）、Rust（Solana）等。 安全第一：合约一经部署不可修改，漏洞永久存在；The DAO 事件（2016，重入攻击，损失 60..."/><meta property="twitter:domain" content="xyf1111.github.io/tech-notes"/><meta property="og:url" content="https://xyf1111.github.io/tech-notes/blockchain/智能合约-01---开发学习路线"/><meta property="twitter:url" content="https://xyf1111.github.io/tech-notes/blockchain/智能合约-01---开发学习路线"/><link rel="icon" href="../static/icon.png"/><meta name="description" content="智能合约开发学习路线 智能合约是运行在区块链上的可编程代码，可自动执行、控制或记录相关事件与行为。本路线从 Solidity 语法、合约开发、安全、测试部署到项目实战，带你零基础掌握智能合约开发，并给出就业方向与面试准备建议。 核心要点 智能合约是什么：运行在区块链上的图灵完备程序，去中心化、不可篡改、自动执行；DApp、DeFi、NFT、DAO 均基于它构建。 语言选型：Solidity 是主流（语法类 JavaScript）；另有 Vyper（类 Python）、Rust（Solana）等。 安全第一：合约一经部署不可修改，漏洞永久存在；The DAO 事件（2016，重入攻击，损失 60..."/><meta name="generator" content="Quartz"/><link href="../index-b754f97d.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-735924e0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-589c1cea.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-bbc3f7c0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-2911f5d1.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-e427079e.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-53b25b2b.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-c93c6a44.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-8a06014f.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-77d6a441.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-6ee21cee.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-1ea6ad18.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-788c9ca3.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-642859cd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-4abc06bd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-274a3dfe.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-94cb6c84.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-58d5ff56.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-7262b5a7.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../static/resource-style-a5c806d2.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../static/resource-style-6bd36952.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" data-persist="true"/><script src="../prescript-2bfc6315.js" type="application/javascript" data-persist="true"></script><script type="application/javascript" data-persist="true">const fetchData = fetch("../static/contentIndex.json").then(data => data.json())</script><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://xyf1111.github.io/tech-notes/blockchain/智能合约-01---开发学习路线-og-image.webp"/><meta property="og:image:url" content="https://xyf1111.github.io/tech-notes/blockchain/智能合约-01---开发学习路线-og-image.webp"/><meta name="twitter:image" content="https://xyf1111.github.io/tech-notes/blockchain/智能合约-01---开发学习路线-og-image.webp"/><meta property="og:image:type" content="image/webp"/></head><body data-slug="blockchain/智能合约-01---开发学习路线" data-basepath="/tech-notes"><div id="quartz-root" class="page" data-frame="default"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="..">技术知识库</a></h2><div class="mobile-only"><div class="spacer"></div></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 0.5rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button" aria-label="搜索" aria-expanded="false"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>搜索</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="搜索内容..." placeholder="搜索内容..."/><div class="search-layout" data-preview="true" data-field-priority="[&quot;title&quot;,&quot;content&quot;,&quot;tags&quot;]"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode" aria-label="暗色模式"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="暗色模式"><title>暗色模式</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="亮色模式"><title>亮色模式</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode" aria-label="阅读模式"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="阅读模式"><title>阅读模式</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer nav-files-container" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a2, b2) => {\n    if (!a2.isFolder &amp;&amp; !b2.isFolder || a2.isFolder &amp;&amp; b2.isFolder) {\n      return (a2.displayName || \&quot;\&quot;).localeCompare(b2.displayName || \&quot;\&quot;, void 0, {\n        numeric: true,\n        sensitivity: \&quot;base\&quot;\n      });\n    }\n    if (!a2.isFolder &amp;&amp; b2.isFolder) {\n      return 1;\n    }\n    return -1;\n  }&quot;,&quot;filterFn&quot;:&quot;(node) => node.slugSegment !== \&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;(node) => {\n    return node;\n  }&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-35" aria-label="探索"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>探索</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-35" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#" class="nav-file-title tree-item-self"></a></li></template><template id="template-folder"><li><div class="folder-container nav-folder-title tree-item-self"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon nav-folder-collapse-indicator collapse-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content tree-item-children"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../blockchain/">blockchain</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>智能合约 01 - 开发学习路线</a></div></nav><h1 class="article-title">智能合约 01 - 开发学习路线</h1><details class="note-properties metadata-container" open data-collapsed="false"><summary class="note-properties-header"><span class="note-properties-title">Properties</span><span class="note-properties-count">1</span></summary><table class="note-properties-table"><tbody><tr class="note-properties-row metadata-property"><td class="note-properties-key metadata-property-key">tags</td><td class="note-properties-value metadata-property-value"><span class="note-properties-tags"><a href="../tags/智能合约" class="internal internal-link tag-link">智能合约</a><span class="note-properties-separator">, </span><a href="../tags/区块链" class="internal internal-link tag-link">区块链</a><span class="note-properties-separator">, </span><a href="../tags/学习路线" class="internal internal-link tag-link">学习路线</a></span></td></tr></tbody></table></details><p show-comma="true" class="content-meta"><time datetime="2026-08-14T16:00:00.000Z">2026年8月15日</time><span>18分钟阅读</span></p></div></div><article class="popover-hint"><div class="markdown-preview-view markdown-rendered"><h1 id="智能合约开发学习路线">智能合约开发学习路线<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#智能合约开发学习路线" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<blockquote>
+<p>智能合约是运行在区块链上的可编程代码，可自动执行、控制或记录相关事件与行为。本路线从 Solidity 语法、合约开发、安全、测试部署到项目实战，带你零基础掌握智能合约开发，并给出就业方向与面试准备建议。</p>
+</blockquote>
+<h2 id="核心要点">核心要点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#核心要点" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ul>
+<li><strong>智能合约是什么</strong>：运行在区块链上的图灵完备程序，去中心化、不可篡改、自动执行；DApp、DeFi、NFT、DAO 均基于它构建。</li>
+<li><strong>语言选型</strong>：Solidity 是主流（语法类 JavaScript）；另有 Vyper（类 Python）、Rust（Solana）等。</li>
+<li><strong>安全第一</strong>：合约一经部署不可修改，漏洞永久存在；The DAO 事件（2016，重入攻击，损失 6000 万美元）是血泪教训。</li>
+<li><strong>学习路径</strong>：Solidity 语法 → 合约开发 → 合约安全 → 测试部署 → 项目实战 → 求职备战。</li>
+<li><strong>必备工具链</strong>：Remix / Hardhat / Foundry、OpenZeppelin 合约库、Slither / Mythril 安全工具、Etherscan 合约验证。</li>
+<li><strong>就业方向</strong>：智能合约工程师、区块链开发工程师、合约审计工程师、Web3 开发工程师、DeFi 开发工程师。</li>
+</ul>
+<h2 id="开篇介绍">开篇介绍<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#开篇介绍" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>智能合约是运行在区块链上的可编程代码，可以自动执行、控制或记录相关事件和行为。智能合约的概念最早由计算机科学家 Nick Szabo 在 1994 年提出，但直到以太坊的出现，智能合约才真正得以实现。以太坊通过引入图灵完备的虚拟机（EVM），让开发者可以编写各种复杂的智能合约。</p>
+<p>智能合约是区块链应用的核心，所有的去中心化应用（DApp）、DeFi 协议、NFT、DAO 等都基于智能合约实现。智能合约运行在区块链上，具有去中心化、不可篡改、自动执行等特性。一旦部署，智能合约就会按照代码逻辑自动执行，无需人工干预，也无法被单方面修改。</p>
+<p><strong>为什么要学智能合约开发？</strong></p>
+<ul>
+<li>智能合约是区块链开发的核心技能，几乎所有区块链应用都需要智能合约。</li>
+<li>掌握智能合约开发，不仅能开发 DApp、DeFi 协议，还能从事智能合约审计、安全研究等高薪工作。</li>
+<li>一线城市智能合约工程师平均薪资在 30-60K，资深智能合约专家可达 60-150K+。</li>
+<li>Solidity 语法类似于 JavaScript，相对容易学习，是入门的首选语言；此外还有 Vyper（Python-like）、Rust（Solana）等智能合约语言，但 Solidity 仍是主流。</li>
+</ul>
+<p><strong>需要特别强调的是，智能合约的安全至关重要！</strong></p>
+<p>历史上发生过多次智能合约漏洞导致的资金损失事件，比如 2016 年的 The DAO 事件（黑客利用重入漏洞盗取了 6000 万美元）、各种 DeFi 协议被黑事件等。智能合约一旦部署无法修改，漏洞会永久存在。因此，智能合约开发要特别注重安全，学习安全最佳实践，进行充分测试和审计。</p>
+<h2 id="学习前提">学习前提<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习前提" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ol>
+<li><strong>编程基础【必学】</strong>：至少会一门编程语言（JavaScript、Python 等）</li>
+<li><strong>区块链基础【建议】</strong>：理解区块链、以太坊的基本概念（详见同目录《区块链 01 - 开发学习路线》）</li>
+</ol>
+<h2 id="就业方向">就业方向<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#就业方向" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>岗位</th><th>说明</th></tr></thead><tbody><tr><td>智能合约工程师</td><td>开发和优化智能合约</td></tr><tr><td>区块链开发工程师</td><td>开发区块链应用</td></tr><tr><td>智能合约审计工程师</td><td>审计智能合约安全</td></tr><tr><td>Web3 开发工程师</td><td>开发去中心化应用</td></tr><tr><td>DeFi 开发工程师</td><td>开发去中心化金融协议</td></tr></tbody></table></div>
+<h2 id="整体学习建议">整体学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#整体学习建议" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ol>
+<li><strong>先学区块链基础</strong>：智能合约运行在区块链上，要先理解区块链和以太坊的基本概念，再学习智能合约开发。</li>
+<li><strong>重点学习 Solidity</strong>：它是以太坊智能合约的主流语言，语法类似 JavaScript，相对容易上手。</li>
+<li><strong>重视安全</strong>：学习安全最佳实践，了解常见漏洞和防御方法，建议使用 OpenZeppelin 等经过审计的安全库。</li>
+<li><strong>部署前充分测试</strong>：智能合约一旦部署无法修改，要编写完整的单元测试，覆盖所有场景。</li>
+<li><strong>善用 AI 但不过度依赖</strong>：可以用 AI 工具辅助编写代码、查找漏洞，但不要完全依赖，要人工审查代码。</li>
+</ol>
+<h2 id="阶段-1solidity-语法10-20-天仅供参考">阶段 1：Solidity 语法（10-20 天，仅供参考）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-1solidity-语法10-20-天仅供参考" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Solidity 语法是智能合约开发的基础，掌握数据类型、函数、事件等基本语法是编写合约的前提。</p>
+<h3 id="学习目标">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>掌握 Solidity 编程语言，能够编写基本的智能合约。</p>
+<h3 id="知识点">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>Solidity 基础语法【必学】：</strong></p>
+<ul>
+<li>数据类型（uint、address、bool、string 等）</li>
+<li>变量（状态变量、局部变量）</li>
+<li>函数（可见性、修饰符）</li>
+<li>控制流（if、for、while）</li>
+</ul>
+<p><strong>高级特性【必学】：</strong></p>
+<ul>
+<li>mapping 和 array</li>
+<li>struct 和 enum</li>
+<li>继承</li>
+<li>接口</li>
+<li>库（library）</li>
+<li>事件（event）</li>
+<li>错误处理（require、assert、revert）</li>
+</ul>
+<p><strong>特殊变量【必学】：</strong></p>
+<ul>
+<li>msg.sender、msg.value</li>
+<li>block.timestamp、block.number</li>
+<li>address.balance、address.transfer</li>
+</ul>
+<h3 id="学习重点">学习重点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习重点" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>Solidity 语法类似 JavaScript，会 JavaScript 会学得很快；但 Solidity 有很多区块链特有的概念，要仔细学习。</li>
+<li>函数的可见性（public、private、internal、external）非常重要，直接影响安全，要理解不同可见性的区别和使用场景。</li>
+<li>事件是智能合约跟外部通信的重要方式，前端可以监听事件获取合约状态变化。</li>
+<li>详细语法进阶可参考同目录《Solidity 01 - 学习路线》。</li>
+</ol>
+<h3 id="学习资源">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>⭐ <a href="https://docs.soliditylang.org/" class="external external-link">Solidity 官方文档<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：最权威的学习资料</li>
+<li><a href="https://vampireachao.gitee.io/2025/09/08/WTF-Solidity/" class="external external-link">WTF Solidity<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：Solidity 教程</li>
+<li><a href="https://www.bilibili.com/video/BV1S5pqeBEfp" class="external external-link">Solidity 快速入门教程<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>（B站）</li>
+<li><a href="https://www.bilibili.com/video/BV15fBJYUEZq" class="external external-link">Solidity 智能合约开发入门实战<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>（B站）</li>
+</ul>
+<h2 id="阶段-2智能合约开发15-30-天仅供参考">阶段 2：智能合约开发（15-30 天，仅供参考）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-2智能合约开发15-30-天仅供参考" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>智能合约开发包括合约设计、开发、测试、部署等完整流程，需要理解区块链的特性和限制。</p>
+<h3 id="学习目标-1">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标-1" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>掌握智能合约的开发流程，能够开发各种类型的智能合约。</p>
+<h3 id="知识点-1">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-1" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>开发环境【必学】：</strong></p>
+<ul>
+<li>Remix IDE（在线 IDE，适合初学者快速上手）</li>
+<li>Hardhat（本地开发框架）【推荐】</li>
+<li>Foundry（Rust-based 开发框架）【建议学】</li>
+</ul>
+<p><strong>常见合约类型【必学】：</strong></p>
+<ul>
+<li>ERC-20（同质化代币，如 USDT）</li>
+<li>ERC-721（非同质化代币 NFT，如 CryptoPunks）</li>
+<li>ERC-1155（多代币标准）【建议学】</li>
+</ul>
+<p><strong>合约交互【必学】：</strong></p>
+<ul>
+<li>合约调用合约</li>
+<li>合约接口</li>
+<li>库的使用</li>
+</ul>
+<p><strong>OpenZeppelin【必学】：</strong></p>
+<ul>
+<li>OpenZeppelin 合约库</li>
+<li>标准合约实现（ERC-20、ERC-721 等）</li>
+<li>安全工具</li>
+</ul>
+<h3 id="学习建议">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>Remix 是在线 IDE，适合初学者快速上手；Hardhat 是本地开发框架，功能强大，适合专业开发。建议先用 Remix 学习基础，然后使用 Hardhat 进行项目开发。</li>
+<li>ERC-20 和 ERC-721 是最重要的代币标准，要熟练掌握：ERC-20 用于同质化代币（如 USDT），ERC-721 用于 NFT（如 CryptoPunks）。</li>
+<li>OpenZeppelin 提供了经过审计的合约库，包括各种标准合约的实现。建议使用 OpenZeppelin 的合约，而不是自己从头实现，这样更安全。</li>
+</ol>
+<h3 id="学习资源-1">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-1" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><a href="https://hardhat.org/docs" class="external external-link">Hardhat 官方文档<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：开发框架</li>
+<li><a href="https://docs.openzeppelin.com/contracts/" class="external external-link">OpenZeppelin 文档<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：合约库</li>
+</ul>
+<h2 id="阶段-3智能合约安全10-25-天仅供参考">阶段 3：智能合约安全（10-25 天，仅供参考）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-3智能合约安全10-25-天仅供参考" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>智能合约安全是开发中的重中之重，需要了解常见漏洞（如重入攻击、溢出等）和安全编码规范。</p>
+<h3 id="学习目标-2">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标-2" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>掌握智能合约安全，能够识别和防御常见漏洞。</p>
+<h3 id="知识点-2">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-2" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>常见漏洞【必学，核心重点】：</strong></p>
+<ul>
+<li>重入攻击（Reentrancy）：最危险的漏洞之一</li>
+<li>整数溢出/下溢：Solidity 0.8+ 默认检查</li>
+<li>权限控制不当：未正确验证调用者</li>
+<li>随机数不安全：使用可预测的随机数</li>
+<li>时间戳依赖：依赖 block.timestamp</li>
+<li>拒绝服务（DoS）：合约被锁定无法使用</li>
+<li>前端运行（Front Running）：交易被抢跑</li>
+</ul>
+<p><strong>安全最佳实践【必学】：</strong></p>
+<ul>
+<li>Checks-Effects-Interactions 模式</li>
+<li>使用 ReentrancyGuard</li>
+<li>使用 SafeMath（Solidity 0.7-）</li>
+<li>权限控制（Ownable、AccessControl）</li>
+<li>紧急停止（Pausable）</li>
+</ul>
+<p><strong>安全工具【建议学】：</strong></p>
+<ul>
+<li>Slither（静态分析）</li>
+<li>Mythril（符号执行）</li>
+<li>安全审计流程</li>
+</ul>
+<h3 id="学习重点-1">学习重点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习重点-1" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li><strong>重入攻击是最危险的漏洞</strong>，The DAO 事件就是因为重入攻击损失了 6000 万美元。典型防御方法：
+<ul>
+<li>使用 Checks-Effects-Interactions 模式（先检查、再修改状态、最后调用外部）</li>
+<li>使用 OpenZeppelin 的 ReentrancyGuard 修饰符</li>
+<li>避免在状态更新前调用外部合约</li>
+</ul>
+</li>
+<li><strong>整数溢出/下溢</strong>：Solidity 0.8 之前没有溢出检查，需要使用 SafeMath 库；Solidity 0.8+ 默认检查溢出，更安全。</li>
+<li><strong>权限控制</strong>：敏感函数（如提取资金、修改配置）要加上权限检查，使用 OpenZeppelin 的 Ownable 或 AccessControl。</li>
+<li>智能合约安全是重中之重，一定要深入学习。建议阅读历史上的安全事件，了解攻击手法和防御方法。</li>
+<li><strong>安全开发原则</strong>：
+<ul>
+<li>使用经过审计的库（如 OpenZeppelin）</li>
+<li>编写完整的测试（单元测试、集成测试）</li>
+<li>进行代码审计（自己审计 + 第三方审计）</li>
+<li>在测试网充分测试后再部署主网</li>
+<li>考虑使用可升级合约模式（但要注意升级的中心化风险）</li>
+</ul>
+</li>
+</ol>
+<h3 id="学习资源-2">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-2" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>⭐ <a href="https://learnblockchain.cn/article/8453" class="external external-link">智能合约安全之重入攻击<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：详细讲解</li>
+<li><a href="https://www.bilibili.com/video/BV1B94y1M71V/" class="external external-link">智能合约安全审计<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>（B站，2024 课程）</li>
+<li><a href="https://blog.chain.link/how-to-audit-smart-contract-zh/" class="external external-link">如何审计智能合约<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：审计指南</li>
+</ul>
+<h2 id="阶段-4测试和部署7-20-天仅供参考">阶段 4：测试和部署（7-20 天，仅供参考）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-4测试和部署7-20-天仅供参考" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>测试和部署是将智能合约上线的关键步骤，包括单元测试、集成测试、主网部署等。</p>
+<h3 id="学习目标-3">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标-3" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>掌握智能合约的测试和部署方法。</p>
+<h3 id="知识点-3">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-3" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>单元测试【必学】：</strong></p>
+<ul>
+<li>Hardhat 测试框架</li>
+<li>Chai 断言库</li>
+<li>测试覆盖率</li>
+</ul>
+<p><strong>部署【必学】：</strong></p>
+<ul>
+<li>部署到测试网（Sepolia、Goerli）</li>
+<li>部署到主网</li>
+<li>部署脚本</li>
+</ul>
+<p><strong>合约验证【必学】：</strong></p>
+<ul>
+<li>Etherscan 合约验证</li>
+<li>源码公开</li>
+</ul>
+<p><strong>Gas 优化【建议学】：</strong></p>
+<ul>
+<li>Gas 消耗优化技巧</li>
+<li>存储优化</li>
+<li>函数优化</li>
+</ul>
+<h3 id="学习重点-2">学习重点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习重点-2" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>测试是智能合约开发的重要环节，要编写完整的单元测试，覆盖所有场景（包括正常场景和异常场景）。</li>
+<li>先在测试网部署和测试，充分验证后再部署到主网。测试网可以免费获取测试币，用于开发和测试。</li>
+<li>合约验证可以让用户在 Etherscan 上查看源码，提高透明度和信任度，建议部署后进行合约验证。</li>
+<li>Gas 优化可以降低交易费用。常见优化技巧：使用 uint256（比小整数更省 Gas）、减少存储操作、使用事件代替存储等。</li>
+</ol>
+<h3 id="学习资源-3">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-3" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><a href="https://hardhat.org/hardhat-runner/docs/guides/test-contracts" class="external external-link">Hardhat 测试文档<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：官方文档</li>
+<li><a href="https://cloud.tencent.com/developer/article/2152773" class="external external-link">重入漏洞分析 - Hardhat 环境<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：实战案例</li>
+</ul>
+<h2 id="阶段-5项目实战20-40-天仅供参考">阶段 5：项目实战（20-40 天，仅供参考）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-5项目实战20-40-天仅供参考" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="学习目标-4">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标-4" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>通过实际项目巩固所学知识，积累智能合约项目经验。</p>
+<h3 id="学习建议-1">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-1" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li><strong>从简单合约开始</strong>：如 ERC-20 代币、简单的 NFT 合约等，熟悉完整的开发流程。</li>
+<li><strong>开发 DeFi 协议</strong>：尝试开发简单的 DeFi 协议（如去中心化交易所、借贷协议），理解 DeFi 的工作原理。</li>
+<li><strong>参考优秀项目</strong>：学习 Uniswap、Aave、Compound 等知名 DeFi 协议的合约代码，了解最佳实践。</li>
+<li><strong>进行安全审计</strong>：部署前一定要进行安全审计，可以使用自动化工具（如 Slither），也可以请专业审计机构审计。</li>
+<li><strong>安全提醒</strong>：
+<ul>
+<li>永远不要在代码中硬编码私钥</li>
+<li>部署前在测试网充分测试</li>
+<li>考虑使用多签钱包管理重要合约</li>
+<li>为合约设置紧急停止机制</li>
+<li>了解常见的攻击模式（重入、闪电贷攻击等）</li>
+</ul>
+</li>
+</ol>
+<h3 id="项目推荐">项目推荐<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#项目推荐" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>入门级项目：</strong></p>
+<ul>
+<li>ERC-20 代币合约</li>
+<li>简单的 NFT（ERC-721）</li>
+<li>投票系统</li>
+<li>众筹合约</li>
+</ul>
+<p><strong>进阶级项目：</strong></p>
+<ul>
+<li>NFT 市场合约</li>
+<li>去中心化交易所（DEX）</li>
+<li>DeFi 借贷协议</li>
+<li>DAO 治理合约</li>
+</ul>
+<p><strong>优质开源项目：</strong></p>
+<ul>
+<li>⭐ <a href="https://github.com/0xisk/awesome-solidity-projects" class="external external-link">Awesome Solidity Projects<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：智能合约优秀项目索引</li>
+<li><a href="https://github.com/smartcontractkit/full-blockchain-solidity-course-js" class="external external-link">Full Blockchain Solidity Course<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：32k+ stars，Solidity 完整课程及项目</li>
+<li><a href="https://github.com/zubairahm3d/Beginner-Level-Solidity-Projects" class="external external-link">Beginner Solidity Projects<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：100 个初学者智能合约项目</li>
+</ul>
+<h3 id="学习资源-4">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-4" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><a href="https://www.bilibili.com/video/BV1S5pqeBEfp" class="external external-link">Solidity 快速入门教程<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>（B站）</li>
+<li><a href="https://www.bilibili.com/video/BV15fBJYUEZq" class="external external-link">Solidity 智能合约开发入门实战<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>（B站）</li>
+</ul>
+<h2 id="阶段-6求职备战">阶段 6：求职备战<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-6求职备战" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="学习目标-5">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标-5" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>熟练掌握智能合约开发常见面试题，准备好简历和项目经历，顺利通过面试。</p>
+<h3 id="学习建议-2">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-2" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li><strong>准备项目</strong>：简历上一定要有智能合约项目，最好能在 Etherscan 上查到你部署的合约。</li>
+<li><strong>准备安全案例</strong>：面试时可能会问你如何防御某种攻击，要能够说出防御方法和最佳实践。</li>
+</ol>
+<h3 id="经典面试题">经典面试题<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#经典面试题" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>Solidity 基础：</strong></p>
+<ol>
+<li>Solidity 有什么特点？</li>
+<li>Solidity 的数据类型有哪些？</li>
+<li>storage 和 memory 有什么区别？</li>
+<li>external 和 public 函数有什么区别？</li>
+</ol>
+<p><strong>智能合约安全：</strong></p>
+<ol>
+<li>智能合约的常见漏洞有哪些？</li>
+<li>什么是重入攻击？如何防御？</li>
+<li>什么是整数溢出？如何防御？</li>
+<li>如何进行权限控制？</li>
+</ol>
+<p><strong>代币标准：</strong></p>
+<ol>
+<li>ERC-20 和 ERC-721 有什么区别？</li>
+<li>如何实现 ERC-20 代币？</li>
+<li>NFT 的元数据存储在哪里？</li>
+</ol>
+<p><strong>其他：</strong></p>
+<ol>
+<li>什么是 Gas？如何优化 Gas？</li>
+<li>如何测试智能合约？</li>
+<li>智能合约如何升级？</li>
+</ol>
+<h2 id="持续学习资源">持续学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#持续学习资源" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="知识总结">知识总结<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识总结" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><a href="https://soliditylang.org/" class="external external-link">Solidity 官网<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：官方网站</li>
+<li><a href="https://openzeppelin.com/" class="external external-link">OpenZeppelin<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：安全合约库</li>
+<li><a href="https://learnblockchain.cn/" class="external external-link">登链社区<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：中文区块链社区</li>
+<li>同目录可配套学习：《区块链 01 - 开发学习路线》《Solidity 01 - 学习路线》《Web3 01 - 开发学习路线》</li>
+</ul>
+<h3 id="技术博客">技术博客<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#技术博客" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><a href="https://blog.openzeppelin.com/" class="external external-link">OpenZeppelin Blog<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：智能合约安全和开发</li>
+<li><a href="https://consensys.io/blog" class="external external-link">ConsenSys Blog<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：智能合约最佳实践</li>
+<li><a href="https://blog.ethereum.org/" class="external external-link">Ethereum Foundation Blog<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：以太坊智能合约</li>
+<li><a href="https://blog.chain.link/" class="external external-link">Chainlink Blog<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：预言机和智能合约</li>
+</ul>
+<h2 id="写在最后">写在最后<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#写在最后" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>智能合约是区块链应用的核心，掌握智能合约开发是进入区块链领域的关键。</p>
+<p>学习智能合约开发要先打好 Solidity 基础，理解智能合约的特性。重点学习智能合约安全，了解常见漏洞和防御方法。还要多做实战项目，在测试网络上练习，积累开发经验。</p>
+<p><strong>最后再次强调安全的重要性！</strong></p>
+<p>智能合约一旦部署无法修改，漏洞会永久存在。历史上多次发生因智能合约漏洞导致的重大资金损失事件。开发智能合约时，要使用安全库、编写完整测试、进行代码审计、在测试网充分验证。<strong>安全意识比编程能力更重要。</strong></p></div></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="toc"><button type="button" class="toc-header" aria-controls="toc-35" aria-expanded="true"><h3>目录</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-0" class="toc-content overflow"><li class="depth-0"><a href="#智能合约开发学习路线" data-for="智能合约开发学习路线">智能合约开发学习路线</a></li><li class="depth-1"><a href="#核心要点" data-for="核心要点">核心要点</a></li><li class="depth-1"><a href="#开篇介绍" data-for="开篇介绍">开篇介绍</a></li><li class="depth-1"><a href="#学习前提" data-for="学习前提">学习前提</a></li><li class="depth-1"><a href="#就业方向" data-for="就业方向">就业方向</a></li><li class="depth-1"><a href="#整体学习建议" data-for="整体学习建议">整体学习建议</a></li><li class="depth-1"><a href="#阶段-1solidity-语法10-20-天仅供参考" data-for="阶段-1solidity-语法10-20-天仅供参考">阶段 1：Solidity 语法（10-20 天，仅供参考）</a></li><li class="depth-2"><a href="#学习目标" data-for="学习目标">学习目标</a></li><li class="depth-2"><a href="#知识点" data-for="知识点">知识点</a></li><li class="depth-2"><a href="#学习重点" data-for="学习重点">学习重点</a></li><li class="depth-2"><a href="#学习资源" data-for="学习资源">学习资源</a></li><li class="depth-1"><a href="#阶段-2智能合约开发15-30-天仅供参考" data-for="阶段-2智能合约开发15-30-天仅供参考">阶段 2：智能合约开发（15-30 天，仅供参考）</a></li><li class="depth-2"><a href="#学习目标-1" data-for="学习目标-1">学习目标</a></li><li class="depth-2"><a href="#知识点-1" data-for="知识点-1">知识点</a></li><li class="depth-2"><a href="#学习建议" data-for="学习建议">学习建议</a></li><li class="depth-2"><a href="#学习资源-1" data-for="学习资源-1">学习资源</a></li><li class="depth-1"><a href="#阶段-3智能合约安全10-25-天仅供参考" data-for="阶段-3智能合约安全10-25-天仅供参考">阶段 3：智能合约安全（10-25 天，仅供参考）</a></li><li class="depth-2"><a href="#学习目标-2" data-for="学习目标-2">学习目标</a></li><li class="depth-2"><a href="#知识点-2" data-for="知识点-2">知识点</a></li><li class="depth-2"><a href="#学习重点-1" data-for="学习重点-1">学习重点</a></li><li class="depth-2"><a href="#学习资源-2" data-for="学习资源-2">学习资源</a></li><li class="depth-1"><a href="#阶段-4测试和部署7-20-天仅供参考" data-for="阶段-4测试和部署7-20-天仅供参考">阶段 4：测试和部署（7-20 天，仅供参考）</a></li><li class="depth-2"><a href="#学习目标-3" data-for="学习目标-3">学习目标</a></li><li class="depth-2"><a href="#知识点-3" data-for="知识点-3">知识点</a></li><li class="depth-2"><a href="#学习重点-2" data-for="学习重点-2">学习重点</a></li><li class="depth-2"><a href="#学习资源-3" data-for="学习资源-3">学习资源</a></li><li class="depth-1"><a href="#阶段-5项目实战20-40-天仅供参考" data-for="阶段-5项目实战20-40-天仅供参考">阶段 5：项目实战（20-40 天，仅供参考）</a></li><li class="depth-2"><a href="#学习目标-4" data-for="学习目标-4">学习目标</a></li><li class="depth-2"><a href="#学习建议-1" data-for="学习建议-1">学习建议</a></li><li class="depth-2"><a href="#项目推荐" data-for="项目推荐">项目推荐</a></li><li class="depth-2"><a href="#学习资源-4" data-for="学习资源-4">学习资源</a></li><li class="depth-1"><a href="#阶段-6求职备战" data-for="阶段-6求职备战">阶段 6：求职备战</a></li><li class="depth-2"><a href="#学习目标-5" data-for="学习目标-5">学习目标</a></li><li class="depth-2"><a href="#学习建议-2" data-for="学习建议-2">学习建议</a></li><li class="depth-2"><a href="#经典面试题" data-for="经典面试题">经典面试题</a></li><li class="depth-1"><a href="#持续学习资源" data-for="持续学习资源">持续学习资源</a></li><li class="depth-2"><a href="#知识总结" data-for="知识总结">知识总结</a></li><li class="depth-2"><a href="#技术博客" data-for="技术博客">技术博客</a></li><li class="depth-1"><a href="#写在最后" data-for="写在最后">写在最后</a></li><li class="overflow-end"></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v5.0.0</a> © 2026</p><ul><li><a href="https://github.com/xyf1111">GitHub</a></li></ul></footer></div></div></body><script src="../static/resource-after-e13fffa1.js" type="application/javascript" data-persist="true"></script><script src="../static/resource-after-8b336f9a.js" type="application/javascript" data-persist="true"></script><script src="../static/resource-after-baba652b.js" type="application/javascript" data-persist="true"></script><script src="../static/resource-after-5eb75950.js" type="module" data-persist="true"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript" data-persist="true"></script><script src="../postscript-17915799.js" type="module" data-persist="true"></script></html>

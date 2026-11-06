@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr"><head><title>移动端 - 安卓开发学习路线 · 后端开发笔记</title><meta charset="utf-8"/><link rel="preload" href="../../index-b754f97d.css" as="style"/><link rel="preload" href="../../prescript-2bfc6315.js" as="script"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="技术知识库"/><meta property="og:title" content="移动端 - 安卓开发学习路线 · 后端开发笔记"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="移动端 - 安卓开发学习路线 · 后端开发笔记"/><meta name="twitter:description" content="移动端 - 安卓开发学习路线 Android 是全球市场占有率最高的移动操作系统，截至 2025 年全球超过 70% 的智能手机运行 Android 系统。本路线从零基础到精通，涵盖 Kotlin、Android 基础与进阶、Jetpack、Compose、项目实战和求职备战，建议投入 3-6 个月系统学习。 开篇介绍 为什么要学 Android 开发？ 市场需求大：互联网大厂和传统企业都需要开发和维护 Android 应用，就业机会多 薪资待遇好：一线城市 Android 开发工程师平均薪资较高，掌握 Kotlin 和 Jetpack Compose 的开发者更受欢迎 技术生态成熟：Goog..."/><meta property="og:description" content="移动端 - 安卓开发学习路线 Android 是全球市场占有率最高的移动操作系统，截至 2025 年全球超过 70% 的智能手机运行 Android 系统。本路线从零基础到精通，涵盖 Kotlin、Android 基础与进阶、Jetpack、Compose、项目实战和求职备战，建议投入 3-6 个月系统学习。 开篇介绍 为什么要学 Android 开发？ 市场需求大：互联网大厂和传统企业都需要开发和维护 Android 应用，就业机会多 薪资待遇好：一线城市 Android 开发工程师平均薪资较高，掌握 Kotlin 和 Jetpack Compose 的开发者更受欢迎 技术生态成熟：Goog..."/><meta property="og:image:alt" content="移动端 - 安卓开发学习路线 Android 是全球市场占有率最高的移动操作系统，截至 2025 年全球超过 70% 的智能手机运行 Android 系统。本路线从零基础到精通，涵盖 Kotlin、Android 基础与进阶、Jetpack、Compose、项目实战和求职备战，建议投入 3-6 个月系统学习。 开篇介绍 为什么要学 Android 开发？ 市场需求大：互联网大厂和传统企业都需要开发和维护 Android 应用，就业机会多 薪资待遇好：一线城市 Android 开发工程师平均薪资较高，掌握 Kotlin 和 Jetpack Compose 的开发者更受欢迎 技术生态成熟：Goog..."/><meta property="twitter:domain" content="xyf1111.github.io/tech-notes"/><meta property="og:url" content="https://xyf1111.github.io/tech-notes/mobile/android/安卓-01---学习路线"/><meta property="twitter:url" content="https://xyf1111.github.io/tech-notes/mobile/android/安卓-01---学习路线"/><link rel="icon" href="../../static/icon.png"/><meta name="description" content="移动端 - 安卓开发学习路线 Android 是全球市场占有率最高的移动操作系统，截至 2025 年全球超过 70% 的智能手机运行 Android 系统。本路线从零基础到精通，涵盖 Kotlin、Android 基础与进阶、Jetpack、Compose、项目实战和求职备战，建议投入 3-6 个月系统学习。 开篇介绍 为什么要学 Android 开发？ 市场需求大：互联网大厂和传统企业都需要开发和维护 Android 应用，就业机会多 薪资待遇好：一线城市 Android 开发工程师平均薪资较高，掌握 Kotlin 和 Jetpack Compose 的开发者更受欢迎 技术生态成熟：Goog..."/><meta name="generator" content="Quartz"/><link href="../../index-b754f97d.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-735924e0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-589c1cea.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-bbc3f7c0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-2911f5d1.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-e427079e.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-53b25b2b.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-c93c6a44.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-8a06014f.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-77d6a441.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-6ee21cee.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-1ea6ad18.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-788c9ca3.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-642859cd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-4abc06bd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-274a3dfe.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-94cb6c84.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-58d5ff56.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-7262b5a7.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../static/resource-style-a5c806d2.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../static/resource-style-6bd36952.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" data-persist="true"/><script src="../../prescript-2bfc6315.js" type="application/javascript" data-persist="true"></script><script type="application/javascript" data-persist="true">const fetchData = fetch("../../static/contentIndex.json").then(data => data.json())</script><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://xyf1111.github.io/tech-notes/mobile/android/安卓-01---学习路线-og-image.webp"/><meta property="og:image:url" content="https://xyf1111.github.io/tech-notes/mobile/android/安卓-01---学习路线-og-image.webp"/><meta name="twitter:image" content="https://xyf1111.github.io/tech-notes/mobile/android/安卓-01---学习路线-og-image.webp"/><meta property="og:image:type" content="image/webp"/></head><body data-slug="mobile/android/安卓-01---学习路线" data-basepath="/tech-notes"><div id="quartz-root" class="page" data-frame="default"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="../..">技术知识库</a></h2><div class="mobile-only"><div class="spacer"></div></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 0.5rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button" aria-label="搜索" aria-expanded="false"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>搜索</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="搜索内容..." placeholder="搜索内容..."/><div class="search-layout" data-preview="true" data-field-priority="[&quot;title&quot;,&quot;content&quot;,&quot;tags&quot;]"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode" aria-label="暗色模式"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="暗色模式"><title>暗色模式</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="亮色模式"><title>亮色模式</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode" aria-label="阅读模式"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="阅读模式"><title>阅读模式</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer nav-files-container" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a2, b2) => {\n    if (!a2.isFolder &amp;&amp; !b2.isFolder || a2.isFolder &amp;&amp; b2.isFolder) {\n      return (a2.displayName || \&quot;\&quot;).localeCompare(b2.displayName || \&quot;\&quot;, void 0, {\n        numeric: true,\n        sensitivity: \&quot;base\&quot;\n      });\n    }\n    if (!a2.isFolder &amp;&amp; b2.isFolder) {\n      return 1;\n    }\n    return -1;\n  }&quot;,&quot;filterFn&quot;:&quot;(node) => node.slugSegment !== \&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;(node) => {\n    return node;\n  }&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-378" aria-label="探索"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>探索</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-378" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#" class="nav-file-title tree-item-self"></a></li></template><template id="template-folder"><li><div class="folder-container nav-folder-title tree-item-self"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon nav-folder-collapse-indicator collapse-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content tree-item-children"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../mobile/">mobile</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../mobile/android/">android</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>移动端 - 安卓开发学习路线</a></div></nav><h1 class="article-title">移动端 - 安卓开发学习路线</h1><details class="note-properties metadata-container" open data-collapsed="false"><summary class="note-properties-header"><span class="note-properties-title">Properties</span><span class="note-properties-count">1</span></summary><table class="note-properties-table"><tbody><tr class="note-properties-row metadata-property"><td class="note-properties-key metadata-property-key">tags</td><td class="note-properties-value metadata-property-value"><span class="note-properties-tags"><a href="../../tags/android" class="internal internal-link tag-link">android</a><span class="note-properties-separator">, </span><a href="../../tags/移动开发" class="internal internal-link tag-link">移动开发</a><span class="note-properties-separator">, </span><a href="../../tags/学习路线" class="internal internal-link tag-link">学习路线</a></span></td></tr></tbody></table></details><p show-comma="true" class="content-meta"><time datetime="2026-08-13T16:00:00.000Z">2026年8月14日</time><span>20分钟阅读</span></p></div></div><article class="popover-hint"><div class="markdown-preview-view markdown-rendered"><h1 id="移动端---安卓开发学习路线">移动端 - 安卓开发学习路线<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#移动端---安卓开发学习路线" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<blockquote>
+<p>Android 是全球市场占有率最高的移动操作系统，截至 2025 年全球超过 70% 的智能手机运行 Android 系统。本路线从零基础到精通，涵盖 Kotlin、Android 基础与进阶、Jetpack、Compose、项目实战和求职备战，建议投入 3-6 个月系统学习。</p>
+</blockquote>
+<h2 id="开篇介绍">开篇介绍<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#开篇介绍" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="为什么要学-android-开发">为什么要学 Android 开发？<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#为什么要学-android-开发" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>市场需求大</strong>：互联网大厂和传统企业都需要开发和维护 Android 应用，就业机会多</li>
+<li><strong>薪资待遇好</strong>：一线城市 Android 开发工程师平均薪资较高，掌握 Kotlin 和 Jetpack Compose 的开发者更受欢迎</li>
+<li><strong>技术生态成熟</strong>：Google 提供完善的开发工具和文档；Android Studio 是功能强大的官方 IDE；Jetpack 组件库大大简化常见功能实现</li>
+<li><strong>应用场景广</strong>：社交、电商、金融、教育等行业都需要 Android 应用</li>
+<li><strong>AI 新机遇</strong>：移动端 AI 应用开发成为新增长点，智能助手、图像识别、语音交互都需在移动端实现</li>
+</ul>
+<h3 id="就业方向">就业方向<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#就业方向" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>Android 开发工程师</strong>：最主流方向，负责 Android 应用的开发与维护</li>
+<li><strong>移动端开发工程师</strong>：同时掌握 iOS 开发，在中小型公司非常抢手的全栈移动开发者</li>
+<li><strong>跨平台开发工程师</strong>：使用 Flutter、React Native 等框架，一套代码同时运行在 Android 和 iOS</li>
+<li><strong>Android 架构师</strong>：负责整体架构设计和技术选型，更高层次的职业发展方向</li>
+<li><strong>AI 应用开发工程师</strong>：结合 Android 与 AI 技术，开发智能助手、图像识别、语音交互等创新应用</li>
+</ul>
+<h3 id="学习前提">学习前提<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习前提" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>编程语言</strong>：至少掌握一门编程语言，建议 Java 或 Kotlin。有 Java 基础学 Android 更顺利；零基础建议直接学 Kotlin（Google 官方推荐首选语言，语法更现代、更简洁）</li>
+<li><strong>计算机基础</strong>：熟悉变量、函数、类、对象等面向对象编程基础知识；不熟悉则先花 1-2 个月打基础</li>
+<li><strong>学习时间</strong>：每天 2-3 小时，约 3 个月掌握 Android 基础开发；深入学习 Jetpack Compose、性能优化等进阶内容需 6 个月以上；工作后仍需持续学习</li>
+</ul>
+<h2 id="整体学习建议">整体学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#整体学习建议" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ol>
+<li><strong>优先学习 Kotlin</strong>：Kotlin 是 Google 官方推荐的首选语言，语法更简洁、更安全；会 Java 的话上手很快</li>
+<li><strong>重点掌握 Jetpack Compose</strong>：现代 UI 开发的标准，传统 XML 布局虽仍在使用，但 Compose 是未来趋势；建议学完 Android 基础后直接学 Compose</li>
+<li><strong>理论结合实践</strong>：Android 开发实践性很强，多写代码、多做项目，每学完一个知识点就动手实现一个小功能</li>
+<li><strong>善用官方文档</strong>：developer.android.com 是最权威资料，虽是英文但配合翻译工具也能阅读，遇到问题优先查阅</li>
+<li><strong>善用 AI 辅助学习</strong>：遇到不懂的概念、代码报错或想实现某功能时，可用 ChatGPT、GitHub Copilot 等 AI 工具辅助学习和开发</li>
+<li><strong>关注 Android 新特性</strong>：Android 每年发布新版本并新增特性，关注官方博客和技术社区了解最新趋势</li>
+<li><strong>多看优秀开源项目</strong>：GitHub 上有大量优秀 Android 开源项目，阅读源码可学到实战经验和最佳实践</li>
+</ol>
+<h2 id="学习路线">学习路线<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习路线" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="阶段-1kotlin-编程语言">阶段 1：Kotlin 编程语言<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-1kotlin-编程语言" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>会 Java 可快速过一遍 Kotlin；零基础建议先系统学习 Kotlin 再进入 Android 开发。</p>
+<h4 id="知识点">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>【必学】Kotlin 基础语法：变量、数据类型、运算符、控制流</li>
+<li>【必学】函数和高阶函数</li>
+<li>【必学】类和对象：面向对象编程</li>
+<li>【必学】空安全（Null Safety）：Kotlin 核心特性</li>
+<li>【必学】集合和泛型</li>
+<li>【建议学】协程（Coroutines）：异步编程的现代方式</li>
+<li>【建议学】扩展函数和属性</li>
+<li>【建议学】DSL 构建</li>
+</ul>
+<h4 id="学习建议">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ol>
+<li>有 Java 基础时重点学 Kotlin 与 Java 的区别，尤其是空安全、扩展函数、协程等特性</li>
+<li>空安全是 Kotlin 杀手级特性，务必理解 <code>?</code>、<code>!!</code>、<code>?.</code> 等操作符的用法</li>
+<li>协程是 Android 处理异步任务的标准方式，比 Java 线程更简洁高效，建议重点学习</li>
+<li>多写代码练习，可用 <a href="https://play.kotlinlang.org/" class="external external-link">Kotlin Playground<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> 在线编写</li>
+<li>善用 AI 对比 Kotlin 和 Java 的写法差异，加深理解</li>
+</ol>
+<h4 id="学习资源">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li><a href="https://openaidoc.org/kotlin/getting-started" class="external external-link">Kotlin 官方文档（中文版）<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><a href="https://book.douban.com/subject/27093660/" class="external external-link">《Kotlin 实战》<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：经典书籍</li>
+<li><a href="https://book.douban.com/subject/33419618/" class="external external-link">《Kotlin 核心编程》<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：进阶书籍</li>
+</ul>
+<h3 id="阶段-2android-基础">阶段 2：Android 基础<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-2android-基础" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>掌握 Android 四大组件和基础开发技能。</p>
+<h4 id="知识点-1">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-1" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p><strong>Android 基础概念：</strong></p>
+<ul>
+<li>【必学】Android 系统架构</li>
+<li>【必学】开发环境搭建：Android Studio、SDK、模拟器</li>
+<li>【必学】Android 项目结构</li>
+<li>【必学】AndroidManifest.xml 配置文件
+<strong>Android 四大组件：</strong></li>
+<li>【必学】Activity：界面和生命周期</li>
+<li>【必学】Service：后台服务</li>
+<li>【必学】BroadcastReceiver：广播接收器</li>
+<li>【必学】ContentProvider：内容提供者
+<strong>UI 开发（传统 XML 布局）：</strong></li>
+<li>【必学】常用布局：LinearLayout、RelativeLayout、ConstraintLayout</li>
+<li>【必学】常用控件：TextView、Button、EditText、ImageView、RecyclerView</li>
+<li>【必学】事件处理：点击事件、触摸事件</li>
+<li>【建议学】自定义 View
+<strong>数据存储：</strong></li>
+<li>【必学】SharedPreferences：轻量级存储</li>
+<li>【必学】文件存储</li>
+<li>【必学】SQLite 数据库</li>
+<li>【建议学】Room 数据库（Jetpack 组件）
+<strong>网络编程：</strong></li>
+<li>【必学】HTTP 请求：Retrofit、OkHttp</li>
+<li>【必学】JSON 解析：Gson、Moshi</li>
+<li>【必学】图片加载：Glide、Coil
+<strong>其他基础：</strong></li>
+<li>【必学】Intent 和 IntentFilter</li>
+<li>【必学】Fragment：界面模块化</li>
+<li>【必学】权限管理</li>
+<li>【必学】多线程：Handler、AsyncTask、Thread</li>
+<li>【建议学】通知（Notification）</li>
+<li>【建议学】动画：属性动画、帧动画</li>
+</ul>
+<h4 id="学习建议-1">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-1" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ol>
+<li>四大组件是 Android 核心，务必理解它们的作用和生命周期，尤其是 Activity 生命周期（onCreate、onStart、onResume、onPause、onStop、onDestroy）</li>
+<li>UI 阶段先学传统 XML 布局即可，不用花太多时间深入，后面会学 Jetpack Compose</li>
+<li>RecyclerView 是列表展示的标准控件，使用频率极高，务必掌握</li>
+<li>网络请求直接学 Retrofit + OkHttp，这是当前主流方案</li>
+<li>多写 Demo 练习，每个知识点做一个小的应用：简单计算器、待办事项列表、图片展示应用等</li>
+</ol>
+<h4 id="学习资源-1">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-1" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>⭐ <a href="https://developer.android.com/docs?hl=zh-cn" class="external external-link">Android 官方文档（中文版）<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：最权威资料</li>
+<li><a href="https://www.bilibili.com/video/BV19U4y1R7zV" class="external external-link">Android 基础教程，从开发入门到项目实战<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><a href="https://www.bilibili.com/video/BV1G73mziEZH" class="external external-link">Android Studio 零基础教程<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><a href="https://www.bilibili.com/video/BV1Np4y1a7UN" class="external external-link">Android Studio 基础教程<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><a href="https://book.douban.com/subject/26599538/" class="external external-link">《Android 开发艺术探索》<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：进阶书籍</li>
+</ul>
+<h3 id="阶段-3android-进阶">阶段 3：Android 进阶<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-3android-进阶" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>深入学习 Android 开发的高级特性。</p>
+<h4 id="知识点-2">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-2" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p><strong>性能优化：</strong></p>
+<ul>
+<li>【必学】内存优化：内存泄漏检测、内存管理</li>
+<li>【必学】布局优化：过度绘制、布局层级优化</li>
+<li>【必学】启动优化：冷启动、热启动优化</li>
+<li>【建议学】电量优化、网络优化
+<strong>多线程和并发：</strong></li>
+<li>【必学】Kotlin 协程（Coroutines）：现代异步编程</li>
+<li>【必学】线程池：ExecutorService</li>
+<li>【建议学】RxJava：响应式编程（可选）
+<strong>架构模式：</strong></li>
+<li>【必学】MVC、MVP、MVVM 架构模式</li>
+<li>【必学】MVVM + DataBinding/ViewBinding</li>
+<li>【建议学】MVI 架构（现代架构模式）
+<strong>依赖注入：</strong></li>
+<li>【建议学】Dagger/Hilt：依赖注入框架</li>
+<li>【建议学】Koin：Kotlin 依赖注入框架
+<strong>其他进阶：</strong></li>
+<li>【必学】ProGuard/R8：代码混淆和优化</li>
+<li>【建议学】JNI/NDK：Native 开发</li>
+<li>【建议学】自定义 View 高级：Canvas、Path、Paint</li>
+<li>【建议学】动画进阶：Lottie 动画库</li>
+<li>【建议学】音视频开发：MediaPlayer、ExoPlayer</li>
+</ul>
+<h4 id="学习建议-2">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-2" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ol>
+<li>性能优化是面试高频考点，重点学习内存优化和启动优化，用 Android Studio 自带 Profiler 工具做性能分析</li>
+<li>协程是 Android 异步编程的标准方式，比 RxJava 更简洁易懂，重点学习；RxJava 了解即可，非必须</li>
+<li>MVVM 是主流架构模式，结合 Jetpack 的 ViewModel 和 LiveData 使用效果更好</li>
+<li>依赖注入不是必须的，但在大型项目中非常有用；Hilt 是 Google 官方推荐的 DI 框架（基于 Dagger）</li>
+<li>善用 AI 对比不同架构模式的优缺点和使用场景</li>
+</ol>
+<h4 id="学习资源-2">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-2" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>⭐ <a href="https://www.youtube.com/playlist?list=PLWz5rJ2EKKc9CBxr3BVjPTPoDPLdPIFCE" class="external external-link">Android 性能优化典范<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：Google 官方性能优化系列</li>
+<li><a href="https://kotlinlang.org/docs/coroutines-overview.html" class="external external-link">Kotlin 协程官方文档<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：协程权威资料</li>
+<li><a href="https://book.douban.com/subject/27108429/" class="external external-link">《Android 进阶之光》<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：进阶书籍</li>
+<li><a href="https://book.douban.com/subject/30358046/" class="external external-link">《Android 进阶解密》<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：深入源码分析</li>
+</ul>
+<h3 id="阶段-4jetpack-组件">阶段 4：Jetpack 组件<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-4jetpack-组件" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>学习 <a href="https://developer.android.com/jetpack?hl=zh-cn" class="external external-link">Android Jetpack<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>，Google 官方推荐的 Android 应用架构组件集合。</p>
+<h4 id="知识点-3">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-3" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p><strong>核心组件（必学）：</strong></p>
+<ul>
+<li>【必学】ViewModel：管理 UI 相关数据</li>
+<li>【必学】LiveData：可观察的数据持有者</li>
+<li>【必学】Room：SQLite 数据库封装</li>
+<li>【必学】Navigation：应用内导航</li>
+<li>【必学】WorkManager：后台任务调度</li>
+<li>【必学】Paging：分页加载数据
+<strong>其他组件（建议学）：</strong></li>
+<li>【建议学】DataStore：替代 SharedPreferences</li>
+<li>【建议学】Lifecycle：生命周期感知组件</li>
+<li>【建议学】ViewBinding/DataBinding：视图绑定</li>
+<li>【建议学】CameraX：相机开发</li>
+<li>【建议学】Hilt：依赖注入（Jetpack 版 Dagger）</li>
+</ul>
+<h4 id="学习建议-3">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-3" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ol>
+<li>Jetpack 组件是现代 Android 开发的标准，Google 强烈推荐，建议系统学习不要跳过</li>
+<li>ViewModel + LiveData + Room 是 MVVM 架构核心三件套，务必掌握它们的配合使用</li>
+<li>Navigation 可简化 Fragment 导航管理，建议在多 Fragment 项目中使用</li>
+<li>Paging 可优雅处理大数据量的分页加载，比传统分页方案更简洁</li>
+<li>多看官方示例代码：Google 提供大量 Jetpack 示例项目，下载运行并阅读源码</li>
+</ol>
+<h4 id="学习资源-3">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-3" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>⭐ <a href="https://developer.android.com/jetpack?hl=zh-cn" class="external external-link">Android Jetpack 官方文档<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：最权威资料</li>
+<li><a href="https://codelabs.developers.google.com/?cat=Android" class="external external-link">Google Codelabs - Jetpack<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：官方实践教程</li>
+</ul>
+<h3 id="阶段-5jetpack-compose现代-ui-开发">阶段 5：Jetpack Compose（现代 UI 开发）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-5jetpack-compose现代-ui-开发" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>学习 <a href="https://developer.android.com/compose" class="external external-link">Jetpack Compose<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>，Android 现代化 UI 工具包，是 2025 年 Android UI 开发的首选方案。</p>
+<h4 id="知识点-4">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-4" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p><strong>Compose 基础：</strong></p>
+<ul>
+<li>【必学】基本概念：声明式 UI</li>
+<li>【必学】Composable 函数</li>
+<li>【必学】状态管理：State、remember、mutableStateOf</li>
+<li>【必学】布局：Column、Row、Box、Scaffold</li>
+<li>【必学】常用组件：Text、Button、Image、LazyColumn
+<strong>Compose 进阶：</strong></li>
+<li>【必学】主题和样式：Material Design 3</li>
+<li>【必学】副作用（Side Effects）：LaunchedEffect、DisposableEffect</li>
+<li>【必学】动画：AnimatedVisibility、Crossfade、animate*AsState</li>
+<li>【建议学】自定义组件和修饰符（Modifier）</li>
+<li>【建议学】手势处理</li>
+<li>【建议学】Canvas 绘图
+<strong>Compose 和 Jetpack 结合：</strong></li>
+<li>【必学】Compose + ViewModel</li>
+<li>【必学】Compose + Navigation</li>
+<li>【建议学】Compose + Paging</li>
+<li>【建议学】Compose + Hilt</li>
+</ul>
+<h4 id="学习建议-4">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-4" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ol>
+<li>Compose 是声明式 UI，与传统命令式 UI（XML 布局）思维方式完全不同，学会后会发现比传统方式简洁很多</li>
+<li>状态管理是 Compose 核心概念，理解 <code>remember</code>、<code>mutableStateOf</code>、状态提升（State Hoisting）非常重要</li>
+<li>Compose 布局比 XML 更灵活，但需要适应新的思维方式，建议多写 Demo 练习</li>
+<li>Material Design 3 是最新设计规范，Compose 原生支持，建议学习并应用到项目中</li>
+<li>Compose 学习曲线略陡，但一旦掌握开发效率会大大提升，结合官方文档和视频教程学习</li>
+<li>善用 AI 将传统 XML 布局转换为 Compose 代码，加深理解</li>
+</ol>
+<h4 id="学习资源-4">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-4" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>⭐ <a href="https://developer.android.com/develop/ui/compose/tutorial?hl=zh-cn" class="external external-link">Jetpack Compose 官方教程<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：官方入门教程</li>
+<li><a href="https://jetpackcompose.cn/" class="external external-link">Compose by Example<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：中文学习网站</li>
+<li><a href="https://github.com/android/compose-samples" class="external external-link">Compose 示例项目<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：官方示例代码</li>
+</ul>
+<h3 id="阶段-6项目实战">阶段 6：项目实战<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-6项目实战" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>通过实际项目巩固所学知识。</p>
+<h4 id="学习建议-5">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-5" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ol>
+<li>从简单项目开始：待办事项、笔记应用、天气应用等，熟悉完整开发流程</li>
+<li>逐步增加复杂度：开发包含网络请求、数据库存储、多页面导航的应用，如新闻客户端、电影信息应用、社交应用</li>
+<li>使用现代技术栈：Jetpack Compose、MVVM 架构、Kotlin 协程、Hilt 依赖注入等</li>
+<li>关注代码质量：代码规范（如 ktlint）、单元测试、代码审查</li>
+<li>发布应用：尝试发布到 Google Play 或其他应用商店，体验完整发布流程</li>
+<li>学习优秀开源项目：GitHub 上大量优质 Android 开源项目，建议阅读源码学习</li>
+</ol>
+<h4 id="项目推荐">项目推荐<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#项目推荐" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p><strong>官方示例项目：</strong></p>
+<ul>
+<li>⭐ <a href="https://github.com/android/compose-samples" class="external external-link">Jetpack Compose Samples<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：22.6k+ stars，Google 官方 Compose 示例项目集合，包含 JetNews、Jetchat、Jetsnack 等多个完整应用</li>
+<li><a href="https://github.com/android/nowinandroid" class="external external-link">Now in Android<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：Google 官方现代化 Android 应用示例，遵循最佳架构实践</li>
+<li><a href="https://github.com/android/plaid" class="external external-link">Plaid<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：Material Design 示例应用
+<strong>社区优质项目：</strong></li>
+<li><a href="https://github.com/chrisbanes/tivi" class="external external-link">Tivi<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：使用 Jetpack Compose 开发的电视节目应用</li>
+<li><a href="https://gitee.com/oschina/android-app" class="external external-link">开源中国 Android 客户端<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：完整的开源项目</li>
+</ul>
+<h4 id="学习资源-5">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-5" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li><a href="https://github.com/Trinea/android-open-project" class="external external-link">Android 开源项目大全<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：精选开源项目</li>
+</ul>
+<h3 id="阶段-7跨平台开发可选">阶段 7：跨平台开发（可选）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-7跨平台开发可选" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>学习跨平台开发技术，一套代码同时运行在 Android 和 iOS 上。</p>
+<h4 id="知识点-5">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-5" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p><strong>Flutter（推荐）：</strong></p>
+<ul>
+<li>【建议学】Flutter 基础：Dart 语言、Widget</li>
+<li>【建议学】Flutter 布局和 UI 组件</li>
+<li>【建议学】状态管理：Provider、Riverpod、Bloc</li>
+<li>【建议学】和原生交互：Platform Channel
+<strong>其他跨平台方案：</strong></li>
+<li>【可不学】React Native：基于 React 的跨平台框架</li>
+<li>【可不学】Kotlin Multiplatform：Kotlin 跨平台方案</li>
+</ul>
+<h4 id="学习建议-6">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-6" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ol>
+<li>跨平台开发不是必须的，但可提升竞争力，尤其在小团队或创业公司</li>
+<li>Flutter 是目前最流行的跨平台开发框架，社区活跃、性能优秀，建议优先学习</li>
+<li>跨平台学习成本较高，建议先掌握原生 Android 开发，再学习跨平台技术</li>
+<li>跨平台虽能提高开发效率，但在性能和原生体验上仍有差距，需权衡使用场景</li>
+</ol>
+<h4 id="学习资源-6">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-6" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li><a href="https://flutter.dev/docs" class="external external-link">Flutter 官方文档<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：官方学习资料</li>
+<li><a href="https://flutterchina.club/" class="external external-link">Flutter 中文网<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：中文学习资源</li>
+</ul>
+<h3 id="阶段-8求职备战">阶段 8：求职备战<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-8求职备战" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>准备 Android 开发岗位的面试。</p>
+<h4 id="学习建议-7">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-7" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ol>
+<li>系统复习知识点：四大组件、Jetpack、性能优化、Kotlin 协程等核心内容，整理自己的知识体系</li>
+<li>准备项目经历：梳理项目介绍、技术选型、遇到的问题和解决方案；建议上传 GitHub 并在简历中附上链接</li>
+<li>准备算法题：Android 面试对算法要求相对较低，但基础数据结构和算法要掌握，可刷 LeetCode 简单和中等难度题目</li>
+<li>了解公司技术栈：投简历前了解目标公司技术栈，针对性准备，如公司使用 Compose 就重点准备 Compose 相关知识</li>
+<li>模拟面试：可找朋友或使用 AI 工具进行模拟面试练习，提前适应面试节奏</li>
+<li>完善简历：使用专业简历模板制作技术简历，突出项目经验和技术能力</li>
+</ol>
+<h4 id="面试考察重点">面试考察重点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#面试考察重点" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ol>
+<li>Android 基础：四大组件、生命周期、Intent、Fragment</li>
+<li>Jetpack 组件：ViewModel、LiveData、Room、Navigation</li>
+<li>Jetpack Compose：声明式 UI、状态管理、重组</li>
+<li>Kotlin：协程、空安全、高阶函数、扩展函数</li>
+<li>性能优化：内存优化、启动优化、布局优化</li>
+<li>架构模式：MVVM、MVI、依赖注入</li>
+<li>网络和数据：Retrofit、OkHttp、数据库、缓存</li>
+<li>项目经验：项目介绍、技术选型、问题解决</li>
+</ol>
+<h4 id="经典面试题">经典面试题<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#经典面试题" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ol>
+<li>Activity 的生命周期是什么？各个方法的调用时机？</li>
+<li>Fragment 和 Activity 的通信方式有哪些？</li>
+<li>Jetpack Compose 的重组机制是什么？如何优化重组性能？</li>
+<li>Kotlin 协程的原理是什么？和线程有什么区别？</li>
+<li>MVVM 架构中 ViewModel 的作用是什么？如何避免内存泄漏？</li>
+<li>RecyclerView 的缓存机制是什么？如何优化滑动性能？</li>
+<li>Android 应用的启动流程是什么？如何优化冷启动时间？</li>
+<li>如何检测和解决内存泄漏问题？</li>
+</ol>
+<h2 id="写在最后">写在最后<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#写在最后" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Android 开发是一个充满挑战和机遇的技术方向。虽然近年来跨平台开发兴起，但原生 Android 开发依然有不可替代的地位，尤其是在性能要求高、需要深度定制的场景中。</p>
+<p>学习 Android 开发需要耐心和毅力，从基础到精通是循序渐进的过程。建议按照本路线的阶段一步步学习，多动手实践、多写项目、多看优秀的开源代码。</p>
+<p>在 AI 时代，移动端 AI 应用开发成为新的增长点。掌握 Android 开发技能，结合 AI 技术，将为你打开更广阔的职业发展空间。</p></div></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="toc"><button type="button" class="toc-header" aria-controls="toc-378" aria-expanded="true"><h3>目录</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-0" class="toc-content overflow"><li class="depth-0"><a href="#移动端---安卓开发学习路线" data-for="移动端---安卓开发学习路线">移动端 - 安卓开发学习路线</a></li><li class="depth-1"><a href="#开篇介绍" data-for="开篇介绍">开篇介绍</a></li><li class="depth-2"><a href="#为什么要学-android-开发" data-for="为什么要学-android-开发">为什么要学 Android 开发？</a></li><li class="depth-2"><a href="#就业方向" data-for="就业方向">就业方向</a></li><li class="depth-2"><a href="#学习前提" data-for="学习前提">学习前提</a></li><li class="depth-1"><a href="#整体学习建议" data-for="整体学习建议">整体学习建议</a></li><li class="depth-1"><a href="#学习路线" data-for="学习路线">学习路线</a></li><li class="depth-2"><a href="#阶段-1kotlin-编程语言" data-for="阶段-1kotlin-编程语言">阶段 1：Kotlin 编程语言</a></li><li class="depth-2"><a href="#阶段-2android-基础" data-for="阶段-2android-基础">阶段 2：Android 基础</a></li><li class="depth-2"><a href="#阶段-3android-进阶" data-for="阶段-3android-进阶">阶段 3：Android 进阶</a></li><li class="depth-2"><a href="#阶段-4jetpack-组件" data-for="阶段-4jetpack-组件">阶段 4：Jetpack 组件</a></li><li class="depth-2"><a href="#阶段-5jetpack-compose现代-ui-开发" data-for="阶段-5jetpack-compose现代-ui-开发">阶段 5：Jetpack Compose（现代 UI 开发）</a></li><li class="depth-2"><a href="#阶段-6项目实战" data-for="阶段-6项目实战">阶段 6：项目实战</a></li><li class="depth-2"><a href="#阶段-7跨平台开发可选" data-for="阶段-7跨平台开发可选">阶段 7：跨平台开发（可选）</a></li><li class="depth-2"><a href="#阶段-8求职备战" data-for="阶段-8求职备战">阶段 8：求职备战</a></li><li class="depth-1"><a href="#写在最后" data-for="写在最后">写在最后</a></li><li class="overflow-end"></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v5.0.0</a> © 2026</p><ul><li><a href="https://github.com/xyf1111">GitHub</a></li></ul></footer></div></div></body><script src="../../static/resource-after-e13fffa1.js" type="application/javascript" data-persist="true"></script><script src="../../static/resource-after-8b336f9a.js" type="application/javascript" data-persist="true"></script><script src="../../static/resource-after-baba652b.js" type="application/javascript" data-persist="true"></script><script src="../../static/resource-after-5eb75950.js" type="module" data-persist="true"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript" data-persist="true"></script><script src="../../postscript-17915799.js" type="module" data-persist="true"></script></html>

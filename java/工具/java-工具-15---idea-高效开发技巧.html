@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr"><head><title>Java 工具 15 - IDEA 高效开发技巧 · 后端开发笔记</title><meta charset="utf-8"/><link rel="preload" href="../../index-b754f97d.css" as="style"/><link rel="preload" href="../../prescript-2bfc6315.js" as="script"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="技术知识库"/><meta property="og:title" content="Java 工具 15 - IDEA 高效开发技巧 · 后端开发笔记"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Java 工具 15 - IDEA 高效开发技巧 · 后端开发笔记"/><meta name="twitter:description" content="Java 工具 15 - IDEA 高效开发技巧 IDEA 是面向 Java 开发的专业 IDE，90% 以上的企业使用；善用实用插件、快捷键和内置工具，可显著提升日常开发与阅读源码的效率。 工欲善其事，必先利其器。IDEA 是 面向 Java 开发的专业 IDE（集成开发环境），90% 以上的企业使用 IDEA 进行 Java 开发，而不是 Eclipse 等其他工具。IDEA 功能丰富，但只有熟练使用才能发挥最大效率，本文总结实用插件、开发技巧、阅读源码技巧三大类使用心得。 如果还是学生党，可以免费使用 IDEA 及 JetBrains 全系列产品： 地址：www.jetbrains.co..."/><meta property="og:description" content="Java 工具 15 - IDEA 高效开发技巧 IDEA 是面向 Java 开发的专业 IDE，90% 以上的企业使用；善用实用插件、快捷键和内置工具，可显著提升日常开发与阅读源码的效率。 工欲善其事，必先利其器。IDEA 是 面向 Java 开发的专业 IDE（集成开发环境），90% 以上的企业使用 IDEA 进行 Java 开发，而不是 Eclipse 等其他工具。IDEA 功能丰富，但只有熟练使用才能发挥最大效率，本文总结实用插件、开发技巧、阅读源码技巧三大类使用心得。 如果还是学生党，可以免费使用 IDEA 及 JetBrains 全系列产品： 地址：www.jetbrains.co..."/><meta property="og:image:alt" content="Java 工具 15 - IDEA 高效开发技巧 IDEA 是面向 Java 开发的专业 IDE，90% 以上的企业使用；善用实用插件、快捷键和内置工具，可显著提升日常开发与阅读源码的效率。 工欲善其事，必先利其器。IDEA 是 面向 Java 开发的专业 IDE（集成开发环境），90% 以上的企业使用 IDEA 进行 Java 开发，而不是 Eclipse 等其他工具。IDEA 功能丰富，但只有熟练使用才能发挥最大效率，本文总结实用插件、开发技巧、阅读源码技巧三大类使用心得。 如果还是学生党，可以免费使用 IDEA 及 JetBrains 全系列产品： 地址：www.jetbrains.co..."/><meta property="twitter:domain" content="xyf1111.github.io/tech-notes"/><meta property="og:url" content="https://xyf1111.github.io/tech-notes/java/工具/java-工具-15---idea-高效开发技巧"/><meta property="twitter:url" content="https://xyf1111.github.io/tech-notes/java/工具/java-工具-15---idea-高效开发技巧"/><link rel="icon" href="../../static/icon.png"/><meta name="description" content="Java 工具 15 - IDEA 高效开发技巧 IDEA 是面向 Java 开发的专业 IDE，90% 以上的企业使用；善用实用插件、快捷键和内置工具，可显著提升日常开发与阅读源码的效率。 工欲善其事，必先利其器。IDEA 是 面向 Java 开发的专业 IDE（集成开发环境），90% 以上的企业使用 IDEA 进行 Java 开发，而不是 Eclipse 等其他工具。IDEA 功能丰富，但只有熟练使用才能发挥最大效率，本文总结实用插件、开发技巧、阅读源码技巧三大类使用心得。 如果还是学生党，可以免费使用 IDEA 及 JetBrains 全系列产品： 地址：www.jetbrains.co..."/><meta name="generator" content="Quartz"/><link href="../../index-b754f97d.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-735924e0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-589c1cea.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-bbc3f7c0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-2911f5d1.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-e427079e.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-53b25b2b.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-c93c6a44.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-8a06014f.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-77d6a441.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-6ee21cee.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-1ea6ad18.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-788c9ca3.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-642859cd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-4abc06bd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-274a3dfe.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-94cb6c84.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-58d5ff56.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-7262b5a7.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../static/resource-style-a5c806d2.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../static/resource-style-6bd36952.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" data-persist="true"/><script src="../../prescript-2bfc6315.js" type="application/javascript" data-persist="true"></script><script type="application/javascript" data-persist="true">const fetchData = fetch("../../static/contentIndex.json").then(data => data.json())</script><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://xyf1111.github.io/tech-notes/java/工具/java-工具-15---idea-高效开发技巧-og-image.webp"/><meta property="og:image:url" content="https://xyf1111.github.io/tech-notes/java/工具/java-工具-15---idea-高效开发技巧-og-image.webp"/><meta name="twitter:image" content="https://xyf1111.github.io/tech-notes/java/工具/java-工具-15---idea-高效开发技巧-og-image.webp"/><meta property="og:image:type" content="image/webp"/></head><body data-slug="java/工具/java-工具-15---idea-高效开发技巧" data-basepath="/tech-notes"><div id="quartz-root" class="page" data-frame="default"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="../..">技术知识库</a></h2><div class="mobile-only"><div class="spacer"></div></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 0.5rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button" aria-label="搜索" aria-expanded="false"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>搜索</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="搜索内容..." placeholder="搜索内容..."/><div class="search-layout" data-preview="true" data-field-priority="[&quot;title&quot;,&quot;content&quot;,&quot;tags&quot;]"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode" aria-label="暗色模式"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="暗色模式"><title>暗色模式</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="亮色模式"><title>亮色模式</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode" aria-label="阅读模式"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="阅读模式"><title>阅读模式</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer nav-files-container" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a2, b2) => {\n    if (!a2.isFolder &amp;&amp; !b2.isFolder || a2.isFolder &amp;&amp; b2.isFolder) {\n      return (a2.displayName || \&quot;\&quot;).localeCompare(b2.displayName || \&quot;\&quot;, void 0, {\n        numeric: true,\n        sensitivity: \&quot;base\&quot;\n      });\n    }\n    if (!a2.isFolder &amp;&amp; b2.isFolder) {\n      return 1;\n    }\n    return -1;\n  }&quot;,&quot;filterFn&quot;:&quot;(node) => node.slugSegment !== \&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;(node) => {\n    return node;\n  }&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-275" aria-label="探索"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>探索</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-275" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#" class="nav-file-title tree-item-self"></a></li></template><template id="template-folder"><li><div class="folder-container nav-folder-title tree-item-self"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon nav-folder-collapse-indicator collapse-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content tree-item-children"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../java/">java</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../java/工具/">工具</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Java 工具 15 - IDEA 高效开发技巧</a></div></nav><h1 class="article-title">Java 工具 15 - IDEA 高效开发技巧</h1><details class="note-properties metadata-container" open data-collapsed="false"><summary class="note-properties-header"><span class="note-properties-title">Properties</span><span class="note-properties-count">1</span></summary><table class="note-properties-table"><tbody><tr class="note-properties-row metadata-property"><td class="note-properties-key metadata-property-key">tags</td><td class="note-properties-value metadata-property-value"><span class="note-properties-tags"><a href="../../tags/java" class="internal internal-link tag-link">java</a><span class="note-properties-separator">, </span><a href="../../tags/idea" class="internal internal-link tag-link">idea</a><span class="note-properties-separator">, </span><a href="../../tags/jetbrains" class="internal internal-link tag-link">jetbrains</a><span class="note-properties-separator">, </span><a href="../../tags/开发效率" class="internal internal-link tag-link">开发效率</a><span class="note-properties-separator">, </span><a href="../../tags/插件" class="internal internal-link tag-link">插件</a><span class="note-properties-separator">, </span><a href="../../tags/快捷键" class="internal internal-link tag-link">快捷键</a></span></td></tr></tbody></table></details><p show-comma="true" class="content-meta"><time datetime="2026-08-25T16:00:00.000Z">2026年8月26日</time><span>13分钟阅读</span></p></div></div><article class="popover-hint"><div class="markdown-preview-view markdown-rendered"><h1 id="java-工具-15---idea-高效开发技巧">Java 工具 15 - IDEA 高效开发技巧<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#java-工具-15---idea-高效开发技巧" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<blockquote>
+<p>IDEA 是面向 Java 开发的专业 IDE，90% 以上的企业使用；善用实用插件、快捷键和内置工具，可显著提升日常开发与阅读源码的效率。</p>
+</blockquote>
+<p>工欲善其事，必先利其器。IDEA 是 <strong>面向 Java 开发的专业 IDE</strong>（集成开发环境），<strong>90% 以上</strong>的企业使用 IDEA 进行 Java 开发，而不是 Eclipse 等其他工具。IDEA 功能丰富，但只有熟练使用才能发挥最大效率，本文总结<strong>实用插件、开发技巧、阅读源码技巧</strong>三大类使用心得。</p>
+<p>如果还是<strong>学生党</strong>，可以<strong>免费使用</strong> IDEA 及 JetBrains 全系列产品：</p>
+<p>地址：<a href="https://www.jetbrains.com/shop/eform/students" class="external external-link">https://www.jetbrains.com/shop/eform/students<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<p>所有快捷键都可以在 preferences 的 keymap 设置中查询及自定义。</p>
+<h2 id="核心要点">核心要点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#核心要点" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ul>
+<li><strong>IDEA 定位</strong>：面向 Java 的专业 IDE，90% 以上企业使用；学生党可免费使用 JetBrains 全系列产品</li>
+<li><strong>快捷键入口</strong>：preferences → keymap 中可查询和设置快捷键</li>
+<li><strong>实用插件 12 个</strong>：快捷键提示、AI 补全、Arthas 诊断、代码生成、Git 增强、翻译等</li>
+<li><strong>开发技巧 6 条</strong>：快捷键、Generate 生成代码、Live Templates、内置剪切板、内置 Git、内置 HTTP Client</li>
+<li><strong>阅读源码</strong>：先看整体（包层级、类关系）再看局部（类属性、方法实现），配合 11 组快捷键</li>
+<li>同为 IDEA 主题的文档：<a href="../../java/工具/java-工具-13---idea-docker远程部署springboot" class="internal internal-link alias" data-slug="java/工具/java-工具-13---idea-docker远程部署springboot">Java 工具 13</a></li>
+</ul>
+<h2 id="实用插件">实用插件<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#实用插件" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>插件可在 Settings（Preferences）→ Plugins 中搜索安装，以下 12 个插件覆盖快捷键、代码生成、代码浏览、Git 增强、翻译等场景，地址均为 JetBrains 官方插件市场：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>插件名</th><th>类型</th><th>作用</th><th>地址</th></tr></thead><tbody><tr><td>Key Promoter X</td><td>快捷键提示</td><td>鼠标操作可被快捷键代替时给出提示，帮助自然养成快捷键习惯，告别死记硬背</td><td><a href="https://plugins.jetbrains.com/plugin/9792-key-promoter-x/" class="external external-link">https://plugins.jetbrains.com/plugin/9792-key-promoter-x/<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></td></tr><tr><td>AiXcoder Code Completer</td><td>代码提示补全</td><td>使用 AI 自动提示和补全代码，比 IDEA 自带代码补全更智能</td><td><a href="https://plugins.jetbrains.com/plugin/13574-aixcoder-code-completer/" class="external external-link">https://plugins.jetbrains.com/plugin/13574-aixcoder-code-completer/<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></td></tr><tr><td>Arthas Idea</td><td>命令生成</td><td>自动生成 Arthas 在线 Java 代码诊断命令（Arthas 是阿里开源的 Java 在线诊断工具），不用再翻文档拼命令</td><td><a href="https://plugins.jetbrains.com/plugin/13581-arthas-idea/" class="external external-link">https://plugins.jetbrains.com/plugin/13581-arthas-idea/<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></td></tr><tr><td>Auto filling Java call arguments</td><td>代码生成</td><td>通过快捷键自动补全函数调用参数，针对包含大量参数的构造函数和方法非常有用</td><td><a href="https://plugins.jetbrains.com/plugin/8638-auto-filling-java-call-arguments/" class="external external-link">https://plugins.jetbrains.com/plugin/8638-auto-filling-java-call-arguments/<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></td></tr><tr><td>GenerateAllSetter</td><td>代码生成</td><td>一键生成指定对象的所有 set 方法调用代码，单元测试造假数据时非常有用</td><td><a href="https://plugins.jetbrains.com/plugin/9360-generateallsetter/" class="external external-link">https://plugins.jetbrains.com/plugin/9360-generateallsetter/<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></td></tr><tr><td>GenerateSerialVersionUID</td><td>代码生成</td><td>一键为实现 Serializable 接口的类生成 SerialVersionUID</td><td><a href="https://plugins.jetbrains.com/plugin/185-generateserialversionuid/" class="external external-link">https://plugins.jetbrains.com/plugin/185-generateserialversionuid/<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></td></tr><tr><td>GsonFormat</td><td>代码生成</td><td>在类中使用，粘贴一段 JSON 文本即可自动生成对象的嵌套结构代码</td><td><a href="https://plugins.jetbrains.com/plugin/7654-gsonformat/" class="external external-link">https://plugins.jetbrains.com/plugin/7654-gsonformat/<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></td></tr><tr><td>Lombok</td><td>代码生成</td><td>配合 Lombok 依赖及注解使用，大大减少 POJO 代码量；安装后需开启注解支持（配置参考 <a href="https://www.baeldung.com/lombok-ide" class="external external-link">https://www.baeldung.com/lombok-ide<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> ）</td><td><a href="https://plugins.jetbrains.com/plugin/6317-lombok/" class="external external-link">https://plugins.jetbrains.com/plugin/6317-lombok/<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></td></tr><tr><td>Rainbow Brackets</td><td>代码浏览</td><td>用颜色区分括号嵌套层级，便于阅读并更快定位调整错误代码（建议避免大量嵌套）</td><td><a href="https://plugins.jetbrains.com/plugin/10080-rainbow-brackets/" class="external external-link">https://plugins.jetbrains.com/plugin/10080-rainbow-brackets/<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></td></tr><tr><td>CodeGlance</td><td>代码浏览</td><td>编辑器右侧生成代码小地图，可拖拽光标快速定位，阅读行数很多的代码文件时非常实用</td><td><a href="https://plugins.jetbrains.com/plugin/7275-codeglance/" class="external external-link">https://plugins.jetbrains.com/plugin/7275-codeglance/<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></td></tr><tr><td>GitToolBox</td><td>Git 增强</td><td>在自带 Git 功能之上新增查看 Git 状态、自动拉取代码、提交通知等，最好用的是查看每一行代码的最近提交信息</td><td><a href="https://plugins.jetbrains.com/plugin/7499-gittoolbox/" class="external external-link">https://plugins.jetbrains.com/plugin/7499-gittoolbox/<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></td></tr><tr><td>Translation</td><td>翻译</td><td>鼠标选中文本点击右键即可自动翻译成多国语言，解决阅读代码遇英文单词的痛点</td><td><a href="https://plugins.jetbrains.com/plugin/8579-translation/" class="external external-link">https://plugins.jetbrains.com/plugin/8579-translation/<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></td></tr></tbody></table></div>
+<h2 id="开发技巧">开发技巧<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#开发技巧" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>通过插件可以给 IDEA 增加新功能，但 IDEA 自带的功能也非常强大，以下 6 条开发技巧值得掌握：</p>
+<h3 id="1-熟练使用快捷键">1. 熟练使用快捷键<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#1-熟练使用快捷键" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>活用快捷键是使用任何 IDE 提升开发及阅读源码效率的前提。比较常用的是<strong>换行、复制/删除当前行、代码格式化</strong>等，可通过 Key Promoter X 插件渐进式熟悉快捷键。</p>
+<p>快捷键参考文章（纯技术博客）：</p>
+<ul>
+<li>IDEA Mac 快捷键指南：<a href="https://www.jianshu.com/p/454c71172c46" class="external external-link">https://www.jianshu.com/p/454c71172c46<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>IDEA Win 常用快捷键：<a href="https://www.jianshu.com/p/5de7cca0fefc" class="external external-link">https://www.jianshu.com/p/5de7cca0fefc<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+<h3 id="2-利用-generate-快捷键快速生成代码">2. 利用 Generate 快捷键快速生成代码<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#2-利用-generate-快捷键快速生成代码" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>在类中使用 Generate 可快速生成构造器、Getter/Setter 等代码：</p>
+<ul>
+<li>Win：<code>Alt + Insert</code></li>
+<li>Mac：<code>Command + N</code></li>
+</ul>
+<h3 id="3-运用代码模板live-templates">3. 运用代码模板（Live Templates）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#3-运用代码模板live-templates" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>代码模板是 IDEA 中非常好用的功能，可以<strong>通过缩写（关键词）生成指定的代码段</strong>，很多重复代码都可以快速生成，提高效率的同时降低出错概率。</p>
+<ul>
+<li>IDEA 内置了很多代码模板，如 <code>main</code>；</li>
+<li>可以自定义缩写和要生成的代码段；</li>
+<li>还支持预定义变量、自定义变量以及内置函数。</li>
+</ul>
+<p>更多高级用法参考：IDEA 中 live template 的详细使用教程 <a href="https://www.jianshu.com/p/3974df6572af" class="external external-link">https://www.jianshu.com/p/3974df6572af<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<h3 id="4-使用内置剪切板保存复制历史">4. 使用内置剪切板保存复制历史<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#4-使用内置剪切板保存复制历史" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>写代码的必备技能是复制粘贴，不仅能提高效率，还能降低出错率（如用户、密钥、地址等信息）。</p>
+<ul>
+<li>IDEA 内置剪切板可保存复制历史，粘贴时按 <code>Shift + Ctrl + V</code> 即可选择要粘贴的内容；</li>
+<li>不满足于内置剪切板，还可以使用更高级的软件：Ditto（Windows）或 Alfred（Mac）。</li>
+</ul>
+<h3 id="5-使用内置的-git">5. 使用内置的 Git<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#5-使用内置的-git" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>IDEA 内置 Git 辅助工具，能够<strong>可视化分支管理/切换、代码提交/更新/冲突解决/回退、代码历史版本查看</strong>等，在顶部菜单 <code>VCS > Git</code> 中查看所有功能；底部栏中可以查看 Git 日志。</p>
+<h3 id="6-使用内置-http-client-测试接口">6. 使用内置 HTTP Client 测试接口<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#6-使用内置-http-client-测试接口" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>不需要再使用 Postman 等外置接口测试工具，IDEA 内置了 HTTP Client，<strong>通过编写请求脚本</strong>进行接口调用，非常灵活，在顶部菜单 <code>Tools > HTTP Client</code> 中打开。</p>
+<p>详细用法请阅读官方使用文档：<a href="https://www.jetbrains.com/help/idea/http-client-in-product-code-editor.html" class="external external-link">https://www.jetbrains.com/help/idea/http-client-in-product-code-editor.html<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<h2 id="常见坑别被包折叠视图骗了">常见坑：别被「包折叠」视图骗了<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#常见坑别被包折叠视图骗了" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>JetBrains 系列 IDE（IDEA / PyCharm 等）为了界面简洁，默认会在视图中<strong>折叠空的中间包</strong>，真实的目录层级可能被隐藏、甚至产生「障眼法」。</p>
+<p><strong>踩坑案例</strong>（MyBatis 配置文件找不到）：resources 目录下已有同事的配置结构 <code>aaa/config</code>（磁盘上两个真实嵌套目录，对应 Java 包 <code>aaa.config</code>）。照葫芦画瓢新建时，直接输入目录名 <code>bbb.config</code>——结果磁盘上创建的是<strong>一个名字里带点号的单目录</strong>，但在 IDE 折叠视图中它显示成 <code>bbb > config</code> 两层，和 <code>aaa/config</code> 看起来一模一样，肉眼无法分辨。</p>
+<ul>
+<li>按 <code>bbb/config/sql-map-config.xml</code> 路径加载 → 运行时<strong>找不到文件</strong>（正确路径应为 <code>bbb.config/sql-map-config.xml</code>，目录名中的点不是路径分隔符）</li>
+<li>逐目录对比两份配置看不出差异，进<strong>构建产物目录</strong>（如 <code>target/classes</code>）检查才发现真实结构</li>
+</ul>
+<p><strong>排查与预防</strong>：</p>
+<ol>
+<li>资源文件找不到时，先看报错信息，再到构建产物目录确认文件是否打包、打包后的真实目录结构——IDE 视图会骗人，构建产物不会</li>
+<li>需要嵌套包结构时<strong>逐级创建目录</strong>：先建 <code>bbb</code>，再在 <code>bbb</code> 下建 <code>config</code>，不要一次性输入 <code>bbb.config</code> 这类带点的目录名</li>
+<li>可在 Project 视图右上角关闭「折叠空中间包」（Compact Middle Packages），显示真实目录层级</li>
+</ol>
+<h2 id="阅读源码技巧">阅读源码技巧<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阅读源码技巧" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>阅读源码遵循「先看整体、再看局部」的思路：</p>
+<ul>
+<li><strong>先看整体</strong>：查看包的层级关系，分析包中类（接口）之间的关系——继承、实现、委托、方法调用；</li>
+<li><strong>再看局部</strong>：查看某个类具体的属性（域）和方法实现。</li>
+</ul>
+<p>IDEA 为整个阅读源码的过程提供了一系列快捷键支持，按用途分组如下：</p>
+<p><strong>搜索定位</strong></p>
+<ol>
+<li><strong>文件/类搜索</strong>：根据文件名搜索文件/类（<code>Shift + Shift</code> 连按两次）</li>
+<li><strong>字段搜索</strong>：根据文件内容搜索并直接定位，支持局部（当前文件或选中代码段）和全局（项目/模块/目录/作用域等）</li>
+<li><strong>跳转到上/下次光标位置</strong>：查看源码时经常需要在多个类之间来回跳转，此功能非常实用</li>
+</ol>
+<p><strong>关系分析</strong></p>
+<ol start="4">
+<li><strong>查看接口的实现类（或接口方法的实现）</strong>：光标选中接口方法直接跳转到具体实现，有多个实现时可选择跳转到指定实现类</li>
+<li><strong>查看方法调用树</strong>：查看指定方法的所有调用方和被调方</li>
+<li><strong>查看类关系图</strong>：直观清晰地展现类的关系，便于分析</li>
+<li><strong>查看类的继承树</strong>：查看类的父类和子类继承关系</li>
+</ol>
+<p><strong>变量追踪</strong></p>
+<ol start="8">
+<li><strong>查看变量声明/调用位置</strong>：光标在声明处则查看使用该变量的代码，光标在使用处则查看变量的声明位置</li>
+<li><strong>查看变量被调用位置</strong>：功能与上类似，仅查看变量的调用位置</li>
+</ol>
+<p><strong>结构与历史</strong></p>
+<ol start="10">
+<li><strong>查看类的结构</strong>：查看属性、域、方法、继承方法、匿名类、Lambdas，并快速跳转到指定位置</li>
+<li><strong>查看每行代码的提交信息</strong>（需被 Git 管理）：在行号处右键，点击 Annotate 开启，可快速定位每一行代码的提交来源</li>
+</ol>
+<p>快捷键汇总表：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>功能</th><th>Win</th><th>Mac</th></tr></thead><tbody><tr><td>文件/类搜索</td><td><code>Shift + Shift</code>（连按两次）</td><td><code>Shift + Shift</code>（连按两次）</td></tr><tr><td>字段搜索（局部）</td><td><code>Ctrl + F</code></td><td><code>Command + F</code></td></tr><tr><td>字段搜索（全局）</td><td><code>Ctrl + Shift + F</code></td><td><code>Command + Shift + F</code></td></tr><tr><td>跳转上次光标位置</td><td><code>Alt + ←</code></td><td><code>Option + Command + ←</code></td></tr><tr><td>跳转下次光标位置</td><td><code>Alt + →</code></td><td><code>Option + Command + →</code></td></tr><tr><td>查看接口实现类</td><td><code>Ctrl + Alt + B</code></td><td><code>Option + Command + B</code></td></tr><tr><td>查看方法调用树</td><td><code>Ctrl + Alt + H</code></td><td><code>Control + Option + H</code></td></tr><tr><td>查看类关系图</td><td><code>Ctrl + Alt + U</code></td><td><code>Shift + Option + Command + U</code></td></tr><tr><td>查看类继承树</td><td><code>Ctrl + H</code></td><td><code>Control + H</code></td></tr><tr><td>查看变量声明/调用位置</td><td><code>Ctrl + B</code>（或按住 Ctrl 点击）</td><td><code>Command + B</code>（或按住 Command 点击）</td></tr><tr><td>查看变量被调用位置</td><td><code>Ctrl + Alt + F7</code></td><td><code>Option + Command + F7</code></td></tr><tr><td>查看类结构</td><td><code>Alt + 7</code></td><td><code>Command + 7</code></td></tr><tr><td>查看每行代码提交信息</td><td>行号处右键 → Annotate</td><td>行号处右键 → Annotate</td></tr></tbody></table></div>
+<blockquote>
+<p>来源：鱼皮·编程导航 / codefather</p>
+</blockquote></div></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="toc"><button type="button" class="toc-header" aria-controls="toc-275" aria-expanded="true"><h3>目录</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-0" class="toc-content overflow"><li class="depth-0"><a href="#java-工具-15---idea-高效开发技巧" data-for="java-工具-15---idea-高效开发技巧">Java 工具 15 - IDEA 高效开发技巧</a></li><li class="depth-1"><a href="#核心要点" data-for="核心要点">核心要点</a></li><li class="depth-1"><a href="#实用插件" data-for="实用插件">实用插件</a></li><li class="depth-1"><a href="#开发技巧" data-for="开发技巧">开发技巧</a></li><li class="depth-2"><a href="#1-熟练使用快捷键" data-for="1-熟练使用快捷键">1. 熟练使用快捷键</a></li><li class="depth-2"><a href="#2-利用-generate-快捷键快速生成代码" data-for="2-利用-generate-快捷键快速生成代码">2. 利用 Generate 快捷键快速生成代码</a></li><li class="depth-2"><a href="#3-运用代码模板live-templates" data-for="3-运用代码模板live-templates">3. 运用代码模板（Live Templates）</a></li><li class="depth-2"><a href="#4-使用内置剪切板保存复制历史" data-for="4-使用内置剪切板保存复制历史">4. 使用内置剪切板保存复制历史</a></li><li class="depth-2"><a href="#5-使用内置的-git" data-for="5-使用内置的-git">5. 使用内置的 Git</a></li><li class="depth-2"><a href="#6-使用内置-http-client-测试接口" data-for="6-使用内置-http-client-测试接口">6. 使用内置 HTTP Client 测试接口</a></li><li class="depth-1"><a href="#常见坑别被包折叠视图骗了" data-for="常见坑别被包折叠视图骗了">常见坑：别被「包折叠」视图骗了</a></li><li class="depth-1"><a href="#阅读源码技巧" data-for="阅读源码技巧">阅读源码技巧</a></li><li class="overflow-end"></li></ul></div><div class="backlinks"><h3>反向链接</h3><ul id="list-0" class="overflow"><li><a href="../../concepts/概念-28---团队研发效能-30-锦囊" class="internal">概念 28 - 团队研发效能 30 锦囊</a></li><li><a href="../../java/工具/java-工具-19---idea-插件大汇总" class="internal">Java 工具 19 - IDEA 插件大汇总</a></li><li><a href="../../tools/前端/工具-36---代码编辑器与-ide-一览" class="internal">工具 36 - 代码编辑器与 IDE 一览</a></li><li class="overflow-end"></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v5.0.0</a> © 2026</p><ul><li><a href="https://github.com/xyf1111">GitHub</a></li></ul></footer></div></div></body><script src="../../static/resource-after-e13fffa1.js" type="application/javascript" data-persist="true"></script><script src="../../static/resource-after-8b336f9a.js" type="application/javascript" data-persist="true"></script><script src="../../static/resource-after-baba652b.js" type="application/javascript" data-persist="true"></script><script src="../../static/resource-after-5eb75950.js" type="module" data-persist="true"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript" data-persist="true"></script><script src="../../postscript-17915799.js" type="module" data-persist="true"></script></html>

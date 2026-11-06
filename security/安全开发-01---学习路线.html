@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr"><head><title>安全开发 01 - 学习路线 · 后端开发笔记</title><meta charset="utf-8"/><link rel="preload" href="../index-b754f97d.css" as="style"/><link rel="preload" href="../prescript-2bfc6315.js" as="script"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="技术知识库"/><meta property="og:title" content="安全开发 01 - 学习路线 · 后端开发笔记"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="安全开发 01 - 学习路线 · 后端开发笔记"/><meta name="twitter:description" content="安全开发 01 - 学习路线 安全开发是软件开发和网络安全的交叉领域，强调在软件全生命周期中融入安全理念与实践，倡导”安全左移”。本篇路线从零基础到精通，涵盖编程基础、安全基础、安全开发生命周期（SDL）、代码审计、DevSecOps 实践、项目实战、求职备战 7 个阶段。 开篇介绍 安全开发是软件开发和网络安全的交叉领域，强调在软件开发的全生命周期中融入安全理念和实践。随着网络安全威胁日益严峻，传统的”先开发后测试”模式已无法满足安全需求，安全开发倡导”安全左移”，即在开发早期就考虑安全问题，从源头上减少安全漏洞。 安全开发是指在软件开发过程中遵循安全开发生命周期，通过安全需求分析、安全设计..."/><meta property="og:description" content="安全开发 01 - 学习路线 安全开发是软件开发和网络安全的交叉领域，强调在软件全生命周期中融入安全理念与实践，倡导”安全左移”。本篇路线从零基础到精通，涵盖编程基础、安全基础、安全开发生命周期（SDL）、代码审计、DevSecOps 实践、项目实战、求职备战 7 个阶段。 开篇介绍 安全开发是软件开发和网络安全的交叉领域，强调在软件开发的全生命周期中融入安全理念和实践。随着网络安全威胁日益严峻，传统的”先开发后测试”模式已无法满足安全需求，安全开发倡导”安全左移”，即在开发早期就考虑安全问题，从源头上减少安全漏洞。 安全开发是指在软件开发过程中遵循安全开发生命周期，通过安全需求分析、安全设计..."/><meta property="og:image:alt" content="安全开发 01 - 学习路线 安全开发是软件开发和网络安全的交叉领域，强调在软件全生命周期中融入安全理念与实践，倡导”安全左移”。本篇路线从零基础到精通，涵盖编程基础、安全基础、安全开发生命周期（SDL）、代码审计、DevSecOps 实践、项目实战、求职备战 7 个阶段。 开篇介绍 安全开发是软件开发和网络安全的交叉领域，强调在软件开发的全生命周期中融入安全理念和实践。随着网络安全威胁日益严峻，传统的”先开发后测试”模式已无法满足安全需求，安全开发倡导”安全左移”，即在开发早期就考虑安全问题，从源头上减少安全漏洞。 安全开发是指在软件开发过程中遵循安全开发生命周期，通过安全需求分析、安全设计..."/><meta property="twitter:domain" content="xyf1111.github.io/tech-notes"/><meta property="og:url" content="https://xyf1111.github.io/tech-notes/security/安全开发-01---学习路线"/><meta property="twitter:url" content="https://xyf1111.github.io/tech-notes/security/安全开发-01---学习路线"/><link rel="icon" href="../static/icon.png"/><meta name="description" content="安全开发 01 - 学习路线 安全开发是软件开发和网络安全的交叉领域，强调在软件全生命周期中融入安全理念与实践，倡导”安全左移”。本篇路线从零基础到精通，涵盖编程基础、安全基础、安全开发生命周期（SDL）、代码审计、DevSecOps 实践、项目实战、求职备战 7 个阶段。 开篇介绍 安全开发是软件开发和网络安全的交叉领域，强调在软件开发的全生命周期中融入安全理念和实践。随着网络安全威胁日益严峻，传统的”先开发后测试”模式已无法满足安全需求，安全开发倡导”安全左移”，即在开发早期就考虑安全问题，从源头上减少安全漏洞。 安全开发是指在软件开发过程中遵循安全开发生命周期，通过安全需求分析、安全设计..."/><meta name="generator" content="Quartz"/><link href="../index-b754f97d.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-735924e0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-589c1cea.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-bbc3f7c0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-2911f5d1.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-e427079e.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-53b25b2b.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-c93c6a44.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-8a06014f.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-77d6a441.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-6ee21cee.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-1ea6ad18.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-788c9ca3.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-642859cd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-4abc06bd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-274a3dfe.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-94cb6c84.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-58d5ff56.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-7262b5a7.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../static/resource-style-a5c806d2.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../static/resource-style-6bd36952.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" data-persist="true"/><script src="../prescript-2bfc6315.js" type="application/javascript" data-persist="true"></script><script type="application/javascript" data-persist="true">const fetchData = fetch("../static/contentIndex.json").then(data => data.json())</script><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://xyf1111.github.io/tech-notes/security/安全开发-01---学习路线-og-image.webp"/><meta property="og:image:url" content="https://xyf1111.github.io/tech-notes/security/安全开发-01---学习路线-og-image.webp"/><meta name="twitter:image" content="https://xyf1111.github.io/tech-notes/security/安全开发-01---学习路线-og-image.webp"/><meta property="og:image:type" content="image/webp"/></head><body data-slug="security/安全开发-01---学习路线" data-basepath="/tech-notes"><div id="quartz-root" class="page" data-frame="default"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="..">技术知识库</a></h2><div class="mobile-only"><div class="spacer"></div></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 0.5rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button" aria-label="搜索" aria-expanded="false"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>搜索</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="搜索内容..." placeholder="搜索内容..."/><div class="search-layout" data-preview="true" data-field-priority="[&quot;title&quot;,&quot;content&quot;,&quot;tags&quot;]"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode" aria-label="暗色模式"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="暗色模式"><title>暗色模式</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="亮色模式"><title>亮色模式</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode" aria-label="阅读模式"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="阅读模式"><title>阅读模式</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer nav-files-container" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a2, b2) => {\n    if (!a2.isFolder &amp;&amp; !b2.isFolder || a2.isFolder &amp;&amp; b2.isFolder) {\n      return (a2.displayName || \&quot;\&quot;).localeCompare(b2.displayName || \&quot;\&quot;, void 0, {\n        numeric: true,\n        sensitivity: \&quot;base\&quot;\n      });\n    }\n    if (!a2.isFolder &amp;&amp; b2.isFolder) {\n      return 1;\n    }\n    return -1;\n  }&quot;,&quot;filterFn&quot;:&quot;(node) => node.slugSegment !== \&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;(node) => {\n    return node;\n  }&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-429" aria-label="探索"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>探索</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-429" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#" class="nav-file-title tree-item-self"></a></li></template><template id="template-folder"><li><div class="folder-container nav-folder-title tree-item-self"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon nav-folder-collapse-indicator collapse-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content tree-item-children"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../security/">security</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>安全开发 01 - 学习路线</a></div></nav><h1 class="article-title">安全开发 01 - 学习路线</h1><details class="note-properties metadata-container" open data-collapsed="false"><summary class="note-properties-header"><span class="note-properties-title">Properties</span><span class="note-properties-count">1</span></summary><table class="note-properties-table"><tbody><tr class="note-properties-row metadata-property"><td class="note-properties-key metadata-property-key">tags</td><td class="note-properties-value metadata-property-value"><span class="note-properties-tags"><a href="../tags/安全开发" class="internal internal-link tag-link">安全开发</a><span class="note-properties-separator">, </span><a href="../tags/devsecops" class="internal internal-link tag-link">devsecops</a><span class="note-properties-separator">, </span><a href="../tags/学习路线" class="internal internal-link tag-link">学习路线</a></span></td></tr></tbody></table></details><p show-comma="true" class="content-meta"><time datetime="2026-08-13T16:00:00.000Z">2026年8月14日</time><span>22分钟阅读</span></p></div></div><article class="popover-hint"><div class="markdown-preview-view markdown-rendered"><h1 id="安全开发-01---学习路线">安全开发 01 - 学习路线<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#安全开发-01---学习路线" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<blockquote>
+<p>安全开发是软件开发和网络安全的交叉领域，强调在软件全生命周期中融入安全理念与实践，倡导”安全左移”。本篇路线从零基础到精通，涵盖编程基础、安全基础、安全开发生命周期（SDL）、代码审计、DevSecOps 实践、项目实战、求职备战 7 个阶段。</p>
+</blockquote>
+<h2 id="开篇介绍">开篇介绍<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#开篇介绍" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>安全开发是软件开发和网络安全的交叉领域，强调在软件开发的全生命周期中融入安全理念和实践。随着网络安全威胁日益严峻，传统的”先开发后测试”模式已无法满足安全需求，安全开发倡导”安全左移”，即在开发早期就考虑安全问题，从源头上减少安全漏洞。</p>
+<p><strong>安全开发</strong>是指在软件开发过程中遵循安全开发生命周期，通过安全需求分析、安全设计、安全编码、安全测试、安全运维等环节，确保软件产品的安全性。它不是简单的安全工具使用，而是一种系统化的安全保障流程和方法论。</p>
+<p><strong>为什么要学安全开发？</strong></p>
+<ol>
+<li>安全漏洞往往源于开发阶段的疏忽，80% 的安全问题都可以在开发阶段发现和修复，越早发现、修复成本越低</li>
+<li>安全开发能力是现代开发者的必备技能，无论前端、后端还是移动开发，掌握安全开发知识都能编写更安全的代码</li>
+<li>安全开发人才需求旺盛、薪资待遇优厚，是很好的职业发展方向</li>
+</ol>
+<p>安全开发的核心价值在于从源头上保障软件安全：减少漏洞数量、降低安全风险，避免数据泄露、系统被入侵等严重后果，广泛应用于企业应用、金融系统、电商平台、移动应用、云服务等开发场景。</p>
+<h3 id="就业方向">就业方向<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#就业方向" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>安全开发工程师 — 负责安全需求分析、安全设计评审、安全编码指导</li>
+<li>代码审计工程师 — 对源代码进行安全审计，发现安全漏洞和逻辑缺陷</li>
+<li>DevSecOps 工程师 — 将安全融入 DevOps 流程，建立自动化安全测试和监控体系</li>
+<li>安全架构师 — 负责系统安全架构设计，制定安全技术方案和安全策略</li>
+<li>应用安全工程师 — 负责应用程序的安全加固、安全测试和安全运维</li>
+</ol>
+<h3 id="学习路线图">学习路线图<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习路线图" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>编程基础 → 安全基础 → 安全开发生命周期（SDL）→ 代码审计 → DevSecOps 实践 → 项目实战 → 求职备战。各阶段时长仅供参考，可根据基础灵活调整。</p>
+<h2 id="阶段-1编程基础30-45-天仅供参考">阶段 1：编程基础（30-45 天，仅供参考）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-1编程基础30-45-天仅供参考" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="学习目标">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>掌握至少一门编程语言的基础知识，为后续的安全开发学习打下基础。</p>
+<h3 id="知识点">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>编程语言基础【必学】</strong></p>
+<ul>
+<li>Java 语言基础（推荐）：基础语法、面向对象、集合框架、异常处理、多线程</li>
+<li>或 Python 语言基础：基础语法、数据结构、文件操作、网络编程</li>
+<li>或 C/C++ 语言基础（适合底层安全开发）</li>
+</ul>
+<p><strong>Web 开发基础【必学】</strong></p>
+<ul>
+<li>HTML/CSS/JavaScript、HTTP 协议、Web 应用架构、数据库基础（SQL）</li>
+<li>常见 Web 框架（Spring Boot、Django、Express 等）</li>
+</ul>
+<p><strong>版本控制【必学】</strong></p>
+<ul>
+<li>Git 基础、GitHub/GitLab 使用</li>
+</ul>
+<h3 id="学习建议">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>安全开发需要有扎实的编程基础，不要跳过这个阶段。建议选择 Java（企业级应用广、安全岗位需求最多）或 Python（适合编写安全工具和脚本）作为主要语言</li>
+<li>有编程基础可快速过一遍重点概念；零基础建议系统学习一门语言，能独立编写小型项目</li>
+<li>Web 开发基础非常重要，大多数安全开发工作都和 Web 应用相关，要理解前后端交互、数据库操作、Session 管理等原理</li>
+<li>建议动手做一个完整的 Web 项目（如博客系统、论坛系统）并上线，真实用户使用能帮你发现很多潜在安全问题</li>
+</ol>
+<h3 id="学习资源">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><a href="https://www.bilibili.com/video/BV1Cv411372m" class="external external-link">黑马程序员 Java 教程<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：适合零基础入门</li>
+</ul>
+<h2 id="阶段-2安全基础20-30-天仅供参考">阶段 2：安全基础（20-30 天，仅供参考）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-2安全基础20-30-天仅供参考" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="学习目标-1">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标-1" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>掌握网络安全和应用安全的基础知识，理解常见的安全威胁和防御方法。</p>
+<h3 id="知识点-1">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-1" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>网络安全基础【必学】</strong></p>
+<ul>
+<li>信息安全三要素（CIA）、常见攻击类型、安全防护思路、OWASP Top 10</li>
+</ul>
+<p><strong>常见安全漏洞【必学】</strong></p>
+<ul>
+<li>SQL 注入、跨站脚本攻击（XSS）、跨站请求伪造（CSRF）</li>
+<li>文件上传漏洞、命令执行漏洞、越权漏洞、敏感信息泄露、反序列化漏洞</li>
+</ul>
+<p><strong>密码学基础【必学】</strong></p>
+<ul>
+<li>加密算法分类、对称加密（AES、DES）、非对称加密（RSA）</li>
+<li>哈希算法（MD5、SHA-256）、数字签名、HTTPS/TLS</li>
+</ul>
+<p><strong>身份认证和授权【必学】</strong></p>
+<ul>
+<li>密码存储、Session 管理、JWT 令牌、OAuth 2.0、权限控制（RBAC、ABAC）</li>
+</ul>
+<h3 id="学习建议-1">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-1" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>安全基础是安全开发的理论基础，必须深入理解。要从攻击者和防御者两个角度思考安全问题，理解漏洞的原理、利用方式和防御方法</li>
+<li>OWASP Top 10 是 Web 安全的核心知识，必须熟练掌握。建议搭建 DVWA 靶场或使用在线安全练习平台，亲自体验漏洞利用过程——只有理解了攻击，才能更好地防御</li>
+<li>密码学要理解各种加密算法的特点和应用场景，知道何时用对称加密、何时用非对称加密，重点掌握 HTTPS 的工作原理</li>
+<li>身份认证和授权是应用安全的核心问题。要掌握安全的密码存储方法（如 bcrypt），了解 JWT 和 OAuth 2.0 的工作原理</li>
+</ol>
+<h3 id="学习资源-1">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-1" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><a href="https://www.bilibili.com/video/BV14rpyzCEpT/" class="external external-link">Web 安全攻防教程<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：2025 最新版</li>
+<li><a href="http://www.owasp.org.cn/" class="external external-link">OWASP 中国官网<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：官方资源</li>
+</ul>
+<h2 id="阶段-3安全开发生命周期sdl25-35-天仅供参考">阶段 3：安全开发生命周期（SDL）（25-35 天，仅供参考）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-3安全开发生命周期sdl25-35-天仅供参考" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>安全开发生命周期（SDL）是将安全融入开发流程的方法论，包括威胁建模、安全编码、安全测试等环节。</p>
+<h3 id="学习目标-2">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标-2" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>掌握安全开发生命周期（SDL）的理论和实践，能够在开发过程中融入安全实践。</p>
+<h3 id="知识点-2">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-2" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>SDL 理论【必学】</strong></p>
+<ul>
+<li>SDL 概念和历史、核心思想（安全左移）</li>
+<li>SDL 五个阶段：需求阶段、设计阶段、实现阶段、验证阶段、发布阶段</li>
+</ul>
+<p><strong>安全需求分析【必学】</strong></p>
+<ul>
+<li>威胁建模、风险评估、安全需求定义、合规性要求</li>
+</ul>
+<p><strong>安全设计【必学】</strong></p>
+<ul>
+<li>安全架构设计、数据流图、威胁分析（STRIDE 模型）、安全设计模式</li>
+</ul>
+<p><strong>安全编码【必学】</strong></p>
+<ul>
+<li>输入验证、输出编码、参数化查询、安全的文件操作、安全的加密使用、错误处理和日志记录</li>
+</ul>
+<p><strong>安全测试【必学】</strong></p>
+<ul>
+<li>静态应用安全测试（SAST）、动态应用安全测试（DAST）、交互式应用安全测试（IAST）、渗透测试</li>
+</ul>
+<p><strong>安全发布和运维【建议学】</strong></p>
+<ul>
+<li>安全配置管理、安全监控、应急响应、补丁管理</li>
+</ul>
+<h3 id="学习建议-2">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-2" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>SDL 是微软提出的安全开发框架，已成为业界标准。核心思想是”安全左移”，即开发早期就考虑安全问题；它不是固定流程，而是一种可灵活应用的方法论</li>
+<li>威胁建模是 SDL 最重要的环节之一，可在设计阶段发现潜在风险。STRIDE 模型包括伪造（Spoofing）、篡改（Tampering）、否认（Repudiation）、信息泄露（Information Disclosure）、拒绝服务（Denial of Service）、权限提升（Elevation of Privilege）六种威胁类型</li>
+<li>安全编码要养成习惯：始终对用户输入保持怀疑，严格输入验证和输出编码，用参数化查询防止 SQL 注入，用成熟加密库而不是自己实现加密算法</li>
+<li>安全测试要覆盖多层面：SAST 在代码层面发现安全问题，DAST 在运行时发现，两者结合更全面；条件允许还应进行渗透测试模拟真实攻击</li>
+</ol>
+<h3 id="学习资源-2">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-2" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/16852420961" class="external external-link">SDL 最佳实践之安全要求<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：SDL 实践指南</li>
+<li><a href="https://cloud.tencent.com/developer/article/2249893" class="external external-link">SDL 人工代码审计思路<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：腾讯 SDL 实践</li>
+<li><a href="https://www.microsoft.com/en-us/securityengineering/sdl/" class="external external-link">Microsoft SDL<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：微软 SDL 官方文档</li>
+<li><a href="https://owaspsamm.org/" class="external external-link">OWASP SAMM<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：软件保障成熟度模型</li>
+</ul>
+<h2 id="阶段-4代码审计30-40-天仅供参考">阶段 4：代码审计（30-40 天，仅供参考）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-4代码审计30-40-天仅供参考" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>代码审计是发现代码中安全漏洞的重要手段，需要掌握常见漏洞模式和审计工具的使用。</p>
+<h3 id="学习目标-3">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标-3" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>掌握代码审计技术，能够发现代码中的安全漏洞和逻辑缺陷。</p>
+<h3 id="知识点-3">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-3" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>代码审计基础【必学】</strong></p>
+<ul>
+<li>代码审计流程、代码审计方法（白盒审计、灰盒审计）、审计工具使用</li>
+</ul>
+<p><strong>常见漏洞审计【必学】</strong></p>
+<ul>
+<li>SQL 注入审计、XSS 审计、命令执行审计、文件操作漏洞审计、反序列化漏洞审计、逻辑漏洞审计</li>
+</ul>
+<p><strong>Java 代码审计【必学】</strong></p>
+<ul>
+<li>Java 常见安全问题、Spring 框架安全问题、JDBC 安全问题、文件上传安全问题、XML 解析安全问题</li>
+</ul>
+<p><strong>代码审计工具【必学】</strong></p>
+<ul>
+<li>SonarQube、Fortify、Checkmarx、Semgrep、CodeQL</li>
+</ul>
+<p><strong>代码审计实战【必学】</strong></p>
+<ul>
+<li>开源项目审计、CTF 代码审计题目、漏洞分析和复现</li>
+</ul>
+<h3 id="学习建议-3">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-3" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>相比黑盒测试，代码审计可以发现更深层次的问题（逻辑漏洞、设计缺陷等），但需要有扎实的编程基础和安全知识</li>
+<li>掌握两种审计方法：正向审计从代码入口开始跟踪数据流分析安全问题；逆向审计从敏感函数（数据库查询、文件操作）回溯数据来源判断是否存在问题</li>
+<li>工具只能辅助审计，自动化工具往往产生大量误报，需要人工分析和验证。建议先手工审计项目掌握方法，再结合工具提高效率</li>
+<li>建议从开源项目开始练习：在 GitHub 找中小型 Web 项目尝试发现安全问题，或做 CTF 代码审计题目积累经验</li>
+</ol>
+<h3 id="经典面试题">经典面试题<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#经典面试题" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>代码审计的流程是什么？</li>
+<li>如何审计 SQL 注入漏洞？</li>
+<li>Java 中有哪些常见的安全问题？</li>
+<li>如何审计反序列化漏洞？</li>
+<li>代码审计工具有哪些？各有什么特点？</li>
+</ol>
+<h3 id="学习资源-3">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-3" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><a href="https://semgrep.dev/docs/" class="external external-link">Semgrep 官方文档<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：开源代码审计工具</li>
+</ul>
+<h2 id="阶段-5devsecops-实践25-35-天仅供参考">阶段 5：DevSecOps 实践（25-35 天，仅供参考）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-5devsecops-实践25-35-天仅供参考" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>DevSecOps 实践是将安全自动化集成到 CI/CD 流程中，实现安全左移和持续安全保障。</p>
+<h3 id="学习目标-4">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标-4" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>掌握 DevSecOps 理念和工具，能够将安全融入 DevOps 流程，建立自动化的安全保障体系。</p>
+<h3 id="知识点-4">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-4" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>DevSecOps 理论【必学】</strong></p>
+<ul>
+<li>DevSecOps 概念、DevSecOps 和 DevOps 的区别、安全自动化、持续安全</li>
+</ul>
+<p><strong>CI/CD 安全【必学】</strong></p>
+<ul>
+<li>CI/CD 流程安全、代码安全扫描集成、依赖安全检查、镜像安全扫描、部署安全控制</li>
+</ul>
+<p><strong>容器安全【必学】</strong></p>
+<ul>
+<li>Docker 安全、Kubernetes 安全、镜像安全、容器运行时安全</li>
+</ul>
+<p><strong>安全工具链【必学】</strong></p>
+<ul>
+<li>SAST 工具（SonarQube、Semgrep）、DAST 工具（OWASP ZAP）</li>
+<li>SCA 工具（Snyk、Dependabot）、秘密扫描工具（GitGuardian、TruffleHog）、镜像扫描工具（Trivy、Clair）</li>
+</ul>
+<p><strong>安全监控【建议学】</strong></p>
+<ul>
+<li>日志管理、安全事件监控、威胁检测、应急响应</li>
+</ul>
+<h3 id="学习建议-4">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-4" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>DevSecOps 是安全开发的高级阶段，核心思想是”安全即代码”（Security as Code），通过自动化工具和流程实现持续的安全保障</li>
+<li>要学会在 CI/CD 流程中集成各种安全工具，实现自动化代码扫描、依赖检查、镜像扫描。建议使用 GitLab CI 或 GitHub Actions 搭建完整的 CI/CD 流程并集成安全工具</li>
+<li>容器技术已成为主流，要了解 Docker 和 Kubernetes 的安全问题，掌握镜像安全扫描、容器运行时安全等技术</li>
+<li>要熟悉各类安全工具的特点和使用方法，根据需求选型。开源工具（SonarQube、OWASP ZAP、Trivy）功能强大且免费，是很好的选择</li>
+</ol>
+<h2 id="阶段-6项目实战30-45-天仅供参考">阶段 6：项目实战（30-45 天，仅供参考）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-6项目实战30-45-天仅供参考" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="学习目标-5">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标-5" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>通过实际项目巩固所学知识，积累安全开发实战经验。</p>
+<h3 id="学习建议-5">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-5" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>搭建完整的 Web 应用项目，从需求分析到上线运维完整实践 SDL 流程，应用威胁建模、安全设计、安全编码、代码审计、安全测试等知识</li>
+<li>对感兴趣的开源项目（如 Web 框架、开源 CMS）进行全面安全审计，尝试发现安全问题并编写漏洞报告</li>
+<li>使用 GitLab CI 或 GitHub Actions 建立 DevSecOps 流水线，集成自动化代码扫描、依赖检查、镜像扫描，可作为作品展示给面试官</li>
+<li>参加安全开发相关的开源项目，为安全工具贡献代码、参与安全编码规范制定，在开源社区中学习和交流</li>
+<li>编写技术博客，分享学习心得和实践经验（最佳实践、代码审计案例、工具使用教程），帮助别人的同时加深自己的理解</li>
+</ol>
+<h3 id="项目推荐">项目推荐<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#项目推荐" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>搭建完整的 Web 应用（含 SDL 实践）、开源项目代码审计、DevSecOps 流水线搭建、安全工具开发、安全编码规范制定</li>
+</ul>
+<p><strong>优质开源项目：</strong></p>
+<ul>
+<li><a href="https://github.com/sottlmarek/DevSecOps" class="external external-link">DevSecOps - Ultimate DevSecOps Library<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：6.5k+ stars，DevSecOps 工具库大全，包含各阶段安全工具</li>
+<li><a href="https://github.com/DevSecOpsSamples" class="external external-link">DevSecOps Samples<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：AWS 容器安全示例项目，包括 EKS、ECS、Fargate 等</li>
+<li><a href="https://github.com/6mile/DevSecOps-Playbook" class="external external-link">DevSecOps Playbook<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：逐步指导如何在公司中引入 DevSecOps 实践</li>
+</ul>
+<h3 id="学习资源-4">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-4" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><a href="https://owasp.org/www-project-top-10-ci-cd-security-risks/" class="external external-link">OWASP Top 10 CI/CD Security Risks<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：CI/CD 安全风险</li>
+<li><a href="https://github.com/paragonie/awesome-appsec" class="external external-link">GitHub - Awesome AppSec<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：应用安全资源大全</li>
+</ul>
+<h2 id="阶段-7求职备战面试前-1-个月突击">阶段 7：求职备战（面试前 1 个月突击）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-7求职备战面试前-1-个月突击" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="学习目标-6">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标-6" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>熟练掌握安全开发常见面试题，准备好简历和项目经历，顺利通过面试。</p>
+<h3 id="学习建议-6">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-6" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>打磨简历和项目：简历上一定要有安全开发相关的项目经历（SDL 实践、代码审计、DevSecOps 流水线搭建等），突出实际成果</li>
+<li>多刷面试题：安全开发面试题主要包括 SDL 理论、安全编码实践、代码审计技术、DevSecOps 等方向，围绕这些主题系统复习</li>
+<li>准备技术分享：有些公司会要求候选人做技术分享，建议提前准备一个 SDL 实践或代码审计的案例分享</li>
+<li>了解目标公司：面试前了解目标公司使用的技术栈、SDL 流程、安全工具等，有针对性地准备</li>
+</ol>
+<h3 id="经典面试题-1">经典面试题<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#经典面试题-1" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>SDL 理论：</strong></p>
+<ol>
+<li>什么是 SDL？SDL 的核心思想是什么？</li>
+<li>SDL 包含哪些阶段？各阶段的主要工作是什么？</li>
+<li>什么是威胁建模？STRIDE 模型是什么？</li>
+<li>什么是安全左移？为什么要安全左移？</li>
+<li>SDL 和 DevSecOps 有什么关系？</li>
+</ol>
+<p><strong>安全编码：</strong></p>
+<ol>
+<li>如何防御 SQL 注入？参数化查询的原理是什么？</li>
+<li>如何防御 XSS 攻击？输出编码有哪些方法？</li>
+<li>密码应该如何存储？为什么不能用 MD5？</li>
+<li>如何安全地生成随机数？</li>
+<li>HTTPS 是如何工作的？如何配置 HTTPS？</li>
+</ol>
+<p><strong>代码审计：</strong></p>
+<ol>
+<li>代码审计的流程是什么？</li>
+<li>正向审计和逆向审计有什么区别？</li>
+<li>如何审计 Java 项目？常见的安全问题有哪些？</li>
+<li>如何审计反序列化漏洞？</li>
+<li>常用的代码审计工具有哪些？各有什么特点？</li>
+</ol>
+<p><strong>DevSecOps：</strong></p>
+<ol>
+<li>什么是 DevSecOps？和 DevOps 有什么区别？</li>
+<li>如何在 CI/CD 流程中集成安全测试？</li>
+<li>SAST 和 DAST 有什么区别？</li>
+<li>如何进行依赖安全检查？</li>
+<li>如何保证容器镜像的安全性？</li>
+</ol>
+<p><strong>实战经验：</strong></p>
+<ol>
+<li>你做过哪些安全开发项目？详细说说。</li>
+<li>你审计过哪些开源项目？发现了哪些安全问题？</li>
+<li>你搭建过 DevSecOps 流水线吗？使用了哪些工具？</li>
+<li>遇到难以修复的安全问题时，你会如何处理？</li>
+<li>如何在开发团队中推广安全开发实践？</li>
+</ol>
+<h2 id="持续学习资源">持续学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#持续学习资源" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="安全标准">安全标准<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#安全标准" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><a href="https://owasp.org/" class="external external-link">OWASP<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：全球应用安全组织</li>
+<li><a href="https://cwe.mitre.org/" class="external external-link">CWE<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：通用漏洞枚举</li>
+<li><a href="https://csrc.nist.gov/Projects/ssdf" class="external external-link">NIST SSDF<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：安全软件开发框架</li>
+</ul>
+<h3 id="技术博客">技术博客<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#技术博客" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><a href="https://security.googleblog.com/" class="external external-link">Google Security Blog<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：谷歌安全开发实践</li>
+<li><a href="https://www.microsoft.com/en-us/security/blog/" class="external external-link">Microsoft Security Blog<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：微软安全开发</li>
+<li><a href="https://github.blog/category/security/" class="external external-link">GitHub Security Blog<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：GitHub 安全最佳实践</li>
+</ul>
+<h2 id="写在最后">写在最后<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#写在最后" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>安全开发是软件开发和网络安全的完美结合，知识体系从 SDL 理论、安全编码实践到代码审计、DevSecOps，完整且实用。学习路径建议：先打好编程基础，掌握至少一门编程语言；理解网络安全和应用安全基础知识，熟悉常见安全漏洞；深入学习 SDL 理论和实践，在开发中融入安全思维；掌握代码审计技术；了解 DevSecOps 理念，建立自动化安全保障体系。</p>
+<p>安全开发不是一个人的事，而是整个团队的事。作为安全开发工程师，不仅要自己编写安全的代码，还要通过培训、Code Review、自动化工具等方式推动团队建立安全开发文化，让安全成为开发的一部分，而不是额外的负担。</p></div></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="toc"><button type="button" class="toc-header" aria-controls="toc-429" aria-expanded="true"><h3>目录</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-0" class="toc-content overflow"><li class="depth-0"><a href="#安全开发-01---学习路线" data-for="安全开发-01---学习路线">安全开发 01 - 学习路线</a></li><li class="depth-1"><a href="#开篇介绍" data-for="开篇介绍">开篇介绍</a></li><li class="depth-2"><a href="#就业方向" data-for="就业方向">就业方向</a></li><li class="depth-2"><a href="#学习路线图" data-for="学习路线图">学习路线图</a></li><li class="depth-1"><a href="#阶段-1编程基础30-45-天仅供参考" data-for="阶段-1编程基础30-45-天仅供参考">阶段 1：编程基础（30-45 天，仅供参考）</a></li><li class="depth-2"><a href="#学习目标" data-for="学习目标">学习目标</a></li><li class="depth-2"><a href="#知识点" data-for="知识点">知识点</a></li><li class="depth-2"><a href="#学习建议" data-for="学习建议">学习建议</a></li><li class="depth-2"><a href="#学习资源" data-for="学习资源">学习资源</a></li><li class="depth-1"><a href="#阶段-2安全基础20-30-天仅供参考" data-for="阶段-2安全基础20-30-天仅供参考">阶段 2：安全基础（20-30 天，仅供参考）</a></li><li class="depth-2"><a href="#学习目标-1" data-for="学习目标-1">学习目标</a></li><li class="depth-2"><a href="#知识点-1" data-for="知识点-1">知识点</a></li><li class="depth-2"><a href="#学习建议-1" data-for="学习建议-1">学习建议</a></li><li class="depth-2"><a href="#学习资源-1" data-for="学习资源-1">学习资源</a></li><li class="depth-1"><a href="#阶段-3安全开发生命周期sdl25-35-天仅供参考" data-for="阶段-3安全开发生命周期sdl25-35-天仅供参考">阶段 3：安全开发生命周期（SDL）（25-35 天，仅供参考）</a></li><li class="depth-2"><a href="#学习目标-2" data-for="学习目标-2">学习目标</a></li><li class="depth-2"><a href="#知识点-2" data-for="知识点-2">知识点</a></li><li class="depth-2"><a href="#学习建议-2" data-for="学习建议-2">学习建议</a></li><li class="depth-2"><a href="#学习资源-2" data-for="学习资源-2">学习资源</a></li><li class="depth-1"><a href="#阶段-4代码审计30-40-天仅供参考" data-for="阶段-4代码审计30-40-天仅供参考">阶段 4：代码审计（30-40 天，仅供参考）</a></li><li class="depth-2"><a href="#学习目标-3" data-for="学习目标-3">学习目标</a></li><li class="depth-2"><a href="#知识点-3" data-for="知识点-3">知识点</a></li><li class="depth-2"><a href="#学习建议-3" data-for="学习建议-3">学习建议</a></li><li class="depth-2"><a href="#经典面试题" data-for="经典面试题">经典面试题</a></li><li class="depth-2"><a href="#学习资源-3" data-for="学习资源-3">学习资源</a></li><li class="depth-1"><a href="#阶段-5devsecops-实践25-35-天仅供参考" data-for="阶段-5devsecops-实践25-35-天仅供参考">阶段 5：DevSecOps 实践（25-35 天，仅供参考）</a></li><li class="depth-2"><a href="#学习目标-4" data-for="学习目标-4">学习目标</a></li><li class="depth-2"><a href="#知识点-4" data-for="知识点-4">知识点</a></li><li class="depth-2"><a href="#学习建议-4" data-for="学习建议-4">学习建议</a></li><li class="depth-1"><a href="#阶段-6项目实战30-45-天仅供参考" data-for="阶段-6项目实战30-45-天仅供参考">阶段 6：项目实战（30-45 天，仅供参考）</a></li><li class="depth-2"><a href="#学习目标-5" data-for="学习目标-5">学习目标</a></li><li class="depth-2"><a href="#学习建议-5" data-for="学习建议-5">学习建议</a></li><li class="depth-2"><a href="#项目推荐" data-for="项目推荐">项目推荐</a></li><li class="depth-2"><a href="#学习资源-4" data-for="学习资源-4">学习资源</a></li><li class="depth-1"><a href="#阶段-7求职备战面试前-1-个月突击" data-for="阶段-7求职备战面试前-1-个月突击">阶段 7：求职备战（面试前 1 个月突击）</a></li><li class="depth-2"><a href="#学习目标-6" data-for="学习目标-6">学习目标</a></li><li class="depth-2"><a href="#学习建议-6" data-for="学习建议-6">学习建议</a></li><li class="depth-2"><a href="#经典面试题-1" data-for="经典面试题-1">经典面试题</a></li><li class="depth-1"><a href="#持续学习资源" data-for="持续学习资源">持续学习资源</a></li><li class="depth-2"><a href="#安全标准" data-for="安全标准">安全标准</a></li><li class="depth-2"><a href="#技术博客" data-for="技术博客">技术博客</a></li><li class="depth-1"><a href="#写在最后" data-for="写在最后">写在最后</a></li><li class="overflow-end"></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v5.0.0</a> © 2026</p><ul><li><a href="https://github.com/xyf1111">GitHub</a></li></ul></footer></div></div></body><script src="../static/resource-after-e13fffa1.js" type="application/javascript" data-persist="true"></script><script src="../static/resource-after-8b336f9a.js" type="application/javascript" data-persist="true"></script><script src="../static/resource-after-baba652b.js" type="application/javascript" data-persist="true"></script><script src="../static/resource-after-5eb75950.js" type="module" data-persist="true"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript" data-persist="true"></script><script src="../postscript-17915799.js" type="module" data-persist="true"></script></html>

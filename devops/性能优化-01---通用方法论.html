@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr"><head><title>性能优化 01 - 通用方法论 · 后端开发笔记</title><meta charset="utf-8"/><link rel="preload" href="../index-b754f97d.css" as="style"/><link rel="preload" href="../prescript-2bfc6315.js" as="script"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="技术知识库"/><meta property="og:title" content="性能优化 01 - 通用方法论 · 后端开发笔记"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="性能优化 01 - 通用方法论 · 后端开发笔记"/><meta name="twitter:description" content="性能优化 01 - 通用方法论 性能优化是指通过持续的分析、实践和测试，确保系统稳定高效运行，从而满足用户诉求。其闭环流程如下： 性能优化分类 性能优化可分为两大类： 1）通用优化 经典的、对绝大多数情况都适用的优化策略，如增大服务器并发请求处理数、使用缓存减少数据库查询、负载均衡分摊请求、同步转异步等。 2）对症下药 结合具体业务特性和系统现状，先通过性能监控工具、压力测试等手段分析出性能瓶颈，再针对性地选取策略。例如数据库慢查询（单次查询超过 1 秒），根据查询条件给对应字段增加索引即可提高性能。 实际开发中这两类策略通常并用。系统设计和开发阶段应本能地引入性能优化手段，降低后续出问题的概..."/><meta property="og:description" content="性能优化 01 - 通用方法论 性能优化是指通过持续的分析、实践和测试，确保系统稳定高效运行，从而满足用户诉求。其闭环流程如下： 性能优化分类 性能优化可分为两大类： 1）通用优化 经典的、对绝大多数情况都适用的优化策略，如增大服务器并发请求处理数、使用缓存减少数据库查询、负载均衡分摊请求、同步转异步等。 2）对症下药 结合具体业务特性和系统现状，先通过性能监控工具、压力测试等手段分析出性能瓶颈，再针对性地选取策略。例如数据库慢查询（单次查询超过 1 秒），根据查询条件给对应字段增加索引即可提高性能。 实际开发中这两类策略通常并用。系统设计和开发阶段应本能地引入性能优化手段，降低后续出问题的概..."/><meta property="og:image:alt" content="性能优化 01 - 通用方法论 性能优化是指通过持续的分析、实践和测试，确保系统稳定高效运行，从而满足用户诉求。其闭环流程如下： 性能优化分类 性能优化可分为两大类： 1）通用优化 经典的、对绝大多数情况都适用的优化策略，如增大服务器并发请求处理数、使用缓存减少数据库查询、负载均衡分摊请求、同步转异步等。 2）对症下药 结合具体业务特性和系统现状，先通过性能监控工具、压力测试等手段分析出性能瓶颈，再针对性地选取策略。例如数据库慢查询（单次查询超过 1 秒），根据查询条件给对应字段增加索引即可提高性能。 实际开发中这两类策略通常并用。系统设计和开发阶段应本能地引入性能优化手段，降低后续出问题的概..."/><meta property="twitter:domain" content="xyf1111.github.io/tech-notes"/><meta property="og:url" content="https://xyf1111.github.io/tech-notes/devops/性能优化-01---通用方法论"/><meta property="twitter:url" content="https://xyf1111.github.io/tech-notes/devops/性能优化-01---通用方法论"/><link rel="icon" href="../static/icon.png"/><meta name="description" content="性能优化 01 - 通用方法论 性能优化是指通过持续的分析、实践和测试，确保系统稳定高效运行，从而满足用户诉求。其闭环流程如下： 性能优化分类 性能优化可分为两大类： 1）通用优化 经典的、对绝大多数情况都适用的优化策略，如增大服务器并发请求处理数、使用缓存减少数据库查询、负载均衡分摊请求、同步转异步等。 2）对症下药 结合具体业务特性和系统现状，先通过性能监控工具、压力测试等手段分析出性能瓶颈，再针对性地选取策略。例如数据库慢查询（单次查询超过 1 秒），根据查询条件给对应字段增加索引即可提高性能。 实际开发中这两类策略通常并用。系统设计和开发阶段应本能地引入性能优化手段，降低后续出问题的概..."/><meta name="generator" content="Quartz"/><link href="../index-b754f97d.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-735924e0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-589c1cea.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-bbc3f7c0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-2911f5d1.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-e427079e.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-53b25b2b.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-c93c6a44.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-8a06014f.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-77d6a441.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-6ee21cee.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-1ea6ad18.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-788c9ca3.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-642859cd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-4abc06bd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-274a3dfe.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-94cb6c84.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-58d5ff56.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-7262b5a7.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../static/resource-style-a5c806d2.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../static/resource-style-6bd36952.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" data-persist="true"/><script src="../prescript-2bfc6315.js" type="application/javascript" data-persist="true"></script><script type="application/javascript" data-persist="true">const fetchData = fetch("../static/contentIndex.json").then(data => data.json())</script><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://xyf1111.github.io/tech-notes/devops/性能优化-01---通用方法论-og-image.webp"/><meta property="og:image:url" content="https://xyf1111.github.io/tech-notes/devops/性能优化-01---通用方法论-og-image.webp"/><meta name="twitter:image" content="https://xyf1111.github.io/tech-notes/devops/性能优化-01---通用方法论-og-image.webp"/><meta property="og:image:type" content="image/webp"/></head><body data-slug="devops/性能优化-01---通用方法论" data-basepath="/tech-notes"><div id="quartz-root" class="page" data-frame="default"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="..">技术知识库</a></h2><div class="mobile-only"><div class="spacer"></div></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 0.5rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button" aria-label="搜索" aria-expanded="false"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>搜索</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="搜索内容..." placeholder="搜索内容..."/><div class="search-layout" data-preview="true" data-field-priority="[&quot;title&quot;,&quot;content&quot;,&quot;tags&quot;]"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode" aria-label="暗色模式"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="暗色模式"><title>暗色模式</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="亮色模式"><title>亮色模式</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode" aria-label="阅读模式"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="阅读模式"><title>阅读模式</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer nav-files-container" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a2, b2) => {\n    if (!a2.isFolder &amp;&amp; !b2.isFolder || a2.isFolder &amp;&amp; b2.isFolder) {\n      return (a2.displayName || \&quot;\&quot;).localeCompare(b2.displayName || \&quot;\&quot;, void 0, {\n        numeric: true,\n        sensitivity: \&quot;base\&quot;\n      });\n    }\n    if (!a2.isFolder &amp;&amp; b2.isFolder) {\n      return 1;\n    }\n    return -1;\n  }&quot;,&quot;filterFn&quot;:&quot;(node) => node.slugSegment !== \&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;(node) => {\n    return node;\n  }&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-149" aria-label="探索"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>探索</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-149" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#" class="nav-file-title tree-item-self"></a></li></template><template id="template-folder"><li><div class="folder-container nav-folder-title tree-item-self"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon nav-folder-collapse-indicator collapse-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content tree-item-children"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../devops/">devops</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>性能优化 01 - 通用方法论</a></div></nav><h1 class="article-title">性能优化 01 - 通用方法论</h1><details class="note-properties metadata-container" open data-collapsed="false"><summary class="note-properties-header"><span class="note-properties-title">Properties</span><span class="note-properties-count">1</span></summary><table class="note-properties-table"><tbody><tr class="note-properties-row metadata-property"><td class="note-properties-key metadata-property-key">tags</td><td class="note-properties-value metadata-property-value"><span class="note-properties-tags"><a href="../tags/性能优化" class="internal internal-link tag-link">性能优化</a><span class="note-properties-separator">, </span><a href="../tags/后端" class="internal internal-link tag-link">后端</a><span class="note-properties-separator">, </span><a href="../tags/架构" class="internal internal-link tag-link">架构</a></span></td></tr></tbody></table></details><p show-comma="true" class="content-meta"><time datetime="2026-07-29T16:00:00.000Z">2026年7月30日</time><span>16分钟阅读</span></p></div></div><article class="popover-hint"><div class="markdown-preview-view markdown-rendered"><h1 id="性能优化-01---通用方法论">性能优化 01 - 通用方法论<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#性能优化-01---通用方法论" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>性能优化是指通过<strong>持续</strong>的分析、实践和测试，确保系统稳定高效运行，从而满足用户诉求。其闭环流程如下：</p>
+<p><img src=".././image/img_perf_optim_01.jpeg" alt="性能优化闭环"/></p>
+<h2 id="性能优化分类">性能优化分类<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#性能优化分类" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>性能优化可分为两大类：</p>
+<h3 id="1通用优化">1）通用优化<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#1通用优化" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>经典的、对绝大多数情况都适用的优化策略，如增大服务器并发请求处理数、使用缓存减少数据库查询、负载均衡分摊请求、同步转异步等。</p>
+<h3 id="2对症下药">2）对症下药<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#2对症下药" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>结合具体业务特性和系统现状，先通过性能监控工具、压力测试等手段分析出性能瓶颈，再针对性地选取策略。例如数据库慢查询（单次查询超过 1 秒），根据查询条件给对应字段增加索引即可提高性能。</p>
+<p>实际开发中这两类策略通常并用。系统设计和开发阶段应本能地引入性能优化手段，降低后续出问题的概率。性能优化是持续的过程，随着需求、用户和系统用量增长，原本符合要求的系统也会出现新问题。</p>
+<p>对于复杂、高可用性要求的项目，可提前通过压力测试模拟大用户量场景，预先做好优化。</p>
+<h2 id="通用性能优化手段">通用性能优化手段<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#通用性能优化手段" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>以请求的完整生命周期为主线，依次介绍各节点的优化方法。</p>
+<p><img src=".././image/img_perf_optim_02.jpeg" alt="请求生命周期节点"/></p>
+<h3 id="1前端优化">1）前端优化<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#1前端优化" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>离线缓存</strong>：利用浏览器缓存机制，已请求的资源无需重复请求，提高页面加载速度。</li>
+<li><strong>请求合并</strong>：页面请求过多时，将多个小请求合并成一个大请求，减少网络开销。</li>
+<li><strong>懒加载</strong>：延迟加载页面图片等元素，提高首屏加载速度。</li>
+</ul>
+<h3 id="2网关优化">2）网关优化<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#2网关优化" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>负载均衡</strong>：根据路由算法将请求转发到对应的后端系统，实现多服务器分摊请求，增大并发量。</li>
+<li><strong>缓存</strong>：缓存后端返回的数据，下次前端请求时直接从网关获取，减少后端调用。</li>
+</ul>
+<h3 id="3后端请求层">3）后端请求层<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#3后端请求层" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>服务器优化</strong>：根据业务特性选择性能更高的服务器并调整参数，如 Nginx、Undertow 等。</li>
+<li><strong>微服务</strong>：将大型服务拆分为小型服务，通过微服务网关转发，增大各服务的并发处理能力。</li>
+</ul>
+<h3 id="4业务逻辑层">4）业务逻辑层<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#4业务逻辑层" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>异步化</strong>：将同步业务逻辑改为异步，尽早响应，提高并发处理能力。</li>
+<li><strong>多线程</strong>：将复杂操作拆分成多个任务，通过多线程并发执行，提高处理效率。</li>
+</ul>
+<h3 id="5中间件第三方依赖">5）中间件（第三方依赖）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#5中间件第三方依赖" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>缓存</strong>：将数据库查询结果缓存到性能更高的服务（如基于内存的 Redis 或本地缓存），减少数据库压力，提高查询性能。</li>
+<li><strong>队列</strong>：使用消息队列对系统解耦或将操作异步化，实现流量的削峰填谷。</li>
+</ul>
+<h3 id="6存储层">6）存储层<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#6存储层" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>分库分表</strong>：数据量极大时，对数据库进行垂直或水平切分，提高并发处理能力。</li>
+<li><strong>数据清理</strong>：定期清理无用或过期数据，减少存储压力，必要时进行备份转储。</li>
+</ul>
+<h2 id="实战案例cdn--http2-网站加速">实战案例：CDN + HTTP/2 网站加速<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#实战案例cdn--http2-网站加速" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<blockquote>
+<p>案例：静态资源站首屏加载从 5s 优化到 1.5s（CDN 5s→3s，HTTP/2 3s→1.5s），几分钟配置完成。</p>
+</blockquote>
+<h3 id="cdn内容分发网络">CDN（内容分发网络）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#cdn内容分发网络" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>原理：</strong> 将源服务器文件分发到多个地域的网络节点，用户访问时从最近的节点获取；节点无缓存时自动从源站拉取（回源）。</p>
+<p><img src=".././image/img_perf_cdn_01.jpeg" alt="CDN 网络拓扑对比"/></p>
+<p><strong>解决单服务器部署的 3 个缺点：</strong></p>
+<ul>
+<li>单服务器压力过大</li>
+<li>单点故障（服务器宕机全站无法访问）</li>
+<li>离服务器越远的用户访问越慢</li>
+</ul>
+<p><strong>配置要点（以云厂商 CDN 为例）：</strong></p>
+<ul>
+<li><strong>CDN 域名</strong>：二级域名 + <code>cdn</code>/<code>static</code> 前缀，如 <code>cdn.example.com</code></li>
+<li><strong>回源地址 + 回源 HOST</strong>：CDN 无缓存时从回源地址拉取源文件；回源 HOST 用于告诉源站请求方身份、返回正确资源</li>
+<li><strong>访问控制（防盗链）</strong>：只允许自己域名的网页请求文件，防止文件被其他网站盗用刷流量</li>
+<li><strong>IP 访问频率限制</strong>：防单个 IP 攻击、限制流量（DDoS 防不住但聊胜于无）</li>
+<li><strong>缓存时间</strong>：不变化的静态文件缓存设长；动态页面不要缓存，否则用户看到的都是旧内容</li>
+<li><strong>文件随机后缀</strong>：更新静态文件时生成随机后缀，防止 CDN 缓存未刷新导致用户看不到最新页面（现代前端框架 + 打包工具如 UMI + Webpack 会自动生成）</li>
+</ul>
+<p><strong>成本与选型：</strong> 按流量计费。前期用户少、或用户都在服务器同机房时没必要上 CDN。</p>
+<p><strong>衍生能力：</strong></p>
+<ul>
+<li><strong>DCDN</strong>：全站加速，通过路由优化加速动态内容，可给实时性要求高的接口加速</li>
+<li><strong>SCDN</strong>：安全加速，给 CDN 加一层防护，应对 DDoS、CC 攻击</li>
+</ul>
+<h3 id="http2">HTTP/2<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#http2" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>在云厂商 CDN/加速配置页直接开启 HTTP/2 开关即可显著降低延迟（协议原理见 <a href="../network/网络-08---http2与http3及websocket" class="internal internal-link alias" data-slug="network/网络-08---http2与http3及websocket">网络 08 - HTTP2与HTTP3及WebSocket</a>）。</p>
+<h2 id="实战案例后端查询接口性能优化缓存--序列化--容器调优">实战案例：后端查询接口性能优化（缓存 + 序列化 + 容器调优）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#实战案例后端查询接口性能优化缓存--序列化--容器调优" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<blockquote>
+<p>案例：主页分页查询接口（纯数据库分页查询），插入 10 万条数据后逐层压测调优，响应时长 700ms → 8ms，QPS 20 → 19000（近千倍）。</p>
+</blockquote>
+<h3 id="优化前基线">优化前基线<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#优化前基线" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>浏览器控制台观察 10 次请求平均 <strong>700ms</strong>；JMeter 压测（每秒启动 1000 线程、共 1 万请求、异常率 0%）QPS 仅 <strong>20</strong>。</p>
+<h3 id="逐层优化过程">逐层优化过程<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#逐层优化过程" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>步骤</th><th>手段</th><th>效果</th></tr></thead><tbody><tr><td>1. SQL 精简</td><td>只查询需要返回前端的字段，减少数据量</td><td>平均 500ms 左右（缩短约 1/4）</td></tr><tr><td>2. Redis 分布式缓存</td><td>分页查询结果序列化为 JSON 写入缓存，命中直接读</td><td>平均 20ms（缩短 25 倍）；QPS 114.6（提升 5 倍多）</td></tr><tr><td>3. 本地缓存</td><td>改为从当前服务器内存直接读取</td><td>浏览器测试几乎无变化（Redis 也在本机）；QPS 仅提升约 10%</td></tr><tr><td>4. 换缓存数据类型</td><td>不再存 JSON，用 JDK 原生序列化保存对象，读取时省去 JSON → 对象转换（省 CPU）</td><td>平均 8ms；吞吐量接近 16000（提升 100 多倍）</td></tr><tr><td>5. Tomcat 容器调优</td><td>增大工作线程数和最大连接数（请求层优化）</td><td>吞吐量提升约 1/5，接近 19000，对比初始 QPS 20 提升近千倍</td></tr><tr><td>6. 空接口测天花板</td><td>写无业务逻辑、直接返回 “ok” 的空接口压测</td><td>QPS 36000+——即 Tomcat + Spring MVC 框架的理论上限，业务接口无论怎么优化都超不过它</td></tr></tbody></table></div>
+<h3 id="要点提炼">要点提炼<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#要点提炼" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>缓存适用数据</strong>：读多写少、更新频率低、访问频率高的数据非常适合加缓存</li>
+<li><strong>I/O 优化完，还有 CPU 和请求层</strong>：看似不起眼的 JSON → 对象转换也极耗性能（步骤 4 提升 100 多倍）；业务层优化完后仍可调容器（线程数/连接数）</li>
+<li><strong>用空接口找上限</strong>：想知道业务接口还有多少优化空间，就写一个无业务逻辑的接口压测，得到当前技术栈的天花板，避免做无用功</li>
+<li><strong>换技术栈是终极手段</strong>：达到 Tomcat + Spring MVC 上限后，可考虑更高性能的框架（如响应式 WebFlux 等）</li>
+<li><strong>性能数据无标准答案</strong>：「一台 Tomcat 每秒最多处理多少请求？」本身无解——缺少测试条件、环境与基准（几核几 G、多大带宽）。优化效果必须以实际压测结果为准</li>
+</ul>
+<h2 id="面试与答辩如何回答项目性能优化类问题">面试与答辩：如何回答「项目性能优化」类问题<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#面试与答辩如何回答项目性能优化类问题" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<blockquote>
+<p>场景：面试官追问「你项目第一的瓶颈是什么？你会怎么优化它？」</p>
+</blockquote>
+<p><strong>先立前提</strong>：脱离具体业务场景和线上实际运行情况的性能优化讨论没有意义——不同场景、不同规模的项目，瓶颈和手段都不一样。回答这类问题时应先讲清这一点，再结合自己的项目展开。</p>
+<p><strong>再按「实际情况 → 解决方案」分点作答</strong>（以 AI 应用类项目为例）：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>瓶颈（线上实际表现）</th><th>优化方案</th></tr></thead><tbody><tr><td>AI 接口 QPS 有限，运行时出现调用超限报错</td><td>单个接口 QPS 有限，就多接几个 AI 接口，用负载均衡（轮询调用）叠加整个系统的 QPS；成本有限时用限流保障稳定性</td></tr><tr><td>AI 单次可处理数据量有限，用户输入过多直接报错</td><td>压缩用户输入数据（如合并同类数据）以处理更多行列；压缩效果差就优化算法，压缩效率低就用文件分片 + 多线程并发压缩</td></tr><tr><td>单用户图表数增多后前端查询越来越慢（等 8 秒才出图）</td><td>引入缓存，改为从更快的内存 / 本地缓存查询，缩短查询时长</td></tr><tr><td>AI 响应时间长，用户要等很久</td><td>同步改异步：先立刻返回「提交成功」，用户可选等待、等执行完通知，或主动到任务管理页查进度——既提升体验又支撑更多用户并发</td></tr></tbody></table></div>
+<p><strong>表达技巧</strong>：做性能优化时多拿生活场景类比——一家店供不应求，可以限时发售（限流）、限制流量，也可以加一个排队机制让用户按顺序等待、依次执行。</p>
+<p><strong>别把优化局限在性能</strong>：项目优化还包括可用性、稳定性、可观测性、成本等维度。例如随着用户图表数据量增大，后端存储成本升高，就需要用数据压缩、数据沉降、数据清理等机制降低存储成本。</p>
+<h2 id="实战案例后端接口优化的-5-种手段工作记录">实战案例：后端接口优化的 5 种手段（工作记录）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#实战案例后端接口优化的-5-种手段工作记录" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<blockquote>
+<p>案例：抽出几小时优化几个后端接口，平均响应时间缩短 <strong>2 ~ 4 倍</strong>。</p>
+</blockquote>
+<ol>
+<li><strong>减少重复的数据库查询</strong>：接口处理链中若方法 A 已查出某条数据（如用户 1），方法 B 就不要再查一遍——把已查出的对象作为参数传给方法 B，或用 <code>ThreadLocal</code> 临时缓存本次请求内的数据。</li>
+<li><strong>并发处理</strong>：两个各耗时 3 秒的数据库查询，同步执行需 6 秒，并发执行后 3 秒完成。⚠️ 但并发不是「无脑加」——某次优化中，对单用户下的大数据量子资源<strong>单纯并发查询</strong>，导致线程池任务队列爆满、连锁引发接口超时；改为<strong>批量并发</strong>（控制批量粒度，靠线上数据 + 大量实验确定）后接口性能提升 <strong>3 倍</strong>、请求耗时分布更平稳。优化效果要靠实验和测试验证，别只凭经验值或理论下判断。</li>
+<li><strong>非核心操作异步化</strong>：接口结束前写一条操作记录等非核心步骤，可开子线程异步执行（或用消息队列等中间件），不必等它结束即可响应。</li>
+<li><strong>减少数据量</strong>：返回前端、缓存读写的数据一般越小越好。实测把缓存的序列化由 JDK 原生库换成开源高性能序列化库 <strong>Kryo</strong> 后，同样数据量占用从约 5 MB 降到 2 MB 多（压缩一倍多），读写耗时从约 700 ms 降到 200 多 ms。⚠️ 更换序列化库后要清掉缓存里的旧数据，否则键值格式冲突。</li>
+<li><strong>合并查询</strong>：要查 id 为 1、2、3 的用户时，直接合并为批量查询 <code>where id in (1, 2, 3)</code>，避免查询耗时随 id 数线性增长，减少数据库请求次数与全表扫描；前端同理可合并请求。</li>
+</ol>
+<blockquote>
+<p>与上文「通用性能优化手段」互补：第 2、3 条分别对应业务逻辑层的「多线程」与「异步化」（中间件「队列」）；本案例的增量在<strong>代码级消除重复查询、Kryo 序列化库、批量合并查询</strong>三类具体手段。</p>
+</blockquote>
+<h2 id="优化原则">优化原则<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#优化原则" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>并非每种方法都要用、每种方法都有用。做性能优化时需注意：</p>
+<ul>
+<li><strong>权衡性价比</strong>：根据实际情况，评估优化收益与系统改动风险。</li>
+<li><strong>避免盲目引入新技术</strong>：例如本地用 Elasticsearch 优化了查询，但公司没有采购成本，就脱离了实际。</li>
+<li><strong>从低成本开始</strong>：先采用最简单、改动最小的优化手段。</li>
+<li><strong>做好充分测试</strong>：避免好心优化反引入新的 Bug。</li>
+</ul>
+<blockquote>
+<p>来源：鱼皮·编程导航 / codefather</p>
+</blockquote></div></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="toc"><button type="button" class="toc-header" aria-controls="toc-149" aria-expanded="true"><h3>目录</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-0" class="toc-content overflow"><li class="depth-0"><a href="#性能优化-01---通用方法论" data-for="性能优化-01---通用方法论">性能优化 01 - 通用方法论</a></li><li class="depth-1"><a href="#性能优化分类" data-for="性能优化分类">性能优化分类</a></li><li class="depth-2"><a href="#1通用优化" data-for="1通用优化">1）通用优化</a></li><li class="depth-2"><a href="#2对症下药" data-for="2对症下药">2）对症下药</a></li><li class="depth-1"><a href="#通用性能优化手段" data-for="通用性能优化手段">通用性能优化手段</a></li><li class="depth-2"><a href="#1前端优化" data-for="1前端优化">1）前端优化</a></li><li class="depth-2"><a href="#2网关优化" data-for="2网关优化">2）网关优化</a></li><li class="depth-2"><a href="#3后端请求层" data-for="3后端请求层">3）后端请求层</a></li><li class="depth-2"><a href="#4业务逻辑层" data-for="4业务逻辑层">4）业务逻辑层</a></li><li class="depth-2"><a href="#5中间件第三方依赖" data-for="5中间件第三方依赖">5）中间件（第三方依赖）</a></li><li class="depth-2"><a href="#6存储层" data-for="6存储层">6）存储层</a></li><li class="depth-1"><a href="#实战案例cdn--http2-网站加速" data-for="实战案例cdn--http2-网站加速">实战案例：CDN + HTTP/2 网站加速</a></li><li class="depth-2"><a href="#cdn内容分发网络" data-for="cdn内容分发网络">CDN（内容分发网络）</a></li><li class="depth-2"><a href="#http2" data-for="http2">HTTP/2</a></li><li class="depth-1"><a href="#实战案例后端查询接口性能优化缓存--序列化--容器调优" data-for="实战案例后端查询接口性能优化缓存--序列化--容器调优">实战案例：后端查询接口性能优化（缓存 + 序列化 + 容器调优）</a></li><li class="depth-2"><a href="#优化前基线" data-for="优化前基线">优化前基线</a></li><li class="depth-2"><a href="#逐层优化过程" data-for="逐层优化过程">逐层优化过程</a></li><li class="depth-2"><a href="#要点提炼" data-for="要点提炼">要点提炼</a></li><li class="depth-1"><a href="#面试与答辩如何回答项目性能优化类问题" data-for="面试与答辩如何回答项目性能优化类问题">面试与答辩：如何回答「项目性能优化」类问题</a></li><li class="depth-1"><a href="#实战案例后端接口优化的-5-种手段工作记录" data-for="实战案例后端接口优化的-5-种手段工作记录">实战案例：后端接口优化的 5 种手段（工作记录）</a></li><li class="depth-1"><a href="#优化原则" data-for="优化原则">优化原则</a></li><li class="overflow-end"></li></ul></div><div class="backlinks"><h3>反向链接</h3><ul id="list-0" class="overflow"><li><a href="../concepts/概念-29---系统稳定性设计（风险点与防御性方法）" class="internal">概念 29 - 系统稳定性设计（风险点与防御性方法）</a></li><li class="overflow-end"></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v5.0.0</a> © 2026</p><ul><li><a href="https://github.com/xyf1111">GitHub</a></li></ul></footer></div></div></body><script src="../static/resource-after-e13fffa1.js" type="application/javascript" data-persist="true"></script><script src="../static/resource-after-8b336f9a.js" type="application/javascript" data-persist="true"></script><script src="../static/resource-after-baba652b.js" type="application/javascript" data-persist="true"></script><script src="../static/resource-after-5eb75950.js" type="module" data-persist="true"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript" data-persist="true"></script><script src="../postscript-17915799.js" type="module" data-persist="true"></script></html>

@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr"><head><title>软件测试 - 测试开发学习路线 · 后端开发笔记</title><meta charset="utf-8"/><link rel="preload" href="../index-b754f97d.css" as="style"/><link rel="preload" href="../prescript-2bfc6315.js" as="script"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="技术知识库"/><meta property="og:title" content="软件测试 - 测试开发学习路线 · 后端开发笔记"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="软件测试 - 测试开发学习路线 · 后端开发笔记"/><meta name="twitter:description" content="软件测试 - 测试开发学习路线 测试开发工程师是软件行业的热门岗位，不仅要会测试，更要会开发测试工具、测试框架和测试平台。本篇路线从编程基础出发，依次覆盖测试理论、自动化测试、测试框架开发、测试平台开发、DevOps/CI-CD、项目实战和求职备战 8 个阶段，适合有一定编程基础、追求更高薪资与发展空间的同学。 核心要点 什么是测试开发： 测试开发工程师不同于传统的功能测试或自动化测试，需要更强的编程能力和技术深度——不仅要会测试，更要会开发测试工具、测试平台、测试框架，帮助团队提升测试效率和质量。随着软件系统越来越复杂，传统手工测试已无法满足快速迭代需求，各大互联网公司都在建设自己的测试平台..."/><meta property="og:description" content="软件测试 - 测试开发学习路线 测试开发工程师是软件行业的热门岗位，不仅要会测试，更要会开发测试工具、测试框架和测试平台。本篇路线从编程基础出发，依次覆盖测试理论、自动化测试、测试框架开发、测试平台开发、DevOps/CI-CD、项目实战和求职备战 8 个阶段，适合有一定编程基础、追求更高薪资与发展空间的同学。 核心要点 什么是测试开发： 测试开发工程师不同于传统的功能测试或自动化测试，需要更强的编程能力和技术深度——不仅要会测试，更要会开发测试工具、测试平台、测试框架，帮助团队提升测试效率和质量。随着软件系统越来越复杂，传统手工测试已无法满足快速迭代需求，各大互联网公司都在建设自己的测试平台..."/><meta property="og:image:alt" content="软件测试 - 测试开发学习路线 测试开发工程师是软件行业的热门岗位，不仅要会测试，更要会开发测试工具、测试框架和测试平台。本篇路线从编程基础出发，依次覆盖测试理论、自动化测试、测试框架开发、测试平台开发、DevOps/CI-CD、项目实战和求职备战 8 个阶段，适合有一定编程基础、追求更高薪资与发展空间的同学。 核心要点 什么是测试开发： 测试开发工程师不同于传统的功能测试或自动化测试，需要更强的编程能力和技术深度——不仅要会测试，更要会开发测试工具、测试平台、测试框架，帮助团队提升测试效率和质量。随着软件系统越来越复杂，传统手工测试已无法满足快速迭代需求，各大互联网公司都在建设自己的测试平台..."/><meta property="twitter:domain" content="xyf1111.github.io/tech-notes"/><meta property="og:url" content="https://xyf1111.github.io/tech-notes/testing/测试开发-01---学习路线"/><meta property="twitter:url" content="https://xyf1111.github.io/tech-notes/testing/测试开发-01---学习路线"/><link rel="icon" href="../static/icon.png"/><meta name="description" content="软件测试 - 测试开发学习路线 测试开发工程师是软件行业的热门岗位，不仅要会测试，更要会开发测试工具、测试框架和测试平台。本篇路线从编程基础出发，依次覆盖测试理论、自动化测试、测试框架开发、测试平台开发、DevOps/CI-CD、项目实战和求职备战 8 个阶段，适合有一定编程基础、追求更高薪资与发展空间的同学。 核心要点 什么是测试开发： 测试开发工程师不同于传统的功能测试或自动化测试，需要更强的编程能力和技术深度——不仅要会测试，更要会开发测试工具、测试平台、测试框架，帮助团队提升测试效率和质量。随着软件系统越来越复杂，传统手工测试已无法满足快速迭代需求，各大互联网公司都在建设自己的测试平台..."/><meta name="generator" content="Quartz"/><link href="../index-b754f97d.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-735924e0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-589c1cea.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-bbc3f7c0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-2911f5d1.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-e427079e.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-53b25b2b.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-c93c6a44.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-8a06014f.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-77d6a441.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-6ee21cee.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-1ea6ad18.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-788c9ca3.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-642859cd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-4abc06bd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-274a3dfe.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-94cb6c84.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-58d5ff56.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-7262b5a7.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../static/resource-style-a5c806d2.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../static/resource-style-6bd36952.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" data-persist="true"/><script src="../prescript-2bfc6315.js" type="application/javascript" data-persist="true"></script><script type="application/javascript" data-persist="true">const fetchData = fetch("../static/contentIndex.json").then(data => data.json())</script><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://xyf1111.github.io/tech-notes/testing/测试开发-01---学习路线-og-image.webp"/><meta property="og:image:url" content="https://xyf1111.github.io/tech-notes/testing/测试开发-01---学习路线-og-image.webp"/><meta name="twitter:image" content="https://xyf1111.github.io/tech-notes/testing/测试开发-01---学习路线-og-image.webp"/><meta property="og:image:type" content="image/webp"/></head><body data-slug="testing/测试开发-01---学习路线" data-basepath="/tech-notes"><div id="quartz-root" class="page" data-frame="default"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="..">技术知识库</a></h2><div class="mobile-only"><div class="spacer"></div></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 0.5rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button" aria-label="搜索" aria-expanded="false"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>搜索</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="搜索内容..." placeholder="搜索内容..."/><div class="search-layout" data-preview="true" data-field-priority="[&quot;title&quot;,&quot;content&quot;,&quot;tags&quot;]"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode" aria-label="暗色模式"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="暗色模式"><title>暗色模式</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="亮色模式"><title>亮色模式</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode" aria-label="阅读模式"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="阅读模式"><title>阅读模式</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer nav-files-container" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a2, b2) => {\n    if (!a2.isFolder &amp;&amp; !b2.isFolder || a2.isFolder &amp;&amp; b2.isFolder) {\n      return (a2.displayName || \&quot;\&quot;).localeCompare(b2.displayName || \&quot;\&quot;, void 0, {\n        numeric: true,\n        sensitivity: \&quot;base\&quot;\n      });\n    }\n    if (!a2.isFolder &amp;&amp; b2.isFolder) {\n      return 1;\n    }\n    return -1;\n  }&quot;,&quot;filterFn&quot;:&quot;(node) => node.slugSegment !== \&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;(node) => {\n    return node;\n  }&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-435" aria-label="探索"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>探索</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-435" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#" class="nav-file-title tree-item-self"></a></li></template><template id="template-folder"><li><div class="folder-container nav-folder-title tree-item-self"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon nav-folder-collapse-indicator collapse-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content tree-item-children"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../testing/">testing</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>软件测试 - 测试开发学习路线</a></div></nav><h1 class="article-title">软件测试 - 测试开发学习路线</h1><details class="note-properties metadata-container" open data-collapsed="false"><summary class="note-properties-header"><span class="note-properties-title">Properties</span><span class="note-properties-count">1</span></summary><table class="note-properties-table"><tbody><tr class="note-properties-row metadata-property"><td class="note-properties-key metadata-property-key">tags</td><td class="note-properties-value metadata-property-value"><span class="note-properties-tags"><a href="../tags/测试开发" class="internal internal-link tag-link">测试开发</a><span class="note-properties-separator">, </span><a href="../tags/软件测试" class="internal internal-link tag-link">软件测试</a><span class="note-properties-separator">, </span><a href="../tags/学习路线" class="internal internal-link tag-link">学习路线</a></span></td></tr></tbody></table></details><p show-comma="true" class="content-meta"><time datetime="2026-08-14T16:00:00.000Z">2026年8月15日</time><span>29分钟阅读</span></p></div></div><article class="popover-hint"><div class="markdown-preview-view markdown-rendered"><h1 id="软件测试---测试开发学习路线">软件测试 - 测试开发学习路线<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#软件测试---测试开发学习路线" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<blockquote>
+<p>测试开发工程师是软件行业的热门岗位，不仅要会测试，更要会开发测试工具、测试框架和测试平台。本篇路线从编程基础出发，依次覆盖测试理论、自动化测试、测试框架开发、测试平台开发、DevOps/CI-CD、项目实战和求职备战 8 个阶段，适合有一定编程基础、追求更高薪资与发展空间的同学。</p>
+</blockquote>
+<h2 id="核心要点">核心要点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#核心要点" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p><strong>什么是测试开发：</strong> 测试开发工程师不同于传统的功能测试或自动化测试，需要更强的编程能力和技术深度——不仅要会测试，更要会开发测试工具、测试平台、测试框架，帮助团队提升测试效率和质量。随着软件系统越来越复杂，传统手工测试已无法满足快速迭代需求，各大互联网公司都在建设自己的测试平台和测试工具。测试开发既懂测试理论，又具备扎实的编程能力，能站在测试和开发的双重视角解决问题，开发和测试哪边缺人都能顶上，在团队中扮演着重要角色。</p>
+<p><strong>为什么要学测试开发：</strong></p>
+<ul>
+<li>薪资更高、发展空间更大：一线城市测试开发薪资一般在 20-50K，经验丰富的高级测试开发可达 50-80K 甚至更高，且对编程能力的要求比纯开发岗位更友好，容易从测试岗转型</li>
+<li>市场需求稳定：随着 DevOps 和持续集成的普及，几乎每个大中型公司都需要测试开发来建设和维护测试平台，需求量持续增长</li>
+<li>技术成长更快：能接触前端、后端、测试、运维等多个领域技术，技术视野更广；还有机会主导测试平台的设计开发，锻炼架构设计和项目管理能力</li>
+<li>AI 时代新机遇：可将 AI 技术应用到测试中，如 AI 生成测试用例、智能识别缺陷、预测测试风险等</li>
+</ul>
+<p><strong>测试开发 vs 纯测试：</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>维度</th><th>纯测试（功能/自动化）</th><th>测试开发</th></tr></thead><tbody><tr><td>优势</td><td>入门门槛低、学习难度小、对编程要求较低</td><td>薪资高、发展空间大、技术含量高、不易被替代</td></tr><tr><td>劣势</td><td>薪资天花板低、发展空间有限、容易被替代</td><td>入门门槛相对较高、需要较强编程能力</td></tr><tr><td>适合人群</td><td>零基础转行、对编程不感兴趣、想快速入职</td><td>有一定编程基础、想要更高薪资和发展空间</td></tr></tbody></table></div>
+<p>建议：已有测试经验的同学（功能或自动化测试）强烈建议向测试开发转型；零基础转行可以先从功能测试入门，积累经验后再学测试开发；时间充足且有决心也可以直接学测试开发，只是学习曲线更陡峭。</p>
+<p><strong>就业方向：</strong> 测试开发工程师（开发测试工具/平台/框架）、高级自动化测试工程师（设计开发自动化测试框架）、测试架构师（测试体系建设与技术架构）、质量保障工程师 QA（质量保障体系建设）、DevOps 工程师（持续集成与持续交付）、全栈测试工程师（前端/后端/接口/性能多种测试）。</p>
+<h2 id="学习路线图">学习路线图<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习路线图" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>编程基础 → 测试基础理论 → 自动化测试 → 测试框架开发 → 测试平台开发 → DevOps 和 CI/CD → 项目实战 → 求职备战。各阶段时长仅供参考，可根据个人基础灵活调整。</p>
+<h3 id="阶段-1编程基础60-90-天仅供参考">阶段 1：编程基础（60-90 天，仅供参考）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-1编程基础60-90-天仅供参考" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>测试开发的核心是编程能力，本阶段系统学习编程语言，打好编程基础。</p>
+<h4 id="学习目标">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>掌握 Python 编程语言，能够熟练使用 Python 开发，理解面向对象编程、数据结构、算法等基础知识。</p>
+<h4 id="知识点">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p><strong>Python 编程基础【必学】：</strong></p>
+<ul>
+<li>Python 语法基础（变量、数据类型、运算符、控制流）</li>
+<li>函数和模块</li>
+<li>文件操作和异常处理</li>
+<li>面向对象编程（类、对象、继承、多态、封装）</li>
+<li>常用内置数据结构（列表、元组、字典、集合）</li>
+<li>常用标准库（os、sys、json、re、datetime）</li>
+</ul>
+<p><strong>数据结构和算法【建议学】：</strong></p>
+<ul>
+<li>基础数据结构（数组、链表、栈、队列、哈希表、树）</li>
+<li>常用算法（排序、查找、递归、动态规划）</li>
+<li>算法复杂度分析</li>
+</ul>
+<p><strong>数据库基础【必学】：</strong></p>
+<ul>
+<li>SQL 语言基础（SELECT、INSERT、UPDATE、DELETE）</li>
+<li>MySQL 基础操作</li>
+<li>Python 操作数据库（pymysql、SQLAlchemy）</li>
+</ul>
+<p><strong>Linux 基础【建议学】：</strong></p>
+<ul>
+<li>Linux 常用命令</li>
+<li>Shell 脚本基础</li>
+<li>Linux 文件系统和权限管理</li>
+</ul>
+<h4 id="学习建议">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ol>
+<li>Python 是测试开发的首选语言，简单易学、生态丰富，建议系统学习，不要只学皮毛</li>
+<li>面向对象编程非常重要，后面开发测试框架和测试平台都要用到，务必理解类、对象、继承、多态并多练习</li>
+<li>数据结构和算法虽然不是核心，但对编程能力提升很有帮助且面试常考，建议刷 LeetCode 简单和中等难度题目</li>
+<li>数据库是测试平台开发的基础（测试平台需要存储测试用例、测试结果等数据），建议系统学习 SQL 和 MySQL</li>
+<li>Linux 是服务器主流操作系统，测试工具和平台经常部署在 Linux 上，建议熟悉常用命令</li>
+</ol>
+<h4 id="学习资源">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p><strong>Python 编程：</strong></p>
+<ul>
+<li><a href="https://www.bilibili.com/video/BV1qW4y1a7fU/" class="external external-link">2025 最新 Python 教程（B站）<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：零基础入门到进阶</li>
+<li><a href="https://www.liaoxuefeng.com/wiki/1016959663602400" class="external external-link">廖雪峰 Python 教程<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：简洁易懂的入门教程</li>
+<li><a href="https://book.douban.com/subject/35196328/" class="external external-link">《Python 编程：从入门到实践》<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：经典入门书籍</li>
+</ul>
+<p><strong>数据结构和算法：</strong></p>
+<ul>
+<li><a href="https://leetcode.cn/" class="external external-link">LeetCode<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：刷题平台</li>
+</ul>
+<p><strong>数据库：</strong></p>
+<ul>
+<li><a href="https://sqlmother.yupi.icu/" class="external external-link">SQL 自学网<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：在线学习 SQL</li>
+</ul>
+<h3 id="阶段-2测试基础理论10-15-天仅供参考">阶段 2：测试基础理论（10-15 天，仅供参考）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-2测试基础理论10-15-天仅供参考" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>掌握测试的基本概念和理论知识，建立测试思维。</p>
+<h4 id="学习目标-1">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标-1" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>理解测试的基本概念、测试分类、测试用例设计方法、缺陷管理等基础知识，建立测试思维。</p>
+<h4 id="知识点-1">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-1" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p><strong>测试基础【必学】：</strong></p>
+<ul>
+<li>软件测试基本概念</li>
+<li>测试分类（黑盒测试、白盒测试、灰盒测试）</li>
+<li>测试级别（单元测试、集成测试、系统测试、验收测试）</li>
+<li>测试类型（功能测试、性能测试、安全测试等）</li>
+</ul>
+<p><strong>测试用例设计【必学】：</strong></p>
+<ul>
+<li>等价类划分法</li>
+<li>边界值分析法</li>
+<li>判定表法</li>
+<li>因果图法【建议学】</li>
+</ul>
+<p><strong>缺陷管理【必学】：</strong></p>
+<ul>
+<li>缺陷的定义和生命周期</li>
+<li>缺陷报告的编写</li>
+<li>缺陷管理工具（Jira、禅道）</li>
+</ul>
+<p><strong>测试流程【必学】：</strong></p>
+<ul>
+<li>测试计划的制定</li>
+<li>测试方案的设计</li>
+<li>测试执行和监控</li>
+<li>测试报告的编写</li>
+</ul>
+<h4 id="学习建议-1">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-1" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ol>
+<li>测试理论是测试开发的基础，虽然侧重开发，但测试思维同样重要，建议理解测试的本质</li>
+<li>测试用例设计方法是测试的核心技能，开发测试工具时也要考虑如何生成有效测试用例，重点学等价类划分和边界值分析</li>
+<li>这部分内容可以快速过一遍，不必花太多时间；有测试经验的同学可以直接跳过</li>
+</ol>
+<h4 id="学习资源-1">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-1" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li><a href="https://book.douban.com/subject/1801050/" class="external external-link">《软件测试》<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：经典教材</li>
+</ul>
+<h3 id="阶段-3自动化测试30-45-天仅供参考">阶段 3：自动化测试（30-45 天，仅供参考）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-3自动化测试30-45-天仅供参考" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>掌握自动化测试技能，为后续开发测试框架打基础。</p>
+<h4 id="学习目标-2">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标-2" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>掌握主流自动化测试工具和框架，能够编写稳定可靠的自动化测试脚本。</p>
+<h4 id="知识点-2">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-2" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p><strong>自动化测试基础【必学】：</strong></p>
+<ul>
+<li>自动化测试的概念和适用场景</li>
+<li>自动化测试框架的分类</li>
+</ul>
+<p><strong>Web 自动化测试【必学】：</strong></p>
+<ul>
+<li>Playwright（推荐）：现代化 Web 测试框架
+<ul>
+<li>元素定位和操作</li>
+<li>等待机制和断言</li>
+<li>页面对象模式（POM）</li>
+<li>录制和生成脚本</li>
+</ul>
+</li>
+<li>Selenium（了解）：传统 Web 测试框架</li>
+</ul>
+<p><strong>接口自动化测试【必学】：</strong></p>
+<ul>
+<li>HTTP 协议基础</li>
+<li>Requests 库：Python 的 HTTP 库</li>
+<li>接口测试用例设计</li>
+<li>接口自动化框架搭建</li>
+</ul>
+<p><strong>移动端自动化测试【建议学】：</strong></p>
+<ul>
+<li>Appium：移动端自动化测试框架</li>
+<li>Android/iOS 自动化测试</li>
+</ul>
+<p><strong>测试框架【必学】：</strong></p>
+<ul>
+<li>Pytest：Python 测试框架（重点）
+<ul>
+<li>测试用例的编写和组织</li>
+<li>Fixture 的使用</li>
+<li>参数化测试</li>
+<li>标记和分组</li>
+<li>插件开发</li>
+</ul>
+</li>
+<li>Unittest：Python 内置测试框架（了解）</li>
+</ul>
+<h4 id="学习建议-2">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-2" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ol>
+<li>Playwright 是 Web 自动化测试的首选，比 Selenium 更稳定、更快速、API 更简洁，建议重点学习；Selenium 仍有公司在用，简单了解即可</li>
+<li>Pytest 是测试开发的核心框架，后面开发测试框架都要基于它，务必深入学习，包括插件开发、钩子函数等高级特性</li>
+<li>接口自动化测试比 UI 测试更稳定、更快速，是自动化测试的重点，建议系统学习 Requests 库和接口测试框架搭建</li>
+<li>移动端自动化测试相对复杂，时间有限可以先跳过，有需要再学</li>
+<li>自动化测试的核心是稳定性和可维护性：使用显式等待、避免硬编码、应用 POM 模式等</li>
+</ol>
+<h4 id="学习资源-2">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-2" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p><strong>Playwright：</strong></p>
+<ul>
+<li><a href="https://playwright.dev/" class="external external-link">Playwright 官方文档<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：权威学习资料</li>
+</ul>
+<p><strong>Pytest：</strong></p>
+<ul>
+<li><a href="https://docs.pytest.org/" class="external external-link">Pytest 官方文档<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：必读</li>
+<li><a href="https://www.bilibili.com/video/BV13U4y137to" class="external external-link">Python 测试开发教程（B站）<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+<p><strong>接口测试：</strong></p>
+<ul>
+<li><a href="https://www.bilibili.com/video/BV1TP4y1J7BD" class="external external-link">黑马软件测试入门到实战（B站）<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+<p><strong>综合教程：</strong></p>
+<ul>
+<li><a href="https://www.bilibili.com/video/BV1hX4y187wi/" class="external external-link">2025 测试开发大佬教学（B站）<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：字节测试开发实战</li>
+</ul>
+<h3 id="阶段-4测试框架开发30-45-天仅供参考">阶段 4：测试框架开发（30-45 天，仅供参考）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-4测试框架开发30-45-天仅供参考" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>学习如何开发测试框架，提升测试的效率和可维护性。</p>
+<h4 id="学习目标-3">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标-3" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>掌握测试框架的设计和开发，能够开发通用的测试框架和测试工具。</p>
+<h4 id="知识点-3">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-3" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p><strong>测试框架设计【必学】：</strong></p>
+<ul>
+<li>测试框架的架构设计</li>
+<li>分层设计（数据层、逻辑层、UI 层）</li>
+<li>配置管理</li>
+<li>日志管理</li>
+<li>报告生成</li>
+</ul>
+<p><strong>Pytest 插件开发【必学】：</strong></p>
+<ul>
+<li>Pytest 钩子函数</li>
+<li>自定义 Fixture</li>
+<li>自定义命令行参数</li>
+<li>自定义标记</li>
+<li>插件打包和发布</li>
+</ul>
+<p><strong>数据驱动测试【必学】：</strong></p>
+<ul>
+<li>从文件读取测试数据（CSV、Excel、JSON、YAML）</li>
+<li>参数化测试</li>
+<li>测试数据管理</li>
+</ul>
+<p><strong>关键字驱动测试【建议学】：</strong></p>
+<ul>
+<li>关键字的设计和实现</li>
+<li>关键字驱动框架的搭建</li>
+</ul>
+<p><strong>测试工具开发【必学】：</strong></p>
+<ul>
+<li>测试数据生成工具</li>
+<li>测试报告美化工具</li>
+<li>接口 Mock 工具</li>
+<li>性能测试工具</li>
+</ul>
+<p><strong>设计模式【建议学】：</strong></p>
+<ul>
+<li>单例模式</li>
+<li>工厂模式</li>
+<li>装饰器模式</li>
+<li>策略模式</li>
+</ul>
+<h4 id="学习建议-3">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-3" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ol>
+<li>测试框架开发是测试开发的核心能力，要学习如何设计易用、可扩展、可维护的框架，建议从简单的数据驱动框架开始逐步增加功能</li>
+<li>Pytest 插件开发非常重要，很多测试框架都是基于 Pytest 插件实现的，务必深入学习钩子函数和插件机制</li>
+<li>设计模式能提升代码的可维护性和可扩展性，学完在测试框架中实际应用</li>
+<li>测试工具开发能提升团队效率，建议按实际需求开发实用工具（测试数据生成、接口 Mock 等）</li>
+<li>这个阶段要多动手实践，不要只看不练，从开发一个简单测试框架开始逐步完善</li>
+</ol>
+<h4 id="学习资源-3">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-3" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li><a href="https://docs.pytest.org/en/latest/how-to/writing_plugins.html" class="external external-link">Pytest 插件开发官方文档<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：必读</li>
+<li><a href="https://www.bilibili.com/read/cv20535780/" class="external external-link">测试开发实战 - 搭建 Pytest 框架（B站专栏）<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：完整的框架搭建教程</li>
+</ul>
+<h3 id="阶段-5测试平台开发60-90-天仅供参考">阶段 5：测试平台开发（60-90 天，仅供参考）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-5测试平台开发60-90-天仅供参考" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>学习如何开发测试平台，掌握前后端开发技能。</p>
+<h4 id="学习目标-4">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标-4" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>掌握 Web 开发技能，能够独立开发测试平台，包括前端界面和后端接口。</p>
+<h4 id="知识点-4">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-4" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p><strong>后端开发【必学】：</strong></p>
+<ul>
+<li>Flask/Django：Python Web 框架
+<ul>
+<li>路由和视图</li>
+<li>模板引擎</li>
+<li>表单处理</li>
+<li>数据库操作（ORM）</li>
+<li>RESTful API 设计</li>
+<li>用户认证和权限管理</li>
+</ul>
+</li>
+<li>FastAPI：现代 Python Web 框架【建议学】</li>
+</ul>
+<p><strong>前端开发【必学】：</strong></p>
+<ul>
+<li>HTML/CSS/JavaScript 基础</li>
+<li>Vue.js/React：前端框架
+<ul>
+<li>组件化开发</li>
+<li>路由管理</li>
+<li>状态管理</li>
+<li>跟后端接口对接</li>
+</ul>
+</li>
+<li>Element UI/Ant Design：UI 组件库</li>
+</ul>
+<p><strong>数据库设计【必学】：</strong></p>
+<ul>
+<li>数据库表结构设计</li>
+<li>索引设计</li>
+<li>查询优化</li>
+</ul>
+<p><strong>测试平台功能【必学】：</strong></p>
+<ul>
+<li>用例管理（创建、编辑、删除、查询）</li>
+<li>任务调度（定时任务、立即执行）</li>
+<li>测试执行（同步/异步执行、并发控制）</li>
+<li>结果展示（测试报告、统计图表）</li>
+<li>用户管理（用户注册、登录、权限控制）</li>
+</ul>
+<p><strong>消息队列【建议学】：</strong></p>
+<ul>
+<li>Celery：Python 分布式任务队列</li>
+<li>RabbitMQ/Redis：消息中间件</li>
+</ul>
+<h4 id="学习建议-4">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-4" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ol>
+<li>测试平台开发需要前后端技能，建议先学后端（Flask/Django）再学前端（Vue/React）；时间有限可以只做后端，前端用现成模板或框架</li>
+<li>Flask 更轻量灵活、Django 功能更完整，建议先学 Flask 掌握 Web 开发基本流程，再学 Django</li>
+<li>前端对测试开发来说不需要太深入，掌握基本 Vue/React 用法（或借助 AI 完成）即可，重点是要能调用后端接口、展示数据</li>
+<li>测试平台的核心是任务调度和测试执行，要学习用 Celery 等实现异步任务、控制并发、展示实时日志</li>
+<li>消息队列可实现异步任务执行和解耦，Celery + RabbitMQ/Redis 是 Python 测试平台的标准技术栈</li>
+<li>本阶段学习曲线较陡，建议从简单功能做起，逐步完善测试平台</li>
+</ol>
+<h4 id="学习资源-4">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-4" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p><strong>后端开发：</strong></p>
+<ul>
+<li><a href="https://flask.palletsprojects.com/" class="external external-link">Flask 官方教程<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：官方文档</li>
+<li><a href="https://docs.djangoproject.com/" class="external external-link">Django 官方教程<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：官方文档</li>
+<li><a href="https://www.bilibili.com/video/BV1KWNzebE6J" class="external external-link">测试开发教程，全栈开发测试平台（B站）<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+<p><strong>前端开发：</strong></p>
+<ul>
+<li><a href="https://cn.vuejs.org/" class="external external-link">Vue3 官方教程<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：官方文档</li>
+<li><a href="https://react.dev/" class="external external-link">React 官方教程<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：官方文档</li>
+</ul>
+<h3 id="阶段-6devops-和-cicd20-30-天仅供参考">阶段 6：DevOps 和 CI/CD（20-30 天，仅供参考）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-6devops-和-cicd20-30-天仅供参考" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>学习 DevOps 和持续集成，实现测试的自动化和持续化。</p>
+<h4 id="学习目标-5">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标-5" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>掌握 Docker、Jenkins、GitLab CI 等工具，能够搭建 CI/CD 流水线，实现测试的自动化执行。</p>
+<h4 id="知识点-5">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-5" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p><strong>版本控制【必学】：</strong></p>
+<ul>
+<li>Git 基础操作</li>
+<li>Git 分支管理和合并策略</li>
+<li>GitHub/GitLab 的使用</li>
+</ul>
+<p><strong>容器化技术【必学】：</strong></p>
+<ul>
+<li>Docker 基础
+<ul>
+<li>镜像和容器</li>
+<li>Dockerfile 编写</li>
+<li>Docker Compose</li>
+</ul>
+</li>
+<li>Kubernetes 基础【建议学】</li>
+</ul>
+<p><strong>持续集成工具【必学】：</strong></p>
+<ul>
+<li>Jenkins：传统 CI/CD 工具
+<ul>
+<li>Pipeline 脚本编写</li>
+<li>插件使用</li>
+<li>自动化构建和测试</li>
+</ul>
+</li>
+<li>GitHub Actions：现代 CI/CD 工具【建议学】</li>
+<li>GitLab CI：GitLab 内置 CI/CD【建议学】</li>
+</ul>
+<p><strong>自动化部署【建议学】：</strong></p>
+<ul>
+<li>自动化部署流程设计</li>
+<li>测试环境管理</li>
+<li>灰度发布和回滚</li>
+</ul>
+<h4 id="学习建议-5">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-5" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ol>
+<li>Docker 是现代软件开发的必备技能，测试环境的搭建和管理都离不开它，重点掌握 Dockerfile 编写和 Docker Compose 编排</li>
+<li>CI/CD 工具选择：Jenkins 功能强大但配置复杂；GitHub Actions 简单易用，建议优先学习；GitLab CI 与 GitLab 集成度高</li>
+<li>持续集成的核心是自动化，要学习编写 CI/CD 脚本，实现代码提交后自动构建、自动测试、自动部署</li>
+<li>Kubernetes 相对复杂，时间有限可以先跳过，等工作有需要再学</li>
+</ol>
+<h4 id="学习资源-5">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-5" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p><strong>Docker：</strong></p>
+<ul>
+<li><a href="https://docs.docker.com/" class="external external-link">Docker 官方文档<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：官方文档</li>
+</ul>
+<p><strong>Jenkins：</strong></p>
+<ul>
+<li><a href="https://www.jenkins.io/doc/" class="external external-link">Jenkins 官方文档<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：官方文档</li>
+</ul>
+<p><strong>GitHub Actions：</strong></p>
+<ul>
+<li><a href="https://docs.github.com/en/actions" class="external external-link">GitHub Actions 官方文档<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：官方文档</li>
+</ul>
+<h3 id="阶段-7项目实战30-60-天仅供参考">阶段 7：项目实战（30-60 天，仅供参考）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-7项目实战30-60-天仅供参考" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>通过实际项目巩固所学知识，积累项目经验。</p>
+<h4 id="学习目标-6">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标-6" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>完成 1-2 个完整的测试开发项目，能够独立设计和开发测试工具/测试平台，并形成项目文档。</p>
+<h4 id="学习建议-6">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-6" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ol>
+<li>从简单项目开始：先开发一个简单的测试工具（如接口测试工具、测试数据生成工具），熟悉开发流程后再开发完整的测试平台</li>
+<li>项目要完整：不要只做一半就停下，一定要做到能正常运行、功能完整、有测试用例、有文档</li>
+<li>应用所学技术：在项目中应用 Pytest、Flask/Django、Vue/React、Docker、CI/CD 等技术，检验学习成果</li>
+<li>参考开源项目：GitHub 上有很多优秀的测试平台开源项目，可以参考学习，但不要直接抄袭，要理解原理后自己实现</li>
+<li>写项目文档：每完成一个项目都写总结文档（项目背景、技术栈、核心功能、技术难点、优化方案），对后续求职非常重要</li>
+</ol>
+<h4 id="项目推荐">项目推荐<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#项目推荐" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p><strong>测试工具类：</strong></p>
+<ul>
+<li>接口自动化测试工具</li>
+<li>性能测试工具</li>
+<li>测试数据生成工具</li>
+<li>接口 Mock 工具</li>
+<li>测试报告美化工具</li>
+</ul>
+<p><strong>测试平台类：</strong></p>
+<ul>
+<li>接口测试平台</li>
+<li>UI 自动化测试平台</li>
+<li>性能测试平台</li>
+<li>测试用例管理平台</li>
+<li>持续集成平台</li>
+</ul>
+<p><strong>开源测试平台参考：</strong></p>
+<ul>
+<li><a href="https://github.com/httprunner/httprunner" class="external external-link">HttpRunner<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：Python 接口自动化测试框架</li>
+<li><a href="https://github.com/metersphere/metersphere" class="external external-link">Metersphere<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：开源测试平台，支持接口、性能、UI 测试</li>
+<li><a href="https://github.com/wuranxu/pityWeb" class="external external-link">pityWeb<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：接口自动化测试平台（Python + FastApi + React）</li>
+<li><a href="https://github.com/ExileLine/ExileTestPlatformServer" class="external external-link">ExileTestPlatform<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：支持接口、UI 测试的持续测试平台</li>
+</ul>
+<h4 id="学习资源-6">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-6" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li><a href="https://www.bilibili.com/video/BV1KWNzebE6J" class="external external-link">测试开发教程，全栈开发测试平台（B站）<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+<h3 id="阶段-8求职备战面试前-1-个月突击">阶段 8：求职备战（面试前 1 个月突击）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-8求职备战面试前-1-个月突击" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>为求职做准备，包括刷面试题、准备简历项目、模拟面试等。</p>
+<h4 id="学习目标-7">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标-7" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>熟练掌握测试开发常见面试题，能够流畅回答面试官的提问，准备好简历上的项目经历，顺利通过面试。</p>
+<h4 id="学习建议-7">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-7" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ol>
+<li>提前做规划：建议至少提前 3 个月开始准备，先看目标公司的招聘要求，了解对测试开发的技术要求</li>
+<li>打磨简历：简历上一定要有能体现测试开发能力的项目经历（开发过什么测试工具/平台、使用了哪些技术栈、解决了什么问题），可借助在线简历模板快速产出高质量简历</li>
+<li>多刷面试题：测试开发面试题涵盖测试理论、编程语言、自动化测试、测试框架、测试平台等多个方面，按公司、题型、难度筛选练习</li>
+<li>多看真实面经：了解不同公司的面试风格和常考题目</li>
+<li>善用 AI 模拟面试：可以用 AI 工具模拟真实面试场景，提前练习</li>
+<li>准备手写代码：测试开发面试常要求手写代码（实现简单测试框架、编写自动化测试脚本等），提前准备常见手写题</li>
+<li>准备项目介绍：能流畅介绍项目背景、技术栈、核心功能、技术难点、优化方案，提前写好文档反复练习</li>
+</ol>
+<h4 id="面试考察重点">面试考察重点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#面试考察重点" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ol>
+<li>编程能力：Python 编程、数据结构、算法、面向对象编程</li>
+<li>测试理论：测试分类、测试用例设计、缺陷管理</li>
+<li>自动化测试：Playwright/Selenium 使用、Pytest 框架、POM 模式</li>
+<li>测试框架开发：框架设计、Pytest 插件开发、数据驱动测试</li>
+<li>测试平台开发：Flask/Django、前端框架、数据库设计、任务调度</li>
+<li>DevOps：Docker、CI/CD、Jenkins/GitHub Actions</li>
+<li>项目经验：项目介绍、技术难点、优化方案</li>
+</ol>
+<h4 id="经典面试题">经典面试题<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#经典面试题" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p><strong>编程基础：</strong></p>
+<ol>
+<li>Python 的特点有哪些？</li>
+<li>Python 中的装饰器是什么？如何实现？</li>
+<li>什么是面向对象编程？Python 如何实现继承和多态？</li>
+<li>Python 的 GIL 是什么？有什么影响？</li>
+</ol>
+<p><strong>测试理论：</strong></p>
+<ol>
+<li>什么是黑盒测试和白盒测试？区别是什么？</li>
+<li>常用的测试用例设计方法有哪些？</li>
+<li>什么是回归测试？如何进行回归测试？</li>
+</ol>
+<p><strong>自动化测试：</strong></p>
+<ol>
+<li>Selenium 和 Playwright 有什么区别？</li>
+<li>如何解决自动化测试中的元素定位问题？</li>
+<li>什么是 POM 模式？有什么优势？</li>
+<li>Pytest 的 Fixture 有什么作用？如何使用？</li>
+</ol>
+<p><strong>测试框架开发：</strong></p>
+<ol>
+<li>如何设计一个测试框架？需要考虑哪些方面？</li>
+<li>Pytest 的钩子函数有哪些？如何使用？</li>
+<li>如何实现数据驱动测试？</li>
+</ol>
+<p><strong>测试平台开发：</strong></p>
+<ol>
+<li>介绍一下你开发过的测试平台？</li>
+<li>测试平台如何实现任务调度？</li>
+<li>测试平台如何展示实时日志？</li>
+<li>Flask 和 Django 有什么区别？</li>
+</ol>
+<p><strong>DevOps：</strong></p>
+<ol>
+<li>什么是 Docker？如何使用 Docker？</li>
+<li>什么是 CI/CD？如何搭建 CI/CD 流水线？</li>
+<li>Jenkins Pipeline 如何编写？</li>
+</ol>
+<h2 id="学习建议-8">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-8" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ol>
+<li><strong>编程基础是核心</strong>：测试开发最重要的就是编程能力，建议重点学习 Python（测试开发的主流语言），系统掌握面向对象编程、数据结构、算法等基础知识；已经学过 Java 也可以</li>
+<li><strong>测试理论不能少</strong>：虽然测试开发侧重开发，但测试理论和测试思维同样重要，要理解测试用例设计方法、测试流程、缺陷管理等基础知识</li>
+<li><strong>多做项目实践</strong>：测试开发的核心是开发能力，必须多动手做项目，从简单的测试工具开始，逐步开发测试框架、测试平台</li>
+<li><strong>善用 AI 辅助开发</strong>：在 AI 时代，可以使用 AI 工具（如 ChatGPT、GitHub Copilot）辅助编写代码、生成测试用例、调试问题</li>
+<li><strong>关注现代技术栈</strong>：主流的 Selenium 已稍显过时，建议学习 Playwright、Cypress 等现代测试工具；同时关注容器化（Docker）、微服务、云原生等新技术</li>
+<li><strong>学习 Web 开发</strong>：测试平台开发需要掌握前后端技术，建议学习 Flask/Django（Python Web 框架）、Vue/React（前端框架），能够独立开发 Web 应用；会 Java 的 Spring Boot 也可以，把重心放到测试相关内容上</li>
+</ol>
+<h2 id="持续学习资源">持续学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#持续学习资源" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="测试开发社区">测试开发社区<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#测试开发社区" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><a href="https://testerhome.com/" class="external external-link">TesterHome<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：国内最大的测试社区</li>
+<li><a href="https://stackoverflow.com/" class="external external-link">StackOverflow<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：技术问答社区</li>
+<li><a href="https://github.com/" class="external external-link">GitHub<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：开源项目平台</li>
+</ul>
+<h3 id="技术博客">技术博客<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#技术博客" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><a href="https://testing.googleblog.com/" class="external external-link">Google Testing Blog<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：谷歌测试工程博客</li>
+<li><a href="https://netflixtechblog.com/" class="external external-link">Netflix TechBlog<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：Netflix 测试开发</li>
+<li><a href="https://www.uber.com/blog/engineering/" class="external external-link">Uber Engineering Blog<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：Uber 测试架构</li>
+<li><a href="https://medium.com/airbnb-engineering" class="external external-link">Airbnb Tech Blog<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：Airbnb 质量工程</li>
+</ul>
+<h2 id="写在最后">写在最后<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#写在最后" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>测试开发是一个非常有前景的技术方向，结合了测试和开发的双重优势，既有测试的业务理解能力，又有开发的编程能力，在团队中往往能发挥更大价值。相比纯测试岗位，测试开发对编程能力要求更高、学习曲线更陡峭，但坚持下来不仅能带来更高薪资，还能让技术视野更广、成长速度更快。</p>
+<p>在 AI 时代，测试开发工程师还可以将 AI 技术应用到测试中，如 AI 生成测试用例、智能识别缺陷、预测测试风险等，这为测试开发带来了新的机遇和挑战。建议大家多关注 AI 测试的新技术和新工具，提前布局未来。</p>
+<p>祝大家学习顺利，早日成为优秀的测试开发工程师！</p>
+<blockquote>
+<p>来源：鱼皮·编程导航 / codefather</p>
+</blockquote></div></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="toc"><button type="button" class="toc-header" aria-controls="toc-435" aria-expanded="true"><h3>目录</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-0" class="toc-content overflow"><li class="depth-0"><a href="#软件测试---测试开发学习路线" data-for="软件测试---测试开发学习路线">软件测试 - 测试开发学习路线</a></li><li class="depth-1"><a href="#核心要点" data-for="核心要点">核心要点</a></li><li class="depth-1"><a href="#学习路线图" data-for="学习路线图">学习路线图</a></li><li class="depth-2"><a href="#阶段-1编程基础60-90-天仅供参考" data-for="阶段-1编程基础60-90-天仅供参考">阶段 1：编程基础（60-90 天，仅供参考）</a></li><li class="depth-2"><a href="#阶段-2测试基础理论10-15-天仅供参考" data-for="阶段-2测试基础理论10-15-天仅供参考">阶段 2：测试基础理论（10-15 天，仅供参考）</a></li><li class="depth-2"><a href="#阶段-3自动化测试30-45-天仅供参考" data-for="阶段-3自动化测试30-45-天仅供参考">阶段 3：自动化测试（30-45 天，仅供参考）</a></li><li class="depth-2"><a href="#阶段-4测试框架开发30-45-天仅供参考" data-for="阶段-4测试框架开发30-45-天仅供参考">阶段 4：测试框架开发（30-45 天，仅供参考）</a></li><li class="depth-2"><a href="#阶段-5测试平台开发60-90-天仅供参考" data-for="阶段-5测试平台开发60-90-天仅供参考">阶段 5：测试平台开发（60-90 天，仅供参考）</a></li><li class="depth-2"><a href="#阶段-6devops-和-cicd20-30-天仅供参考" data-for="阶段-6devops-和-cicd20-30-天仅供参考">阶段 6：DevOps 和 CI/CD（20-30 天，仅供参考）</a></li><li class="depth-2"><a href="#阶段-7项目实战30-60-天仅供参考" data-for="阶段-7项目实战30-60-天仅供参考">阶段 7：项目实战（30-60 天，仅供参考）</a></li><li class="depth-2"><a href="#阶段-8求职备战面试前-1-个月突击" data-for="阶段-8求职备战面试前-1-个月突击">阶段 8：求职备战（面试前 1 个月突击）</a></li><li class="depth-1"><a href="#学习建议" data-for="学习建议">学习建议</a></li><li class="depth-1"><a href="#持续学习资源" data-for="持续学习资源">持续学习资源</a></li><li class="depth-2"><a href="#测试开发社区" data-for="测试开发社区">测试开发社区</a></li><li class="depth-2"><a href="#技术博客" data-for="技术博客">技术博客</a></li><li class="depth-1"><a href="#写在最后" data-for="写在最后">写在最后</a></li><li class="overflow-end"></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v5.0.0</a> © 2026</p><ul><li><a href="https://github.com/xyf1111">GitHub</a></li></ul></footer></div></div></body><script src="../static/resource-after-e13fffa1.js" type="application/javascript" data-persist="true"></script><script src="../static/resource-after-8b336f9a.js" type="application/javascript" data-persist="true"></script><script src="../static/resource-after-baba652b.js" type="application/javascript" data-persist="true"></script><script src="../static/resource-after-5eb75950.js" type="module" data-persist="true"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript" data-persist="true"></script><script src="../postscript-17915799.js" type="module" data-persist="true"></script></html>

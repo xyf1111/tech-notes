@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr"><head><title>TypeScript 01 - 学习路线 · 后端开发笔记</title><meta charset="utf-8"/><link rel="preload" href="../../index-b754f97d.css" as="style"/><link rel="preload" href="../../prescript-2bfc6315.js" as="script"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="技术知识库"/><meta property="og:title" content="TypeScript 01 - 学习路线 · 后端开发笔记"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="TypeScript 01 - 学习路线 · 后端开发笔记"/><meta name="twitter:description" content="TypeScript 学习路线 开篇介绍 TypeScript（简称 TS）是 JavaScript 的超集，由微软开发并开源。简单来说，TypeScript 就是”带类型的 JavaScript”，它在 JavaScript 的基础上添加了静态类型系统，让代码更加健壮和易于维护。 如果你曾因为 JavaScript 的 undefined、类型错误、看不出变量类型而困扰，TypeScript 就是来解决这些问题的。TS 的写法与 Java 有些相似，学过 Java 会更容易上手。 为什么要学 TypeScript？ 类型安全：编译阶段检查类型错误，在代码运行前发现潜在 bug，减少线上故障 ..."/><meta property="og:description" content="TypeScript 学习路线 开篇介绍 TypeScript（简称 TS）是 JavaScript 的超集，由微软开发并开源。简单来说，TypeScript 就是”带类型的 JavaScript”，它在 JavaScript 的基础上添加了静态类型系统，让代码更加健壮和易于维护。 如果你曾因为 JavaScript 的 undefined、类型错误、看不出变量类型而困扰，TypeScript 就是来解决这些问题的。TS 的写法与 Java 有些相似，学过 Java 会更容易上手。 为什么要学 TypeScript？ 类型安全：编译阶段检查类型错误，在代码运行前发现潜在 bug，减少线上故障 ..."/><meta property="og:image:alt" content="TypeScript 学习路线 开篇介绍 TypeScript（简称 TS）是 JavaScript 的超集，由微软开发并开源。简单来说，TypeScript 就是”带类型的 JavaScript”，它在 JavaScript 的基础上添加了静态类型系统，让代码更加健壮和易于维护。 如果你曾因为 JavaScript 的 undefined、类型错误、看不出变量类型而困扰，TypeScript 就是来解决这些问题的。TS 的写法与 Java 有些相似，学过 Java 会更容易上手。 为什么要学 TypeScript？ 类型安全：编译阶段检查类型错误，在代码运行前发现潜在 bug，减少线上故障 ..."/><meta property="twitter:domain" content="xyf1111.github.io/tech-notes"/><meta property="og:url" content="https://xyf1111.github.io/tech-notes/typescript/路线/typescript-01---学习路线"/><meta property="twitter:url" content="https://xyf1111.github.io/tech-notes/typescript/路线/typescript-01---学习路线"/><link rel="icon" href="../../static/icon.png"/><meta name="description" content="TypeScript 学习路线 开篇介绍 TypeScript（简称 TS）是 JavaScript 的超集，由微软开发并开源。简单来说，TypeScript 就是”带类型的 JavaScript”，它在 JavaScript 的基础上添加了静态类型系统，让代码更加健壮和易于维护。 如果你曾因为 JavaScript 的 undefined、类型错误、看不出变量类型而困扰，TypeScript 就是来解决这些问题的。TS 的写法与 Java 有些相似，学过 Java 会更容易上手。 为什么要学 TypeScript？ 类型安全：编译阶段检查类型错误，在代码运行前发现潜在 bug，减少线上故障 ..."/><meta name="generator" content="Quartz"/><link href="../../index-b754f97d.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-735924e0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-589c1cea.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-bbc3f7c0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-2911f5d1.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-e427079e.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-53b25b2b.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-c93c6a44.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-8a06014f.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-77d6a441.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-6ee21cee.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-1ea6ad18.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-788c9ca3.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-642859cd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-4abc06bd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-274a3dfe.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-94cb6c84.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-58d5ff56.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-7262b5a7.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../static/resource-style-a5c806d2.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../static/resource-style-6bd36952.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" data-persist="true"/><script src="../../prescript-2bfc6315.js" type="application/javascript" data-persist="true"></script><script type="application/javascript" data-persist="true">const fetchData = fetch("../../static/contentIndex.json").then(data => data.json())</script><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://xyf1111.github.io/tech-notes/typescript/路线/typescript-01---学习路线-og-image.webp"/><meta property="og:image:url" content="https://xyf1111.github.io/tech-notes/typescript/路线/typescript-01---学习路线-og-image.webp"/><meta name="twitter:image" content="https://xyf1111.github.io/tech-notes/typescript/路线/typescript-01---学习路线-og-image.webp"/><meta property="og:image:type" content="image/webp"/></head><body data-slug="typescript/路线/typescript-01---学习路线" data-basepath="/tech-notes"><div id="quartz-root" class="page" data-frame="default"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="../..">技术知识库</a></h2><div class="mobile-only"><div class="spacer"></div></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 0.5rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button" aria-label="搜索" aria-expanded="false"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>搜索</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="搜索内容..." placeholder="搜索内容..."/><div class="search-layout" data-preview="true" data-field-priority="[&quot;title&quot;,&quot;content&quot;,&quot;tags&quot;]"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode" aria-label="暗色模式"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="暗色模式"><title>暗色模式</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="亮色模式"><title>亮色模式</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode" aria-label="阅读模式"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="阅读模式"><title>阅读模式</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer nav-files-container" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a2, b2) => {\n    if (!a2.isFolder &amp;&amp; !b2.isFolder || a2.isFolder &amp;&amp; b2.isFolder) {\n      return (a2.displayName || \&quot;\&quot;).localeCompare(b2.displayName || \&quot;\&quot;, void 0, {\n        numeric: true,\n        sensitivity: \&quot;base\&quot;\n      });\n    }\n    if (!a2.isFolder &amp;&amp; b2.isFolder) {\n      return 1;\n    }\n    return -1;\n  }&quot;,&quot;filterFn&quot;:&quot;(node) => node.slugSegment !== \&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;(node) => {\n    return node;\n  }&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-488" aria-label="探索"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>探索</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-488" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#" class="nav-file-title tree-item-self"></a></li></template><template id="template-folder"><li><div class="folder-container nav-folder-title tree-item-self"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon nav-folder-collapse-indicator collapse-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content tree-item-children"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../typescript/">typescript</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../typescript/路线/">路线</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>TypeScript 01 - 学习路线</a></div></nav><h1 class="article-title">TypeScript 01 - 学习路线</h1><details class="note-properties metadata-container" open data-collapsed="false"><summary class="note-properties-header"><span class="note-properties-title">Properties</span><span class="note-properties-count">1</span></summary><table class="note-properties-table"><tbody><tr class="note-properties-row metadata-property"><td class="note-properties-key metadata-property-key">tags</td><td class="note-properties-value metadata-property-value"><span class="note-properties-tags"><a href="../../tags/typescript" class="internal internal-link tag-link">typescript</a><span class="note-properties-separator">, </span><a href="../../tags/learning" class="internal internal-link tag-link">learning</a><span class="note-properties-separator">, </span><a href="../../tags/roadmap" class="internal internal-link tag-link">roadmap</a><span class="note-properties-separator">, </span><a href="../../tags/frontend" class="internal internal-link tag-link">frontend</a></span></td></tr></tbody></table></details><p show-comma="true" class="content-meta"><time datetime="2026-08-06T16:00:00.000Z">2026年8月07日</time><span>18分钟阅读</span></p></div></div><article class="popover-hint"><div class="markdown-preview-view markdown-rendered"><h1 id="typescript-学习路线">TypeScript 学习路线<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#typescript-学习路线" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<h2 id="开篇介绍">开篇介绍<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#开篇介绍" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>TypeScript（简称 TS）是 JavaScript 的超集，由微软开发并开源。简单来说，TypeScript 就是”带类型的 JavaScript”，它在 JavaScript 的基础上添加了静态类型系统，让代码更加健壮和易于维护。</p>
+<p>如果你曾因为 JavaScript 的 <code>undefined</code>、类型错误、看不出变量类型而困扰，TypeScript 就是来解决这些问题的。TS 的写法与 Java 有些相似，学过 Java 会更容易上手。</p>
+<h3 id="为什么要学-typescript">为什么要学 TypeScript？<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#为什么要学-typescript" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>类型安全</strong>：编译阶段检查类型错误，在代码运行前发现潜在 bug，减少线上故障</li>
+<li><strong>开发体验</strong>：IDE 代码提示更智能准确，输入对象后的点号会立即列出所有可用的属性和方法</li>
+<li><strong>代码可读性</strong>：类型注解让代码意图更清晰，几个月后回看也能快速理解每个变量和函数的用途</li>
+<li><strong>重构安全</strong>：修改函数签名时，所有调用点立即报错，不用担心遗漏</li>
+<li><strong>框架原生支持</strong>：Vue 3、React、Angular 等主流框架都提供完善的 TypeScript 支持，已成为行业标准</li>
+</ul>
+<h3 id="应用场景">应用场景<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#应用场景" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>TypeScript 是工具技能而非独立的职业方向，需要与其他技术结合使用：</p>
+<ul>
+<li>前端开发：Vue、React、Angular 项目</li>
+<li>后端开发：Node.js + TypeScript 服务端应用</li>
+<li>全栈开发：Next.js、Nuxt.js 等框架，实现前后端类型共享</li>
+<li>npm 包 / 工具库开发：为使用者提供完善的类型定义和代码提示</li>
+<li>大型项目维护：保证代码质量，让团队协作更顺畅</li>
+</ul>
+<h3 id="学习前提">学习前提<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习前提" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>必须掌握 JavaScript</strong>（硬性要求）：TS 是 JS 的超集，JS 基础不牢固学 TS 会非常吃力。至少掌握 ES6+ 语法，包括箭头函数、解构赋值、Promise、async/await 等特性</li>
+<li>前端方向：需要了解 HTML、CSS 等基础知识，以及至少一个前端框架（Vue、React 或 Angular）</li>
+<li>后端方向：需要了解 Node.js 和服务端开发的基本概念</li>
+<li>学习时间：TS 学习曲线并不陡峭，JS 基础扎实的话十几天可掌握核心内容；精通高级特性（泛型、条件类型、映射类型等）需要更长的时间和实践</li>
+</ul>
+<hr/>
+<h2 id="整体学习建议">整体学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#整体学习建议" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ol>
+<li><strong>先学好 JavaScript</strong>：TS 是 JS 的超集，建议先系统学习 JS（尤其是 ES6+ 语法），再学习 TS</li>
+<li><strong>边学边练</strong>：在 <a href="https://www.typescriptlang.org/play" class="external external-link">TypeScript Playground<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> 在线编写代码，即时查看编译结果</li>
+<li><strong>理解类型思维</strong>：核心是类型系统，要从”动态类型”转向”静态类型”思维。一开始可能觉得类型注解很繁琐，习惯后会大大提高代码质量</li>
+<li><strong>不要过度设计类型</strong>：简单项目中适当使用 <code>any</code> 或类型推断即可，不必为每个变量写复杂类型（TS 也因此被调侃为 AnyScript）</li>
+<li><strong>善用 AI 辅助</strong>：遇到复杂的类型定义或泛型时，可使用 ChatGPT、GitHub Copilot 等工具帮助理解和编写</li>
+<li><strong>结合框架学习</strong>：结合实际的前端框架（Vue、React）或后端框架（Nest.js）学习，更有实战价值</li>
+</ol>
+<hr/>
+<h2 id="阶段-1typescript-基础语法">阶段 1：TypeScript 基础语法<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-1typescript-基础语法" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="学习目标">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>掌握 TypeScript 的基本语法和类型注解。</p>
+<h3 id="知识点">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>环境搭建（必学）：</strong></p>
+<ul>
+<li>安装 Node.js 和 npm</li>
+<li>安装 TypeScript：<code>npm install -g typescript</code></li>
+<li>tsc 编译命令：将 <code>.ts</code> 文件编译为 <code>.js</code> 文件</li>
+<li>TypeScript Playground：在线编写和调试代码</li>
+</ul>
+<p><strong>基础类型（必学）：</strong></p>
+<ul>
+<li>基本类型：number、string、boolean</li>
+<li>数组和元组：Array、Tuple</li>
+<li>any 和 unknown：任意类型</li>
+<li>void、null、undefined</li>
+<li>never：永不存在的值的类型</li>
+<li>枚举（enum，建议学）</li>
+</ul>
+<p><strong>类型注解和类型推断（必学）：</strong></p>
+<ul>
+<li>变量类型注解：<code>let name: string = &quot;张三&quot;</code></li>
+<li>函数参数和返回值类型注解</li>
+<li>类型推断：TypeScript 自动推断类型</li>
+</ul>
+<p><strong>函数类型（必学）：</strong></p>
+<ul>
+<li>函数类型注解</li>
+<li>可选参数和默认参数</li>
+<li>剩余参数</li>
+<li>函数重载（建议学）</li>
+</ul>
+<h3 id="学习建议">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>环境搭建非常简单，建议先在 TypeScript Playground 在线练习，熟悉后再搭建本地环境</li>
+<li>基础类型是 TS 的基础，尤其要理解 <code>any</code>、<code>unknown</code>、<code>never</code> 三种特殊类型的区别和使用场景</li>
+<li>类型推断是 TS 的特性之一，很多时候无需显式写类型注解；建议先了解类型推断，再学习如何显式注解</li>
+<li>函数类型是重点，函数重载初学时可先掌握基础，之后深入学习</li>
+</ol>
+<h3 id="学习资源">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>⭐ <a href="https://www.typescriptlang.org/zh/docs/" class="external external-link">TypeScript 官方文档（中文版）<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：最权威的学习资料</li>
+<li><a href="https://wangdoc.com/typescript/" class="external external-link">阮一峰的 TypeScript 教程<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：简洁易懂的中文教程</li>
+<li><a href="https://ts.xcatliu.com/" class="external external-link">TypeScript 入门教程<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：GitHub 开源教程</li>
+<li><a href="https://www.typescriptlang.org/play" class="external external-link">TypeScript Playground<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：在线练习平台</li>
+</ul>
+<hr/>
+<h2 id="阶段-2typescript-类型系统核心">阶段 2：TypeScript 类型系统（核心）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-2typescript-类型系统核心" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="学习目标-1">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标-1" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>深入学习 TypeScript 的类型系统，这是 TypeScript 的核心和精髓。</p>
+<h3 id="知识点-1">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-1" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>接口 Interface（必学）：</strong></p>
+<ul>
+<li>接口的定义和使用</li>
+<li>可选属性和只读属性</li>
+<li>函数类型接口</li>
+<li>可索引类型接口</li>
+<li>接口继承</li>
+</ul>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="typescript" data-theme="github-light github-dark"><code data-language="typescript" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">interface</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="property"> User</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation"> {</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">  readonly</span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;" data-token-type="normal"> id</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="property"> number</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">; </span><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;" data-token-type="comment">// 只读属性</span></span>
+<span data-line><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;" data-token-type="normal">  name</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="property"> string</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">;</span></span>
+<span data-line><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;" data-token-type="normal">  age</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">?:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="property"> number</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">; </span><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;" data-token-type="comment">// 可选属性</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">}</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">interface</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="property"> Admin</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword"> extends</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="property"> User</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation"> {</span></span>
+<span data-line><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;" data-token-type="normal">  permissions</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="property"> string</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">[];</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">}</span></span></code></pre></figure>
+<p><strong>类型别名 Type Alias（必学）：</strong></p>
+<ul>
+<li>type 关键字定义类型别名</li>
+<li>type 和 interface 的区别</li>
+<li>联合类型（Union Types）：<code>string | number</code></li>
+<li>交叉类型（Intersection Types）：<code>A &amp; B</code></li>
+</ul>
+<p><strong>字面量类型（必学）：</strong></p>
+<ul>
+<li>字符串字面量类型</li>
+<li>数字字面量类型</li>
+<li>布尔字面量类型</li>
+</ul>
+<p><strong>类型断言和类型守卫（必学）：</strong></p>
+<ul>
+<li>类型断言：<code>as</code> 和 <code>&lt;></code></li>
+<li>类型守卫：<code>typeof</code>、<code>instanceof</code></li>
+<li>自定义类型守卫：<code>is</code> 关键字（建议学）</li>
+</ul>
+<p><strong>泛型 Generics（必学）：</strong></p>
+<ul>
+<li>泛型函数</li>
+<li>泛型接口</li>
+<li>泛型类</li>
+<li>泛型约束</li>
+<li>泛型工具类型：<code>Partial&lt;T></code>、<code>Required&lt;T></code>、<code>Pick&lt;T, K></code>、<code>Omit&lt;T, K></code> 等（建议学）</li>
+</ul>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="typescript" data-theme="github-light github-dark"><code data-language="typescript" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;" data-token-type="comment">// 泛型函数</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">function</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function"> identity</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">&lt;</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="property">T</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">>(</span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;" data-token-type="important">value</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">:</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="property"> T</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">)</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">:</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="property"> T</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation"> {</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">  return</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="normal"> value;</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">}</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;" data-token-type="comment">// 泛型约束</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">function</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function"> getLength</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">&lt;</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="property">T</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword"> extends</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation"> { </span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;" data-token-type="normal">length</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="property"> number</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation"> }>(</span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;" data-token-type="important">arg</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">:</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="property"> T</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">)</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="property"> number</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation"> {</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">  return</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="normal"> arg.</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="normal">length</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">;</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">}</span></span></code></pre></figure>
+<h3 id="学习建议-1">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-1" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>接口是类型系统的核心，用于定义对象的结构，理解接口是学好 TS 的关键</li>
+<li>type 和 interface 的选择：能用 interface 就用 interface，需要联合类型或复杂类型运算时用 type；两者大部分情况下可互换</li>
+<li>联合类型表示”或”的关系，交叉类型表示”且”的关系，可以灵活组合类型</li>
+<li>泛型是类型系统的精髓也是难点，先理解”类型的参数化”概念，再学习各种用法，多写代码练习</li>
+<li>工具类型（Utility Types）非常实用，重点学习 <code>Partial</code>、<code>Required</code>、<code>Pick</code>、<code>Omit</code>、<code>Record</code>、<code>Exclude</code>、<code>Extract</code> 等</li>
+<li>泛型比较抽象，可让 AI 解释用法和场景，配合示例代码理解更快</li>
+</ol>
+<h3 id="学习资源-1">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-1" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>⭐ <a href="https://jkchao.github.io/typescript-book-chinese/" class="external external-link">TypeScript 深入理解<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：深入讲解 TS 类型系统的在线书籍</li>
+<li><a href="https://github.com/type-challenges/type-challenges" class="external external-link">Type Challenges 类型体操<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：通过练习题掌握类型系统</li>
+</ul>
+<hr/>
+<h2 id="阶段-3typescript-进阶特性">阶段 3：TypeScript 进阶特性<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-3typescript-进阶特性" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="学习目标-2">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标-2" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>学习 TypeScript 的进阶特性和高级用法。</p>
+<h3 id="知识点-2">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-2" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>类 Class（必学）：</strong></p>
+<ul>
+<li>类的定义和继承</li>
+<li>访问修饰符：public、private、protected</li>
+<li>readonly 修饰符</li>
+<li>抽象类（建议学）</li>
+<li>类和接口（建议学）</li>
+</ul>
+<p><strong>高级类型（必学）：</strong></p>
+<ul>
+<li>映射类型（Mapped Types）</li>
+<li>条件类型（Conditional Types）</li>
+<li>索引类型（Index Types，建议学）</li>
+<li>模板字面量类型（Template Literal Types，建议学）</li>
+</ul>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="typescript" data-theme="github-light github-dark"><code data-language="typescript" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;" data-token-type="comment">// 映射类型：将对象的所有属性转为可选</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">type</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="property"> Partial</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">&lt;</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="property">T</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">> </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation"> { [</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="property">K</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword"> in</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword"> keyof</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="property"> T</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">]</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">?:</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="property"> T</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">[</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="property">K</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">] };</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;" data-token-type="comment">// 条件类型</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">type</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="property"> IsString</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">&lt;</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="property">T</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">> </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">=</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="property"> T</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword"> extends</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="property"> string</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator"> ?</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="property"> true</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator"> :</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="property"> false</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">;</span></span></code></pre></figure>
+<p><strong>装饰器 Decorator（建议学）：</strong></p>
+<ul>
+<li>类装饰器、方法装饰器、属性装饰器、参数装饰器</li>
+<li>实验性特性，主要用于框架开发（Angular、Nest.js）</li>
+</ul>
+<p><strong>模块和命名空间（必学）：</strong></p>
+<ul>
+<li>ES6 模块：import / export</li>
+<li>模块解析</li>
+<li>命名空间（Namespace）：已过时，不推荐使用</li>
+</ul>
+<p><strong>声明文件 .d.ts（必学）：</strong></p>
+<ul>
+<li>什么是声明文件</li>
+<li>使用第三方库的声明文件：<code>@types/*</code></li>
+<li>编写自己的声明文件（建议学）</li>
+</ul>
+<h3 id="学习建议-2">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-2" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>类与 ES6 的类类似，但增加了访问修饰符、抽象类等特性；熟悉 Java 或 C# 会发现它们非常相似</li>
+<li>映射类型和条件类型是高级类型的核心，可实现强大的类型转换；初学难以理解，建议先掌握基础再逐步深入</li>
+<li>装饰器是实验性特性，主要用于 Angular、Nest.js 等框架，不使用这些框架可暂时跳过</li>
+<li>声明文件（.d.ts）为 JavaScript 库提供类型信息，使用第三方库时一般需安装对应的 <code>@types/*</code> 包；建议先会使用，再学习编写</li>
+<li>命名空间是 TS 早期的模块化方案，已被 ES6 模块取代，不建议学习和使用</li>
+</ol>
+<h3 id="学习资源-2">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-2" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><a href="https://www.typescriptlang.org/docs/handbook/decorators.html" class="external external-link">TypeScript 装饰器详解<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：官方文档</li>
+<li><a href="https://github.com/DefinitelyTyped/DefinitelyTyped" class="external external-link">DefinitelyTyped<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：第三方库的 TypeScript 声明文件仓库</li>
+</ul>
+<hr/>
+<h2 id="阶段-4typescript-工程化">阶段 4：TypeScript 工程化<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-4typescript-工程化" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="学习目标-3">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标-3" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>学习 TypeScript 在实际项目中的配置和工程化实践。</p>
+<h3 id="知识点-3">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-3" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>tsconfig.json 配置（必学）：</strong></p>
+<ul>
+<li>tsconfig.json 文件的作用</li>
+<li>常用编译选项：target、module、lib、outDir、strict</li>
+<li>严格模式选项：strictNullChecks、strictFunctionTypes 等</li>
+<li>路径映射：paths 和 baseUrl（建议学）</li>
+<li>项目引用：references（建议学）</li>
+</ul>
+<p><strong>代码规范和检查（必学）：</strong></p>
+<ul>
+<li>ESLint + TypeScript：代码检查（<code>@typescript-eslint/parser</code>、<code>@typescript-eslint/eslint-plugin</code>）</li>
+<li>Prettier：代码格式化</li>
+<li>Husky + lint-staged：Git 钩子（建议学）</li>
+</ul>
+<p><strong>构建工具集成（必学）：</strong></p>
+<ul>
+<li>Webpack + TypeScript：需配置 <code>ts-loader</code> 或 <code>babel-loader</code></li>
+<li>Vite + TypeScript：原生支持，配置非常简单</li>
+<li>Rollup + TypeScript：库开发（建议学）</li>
+</ul>
+<p><strong>调试技巧（必学）：</strong></p>
+<ul>
+<li>Source Map：调试 TypeScript 源代码而非编译后的 JS</li>
+<li>VSCode 调试配置（建议学）</li>
+</ul>
+<h3 id="学习建议-3">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-3" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>tsconfig.json 是 TS 项目的配置文件，建议先用默认配置再根据项目需求逐步调整；重点理解 <code>strict</code> 选项，它会开启所有严格类型检查</li>
+<li>ESLint 和 Prettier 是代码质量保证的标配，建议在项目中配置好</li>
+<li>现代前端项目一般使用 Vite（原生支持 TS，配置简单）；老项目可能用 Webpack，需配置 <code>ts-loader</code> 或 <code>babel-loader</code></li>
+<li>Source Map 可以让你在浏览器中调试 TS 源代码而非编译后的 JS，建议开发环境开启</li>
+</ol>
+<h3 id="学习资源-3">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-3" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>⭐ <a href="https://www.typescriptlang.org/tsconfig" class="external external-link">TypeScript 官方 tsconfig 文档<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：配置选项详解</li>
+<li><a href="https://cn.vitejs.dev/guide/features.html#typescript" class="external external-link">Vite 官方文档（TypeScript 支持）<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><a href="https://typescript-eslint.io/getting-started" class="external external-link">typescript-eslint 配置指南<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+<hr/>
+<h2 id="阶段-5typescript-实战应用">阶段 5：TypeScript 实战应用<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-5typescript-实战应用" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="学习目标-4">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标-4" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>在实际项目中应用 TypeScript。</p>
+<h3 id="知识点-4">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-4" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>前端框架 + TypeScript（必学）：</strong></p>
+<ul>
+<li>Vue 3 + TypeScript：Composition API + TypeScript</li>
+<li>React + TypeScript：函数组件 + Hooks + TypeScript</li>
+<li>Angular + TypeScript：Angular 原生支持（建议学）</li>
+</ul>
+<p><strong>后端开发 + TypeScript（必学）：</strong></p>
+<ul>
+<li>Node.js + TypeScript：Express / Koa + TypeScript</li>
+<li>Nest.js：基于 TS 的企业级 Node.js 框架（建议学）</li>
+<li>Prisma：TypeScript ORM（建议学）</li>
+</ul>
+<p><strong>全栈开发 + TypeScript（建议学）：</strong></p>
+<ul>
+<li>Next.js + TypeScript：React 全栈框架</li>
+<li>Nuxt.js + TypeScript：Vue 全栈框架</li>
+<li>tRPC：端到端类型安全的 API</li>
+</ul>
+<p><strong>工具库开发（建议学）：</strong></p>
+<ul>
+<li>开发 npm 包：使用 TypeScript 开发高质量的 npm 包</li>
+<li>类型声明文件：为 npm 包提供类型声明</li>
+</ul>
+<h3 id="学习建议-4">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-4" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>前端框架 + TS 是最常见的应用场景，Vue 3 和 React 都对 TS 支持良好，建议选择一个框架深入学习</li>
+<li>Vue 3 的 Composition API 与 TS 配合非常好，类型推断强大；React 函数组件 + Hooks 使用 TS 时需手动定义 Props、State 等类型</li>
+<li>后端方面，Nest.js 是基于 TS 的企业级框架，类似 Java 的 Spring Boot，适合构建大型后端应用</li>
+<li>全栈框架（Next.js、Nuxt.js）原生支持 TS，可实现前后端类型共享，提高开发效率</li>
+<li>开发 npm 包建议使用 TS，可为使用者提供更好的类型提示和代码补全</li>
+<li>实战中可使用 GitHub Copilot 等 AI 工具自动生成类型定义和代码，提高开发效率</li>
+</ol>
+<h3 id="学习资源-4">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-4" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>⭐ <a href="https://cn.vuejs.org/guide/typescript/overview.html" class="external external-link">Vue 3 官方 TypeScript 支持文档<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>⭐ <a href="https://react-typescript-cheatsheet.netlify.app/" class="external external-link">React TypeScript Cheatsheet<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：React + TS 速查表</li>
+<li><a href="https://docs.nestjs.com/" class="external external-link">Nest.js 官方文档<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+<hr/>
+<h2 id="阶段-6求职备战">阶段 6：求职备战<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-6求职备战" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="学习目标-5">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标-5" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>准备 TypeScript 相关岗位的面试。</p>
+<h3 id="学习建议-5">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-5" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li><strong>梳理知识体系</strong>：回顾核心知识点（类型系统、泛型、工程化配置等），整理成自己的知识体系</li>
+<li><strong>准备项目经历</strong>：梳理使用 TS 开发的项目，重点介绍如何用 TS 提高代码质量、如何设计类型系统、遇到的类型问题和解决方案</li>
+<li><strong>多刷面试题</strong>：TS 面试题主要考察类型系统、泛型、工程化配置等</li>
+<li><strong>练习手写代码</strong>：部分公司会要求手写 TS 代码，如实现类型工具函数（<code>Partial</code>、<code>Pick</code>）、实现泛型函数等，建议提前练习</li>
+<li><strong>了解公司技术栈</strong>：投简历前了解目标公司的技术栈，若使用 TS + Vue/React 就重点准备相关知识</li>
+<li><strong>模拟面试</strong>：进行模拟面试练习，提前适应面试节奏</li>
+</ol>
+<h3 id="面试考察重点">面试考察重点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#面试考察重点" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>类型系统：接口、类型别名、联合类型、交叉类型</li>
+<li>泛型：泛型函数、泛型接口、泛型约束、泛型工具类型</li>
+<li>高级类型：映射类型、条件类型、索引类型</li>
+<li>工程化：tsconfig.json 配置、ESLint + TypeScript</li>
+<li>框架集成：Vue / React + TypeScript 的使用</li>
+<li>类型体操：复杂的类型定义和转换（高级岗位）</li>
+<li>实战经验：TS 在项目中的应用、遇到的问题和解决方案</li>
+</ol>
+<h3 id="经典面试题">经典面试题<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#经典面试题" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>TypeScript 和 JavaScript 有什么区别？TypeScript 的优势是什么？</li>
+<li>interface 和 type 有什么区别？什么时候用 interface，什么时候用 type？</li>
+<li>any、unknown、never 三种类型有什么区别？</li>
+<li>什么是泛型？如何使用泛型约束？</li>
+<li>TypeScript 的工具类型 Partial、Pick、Omit 是如何实现的？</li>
+<li>如何在 Vue / React 项目中使用 TypeScript？</li>
+<li>tsconfig.json 中的 strict 选项包含哪些子选项？</li>
+<li>如何为第三方 JavaScript 库编写类型声明文件？</li>
+</ol>
+<hr/>
+<h2 id="总结">总结<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#总结" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>TypeScript 是现代前端开发的必备技能，几乎所有大型项目都在使用。虽然它增加了一些学习成本，但带来的收益（类型安全、代码可读性、重构便利性）远远超过这些成本。</p>
+<p>学习 TypeScript 需要转变思维，从”动态类型”转向”静态类型”。一开始可能觉得类型注解很繁琐，但习惯后会大大提高代码质量和开发效率。</p>
+<p>建议按照本路线循序渐进地学习，重点掌握类型系统和泛型，结合实际项目进行实践。善用 AI 工具辅助学习和开发，可以事半功倍。</p></div></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="toc"><button type="button" class="toc-header" aria-controls="toc-488" aria-expanded="true"><h3>目录</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-0" class="toc-content overflow"><li class="depth-0"><a href="#typescript-学习路线" data-for="typescript-学习路线">TypeScript 学习路线</a></li><li class="depth-1"><a href="#开篇介绍" data-for="开篇介绍">开篇介绍</a></li><li class="depth-2"><a href="#为什么要学-typescript" data-for="为什么要学-typescript">为什么要学 TypeScript？</a></li><li class="depth-2"><a href="#应用场景" data-for="应用场景">应用场景</a></li><li class="depth-2"><a href="#学习前提" data-for="学习前提">学习前提</a></li><li class="depth-1"><a href="#整体学习建议" data-for="整体学习建议">整体学习建议</a></li><li class="depth-1"><a href="#阶段-1typescript-基础语法" data-for="阶段-1typescript-基础语法">阶段 1：TypeScript 基础语法</a></li><li class="depth-2"><a href="#学习目标" data-for="学习目标">学习目标</a></li><li class="depth-2"><a href="#知识点" data-for="知识点">知识点</a></li><li class="depth-2"><a href="#学习建议" data-for="学习建议">学习建议</a></li><li class="depth-2"><a href="#学习资源" data-for="学习资源">学习资源</a></li><li class="depth-1"><a href="#阶段-2typescript-类型系统核心" data-for="阶段-2typescript-类型系统核心">阶段 2：TypeScript 类型系统（核心）</a></li><li class="depth-2"><a href="#学习目标-1" data-for="学习目标-1">学习目标</a></li><li class="depth-2"><a href="#知识点-1" data-for="知识点-1">知识点</a></li><li class="depth-2"><a href="#学习建议-1" data-for="学习建议-1">学习建议</a></li><li class="depth-2"><a href="#学习资源-1" data-for="学习资源-1">学习资源</a></li><li class="depth-1"><a href="#阶段-3typescript-进阶特性" data-for="阶段-3typescript-进阶特性">阶段 3：TypeScript 进阶特性</a></li><li class="depth-2"><a href="#学习目标-2" data-for="学习目标-2">学习目标</a></li><li class="depth-2"><a href="#知识点-2" data-for="知识点-2">知识点</a></li><li class="depth-2"><a href="#学习建议-2" data-for="学习建议-2">学习建议</a></li><li class="depth-2"><a href="#学习资源-2" data-for="学习资源-2">学习资源</a></li><li class="depth-1"><a href="#阶段-4typescript-工程化" data-for="阶段-4typescript-工程化">阶段 4：TypeScript 工程化</a></li><li class="depth-2"><a href="#学习目标-3" data-for="学习目标-3">学习目标</a></li><li class="depth-2"><a href="#知识点-3" data-for="知识点-3">知识点</a></li><li class="depth-2"><a href="#学习建议-3" data-for="学习建议-3">学习建议</a></li><li class="depth-2"><a href="#学习资源-3" data-for="学习资源-3">学习资源</a></li><li class="depth-1"><a href="#阶段-5typescript-实战应用" data-for="阶段-5typescript-实战应用">阶段 5：TypeScript 实战应用</a></li><li class="depth-2"><a href="#学习目标-4" data-for="学习目标-4">学习目标</a></li><li class="depth-2"><a href="#知识点-4" data-for="知识点-4">知识点</a></li><li class="depth-2"><a href="#学习建议-4" data-for="学习建议-4">学习建议</a></li><li class="depth-2"><a href="#学习资源-4" data-for="学习资源-4">学习资源</a></li><li class="depth-1"><a href="#阶段-6求职备战" data-for="阶段-6求职备战">阶段 6：求职备战</a></li><li class="depth-2"><a href="#学习目标-5" data-for="学习目标-5">学习目标</a></li><li class="depth-2"><a href="#学习建议-5" data-for="学习建议-5">学习建议</a></li><li class="depth-2"><a href="#面试考察重点" data-for="面试考察重点">面试考察重点</a></li><li class="depth-2"><a href="#经典面试题" data-for="经典面试题">经典面试题</a></li><li class="depth-1"><a href="#总结" data-for="总结">总结</a></li><li class="overflow-end"></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v5.0.0</a> © 2026</p><ul><li><a href="https://github.com/xyf1111">GitHub</a></li></ul></footer></div></div></body><script src="../../static/resource-after-e13fffa1.js" type="application/javascript" data-persist="true"></script><script src="../../static/resource-after-8b336f9a.js" type="application/javascript" data-persist="true"></script><script src="../../static/resource-after-baba652b.js" type="application/javascript" data-persist="true"></script><script src="../../static/resource-after-5eb75950.js" type="module" data-persist="true"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript" data-persist="true"></script><script src="../../postscript-17915799.js" type="module" data-persist="true"></script></html>

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr"><head><title>概念 - 软件工程学习路线 · 后端开发笔记</title><meta charset="utf-8"/><link rel="preload" href="../index-b754f97d.css" as="style"/><link rel="preload" href="../prescript-2bfc6315.js" as="script"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="技术知识库"/><meta property="og:title" content="概念 - 软件工程学习路线 · 后端开发笔记"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="概念 - 软件工程学习路线 · 后端开发笔记"/><meta name="twitter:description" content="概念 - 软件工程学习路线 软件工程是系统性、规范化的软件开发方法论，核心是”提质增效”。建议先独立完成 1-2 个项目再学理论，按 软件工程基础 → 开发原则 → 设计模式 → 开发规范 → 软件测试 → 项目管理 → 实践进阶 七个阶段推进，覆盖软件生命周期（需求、设计、编码、测试、维护）与团队协作各环节。 总览 什么是软件工程 软件工程是一种系统性、规范化的软件开发方法论，就像建筑工程中的设计、施工、验收等阶段一样。开发一个软件就好比建造一座大楼，必须严格执行规划、设计、施工、检测等步骤，而且每个步骤都要遵循一定的规范、流程和方法，才能最终建造出符合要求的高楼大厦。否则可能建楼建到一半，..."/><meta property="og:description" content="概念 - 软件工程学习路线 软件工程是系统性、规范化的软件开发方法论，核心是”提质增效”。建议先独立完成 1-2 个项目再学理论，按 软件工程基础 → 开发原则 → 设计模式 → 开发规范 → 软件测试 → 项目管理 → 实践进阶 七个阶段推进，覆盖软件生命周期（需求、设计、编码、测试、维护）与团队协作各环节。 总览 什么是软件工程 软件工程是一种系统性、规范化的软件开发方法论，就像建筑工程中的设计、施工、验收等阶段一样。开发一个软件就好比建造一座大楼，必须严格执行规划、设计、施工、检测等步骤，而且每个步骤都要遵循一定的规范、流程和方法，才能最终建造出符合要求的高楼大厦。否则可能建楼建到一半，..."/><meta property="og:image:alt" content="概念 - 软件工程学习路线 软件工程是系统性、规范化的软件开发方法论，核心是”提质增效”。建议先独立完成 1-2 个项目再学理论，按 软件工程基础 → 开发原则 → 设计模式 → 开发规范 → 软件测试 → 项目管理 → 实践进阶 七个阶段推进，覆盖软件生命周期（需求、设计、编码、测试、维护）与团队协作各环节。 总览 什么是软件工程 软件工程是一种系统性、规范化的软件开发方法论，就像建筑工程中的设计、施工、验收等阶段一样。开发一个软件就好比建造一座大楼，必须严格执行规划、设计、施工、检测等步骤，而且每个步骤都要遵循一定的规范、流程和方法，才能最终建造出符合要求的高楼大厦。否则可能建楼建到一半，..."/><meta property="twitter:domain" content="xyf1111.github.io/tech-notes"/><meta property="og:url" content="https://xyf1111.github.io/tech-notes/concepts/概念-09---软件工程学习路线"/><meta property="twitter:url" content="https://xyf1111.github.io/tech-notes/concepts/概念-09---软件工程学习路线"/><link rel="icon" href="../static/icon.png"/><meta name="description" content="概念 - 软件工程学习路线 软件工程是系统性、规范化的软件开发方法论，核心是”提质增效”。建议先独立完成 1-2 个项目再学理论，按 软件工程基础 → 开发原则 → 设计模式 → 开发规范 → 软件测试 → 项目管理 → 实践进阶 七个阶段推进，覆盖软件生命周期（需求、设计、编码、测试、维护）与团队协作各环节。 总览 什么是软件工程 软件工程是一种系统性、规范化的软件开发方法论，就像建筑工程中的设计、施工、验收等阶段一样。开发一个软件就好比建造一座大楼，必须严格执行规划、设计、施工、检测等步骤，而且每个步骤都要遵循一定的规范、流程和方法，才能最终建造出符合要求的高楼大厦。否则可能建楼建到一半，..."/><meta name="generator" content="Quartz"/><link href="../index-b754f97d.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-735924e0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-589c1cea.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-bbc3f7c0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-2911f5d1.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-e427079e.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-53b25b2b.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-c93c6a44.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-8a06014f.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-77d6a441.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-6ee21cee.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-1ea6ad18.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-788c9ca3.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-642859cd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-4abc06bd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-274a3dfe.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-94cb6c84.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-58d5ff56.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-7262b5a7.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../static/resource-style-a5c806d2.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../static/resource-style-6bd36952.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" data-persist="true"/><script src="../prescript-2bfc6315.js" type="application/javascript" data-persist="true"></script><script type="application/javascript" data-persist="true">const fetchData = fetch("../static/contentIndex.json").then(data => data.json())</script><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://xyf1111.github.io/tech-notes/concepts/概念-09---软件工程学习路线-og-image.webp"/><meta property="og:image:url" content="https://xyf1111.github.io/tech-notes/concepts/概念-09---软件工程学习路线-og-image.webp"/><meta name="twitter:image" content="https://xyf1111.github.io/tech-notes/concepts/概念-09---软件工程学习路线-og-image.webp"/><meta property="og:image:type" content="image/webp"/></head><body data-slug="concepts/概念-09---软件工程学习路线" data-basepath="/tech-notes"><div id="quartz-root" class="page" data-frame="default"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="..">技术知识库</a></h2><div class="mobile-only"><div class="spacer"></div></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 0.5rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button" aria-label="搜索" aria-expanded="false"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>搜索</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="搜索内容..." placeholder="搜索内容..."/><div class="search-layout" data-preview="true" data-field-priority="[&quot;title&quot;,&quot;content&quot;,&quot;tags&quot;]"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode" aria-label="暗色模式"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="暗色模式"><title>暗色模式</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="亮色模式"><title>亮色模式</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode" aria-label="阅读模式"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="阅读模式"><title>阅读模式</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer nav-files-container" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a2, b2) => {\n    if (!a2.isFolder &amp;&amp; !b2.isFolder || a2.isFolder &amp;&amp; b2.isFolder) {\n      return (a2.displayName || \&quot;\&quot;).localeCompare(b2.displayName || \&quot;\&quot;, void 0, {\n        numeric: true,\n        sensitivity: \&quot;base\&quot;\n      });\n    }\n    if (!a2.isFolder &amp;&amp; b2.isFolder) {\n      return 1;\n    }\n    return -1;\n  }&quot;,&quot;filterFn&quot;:&quot;(node) => node.slugSegment !== \&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;(node) => {\n    return node;\n  }&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-45" aria-label="探索"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>探索</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-45" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#" class="nav-file-title tree-item-self"></a></li></template><template id="template-folder"><li><div class="folder-container nav-folder-title tree-item-self"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon nav-folder-collapse-indicator collapse-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content tree-item-children"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../concepts/">concepts</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>概念 - 软件工程学习路线</a></div></nav><h1 class="article-title">概念 - 软件工程学习路线</h1><details class="note-properties metadata-container" open data-collapsed="false"><summary class="note-properties-header"><span class="note-properties-title">Properties</span><span class="note-properties-count">1</span></summary><table class="note-properties-table"><tbody><tr class="note-properties-row metadata-property"><td class="note-properties-key metadata-property-key">tags</td><td class="note-properties-value metadata-property-value"><span class="note-properties-tags"><a href="../tags/软件工程" class="internal internal-link tag-link">软件工程</a><span class="note-properties-separator">, </span><a href="../tags/学习路线" class="internal internal-link tag-link">学习路线</a></span></td></tr></tbody></table></details><p show-comma="true" class="content-meta"><time datetime="2026-08-16T16:00:00.000Z">2026年8月17日</time><span>24分钟阅读</span></p></div></div><article class="popover-hint"><div class="markdown-preview-view markdown-rendered"><h1 id="概念---软件工程学习路线">概念 - 软件工程学习路线<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#概念---软件工程学习路线" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<blockquote>
+<p>软件工程是系统性、规范化的软件开发方法论，核心是”提质增效”。建议先独立完成 1-2 个项目再学理论，按 软件工程基础 → 开发原则 → 设计模式 → 开发规范 → 软件测试 → 项目管理 → 实践进阶 七个阶段推进，覆盖软件生命周期（需求、设计、编码、测试、维护）与团队协作各环节。</p>
+</blockquote>
+<h2 id="总览">总览<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#总览" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="什么是软件工程">什么是软件工程<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#什么是软件工程" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>软件工程是一种系统性、规范化的软件开发方法论，就像建筑工程中的设计、施工、验收等阶段一样。开发一个软件就好比建造一座大楼，必须严格执行规划、设计、施工、检测等步骤，而且每个步骤都要遵循一定的规范、流程和方法，才能最终建造出符合要求的高楼大厦。否则可能建楼建到一半，发现无法再盖更多层了。</p>
+<p>软件工程强调在软件开发过程中，按照一定的流程和方法来组织、规划、管理和控制软件开发过程，以保证开发出高质量、可靠、易维护的软件项目。随着软件系统越来越复杂，团队协作越来越重要，软件工程的价值也越来越凸显。</p>
+<h3 id="为什么要学">为什么要学<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#为什么要学" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>很多同学刚开始学编程时都是一个人写代码，想怎么写就怎么写。但进入企业、参加团队开发后就会发现：如果大家都不遵循规范和流程，代码会变得越来越混乱，随便加个新功能、老功能就没法用了，也就是所谓的”屎山代码”。学习软件工程，能让你理解如何在团队中高效协作、如何开发出高质量的软件、如何避免走弯路。</p>
+<p>软件工程能解决什么问题？核心是 4 个字——<strong>提质增效</strong>：</p>
+<ul>
+<li><strong>提质</strong>：通过规范的流程、方法和工具来提高软件质量，降低软件维护成本</li>
+<li><strong>增效</strong>：通过设计模式、项目框架、自动化工具来提高开发效率，缩短软件开发周期</li>
+</ul>
+<p>此外，软件工程还能提高团队协作效率、提高软件安全性、培养系统性思维。</p>
+<h3 id="学习时机">学习时机<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习时机" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>软件工程包含大量理论知识，学起来可能比较枯燥。建议<strong>已经能够独立开发一个完整的项目后</strong>，再抽时间系统学习。如果想快速找工作，可以先忽略——面试基本不会直接考软件工程理论，但会考设计模式和开发规范。</p>
+<p>在 AI 时代，软件工程的重要性不降反增。AI 应用开发同样需要遵循软件工程的规范和流程，从需求分析、系统设计到测试部署，每个环节都不能少；AI 工具（如 Cursor、GitHub Copilot）还能自动生成代码、自动测试、自动部署，让软件工程实践更高效。比如让 AI 从 0 开发一个项目时，最好也是先提供和确认方案，而不是无脑写代码。</p>
+<h3 id="就业方向">就业方向<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#就业方向" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>软件工程不是一个独立的岗位，而是软件开发、架构师、项目经理等岗位的核心能力。掌握软件工程后，可以从事：</p>
+<ol>
+<li>软件开发工程师：遵循软件工程规范开发高质量代码</li>
+<li>系统架构师：设计复杂系统的架构，应用软件工程原理</li>
+<li>项目经理 / 技术 Leader：管理团队和项目，确保开发流程规范</li>
+<li>质量保证工程师：负责软件质量管理和流程优化</li>
+<li>DevOps 工程师：实现自动化开发、测试、部署流程</li>
+</ol>
+<h2 id="整体学习建议">整体学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#整体学习建议" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>1）<strong>先做项目再学理论</strong>：软件工程的很多概念和方法只有在实践中才能理解。建议先独立完成 1-2 个项目，有了实际经验后再学习软件工程，会有”醍醐灌顶”的感觉。</p>
+<p>2）<strong>重点学习实用内容</strong>：如果你是软件开发同学，优先学习开发原则、设计模式、开发规范、软件测试这些直接用得上的内容，其他理论知识简单了解即可。</p>
+<p>3）<strong>不要死记硬背</strong>：软件工程知识点很多，建议在实际开发中应用这些原则和方法，感受其有效性。</p>
+<p>4）<strong>结合实际项目学习</strong>：学习设计模式时，分析一些知名框架的源码（如 Spring、MyBatis），看看它们是如何应用设计模式的。</p>
+<p>5）<strong>善用 AI 工具</strong>：学习时可用 AI 工具（如 ChatGPT / 豆包）辅助理解概念、生成代码、分析设计方案。</p>
+<h2 id="阶段-1软件工程基础3-5-天">阶段 1：软件工程基础（3-5 天）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-1软件工程基础3-5-天" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="学习目标">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>理解软件工程的基本概念、特点和应用价值。</p>
+<h3 id="知识点">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>软件工程基本概念【必学】：</strong></p>
+<ul>
+<li>软件的本质和特性</li>
+<li>软件工程的定义和目标</li>
+<li>软件开发的挑战（复杂性、一致性、可变性、不可见性）</li>
+<li>软件危机和软件工程的诞生</li>
+</ul>
+<p><strong>软件过程【必学】：</strong></p>
+<ul>
+<li>什么是软件过程</li>
+<li>软件生命周期（需求、设计、编码、测试、维护）</li>
+<li>软件过程模型
+<ul>
+<li>瀑布模型</li>
+<li>迭代模型</li>
+<li>敏捷开发（Scrum、看板）【建议学】</li>
+<li>DevOps【建议学】</li>
+</ul>
+</li>
+</ul>
+<p><strong>软件质量【必学】：</strong></p>
+<ul>
+<li>软件质量的定义</li>
+<li>软件质量要素（功能性、可靠性、易用性、效率、可维护性、可移植性）</li>
+<li>如何保证软件质量</li>
+</ul>
+<h3 id="学习建议">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>1）软件工程的理论知识比较抽象，不要一开始就深入学习，快速过一遍基本概念、理解其核心价值即可。</p>
+<p>2）敏捷开发是目前最主流的软件开发方法，要重点理解其核心思想：拥抱变化、快速迭代、持续交付。很多互联网公司都在使用敏捷开发。</p>
+<p>3）这个阶段不需要深入学习每种过程模型的细节，重点理解不同模型的特点和适用场景即可。</p>
+<h3 id="学习资源">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><a href="https://www.bilibili.com/video/BV1Vt411V72G/" class="external external-link">北京大学软件工程<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：深入浅出的软件工程课程</li>
+<li>《软件工程：实践者的研究方法》：经典大黑书，内容全面</li>
+</ul>
+<h2 id="阶段-2软件开发原则5-7-天">阶段 2：软件开发原则（5-7 天）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-2软件开发原则5-7-天" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>软件开发原则包括 SOLID、DRY、KISS 等设计原则，指导开发者编写高质量的代码。</p>
+<h3 id="学习目标-1">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标-1" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>掌握软件开发的核心原则，能够在编码时应用这些原则。</p>
+<h3 id="知识点-1">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-1" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>SOLID 原则【必学】：</strong></p>
+<ul>
+<li>单一职责原则（SRP）：一个类只负责一个职责</li>
+<li>开闭原则（OCP）：对扩展开放，对修改关闭</li>
+<li>里氏替换原则（LSP）：子类可以替换父类</li>
+<li>接口隔离原则（ISP）：接口要小而精</li>
+<li>依赖倒置原则（DIP）：依赖抽象而不是具体实现</li>
+</ul>
+<p><strong>其他开发原则【建议学】：</strong></p>
+<ul>
+<li>DRY（Don’t Repeat Yourself）：不要重复自己</li>
+<li>KISS（Keep It Simple, Stupid）：保持简单</li>
+<li>YAGNI（You Aren’t Gonna Need It）：不要过度设计</li>
+<li>迪米特法则（最少知道原则）</li>
+<li>组合优于继承</li>
+</ul>
+<h3 id="学习建议-1">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-1" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>1）SOLID 原则是面向对象设计的核心原则，也是设计模式的理论基础，要深入理解每个原则的含义和应用场景。</p>
+<p>2）不要死记硬背，要在实际编码中体会。比如发现一个类越写越长、职责越来越多时，就应该想到单一职责原则，考虑拆分。</p>
+<p>3）开闭原则是最重要的原则，很多设计模式（如工厂模式、策略模式）都是为了实现开闭原则。要理解如何通过抽象和多态来实现”对扩展开放，对修改关闭”。</p>
+<p>4）DRY、KISS、YAGNI 虽然简单，但在实际开发中非常实用。很多同学容易过度设计，写出过于复杂的代码，要记住：简单就是美。</p>
+<h3 id="学习资源-1">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-1" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><a href="https://book.douban.com/subject/4199741/" class="external external-link">代码整洁之道<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：经典书籍，讲解编程原则</li>
+</ul>
+<h2 id="阶段-3设计模式15-30-天">阶段 3：设计模式（15-30 天）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-3设计模式15-30-天" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>设计模式是软件设计中的经典解决方案，掌握常用设计模式能够提升代码的可维护性和可扩展性。</p>
+<h3 id="学习目标-2">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标-2" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>掌握 23 种经典设计模式，能够在实际项目中灵活运用。</p>
+<h3 id="知识点-2">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-2" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>设计模式基础【必学】：</strong></p>
+<ul>
+<li>什么是设计模式</li>
+<li>设计模式的分类（创建型、结构型、行为型）</li>
+<li>设计模式和设计原则的关系</li>
+</ul>
+<p><strong>创建型模式【必学】：</strong></p>
+<ul>
+<li>单例模式：确保一个类只有一个实例</li>
+<li>工厂方法模式：定义创建对象的接口</li>
+<li>抽象工厂模式：创建相关对象家族</li>
+<li>建造者模式：构建复杂对象</li>
+<li>原型模式：通过复制创建对象【建议学】</li>
+</ul>
+<p><strong>结构型模式【必学】：</strong></p>
+<ul>
+<li>适配器模式：接口转换</li>
+<li>装饰器模式：动态添加职责</li>
+<li>代理模式：控制对象访问</li>
+<li>外观模式：简化子系统接口</li>
+<li>桥接模式：抽象和实现分离【建议学】</li>
+<li>组合模式：树形结构处理【建议学】</li>
+<li>享元模式：共享对象节省内存【可不学】</li>
+</ul>
+<p><strong>行为型模式【必学】：</strong></p>
+<ul>
+<li>策略模式：算法封装和切换</li>
+<li>模板方法模式：定义算法骨架</li>
+<li>观察者模式：对象间的依赖通知</li>
+<li>责任链模式：请求传递处理</li>
+<li>迭代器模式：遍历聚合对象</li>
+<li>状态模式：对象状态变化【建议学】</li>
+<li>命令模式：请求封装为对象【建议学】</li>
+<li>访问者模式：操作对象结构【可不学】</li>
+<li>中介者模式：对象间的中介【可不学】</li>
+<li>备忘录模式：保存和恢复状态【可不学】</li>
+<li>解释器模式：语言解释【可不学】</li>
+</ul>
+<h3 id="学习建议-2">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-2" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>1）设计模式是软件工程中最重要的内容，也是面试的高频考点。23 种设计模式不需要全部精通，建议重点学习常用的 10-12 种。</p>
+<p>2）学习顺序建议按使用频率：单例模式 → 工厂模式 → 策略模式 → 代理模式 → 观察者模式 → 模板方法模式 → 适配器模式 → 责任链模式。</p>
+<p>3）每学一个设计模式：先理解是什么和为什么 → 看 UML 类图理解结构 → 手写代码实现 → 分析框架源码中的应用。不要死记硬背代码。</p>
+<p>4）学完基础的设计模式后，建议阅读 Spring、MyBatis 等框架的源码，看看大厂是如何应用设计模式的。</p>
+<p>5）<strong>不要过度使用设计模式！</strong> 设计模式不是银弹，过度使用只会增加系统复杂度，要根据实际需求选择合适的设计模式。</p>
+<h3 id="经典面试题">经典面试题<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#经典面试题" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>什么是设计模式？设计模式分为哪几类？</li>
+<li>请说说你了解的常见设计模式及其应用场景</li>
+<li>单例模式有哪几种实现方式？各有什么优缺点？</li>
+<li>工厂模式和抽象工厂模式有什么区别？</li>
+<li>策略模式和状态模式有什么区别？</li>
+<li>Spring 框架中使用了哪些设计模式？</li>
+<li>装饰器模式、适配器模式、代理模式、桥接模式有什么区别？</li>
+</ol>
+<h3 id="学习资源-2">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-2" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><a href="https://github.com/liyupi/design-pattern-guide" class="external external-link">鱼皮的设计模式 GitHub<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：开源设计模式教程</li>
+<li><a href="https://www.bilibili.com/video/BV1Np4y1z7BU/" class="external external-link">图解设计模式<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：生动形象的设计模式讲解</li>
+<li><a href="https://book.douban.com/subject/2243615/" class="external external-link">Head First 设计模式<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：经典设计模式书籍</li>
+</ul>
+<h2 id="阶段-4开发规范3-7-天">阶段 4：开发规范（3-7 天）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-4开发规范3-7-天" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>开发规范包括代码规范、版本管理、文档编写等内容，是团队协作的基础。</p>
+<h3 id="学习目标-3">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标-3" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>掌握代码规范、文档规范、Git 规范等开发规范，养成良好的编程习惯。</p>
+<h3 id="知识点-3">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-3" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>代码规范【必学】：</strong></p>
+<ul>
+<li>命名规范（变量、函数、类、包等）</li>
+<li>代码格式规范（缩进、空格、换行等）</li>
+<li>注释规范（单行注释、多行注释、文档注释）</li>
+<li>编码原则（SOLID、DRY、KISS 等）</li>
+<li>异常处理规范</li>
+<li>并发编程规范【建议学】</li>
+</ul>
+<p><strong>文档规范【建议学】：</strong></p>
+<ul>
+<li>需求文档（PRD）</li>
+<li>设计文档（架构设计、详细设计）</li>
+<li>接口文档（API 文档）</li>
+<li>README 文档</li>
+<li>变更日志（CHANGELOG）</li>
+</ul>
+<p><strong>Git 规范【必学】：</strong></p>
+<ul>
+<li>分支管理规范（Git Flow、GitHub Flow）</li>
+<li>Commit 提交规范（Conventional Commits）</li>
+<li>代码审查规范（Code Review）</li>
+<li>Pull Request 规范</li>
+</ul>
+<p><strong>代码检查工具【必学】：</strong></p>
+<ul>
+<li>Java：CheckStyle、SonarQube、SpotBugs</li>
+<li>Python：Pylint、Flake8、Black</li>
+<li>JavaScript/TypeScript：ESLint、Prettier</li>
+<li>Go：golint、gofmt</li>
+</ul>
+<h3 id="学习建议-3">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-3" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>1）开发规范是整个软件工程中最重要、最应该优先学习的内容！因为：<strong>开发不规范，同事两行泪！</strong> 遵守规范有利于提高项目的开发效率、降低维护成本。</p>
+<p>2）每个团队的开发规范可能不完全相同，千万不要死记硬背！建议先过一遍大厂的代码规范手册（如阿里巴巴 Java 开发手册），做项目时想到了某个规范，就去查阅确认。</p>
+<p>3）善用代码检查工具。现代 IDE（如 IDEA、VSCode）都集成了代码检查功能，会自动提示不规范的代码。建议多观察编辑器给出的警告，尝试消除它们。</p>
+<p>4）项目做得多了、慢慢养成习惯后，你会发现遵循规范是一件”水到渠成”的事情，不用刻意去记。</p>
+<h3 id="学习资源-3">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-3" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>⭐ <a href="https://developer.aliyun.com/graph/java" class="external external-link">阿里巴巴 Java 开发手册<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：搜索”Java 开发手册”</li>
+<li>⭐ <a href="https://developer.aliyun.com/live/1201" class="external external-link">华山版《Java 开发手册》讲解<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：官方讲解视频</li>
+<li><a href="https://google.github.io/styleguide/javaguide.html" class="external external-link">Google Java Style Guide<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：Google Java 代码规范</li>
+<li><a href="https://github.com/airbnb/javascript" class="external external-link">Airbnb JavaScript 代码规范<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：前端代码规范</li>
+<li><a href="https://www.conventionalcommits.org/" class="external external-link">Conventional Commits<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：Git 提交规范</li>
+</ul>
+<h2 id="阶段-5软件测试3-7-天">阶段 5：软件测试（3-7 天）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-5软件测试3-7-天" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>软件测试是保证软件质量的重要手段，包括单元测试、集成测试、系统测试等。</p>
+<h3 id="学习目标-4">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标-4" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>掌握软件测试的基本方法，能够编写单元测试和集成测试。</p>
+<h3 id="知识点-4">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-4" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>测试基础【必学】：</strong></p>
+<ul>
+<li>软件测试的目的和意义</li>
+<li>测试的分类（黑盒测试、白盒测试）</li>
+<li>测试的层次（单元测试、集成测试、系统测试、验收测试）</li>
+</ul>
+<p><strong>单元测试【必学】：</strong></p>
+<ul>
+<li>什么是单元测试</li>
+<li>单元测试框架（JUnit、PyTest、Jest 等）</li>
+<li>测试覆盖率（Jacoco）</li>
+<li>Mock 和 Stub【建议学】</li>
+</ul>
+<p><strong>集成测试【建议学】：</strong></p>
+<ul>
+<li>什么是集成测试</li>
+<li>集成测试的策略</li>
+<li>接口测试工具（Postman、JMeter）</li>
+</ul>
+<p><strong>自动化测试【建议学】：</strong></p>
+<ul>
+<li>测试自动化的价值</li>
+<li>持续集成（CI）和持续测试</li>
+<li>自动化测试框架（Selenium、Cypress）</li>
+</ul>
+<p><strong>性能测试【可不学】：</strong></p>
+<ul>
+<li>压力测试、负载测试</li>
+<li>性能测试工具（JMeter、Gatling）</li>
+</ul>
+<h3 id="学习建议-4">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-4" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>1）单元测试是开发者的基本功，要重点掌握。单元测试能帮你发现代码中的问题，提高代码质量。</p>
+<p>2）测试覆盖率不是越高越好，要关注核心业务逻辑的测试。100% 的测试覆盖率往往意味着很多无意义的测试。</p>
+<p>3）Mock 和 Stub 是单元测试中的重要技术，用于隔离外部依赖（如数据库、网络请求），要理解它们的概念和使用场景。</p>
+<p>4）集成测试和系统测试一般由专业的测试工程师负责，开发者了解基本概念即可。</p>
+<h3 id="学习资源-4">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-4" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>《软件测试》（Ron Patton 著）：经典测试书籍</li>
+</ul>
+<h2 id="阶段-6软件项目管理选学3-5-天">阶段 6：软件项目管理（选学，3-5 天）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-6软件项目管理选学3-5-天" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>软件项目管理包括需求管理、进度管理、风险管理等内容，是项目成功的关键因素。</p>
+<h3 id="学习目标-5">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标-5" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>了解软件项目管理的基本概念和方法，理解敏捷开发流程。</p>
+<h3 id="知识点-5">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-5" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>项目管理基础【建议学】：</strong></p>
+<ul>
+<li>项目管理的定义和目标</li>
+<li>项目管理的要素（范围、时间、成本、质量）</li>
+<li>项目管理的过程（启动、规划、执行、监控、收尾）</li>
+</ul>
+<p><strong>敏捷项目管理【建议学】：</strong></p>
+<ul>
+<li>Scrum 框架（Sprint、Daily Standup、Sprint Review）</li>
+<li>看板方法（Kanban）</li>
+<li>用户故事（User Story）</li>
+<li>迭代计划和估算</li>
+</ul>
+<p><strong>项目管理工具【可不学】：</strong></p>
+<ul>
+<li>Jira：最流行的项目管理工具</li>
+<li>禅道：国产项目管理工具</li>
+<li>Trello：轻量级看板工具</li>
+<li>Teambition：阿里的协作工具</li>
+</ul>
+<h3 id="学习建议-5">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-5" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>1）项目管理对于普通开发者来说不是必学的，但对于 Team Leader、项目经理来说是必备技能。如果未来想往管理方向发展，建议学习。</p>
+<p>2）Scrum 是最流行的敏捷框架，要理解其核心概念：Sprint（冲刺）、Product Backlog（产品待办列表）、Sprint Planning（迭代计划会）、Daily Standup（每日站会）等。</p>
+<p>3）项目管理工具的使用很简单，不需要专门学习，入职后跟着团队使用即可。</p>
+<h3 id="学习资源-5">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-5" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>《敏捷软件开发》（Robert C. Martin 著）：敏捷开发经典书籍</li>
+<li>《人月神话》（Frederick P. Brooks Jr. 著）：软件项目管理经典</li>
+</ul>
+<h2 id="阶段-7实践和进阶持续学习">阶段 7：实践和进阶（持续学习）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-7实践和进阶持续学习" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="学习目标-6">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标-6" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>将软件工程知识应用到实际项目中，持续提升软件工程能力。</p>
+<h3 id="知识点-6">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-6" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>需求工程【可不学】：</strong></p>
+<ul>
+<li>需求获取和分析</li>
+<li>需求规格说明</li>
+<li>需求验证</li>
+</ul>
+<p><strong>UML 建模【可不学】：</strong></p>
+<ul>
+<li>UML 图的类型（类图、时序图、用例图等）</li>
+<li>UML 建模工具（PlantUML、draw.io）</li>
+</ul>
+<p><strong>软件架构【建议学】：</strong></p>
+<ul>
+<li>分层架构、MVC 架构</li>
+<li>微服务架构</li>
+<li>事件驱动架构</li>
+<li>领域驱动设计（DDD）【建议学】</li>
+</ul>
+<p><strong>DevOps 实践【建议学】：</strong></p>
+<ul>
+<li>持续集成（CI）</li>
+<li>持续交付（CD）</li>
+<li>自动化部署</li>
+<li>基础设施即代码（IaC）【可不学】</li>
+</ul>
+<h3 id="学习建议-6">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-6" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>1）软件架构是高级内容，建议有一定项目经验后再学习，可参考专门的系统设计学习路线。</p>
+<p>2）领域驱动设计（DDD）是一种复杂系统的设计方法论，强调业务领域建模，可通过实际项目实战学习 DDD 的应用。</p>
+<p>3）DevOps 是现代软件开发的重要实践，建议了解 CI/CD 的基本概念。</p>
+<p>4）UML 建模在实际工作中使用频率不高，简单了解即可。更多时候我们用流程图、架构图等更直观的方式来表达设计。</p>
+<h2 id="持续学习资源">持续学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#持续学习资源" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="经典书籍">经典书籍<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#经典书籍" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>⭐ 《软件工程：实践者的研究方法》：经典大黑书，内容全面（但比较厚重）</li>
+<li>⭐ 《代码整洁之道》：教你写出整洁易读的代码</li>
+<li>《软件开发的 201 个原则》：工具书，实用性强</li>
+<li>《重构：改善既有代码的设计》：经典重构书籍</li>
+<li>《设计模式：可复用面向对象软件的基础》：设计模式圣经（GoF）</li>
+</ul>
+<h3 id="技术博客">技术博客<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#技术博客" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><a href="https://martinfowler.com/" class="external external-link">Martin Fowler Blog<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：软件工程大师博客</li>
+<li><a href="https://google.github.io/eng-practices/" class="external external-link">Google Engineering Practices<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：谷歌工程实践</li>
+<li><a href="https://engineering.atspotify.com/" class="external external-link">Spotify Engineering<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：Spotify 工程文化</li>
+<li><a href="https://netflixtechblog.com/" class="external external-link">Netflix TechBlog<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：Netflix 工程实践</li>
+</ul>
+<h2 id="写在最后">写在最后<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#写在最后" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>软件工程是一门实践性很强的学科，理论学习只是第一步，更重要的是在实际项目中应用。</p>
+<p>学习时不要追求面面俱到，重点掌握软件开发原则、设计模式、开发规范、软件测试这些最实用的内容；成为团队负责人后，再去深入学习项目管理、需求工程等内容。</p>
+<hr/>
+<blockquote>
+<p>来源：鱼皮·编程导航 / codefather</p>
+</blockquote></div></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="toc"><button type="button" class="toc-header" aria-controls="toc-45" aria-expanded="true"><h3>目录</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-0" class="toc-content overflow"><li class="depth-0"><a href="#概念---软件工程学习路线" data-for="概念---软件工程学习路线">概念 - 软件工程学习路线</a></li><li class="depth-1"><a href="#总览" data-for="总览">总览</a></li><li class="depth-2"><a href="#什么是软件工程" data-for="什么是软件工程">什么是软件工程</a></li><li class="depth-2"><a href="#为什么要学" data-for="为什么要学">为什么要学</a></li><li class="depth-2"><a href="#学习时机" data-for="学习时机">学习时机</a></li><li class="depth-2"><a href="#就业方向" data-for="就业方向">就业方向</a></li><li class="depth-1"><a href="#整体学习建议" data-for="整体学习建议">整体学习建议</a></li><li class="depth-1"><a href="#阶段-1软件工程基础3-5-天" data-for="阶段-1软件工程基础3-5-天">阶段 1：软件工程基础（3-5 天）</a></li><li class="depth-2"><a href="#学习目标" data-for="学习目标">学习目标</a></li><li class="depth-2"><a href="#知识点" data-for="知识点">知识点</a></li><li class="depth-2"><a href="#学习建议" data-for="学习建议">学习建议</a></li><li class="depth-2"><a href="#学习资源" data-for="学习资源">学习资源</a></li><li class="depth-1"><a href="#阶段-2软件开发原则5-7-天" data-for="阶段-2软件开发原则5-7-天">阶段 2：软件开发原则（5-7 天）</a></li><li class="depth-2"><a href="#学习目标-1" data-for="学习目标-1">学习目标</a></li><li class="depth-2"><a href="#知识点-1" data-for="知识点-1">知识点</a></li><li class="depth-2"><a href="#学习建议-1" data-for="学习建议-1">学习建议</a></li><li class="depth-2"><a href="#学习资源-1" data-for="学习资源-1">学习资源</a></li><li class="depth-1"><a href="#阶段-3设计模式15-30-天" data-for="阶段-3设计模式15-30-天">阶段 3：设计模式（15-30 天）</a></li><li class="depth-2"><a href="#学习目标-2" data-for="学习目标-2">学习目标</a></li><li class="depth-2"><a href="#知识点-2" data-for="知识点-2">知识点</a></li><li class="depth-2"><a href="#学习建议-2" data-for="学习建议-2">学习建议</a></li><li class="depth-2"><a href="#经典面试题" data-for="经典面试题">经典面试题</a></li><li class="depth-2"><a href="#学习资源-2" data-for="学习资源-2">学习资源</a></li><li class="depth-1"><a href="#阶段-4开发规范3-7-天" data-for="阶段-4开发规范3-7-天">阶段 4：开发规范（3-7 天）</a></li><li class="depth-2"><a href="#学习目标-3" data-for="学习目标-3">学习目标</a></li><li class="depth-2"><a href="#知识点-3" data-for="知识点-3">知识点</a></li><li class="depth-2"><a href="#学习建议-3" data-for="学习建议-3">学习建议</a></li><li class="depth-2"><a href="#学习资源-3" data-for="学习资源-3">学习资源</a></li><li class="depth-1"><a href="#阶段-5软件测试3-7-天" data-for="阶段-5软件测试3-7-天">阶段 5：软件测试（3-7 天）</a></li><li class="depth-2"><a href="#学习目标-4" data-for="学习目标-4">学习目标</a></li><li class="depth-2"><a href="#知识点-4" data-for="知识点-4">知识点</a></li><li class="depth-2"><a href="#学习建议-4" data-for="学习建议-4">学习建议</a></li><li class="depth-2"><a href="#学习资源-4" data-for="学习资源-4">学习资源</a></li><li class="depth-1"><a href="#阶段-6软件项目管理选学3-5-天" data-for="阶段-6软件项目管理选学3-5-天">阶段 6：软件项目管理（选学，3-5 天）</a></li><li class="depth-2"><a href="#学习目标-5" data-for="学习目标-5">学习目标</a></li><li class="depth-2"><a href="#知识点-5" data-for="知识点-5">知识点</a></li><li class="depth-2"><a href="#学习建议-5" data-for="学习建议-5">学习建议</a></li><li class="depth-2"><a href="#学习资源-5" data-for="学习资源-5">学习资源</a></li><li class="depth-1"><a href="#阶段-7实践和进阶持续学习" data-for="阶段-7实践和进阶持续学习">阶段 7：实践和进阶（持续学习）</a></li><li class="depth-2"><a href="#学习目标-6" data-for="学习目标-6">学习目标</a></li><li class="depth-2"><a href="#知识点-6" data-for="知识点-6">知识点</a></li><li class="depth-2"><a href="#学习建议-6" data-for="学习建议-6">学习建议</a></li><li class="depth-1"><a href="#持续学习资源" data-for="持续学习资源">持续学习资源</a></li><li class="depth-2"><a href="#经典书籍" data-for="经典书籍">经典书籍</a></li><li class="depth-2"><a href="#技术博客" data-for="技术博客">技术博客</a></li><li class="depth-1"><a href="#写在最后" data-for="写在最后">写在最后</a></li><li class="overflow-end"></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v5.0.0</a> © 2026</p><ul><li><a href="https://github.com/xyf1111">GitHub</a></li></ul></footer></div></div></body><script src="../static/resource-after-e13fffa1.js" type="application/javascript" data-persist="true"></script><script src="../static/resource-after-8b336f9a.js" type="application/javascript" data-persist="true"></script><script src="../static/resource-after-baba652b.js" type="application/javascript" data-persist="true"></script><script src="../static/resource-after-5eb75950.js" type="module" data-persist="true"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript" data-persist="true"></script><script src="../postscript-17915799.js" type="module" data-persist="true"></script></html>

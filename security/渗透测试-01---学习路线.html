@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr"><head><title>安全 - 渗透测试学习路线 · 后端开发笔记</title><meta charset="utf-8"/><link rel="preload" href="../index-b754f97d.css" as="style"/><link rel="preload" href="../prescript-2bfc6315.js" as="script"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="技术知识库"/><meta property="og:title" content="安全 - 渗透测试学习路线 · 后端开发笔记"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="安全 - 渗透测试学习路线 · 后端开发笔记"/><meta name="twitter:description" content="安全 - 渗透测试学习路线 渗透测试（Penetration Testing，PT）是在获得授权的前提下，使用与攻击者相同的思维方式和技术手段，对目标系统进行全方位的安全评估，发现潜在漏洞并提供修复建议。本篇路线从零基础到精通，涵盖网络安全基础、渗透测试基础、系统渗透与提权、内网渗透、综合实战、求职备战 6 个阶段。 开篇介绍 渗透测试不仅包括 Web 应用测试，还涵盖网络渗透、系统渗透、内网渗透、无线渗透等多个方面，目的是在真实攻击发生之前主动发现并修复安全漏洞。只有站在攻击者的角度思考，才能真正理解系统的安全风险。 核心价值：提前发现安全风险，避免数据泄露、业务中断等严重后果。广泛应用于企..."/><meta property="og:description" content="安全 - 渗透测试学习路线 渗透测试（Penetration Testing，PT）是在获得授权的前提下，使用与攻击者相同的思维方式和技术手段，对目标系统进行全方位的安全评估，发现潜在漏洞并提供修复建议。本篇路线从零基础到精通，涵盖网络安全基础、渗透测试基础、系统渗透与提权、内网渗透、综合实战、求职备战 6 个阶段。 开篇介绍 渗透测试不仅包括 Web 应用测试，还涵盖网络渗透、系统渗透、内网渗透、无线渗透等多个方面，目的是在真实攻击发生之前主动发现并修复安全漏洞。只有站在攻击者的角度思考，才能真正理解系统的安全风险。 核心价值：提前发现安全风险，避免数据泄露、业务中断等严重后果。广泛应用于企..."/><meta property="og:image:alt" content="安全 - 渗透测试学习路线 渗透测试（Penetration Testing，PT）是在获得授权的前提下，使用与攻击者相同的思维方式和技术手段，对目标系统进行全方位的安全评估，发现潜在漏洞并提供修复建议。本篇路线从零基础到精通，涵盖网络安全基础、渗透测试基础、系统渗透与提权、内网渗透、综合实战、求职备战 6 个阶段。 开篇介绍 渗透测试不仅包括 Web 应用测试，还涵盖网络渗透、系统渗透、内网渗透、无线渗透等多个方面，目的是在真实攻击发生之前主动发现并修复安全漏洞。只有站在攻击者的角度思考，才能真正理解系统的安全风险。 核心价值：提前发现安全风险，避免数据泄露、业务中断等严重后果。广泛应用于企..."/><meta property="twitter:domain" content="xyf1111.github.io/tech-notes"/><meta property="og:url" content="https://xyf1111.github.io/tech-notes/security/渗透测试-01---学习路线"/><meta property="twitter:url" content="https://xyf1111.github.io/tech-notes/security/渗透测试-01---学习路线"/><link rel="icon" href="../static/icon.png"/><meta name="description" content="安全 - 渗透测试学习路线 渗透测试（Penetration Testing，PT）是在获得授权的前提下，使用与攻击者相同的思维方式和技术手段，对目标系统进行全方位的安全评估，发现潜在漏洞并提供修复建议。本篇路线从零基础到精通，涵盖网络安全基础、渗透测试基础、系统渗透与提权、内网渗透、综合实战、求职备战 6 个阶段。 开篇介绍 渗透测试不仅包括 Web 应用测试，还涵盖网络渗透、系统渗透、内网渗透、无线渗透等多个方面，目的是在真实攻击发生之前主动发现并修复安全漏洞。只有站在攻击者的角度思考，才能真正理解系统的安全风险。 核心价值：提前发现安全风险，避免数据泄露、业务中断等严重后果。广泛应用于企..."/><meta name="generator" content="Quartz"/><link href="../index-b754f97d.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-735924e0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-589c1cea.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-bbc3f7c0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-2911f5d1.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-e427079e.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-53b25b2b.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-c93c6a44.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-8a06014f.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-77d6a441.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-6ee21cee.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-1ea6ad18.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-788c9ca3.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-642859cd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-4abc06bd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-274a3dfe.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-94cb6c84.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-58d5ff56.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-7262b5a7.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../static/resource-style-a5c806d2.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../static/resource-style-6bd36952.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" data-persist="true"/><script src="../prescript-2bfc6315.js" type="application/javascript" data-persist="true"></script><script type="application/javascript" data-persist="true">const fetchData = fetch("../static/contentIndex.json").then(data => data.json())</script><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://xyf1111.github.io/tech-notes/security/渗透测试-01---学习路线-og-image.webp"/><meta property="og:image:url" content="https://xyf1111.github.io/tech-notes/security/渗透测试-01---学习路线-og-image.webp"/><meta name="twitter:image" content="https://xyf1111.github.io/tech-notes/security/渗透测试-01---学习路线-og-image.webp"/><meta property="og:image:type" content="image/webp"/></head><body data-slug="security/渗透测试-01---学习路线" data-basepath="/tech-notes"><div id="quartz-root" class="page" data-frame="default"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="..">技术知识库</a></h2><div class="mobile-only"><div class="spacer"></div></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 0.5rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button" aria-label="搜索" aria-expanded="false"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>搜索</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="搜索内容..." placeholder="搜索内容..."/><div class="search-layout" data-preview="true" data-field-priority="[&quot;title&quot;,&quot;content&quot;,&quot;tags&quot;]"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode" aria-label="暗色模式"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="暗色模式"><title>暗色模式</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="亮色模式"><title>亮色模式</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode" aria-label="阅读模式"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="阅读模式"><title>阅读模式</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer nav-files-container" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a2, b2) => {\n    if (!a2.isFolder &amp;&amp; !b2.isFolder || a2.isFolder &amp;&amp; b2.isFolder) {\n      return (a2.displayName || \&quot;\&quot;).localeCompare(b2.displayName || \&quot;\&quot;, void 0, {\n        numeric: true,\n        sensitivity: \&quot;base\&quot;\n      });\n    }\n    if (!a2.isFolder &amp;&amp; b2.isFolder) {\n      return 1;\n    }\n    return -1;\n  }&quot;,&quot;filterFn&quot;:&quot;(node) => node.slugSegment !== \&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;(node) => {\n    return node;\n  }&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-431" aria-label="探索"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>探索</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-431" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#" class="nav-file-title tree-item-self"></a></li></template><template id="template-folder"><li><div class="folder-container nav-folder-title tree-item-self"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon nav-folder-collapse-indicator collapse-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content tree-item-children"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../security/">security</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>安全 - 渗透测试学习路线</a></div></nav><h1 class="article-title">安全 - 渗透测试学习路线</h1><details class="note-properties metadata-container" open data-collapsed="false"><summary class="note-properties-header"><span class="note-properties-title">Properties</span><span class="note-properties-count">1</span></summary><table class="note-properties-table"><tbody><tr class="note-properties-row metadata-property"><td class="note-properties-key metadata-property-key">tags</td><td class="note-properties-value metadata-property-value"><span class="note-properties-tags"><a href="../tags/渗透测试" class="internal internal-link tag-link">渗透测试</a><span class="note-properties-separator">, </span><a href="../tags/安全" class="internal internal-link tag-link">安全</a><span class="note-properties-separator">, </span><a href="../tags/学习路线" class="internal internal-link tag-link">学习路线</a></span></td></tr></tbody></table></details><p show-comma="true" class="content-meta"><time datetime="2026-08-15T16:00:00.000Z">2026年8月16日</time><span>20分钟阅读</span></p></div></div><article class="popover-hint"><div class="markdown-preview-view markdown-rendered"><h1 id="安全---渗透测试学习路线">安全 - 渗透测试学习路线<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#安全---渗透测试学习路线" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<blockquote>
+<p>渗透测试（Penetration Testing，PT）是在获得授权的前提下，使用与攻击者相同的思维方式和技术手段，对目标系统进行全方位的安全评估，发现潜在漏洞并提供修复建议。本篇路线从零基础到精通，涵盖网络安全基础、渗透测试基础、系统渗透与提权、内网渗透、综合实战、求职备战 6 个阶段。</p>
+</blockquote>
+<h2 id="开篇介绍">开篇介绍<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#开篇介绍" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>渗透测试不仅包括 Web 应用测试，还涵盖网络渗透、系统渗透、内网渗透、无线渗透等多个方面，目的是在真实攻击发生之前主动发现并修复安全漏洞。只有站在攻击者的角度思考，才能真正理解系统的安全风险。</p>
+<p><strong>核心价值</strong>：提前发现安全风险，避免数据泄露、业务中断等严重后果。广泛应用于企业信息系统安全评估、金融系统安全审计、政府机构网络安全检测、云服务平台安全测试、物联网设备安全评估等场景。</p>
+<h3 id="就业方向">就业方向<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#就业方向" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li><strong>渗透测试工程师</strong> — 对企业信息系统进行全方位安全测试，发现并报告漏洞，是核心岗位</li>
+<li><strong>红队工程师</strong> — 在攻防演练中担任攻击方，模拟真实 APT 攻击，考验企业防御能力</li>
+<li><strong>安全服务工程师</strong> — 提供安全咨询和渗透测试服务，参与护网行动等安全项目</li>
+<li><strong>漏洞研究员</strong> — 深入研究系统和应用的漏洞，发现 0day，为安全产品提供支撑</li>
+<li><strong>安全顾问</strong> — 提供安全架构设计、安全策略制定等高级咨询服务</li>
+</ol>
+<h3 id="学习路线图">学习路线图<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习路线图" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<pre><button class="expand-button" aria-label="Expand mermaid diagram" data-view-component="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3.72 3.72a.75.75 0 011.06 1.06L2.56 7h10.88l-2.22-2.22a.75.75 0 011.06-1.06l3.5 3.5a.75.75 0 010 1.06l-3.5 3.5a.75.75 0 11-1.06-1.06l2.22-2.22H2.56l2.22 2.22a.75.75 0 11-1.06 1.06l-3.5-3.5a.75.75 0 010-1.06l3.5-3.5z"></path></svg></button><code class="mermaid" data-clipboard="&quot;flowchart LR\n    A[阶段1 网络安全基础] --> B[阶段2 渗透测试基础]\n    B --> C[阶段3 系统渗透和提权]\n    C --> D[阶段4 内网渗透]\n    D --> E[阶段5 综合实战]\n    E --> F[阶段6 求职备战]&quot;">flowchart LR
+    A[阶段1 网络安全基础] --> B[阶段2 渗透测试基础]
+    B --> C[阶段3 系统渗透和提权]
+    C --> D[阶段4 内网渗透]
+    D --> E[阶段5 综合实战]
+    E --> F[阶段6 求职备战]
+</code><div id="mermaid-container" role="dialog"><div id="mermaid-space"><div class="mermaid-content"></div></div></div></pre>
+<pre><button class="expand-button" aria-label="Expand mermaid diagram" data-view-component="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3.72 3.72a.75.75 0 011.06 1.06L2.56 7h10.88l-2.22-2.22a.75.75 0 011.06-1.06l3.5 3.5a.75.75 0 010 1.06l-3.5 3.5a.75.75 0 11-1.06-1.06l2.22-2.22H2.56l2.22 2.22a.75.75 0 11-1.06 1.06l-3.5-3.5a.75.75 0 010-1.06l3.5-3.5z"></path></svg></button><code class="mermaid" data-clipboard="&quot;flowchart LR\n    A[前期信息收集] --> B[漏洞扫描和发现]\n    B --> C[漏洞验证和利用]\n    C --> D[权限维持]\n    D --> E[痕迹清理]\n    E --> F[报告编写]&quot;">flowchart LR
+    A[前期信息收集] --> B[漏洞扫描和发现]
+    B --> C[漏洞验证和利用]
+    C --> D[权限维持]
+    D --> E[痕迹清理]
+    E --> F[报告编写]
+</code><div id="mermaid-container" role="dialog"><div id="mermaid-space"><div class="mermaid-content"></div></div></div></pre>
+<h2 id="整体学习建议">整体学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#整体学习建议" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ol>
+<li><strong>先打基础，不要跳过</strong> — 深入理解 TCP/IP 协议（三次握手、四次挥手、端口扫描原理），这些在后续渗透中会经常用到</li>
+<li><strong>思路比工具重要</strong> — 渗透测试不是简单的工具使用，要培养攻击者思维，看到系统能快速判断可能存在的安全风险</li>
+<li><strong>动手实践贯穿始终</strong> — 搭建靶场（DVWA、VulnHub、HackTheBox 等）、参加 CTF 和护网行动</li>
+<li><strong>合法合规是底线</strong> — 渗透测试必须在获得授权下进行，未经授权的攻击行为违法；做有道德、有底线的白帽子</li>
+</ol>
+<h2 id="阶段-1网络安全基础15-25-天仅供参考">阶段 1：网络安全基础（15-25 天，仅供参考）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-1网络安全基础15-25-天仅供参考" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="学习目标">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>掌握网络安全的基本概念和技术基础，为后续渗透测试学习打下坚实基础。</p>
+<h3 id="知识点">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>网络安全基础【必学】</strong></p>
+<ul>
+<li>信息安全基础概念</li>
+<li>CIA 三要素（机密性 Confidentiality、完整性 Integrity、可用性 Availability）</li>
+<li>常见攻击类型和防御思路</li>
+<li>网络安全法律法规</li>
+</ul>
+<p><strong>计算机网络【必学】</strong></p>
+<ul>
+<li>TCP/IP 协议栈</li>
+<li>HTTP/HTTPS 协议详解</li>
+<li>DNS 解析原理</li>
+<li>常见端口和服务</li>
+</ul>
+<p><strong>操作系统基础【必学】</strong></p>
+<ul>
+<li>Windows：用户和权限管理、注册表和服务、常用命令</li>
+<li>Linux：文件系统和权限、Shell 基础、常用命令和工具</li>
+</ul>
+<p><strong>编程基础【必学】</strong></p>
+<ul>
+<li>Python 编程基础（语法、文件操作、网络编程、正则表达式）</li>
+<li>Shell 脚本编程</li>
+<li>正则表达式</li>
+</ul>
+<h3 id="学习建议">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>网络安全基础是渗透测试的根基，要深入理解 TCP/IP 协议，特别是三次握手、四次挥手、端口扫描原理</li>
+<li>Linux 是渗透测试的主要工作环境，必须熟练掌握；建议安装 Kali Linux 虚拟机，Kali 预装大量安全工具；熟悉 ls、cd、chmod、grep、awk、sed 等常用命令</li>
+<li>Python 是渗透测试中最常用的编程语言，用于编写自动化脚本和工具；不需要学得很深，能看懂和编写简单脚本即可</li>
+<li>建立正确的安全意识和法律意识，未经授权的攻击行为是违法的，守住道德和法律底线</li>
+</ol>
+<h3 id="学习资源">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><a href="https://www.bilibili.com/video/BV1n84y1i7td" class="external external-link">黑马程序员 Linux 教程<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：Linux 基础入门</li>
+</ul>
+<h2 id="阶段-2渗透测试基础10-30-天仅供参考">阶段 2：渗透测试基础（10-30 天，仅供参考）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-2渗透测试基础10-30-天仅供参考" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="学习目标-1">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标-1" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>掌握渗透测试的基本流程和常用工具，能够进行基础的渗透测试工作。</p>
+<h3 id="知识点-1">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-1" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>渗透测试流程【必学】</strong></p>
+<ul>
+<li>前期信息收集（主动信息收集、被动信息收集、社会工程学）</li>
+<li>漏洞扫描和发现</li>
+<li>漏洞验证和利用</li>
+<li>权限维持</li>
+<li>痕迹清理</li>
+<li>报告编写</li>
+</ul>
+<p><strong>信息收集技术【必学】</strong></p>
+<ul>
+<li>域名和 IP 信息收集</li>
+<li>子域名枚举</li>
+<li>端口扫描</li>
+<li>服务识别和指纹识别</li>
+<li>目录扫描</li>
+<li>Google Hacking</li>
+<li>社会工程学信息收集</li>
+</ul>
+<p><strong>常用渗透工具【必学】</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>工具</th><th>用途</th></tr></thead><tbody><tr><td>Nmap</td><td>端口扫描</td></tr><tr><td>Masscan</td><td>快速端口扫描</td></tr><tr><td>Dirsearch</td><td>目录扫描</td></tr><tr><td>Subfinder</td><td>子域名枚举</td></tr><tr><td>Whatweb</td><td>指纹识别</td></tr><tr><td>Burp Suite</td><td>Web 渗透</td></tr><tr><td>SQLMap</td><td>SQL 注入</td></tr></tbody></table></div>
+<p><strong>Web 渗透基础【必学】</strong></p>
+<ul>
+<li>OWASP Top 10 漏洞</li>
+<li>SQL 注入</li>
+<li>XSS 攻击</li>
+<li>文件上传漏洞</li>
+<li>命令执行漏洞</li>
+</ul>
+<h3 id="学习建议-1">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-1" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>信息收集是渗透测试的第一步，也是最重要的一步，其广度和深度直接决定后续渗透的成功率</li>
+<li>Nmap 是最重要的工具之一，要理解各种扫描技术原理（TCP SYN 扫描、TCP Connect 扫描、UDP 扫描等），掌握常用参数 -sS、-sV、-O、-A</li>
+<li>Burp Suite 是 Web 渗透测试的核心工具，深入学习各个模块，结合 Web 安全知识理解工具背后的原理（Professional 版本功能更强）</li>
+<li>培养攻击者思维方式，学会从安全的角度审视系统</li>
+</ol>
+<h3 id="学习资源-1">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-1" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><a href="https://www.bilibili.com/video/BV1EkKpeNE8R" class="external external-link">Kali 渗透入门教程<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><a href="https://nmap.org/book/man.html" class="external external-link">Nmap 官方文档<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：最权威的 Nmap 使用指南</li>
+</ul>
+<h2 id="阶段-3系统渗透和提权15-35-天仅供参考">阶段 3：系统渗透和提权（15-35 天，仅供参考）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-3系统渗透和提权15-35-天仅供参考" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>系统渗透和提权是针对操作系统的攻击技术，包括漏洞利用、权限提升等，是渗透测试的核心技能。</p>
+<h3 id="学习目标-2">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标-2" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>掌握 Windows 和 Linux 系统的渗透技术，能够进行权限提升和权限维持。</p>
+<h3 id="知识点-2">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-2" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>Windows 渗透【必学】</strong></p>
+<ul>
+<li>Windows 系统漏洞利用</li>
+<li>Windows 权限提升：本地提权漏洞、配置错误提权、第三方软件提权</li>
+<li>Windows 权限维持：后门技术、启动项维持、服务维持</li>
+<li>Windows 痕迹清理</li>
+</ul>
+<p><strong>Linux 渗透【必学】</strong></p>
+<ul>
+<li>Linux 系统漏洞利用</li>
+<li>Linux 权限提升：SUID 提权、内核漏洞提权、配置错误提权</li>
+<li>Linux 权限维持</li>
+<li>Linux 痕迹清理</li>
+</ul>
+<p><strong>Metasploit 框架【必学】</strong></p>
+<ul>
+<li>Metasploit 基础、MSFconsole 使用</li>
+<li>Exploit 模块、Payload 生成</li>
+<li>Meterpreter 使用、后渗透模块</li>
+</ul>
+<p><strong>密码攻击【必学】</strong></p>
+<ul>
+<li>密码破解技术、哈希破解</li>
+<li>Hashcat、John the Ripper 使用</li>
+<li>字典生成</li>
+</ul>
+<h3 id="学习建议-2">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-2" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>权限提升是关键环节：拿到初始权限后往往需要提升到管理员权限才能继续操作；熟练掌握漏洞提权、配置错误提权、第三方软件提权等方法</li>
+<li>Metasploit 是渗透测试中最强大的框架（“渗透测试的瑞士军刀”），深入学习各模块，特别是 Exploit 和 Payload 的使用；Meterpreter 是核心 Payload，要熟练掌握</li>
+<li>搭建靶场练习非常重要：使用 VulnHub、HackTheBox 等平台靶机，或自己搭建漏洞环境，在实践中学习</li>
+<li>权限维持和痕迹清理是红队演练中的高级技巧；实际渗透测试工作一般不需要做权限维持，发现漏洞并报告即可，痕迹清理要谨慎避免破坏系统</li>
+</ol>
+<h3 id="学习资源-2">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-2" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><a href="https://www.bilibili.com/video/BV1Gr421H7Dj" class="external external-link">Metasploit 教程<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><a href="https://www.offensive-security.com/metasploit-unleashed/" class="external external-link">Metasploit Unleashed<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：官方免费教程</li>
+<li><a href="https://www.vulnhub.com/" class="external external-link">VulnHub<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：靶机下载平台</li>
+</ul>
+<h2 id="阶段-4内网渗透15-45-天仅供参考">阶段 4：内网渗透（15-45 天，仅供参考）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-4内网渗透15-45-天仅供参考" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>内网渗透是在获得初步权限后，进一步渗透内网环境、横向移动获取更多资源的过程。</p>
+<h3 id="学习目标-3">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标-3" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>掌握内网渗透技术，能够在内网环境中进行横向移动和域渗透。</p>
+<h3 id="知识点-3">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-3" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>内网基础【必学】</strong></p>
+<ul>
+<li>内网架构</li>
+<li>域环境基础：Active Directory、域控制器、域用户和组</li>
+<li>内网协议：SMB 协议、LDAP 协议、Kerberos 认证</li>
+</ul>
+<p><strong>内网信息收集【必学】</strong></p>
+<ul>
+<li>主机发现、端口扫描、服务识别</li>
+<li>域信息收集、凭证获取</li>
+</ul>
+<p><strong>横向移动【必学】</strong></p>
+<ul>
+<li>Pass The Hash（哈希传递）</li>
+<li>Pass The Ticket（票据传递）</li>
+<li>IPC$ 连接、WMI 利用、DCOM 利用、PsExec 利用、WinRM 利用</li>
+</ul>
+<p><strong>域渗透【必学】</strong></p>
+<ul>
+<li>域内信息收集</li>
+<li>Kerberos 攻击：AS-REP Roasting、Kerberoasting、Golden Ticket、Silver Ticket</li>
+<li>域控提权、域委派攻击</li>
+</ul>
+<p><strong>内网渗透工具【必学】</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>工具</th><th>用途</th></tr></thead><tbody><tr><td>Cobalt Strike</td><td>红队 C2 平台（商业软件，需授权使用）</td></tr><tr><td>Impacket</td><td>内网渗透工具集（SMB/LDAP/Kerberos 利用脚本）</td></tr><tr><td>BloodHound</td><td>可视化域内信任关系与攻击路径</td></tr><tr><td>Mimikatz</td><td>凭证抓取与 Kerberos 攻击</td></tr><tr><td>PowerShell Empire</td><td>后渗透攻击框架</td></tr></tbody></table></div>
+<h3 id="学习建议-3">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-3" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>内网渗透是高级阶段，要先理解域环境基础知识：Active Directory 架构、Kerberos 认证流程等，这些理论对理解攻击技术非常重要</li>
+<li>横向移动是核心：拿到一台内网主机权限后，以此为跳板横向移动，最终控制更多主机；熟练掌握 Pass The Hash、IPC$ 连接、WMI 利用等技术</li>
+<li>Cobalt Strike 功能强大但为商业软件，学习时可用试用版或搭建测试环境；使用必须获得授权</li>
+<li>BloodHound 是域渗透利器，能可视化域内信任关系和攻击路径，快速发现安全风险和提权路径</li>
+<li>内网渗透需要大量实战：自己搭建域环境练习，或参加红蓝对抗演练，在实战中积累经验</li>
+</ol>
+<h3 id="经典面试题">经典面试题<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#经典面试题" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>什么是横向移动？常见的横向移动方法有哪些？</li>
+<li>Pass The Hash 攻击的原理是什么？如何防御？</li>
+<li>什么是 Kerberoasting 攻击？如何利用？</li>
+<li>Golden Ticket 和 Silver Ticket 有什么区别？</li>
+<li>如何进行域内信息收集？</li>
+</ol>
+<h3 id="学习资源-3">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-3" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><a href="https://www.cnblogs.com/iruan/p/18214394" class="external external-link">内网渗透之横向移动<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：实战指南</li>
+<li><a href="https://github.com/chriskaliX/AD-Pentest-Notes" class="external external-link">AD Pentest Notes<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：内网渗透学习笔记</li>
+<li><a href="https://github.com/fortra/impacket" class="external external-link">Impacket<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：内网渗透工具集</li>
+</ul>
+<h2 id="阶段-5综合实战30-45-天仅供参考">阶段 5：综合实战（30-45 天，仅供参考）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-5综合实战30-45-天仅供参考" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="学习目标-4">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标-4" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>通过实际项目和靶场练习，综合运用所学知识，提升实战能力。</p>
+<h3 id="学习建议-4">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-4" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li><strong>搭建完整渗透测试环境</strong> — 包括 Web 应用、操作系统、内网环境等，模拟真实场景，从信息收集到权限提升、从横向移动到域控制完整走一遍流程</li>
+<li><strong>参加 CTF 和靶场练习</strong> — 推荐 HackTheBox、TryHackMe、VulnHub 等平台，难度从入门到高级都有，通过通关快速提升实战能力</li>
+<li><strong>参加护网行动或红蓝对抗演练</strong> — 护网行动是国内最大规模的攻防演练活动，可在真实环境中锻炼能力、积累实战经验</li>
+<li><strong>编写自己的工具和脚本</strong> — 用 Python 编写信息收集、漏洞扫描、批量检测等自动化脚本，提升编程能力并加深对技术的理解</li>
+<li><strong>学习编写渗透测试报告</strong> — 报告是交付客户的最终成果，应包含测试范围、测试方法、发现的漏洞、风险评估、修复建议等内容</li>
+</ol>
+<h3 id="项目推荐">项目推荐<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#项目推荐" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>HackTheBox 靶机（至少完成 50 台）</li>
+<li>TryHackMe 学习路径</li>
+<li>VulnHub 综合靶机</li>
+<li>搭建企业级内网环境</li>
+<li>参加 SRC 漏洞挖掘</li>
+<li>参加护网行动</li>
+</ul>
+<h3 id="学习资源-4">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-4" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><a href="https://www.hackthebox.com/" class="external external-link">HackTheBox<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：全球最大的渗透测试平台</li>
+<li><a href="https://tryhackme.com/" class="external external-link">TryHackMe<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：新手友好的学习平台</li>
+<li><a href="https://www.vulnhub.com/" class="external external-link">VulnHub<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：靶机下载平台</li>
+<li><a href="https://labex.io/zh/tutorials/kali-online-kali-linux-terminal-and-playground-592935" class="external external-link">LabEx 在线 Kali 环境<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：在线练习环境</li>
+</ul>
+<h2 id="阶段-6求职备战面试前-1-个月突击">阶段 6：求职备战（面试前 1 个月突击）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-6求职备战面试前-1-个月突击" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="学习目标-5">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标-5" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>熟练掌握渗透测试常见面试题，准备好简历和项目经历，顺利通过面试。</p>
+<h3 id="学习建议-5">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-5" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li><strong>打磨简历和项目</strong> — 简历上要有渗透测试相关的项目经历：靶机通关记录、SRC 提交记录、CTF 比赛成绩、护网参加经历等</li>
+<li><strong>准备实战演示</strong> — 有些公司会要求现场演示渗透测试能力，提前准备靶场环境，能快速演示信息收集、漏洞发现、权限提升等过程；演示时讲清思路和方法</li>
+<li><strong>准备项目经历讲解</strong> — 能清楚介绍做过的渗透测试项目、发现的漏洞、使用的技术、遇到的问题和解决方案，提前准备并反复练习</li>
+<li><strong>了解目标公司</strong> — 不同公司侧重不同（有的侧重 Web 渗透，有的侧重内网渗透），面试前了解目标公司的业务和安全团队情况，有针对性地准备</li>
+</ol>
+<h3 id="经典面试题-1">经典面试题<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#经典面试题-1" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>基础概念</strong></p>
+<ol>
+<li>什么是渗透测试？和漏洞扫描有什么区别？</li>
+<li>渗透测试的流程是什么？</li>
+<li>什么是信息收集？有哪些方法？</li>
+<li>什么是社会工程学？</li>
+<li>如何编写渗透测试报告？</li>
+</ol>
+<p><strong>工具使用</strong></p>
+<ol>
+<li>Nmap 有哪些常用参数？各有什么作用？</li>
+<li>Burp Suite 有哪些模块？如何使用 Intruder 进行爆破？</li>
+<li>Metasploit 的架构是怎样的？Exploit 和 Payload 有什么区别？</li>
+<li>SQLMap 有哪些常用参数？如何绕过 WAF？</li>
+<li>Cobalt Strike 有哪些功能？如何使用 Beacon？</li>
+</ol>
+<p><strong>漏洞利用</strong></p>
+<ol>
+<li>SQL 注入有哪些类型？如何利用？</li>
+<li>如何进行 Windows 系统提权？</li>
+<li>如何进行 Linux 系统提权？</li>
+<li>什么是 Pass The Hash 攻击？如何利用？</li>
+<li>什么是 Kerberoasting 攻击？如何防御？</li>
+</ol>
+<p><strong>内网渗透</strong></p>
+<ol>
+<li>内网渗透的流程是什么？</li>
+<li>如何进行域内信息收集？</li>
+<li>横向移动有哪些方法？</li>
+<li>Golden Ticket 和 Silver Ticket 有什么区别？</li>
+<li>如何定位域控制器？</li>
+</ol>
+<p><strong>实战经验</strong></p>
+<ol>
+<li>你做过哪些渗透测试项目？详细说说。</li>
+<li>你在 HackTheBox 上通关了多少台靶机？</li>
+<li>你参加过护网行动吗？做了哪些工作？</li>
+<li>遇到 WAF 拦截时，你会怎么绕过？</li>
+<li>你编写过哪些渗透测试工具？</li>
+</ol>
+<h3 id="学习资源-5">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-5" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/1895076259005964982" class="external external-link">2025 护网 HVV 面试通关笔记<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：高频面试题</li>
+</ul>
+<h2 id="持续学习资源">持续学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#持续学习资源" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="安全社区">安全社区<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#安全社区" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><a href="https://www.freebuf.com/" class="external external-link">FreeBuf<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：国内知名安全社区</li>
+<li><a href="https://xz.aliyun.com/" class="external external-link">先知社区<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：阿里云安全社区</li>
+<li><a href="https://www.seebug.org/" class="external external-link">Seebug<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：漏洞平台</li>
+</ul>
+<h3 id="靶场平台">靶场平台<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#靶场平台" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><a href="https://www.hackthebox.com/" class="external external-link">HackTheBox<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：全球最大的渗透测试平台</li>
+<li><a href="https://tryhackme.com/" class="external external-link">TryHackMe<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：新手友好的学习平台</li>
+<li><a href="https://www.vulnhub.com/" class="external external-link">VulnHub<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：靶机下载平台</li>
+<li><a href="https://adworld.xctf.org.cn/" class="external external-link">攻防世界<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：CTF 练习平台</li>
+</ul>
+<h3 id="技术博客">技术博客<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#技术博客" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><a href="https://googleprojectzero.blogspot.com/" class="external external-link">Google Project Zero<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：谷歌漏洞研究团队</li>
+<li><a href="https://msrc.microsoft.com/blog/" class="external external-link">Microsoft Security Response Center<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：微软安全响应中心</li>
+<li><a href="https://krebsonsecurity.com/" class="external external-link">Krebs on Security<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：安全研究博客</li>
+</ul>
+<h2 id="写在最后">写在最后<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#写在最后" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>渗透测试从信息收集到漏洞利用、从权限提升到横向移动、从域渗透到报告编写，技术体系完整且深入。学习路径：先打好基础（网络、系统、编程），再重点掌握渗透测试流程和核心工具（Nmap、Burp Suite、Metasploit），深入内网渗透（高级阶段），最后通过靶场、CTF 和护网行动在实战中提升能力。</p>
+<p><strong>务必牢记</strong>：渗透测试必须在获得授权的情况下进行，未经授权的攻击行为是违法的。做一个有道德、有底线的白帽子，用自己的技术为网络安全做出贡献。</p></div></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="toc"><button type="button" class="toc-header" aria-controls="toc-431" aria-expanded="true"><h3>目录</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-0" class="toc-content overflow"><li class="depth-0"><a href="#安全---渗透测试学习路线" data-for="安全---渗透测试学习路线">安全 - 渗透测试学习路线</a></li><li class="depth-1"><a href="#开篇介绍" data-for="开篇介绍">开篇介绍</a></li><li class="depth-2"><a href="#就业方向" data-for="就业方向">就业方向</a></li><li class="depth-2"><a href="#学习路线图" data-for="学习路线图">学习路线图</a></li><li class="depth-1"><a href="#整体学习建议" data-for="整体学习建议">整体学习建议</a></li><li class="depth-1"><a href="#阶段-1网络安全基础15-25-天仅供参考" data-for="阶段-1网络安全基础15-25-天仅供参考">阶段 1：网络安全基础（15-25 天，仅供参考）</a></li><li class="depth-2"><a href="#学习目标" data-for="学习目标">学习目标</a></li><li class="depth-2"><a href="#知识点" data-for="知识点">知识点</a></li><li class="depth-2"><a href="#学习建议" data-for="学习建议">学习建议</a></li><li class="depth-2"><a href="#学习资源" data-for="学习资源">学习资源</a></li><li class="depth-1"><a href="#阶段-2渗透测试基础10-30-天仅供参考" data-for="阶段-2渗透测试基础10-30-天仅供参考">阶段 2：渗透测试基础（10-30 天，仅供参考）</a></li><li class="depth-2"><a href="#学习目标-1" data-for="学习目标-1">学习目标</a></li><li class="depth-2"><a href="#知识点-1" data-for="知识点-1">知识点</a></li><li class="depth-2"><a href="#学习建议-1" data-for="学习建议-1">学习建议</a></li><li class="depth-2"><a href="#学习资源-1" data-for="学习资源-1">学习资源</a></li><li class="depth-1"><a href="#阶段-3系统渗透和提权15-35-天仅供参考" data-for="阶段-3系统渗透和提权15-35-天仅供参考">阶段 3：系统渗透和提权（15-35 天，仅供参考）</a></li><li class="depth-2"><a href="#学习目标-2" data-for="学习目标-2">学习目标</a></li><li class="depth-2"><a href="#知识点-2" data-for="知识点-2">知识点</a></li><li class="depth-2"><a href="#学习建议-2" data-for="学习建议-2">学习建议</a></li><li class="depth-2"><a href="#学习资源-2" data-for="学习资源-2">学习资源</a></li><li class="depth-1"><a href="#阶段-4内网渗透15-45-天仅供参考" data-for="阶段-4内网渗透15-45-天仅供参考">阶段 4：内网渗透（15-45 天，仅供参考）</a></li><li class="depth-2"><a href="#学习目标-3" data-for="学习目标-3">学习目标</a></li><li class="depth-2"><a href="#知识点-3" data-for="知识点-3">知识点</a></li><li class="depth-2"><a href="#学习建议-3" data-for="学习建议-3">学习建议</a></li><li class="depth-2"><a href="#经典面试题" data-for="经典面试题">经典面试题</a></li><li class="depth-2"><a href="#学习资源-3" data-for="学习资源-3">学习资源</a></li><li class="depth-1"><a href="#阶段-5综合实战30-45-天仅供参考" data-for="阶段-5综合实战30-45-天仅供参考">阶段 5：综合实战（30-45 天，仅供参考）</a></li><li class="depth-2"><a href="#学习目标-4" data-for="学习目标-4">学习目标</a></li><li class="depth-2"><a href="#学习建议-4" data-for="学习建议-4">学习建议</a></li><li class="depth-2"><a href="#项目推荐" data-for="项目推荐">项目推荐</a></li><li class="depth-2"><a href="#学习资源-4" data-for="学习资源-4">学习资源</a></li><li class="depth-1"><a href="#阶段-6求职备战面试前-1-个月突击" data-for="阶段-6求职备战面试前-1-个月突击">阶段 6：求职备战（面试前 1 个月突击）</a></li><li class="depth-2"><a href="#学习目标-5" data-for="学习目标-5">学习目标</a></li><li class="depth-2"><a href="#学习建议-5" data-for="学习建议-5">学习建议</a></li><li class="depth-2"><a href="#经典面试题-1" data-for="经典面试题-1">经典面试题</a></li><li class="depth-2"><a href="#学习资源-5" data-for="学习资源-5">学习资源</a></li><li class="depth-1"><a href="#持续学习资源" data-for="持续学习资源">持续学习资源</a></li><li class="depth-2"><a href="#安全社区" data-for="安全社区">安全社区</a></li><li class="depth-2"><a href="#靶场平台" data-for="靶场平台">靶场平台</a></li><li class="depth-2"><a href="#技术博客" data-for="技术博客">技术博客</a></li><li class="depth-1"><a href="#写在最后" data-for="写在最后">写在最后</a></li><li class="overflow-end"></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v5.0.0</a> © 2026</p><ul><li><a href="https://github.com/xyf1111">GitHub</a></li></ul></footer></div></div></body><script src="../static/resource-after-e13fffa1.js" type="application/javascript" data-persist="true"></script><script src="../static/resource-after-8b336f9a.js" type="application/javascript" data-persist="true"></script><script src="../static/resource-after-baba652b.js" type="application/javascript" data-persist="true"></script><script src="../static/resource-after-5eb75950.js" type="module" data-persist="true"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript" data-persist="true"></script><script src="../postscript-17915799.js" type="module" data-persist="true"></script></html>

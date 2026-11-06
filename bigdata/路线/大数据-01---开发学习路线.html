@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr"><head><title>大数据 01 - 开发学习路线 · 后端开发笔记</title><meta charset="utf-8"/><link rel="preload" href="../../index-b754f97d.css" as="style"/><link rel="preload" href="../../prescript-2bfc6315.js" as="script"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="技术知识库"/><meta property="og:title" content="大数据 01 - 开发学习路线 · 后端开发笔记"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="大数据 01 - 开发学习路线 · 后端开发笔记"/><meta name="twitter:description" content="大数据开发学习路线 从零基础到大数据开发 / 数据仓库 / 实时计算工程师的完整学习路径：Kafka、Spark、Flink、数仓建模、OLAP 引擎、数据湖，一条龙到项目实战与求职。 概述 大数据是指无法在一定时间范围内用常规软件工具进行捕捉、管理和处理的数据集合。全球每天产生的数据量超过 2.5 EB（1 EB = 100 万 TB）且仍在快速增长，如何存储、管理和分析海量数据，已成为企业数字化转型的核心挑战。 为什么要学大数据开发？ 市场需求大：互联网公司（阿里、字节、美团）和传统企业（银行、制造、零售）都需要处理海量数据，人才缺口大 薪资可观：一线城市大数据开发工程师平均 25-50K..."/><meta property="og:description" content="大数据开发学习路线 从零基础到大数据开发 / 数据仓库 / 实时计算工程师的完整学习路径：Kafka、Spark、Flink、数仓建模、OLAP 引擎、数据湖，一条龙到项目实战与求职。 概述 大数据是指无法在一定时间范围内用常规软件工具进行捕捉、管理和处理的数据集合。全球每天产生的数据量超过 2.5 EB（1 EB = 100 万 TB）且仍在快速增长，如何存储、管理和分析海量数据，已成为企业数字化转型的核心挑战。 为什么要学大数据开发？ 市场需求大：互联网公司（阿里、字节、美团）和传统企业（银行、制造、零售）都需要处理海量数据，人才缺口大 薪资可观：一线城市大数据开发工程师平均 25-50K..."/><meta property="og:image:alt" content="大数据开发学习路线 从零基础到大数据开发 / 数据仓库 / 实时计算工程师的完整学习路径：Kafka、Spark、Flink、数仓建模、OLAP 引擎、数据湖，一条龙到项目实战与求职。 概述 大数据是指无法在一定时间范围内用常规软件工具进行捕捉、管理和处理的数据集合。全球每天产生的数据量超过 2.5 EB（1 EB = 100 万 TB）且仍在快速增长，如何存储、管理和分析海量数据，已成为企业数字化转型的核心挑战。 为什么要学大数据开发？ 市场需求大：互联网公司（阿里、字节、美团）和传统企业（银行、制造、零售）都需要处理海量数据，人才缺口大 薪资可观：一线城市大数据开发工程师平均 25-50K..."/><meta property="twitter:domain" content="xyf1111.github.io/tech-notes"/><meta property="og:url" content="https://xyf1111.github.io/tech-notes/bigdata/路线/大数据-01---开发学习路线"/><meta property="twitter:url" content="https://xyf1111.github.io/tech-notes/bigdata/路线/大数据-01---开发学习路线"/><link rel="icon" href="../../static/icon.png"/><meta name="description" content="大数据开发学习路线 从零基础到大数据开发 / 数据仓库 / 实时计算工程师的完整学习路径：Kafka、Spark、Flink、数仓建模、OLAP 引擎、数据湖，一条龙到项目实战与求职。 概述 大数据是指无法在一定时间范围内用常规软件工具进行捕捉、管理和处理的数据集合。全球每天产生的数据量超过 2.5 EB（1 EB = 100 万 TB）且仍在快速增长，如何存储、管理和分析海量数据，已成为企业数字化转型的核心挑战。 为什么要学大数据开发？ 市场需求大：互联网公司（阿里、字节、美团）和传统企业（银行、制造、零售）都需要处理海量数据，人才缺口大 薪资可观：一线城市大数据开发工程师平均 25-50K..."/><meta name="generator" content="Quartz"/><link href="../../index-b754f97d.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-735924e0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-589c1cea.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-bbc3f7c0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-2911f5d1.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-e427079e.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-53b25b2b.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-c93c6a44.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-8a06014f.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-77d6a441.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-6ee21cee.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-1ea6ad18.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-788c9ca3.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-642859cd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-4abc06bd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-274a3dfe.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-94cb6c84.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-58d5ff56.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-7262b5a7.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../static/resource-style-a5c806d2.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../static/resource-style-6bd36952.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" data-persist="true"/><script src="../../prescript-2bfc6315.js" type="application/javascript" data-persist="true"></script><script type="application/javascript" data-persist="true">const fetchData = fetch("../../static/contentIndex.json").then(data => data.json())</script><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://xyf1111.github.io/tech-notes/bigdata/路线/大数据-01---开发学习路线-og-image.webp"/><meta property="og:image:url" content="https://xyf1111.github.io/tech-notes/bigdata/路线/大数据-01---开发学习路线-og-image.webp"/><meta name="twitter:image" content="https://xyf1111.github.io/tech-notes/bigdata/路线/大数据-01---开发学习路线-og-image.webp"/><meta property="og:image:type" content="image/webp"/></head><body data-slug="bigdata/路线/大数据-01---开发学习路线" data-basepath="/tech-notes"><div id="quartz-root" class="page" data-frame="default"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="../..">技术知识库</a></h2><div class="mobile-only"><div class="spacer"></div></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 0.5rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button" aria-label="搜索" aria-expanded="false"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>搜索</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="搜索内容..." placeholder="搜索内容..."/><div class="search-layout" data-preview="true" data-field-priority="[&quot;title&quot;,&quot;content&quot;,&quot;tags&quot;]"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode" aria-label="暗色模式"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="暗色模式"><title>暗色模式</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="亮色模式"><title>亮色模式</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode" aria-label="阅读模式"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="阅读模式"><title>阅读模式</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer nav-files-container" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a2, b2) => {\n    if (!a2.isFolder &amp;&amp; !b2.isFolder || a2.isFolder &amp;&amp; b2.isFolder) {\n      return (a2.displayName || \&quot;\&quot;).localeCompare(b2.displayName || \&quot;\&quot;, void 0, {\n        numeric: true,\n        sensitivity: \&quot;base\&quot;\n      });\n    }\n    if (!a2.isFolder &amp;&amp; b2.isFolder) {\n      return 1;\n    }\n    return -1;\n  }&quot;,&quot;filterFn&quot;:&quot;(node) => node.slugSegment !== \&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;(node) => {\n    return node;\n  }&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-31" aria-label="探索"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>探索</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-31" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#" class="nav-file-title tree-item-self"></a></li></template><template id="template-folder"><li><div class="folder-container nav-folder-title tree-item-self"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon nav-folder-collapse-indicator collapse-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content tree-item-children"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../bigdata/">bigdata</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../bigdata/路线/">路线</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>大数据 01 - 开发学习路线</a></div></nav><h1 class="article-title">大数据 01 - 开发学习路线</h1><details class="note-properties metadata-container" open data-collapsed="false"><summary class="note-properties-header"><span class="note-properties-title">Properties</span><span class="note-properties-count">1</span></summary><table class="note-properties-table"><tbody><tr class="note-properties-row metadata-property"><td class="note-properties-key metadata-property-key">tags</td><td class="note-properties-value metadata-property-value"><span class="note-properties-tags"><a href="../../tags/大数据" class="internal internal-link tag-link">大数据</a><span class="note-properties-separator">, </span><a href="../../tags/开发" class="internal internal-link tag-link">开发</a><span class="note-properties-separator">, </span><a href="../../tags/学习路线" class="internal internal-link tag-link">学习路线</a></span></td></tr></tbody></table></details><p show-comma="true" class="content-meta"><time datetime="2026-08-08T16:00:00.000Z">2026年8月09日</time><span>23分钟阅读</span></p></div></div><article class="popover-hint"><div class="markdown-preview-view markdown-rendered"><h1 id="大数据开发学习路线">大数据开发学习路线<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#大数据开发学习路线" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<blockquote>
+<p>从零基础到大数据开发 / 数据仓库 / 实时计算工程师的完整学习路径：Kafka、Spark、Flink、数仓建模、OLAP 引擎、数据湖，一条龙到项目实战与求职。</p>
+</blockquote>
+<h2 id="概述">概述<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#概述" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>大数据是指无法在一定时间范围内用常规软件工具进行捕捉、管理和处理的数据集合。全球每天产生的数据量超过 2.5 EB（1 EB = 100 万 TB）且仍在快速增长，如何存储、管理和分析海量数据，已成为企业数字化转型的核心挑战。</p>
+<p><strong>为什么要学大数据开发？</strong></p>
+<ul>
+<li><strong>市场需求大</strong>：互联网公司（阿里、字节、美团）和传统企业（银行、制造、零售）都需要处理海量数据，人才缺口大</li>
+<li><strong>薪资可观</strong>：一线城市大数据开发工程师平均 25-50K，资深架构师可达 50-80K</li>
+<li><strong>前景广阔</strong>：大数据与 AI、云计算结合紧密——大数据为 AI 提供训练数据，AI 反向赋能智能分析</li>
+<li><strong>应用广泛</strong>：电商精准推荐、金融风控反欺诈、医疗辅助诊断、教育个性化教学</li>
+</ul>
+<p><strong>就业方向：</strong></p>
+<ol>
+<li>大数据开发工程师：开发大数据处理应用</li>
+<li>数据仓库工程师：设计和维护数据仓库</li>
+<li>实时计算工程师：开发实时数据处理应用</li>
+<li>数据平台工程师：搭建和维护大数据平台</li>
+<li>大数据架构师：设计大数据系统架构</li>
+<li>AI 工程师：使用大数据训练 AI 模型（需额外学习 AI 知识）</li>
+</ol>
+<p><strong>学习前提：</strong></p>
+<ol>
+<li>编程基础：至少掌握一门编程语言（Java、Python、Scala）</li>
+<li>SQL 基础：熟悉 SQL 查询语言</li>
+<li>Linux 基础：了解 Linux 基本操作</li>
+<li>时间投入：建议至少 6-12 个月系统学习</li>
+</ol>
+<h2 id="整体学习建议">整体学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#整体学习建议" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ol>
+<li><strong>先打好基础</strong>：编程（Java/Scala/Python）、SQL、Linux 基础不牢固先补基础</li>
+<li><strong>理论结合实践</strong>：分布式概念（数据分片、数据倾斜、容错机制）较抽象，建议本机搭建伪分布式环境动手实践</li>
+<li><strong>关注技术趋势</strong>：Hadoop 已非首选，2025 年主流是 Spark（离线）、Flink（实时）、ClickHouse/Doris（OLAP）、Iceberg/Hudi（数据湖）</li>
+<li><strong>善用 AI 辅助学习</strong>：技术栈庞大，遇到概念、配置、报错问题可用 AI 工具（如 ChatGPT）辅助</li>
+<li><strong>多看官方文档</strong>：官方文档质量高，英文内容配合翻译工具或 AI 阅读</li>
+<li><strong>关注实时计算</strong>：实时计算是发展趋势，重点学 Flink 而非过时的 Storm</li>
+<li><strong>数据仓库是核心</strong>：离线与实时计算最终都落地数仓，重点学数仓建模（维度建模、范式建模）和 OLAP 引擎</li>
+</ol>
+<h2 id="学习路线">学习路线<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习路线" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="阶段-1大数据基础">阶段 1：大数据基础<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-1大数据基础" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>打好编程语言、SQL、Linux 等基础。</p>
+<h4 id="知识点">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p><strong>编程语言（必选其一）：</strong></p>
+<ul>
+<li>【必学】Java：大数据生态主流语言，Hadoop、Spark、Flink 均用 Java 开发</li>
+<li>【建议学】Scala：Spark 的开发语言，语法简洁</li>
+<li>【建议学】Python：数据分析与 AI 首选语言，也可用于大数据开发</li>
+</ul>
+<p><strong>SQL 基础：</strong></p>
+<ul>
+<li>【必学】基础语法：SELECT、WHERE、GROUP BY、JOIN、子查询</li>
+<li>【必学】高级特性：窗口函数、CTE、UNION</li>
+<li>【必学】性能优化：索引、EXPLAIN、查询优化</li>
+</ul>
+<p><strong>Linux 基础：</strong></p>
+<ul>
+<li>【必学】基本命令：cd、ls、cp、mv、rm、cat、grep、awk、sed</li>
+<li>【必学】Shell 脚本：自动化脚本编写</li>
+<li>【建议学】系统管理：用户管理、权限管理、网络配置</li>
+</ul>
+<p><strong>分布式系统基础：</strong></p>
+<ul>
+<li>【必学】CAP 理论：一致性、可用性、分区容错性</li>
+<li>【必学】数据分片（Sharding）：水平分片、垂直分片</li>
+<li>【建议学】一致性算法：Raft、Paxos</li>
+</ul>
+<h4 id="学习建议">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ol>
+<li>会 Java 可继续使用；想学新语言推荐 Scala（Spark 官方语言）；Python 在大数据领域不如 Java/Scala 常用</li>
+<li>SQL 是大数据开发的核心技能，务必熟练掌握</li>
+<li>Linux 是大数据平台的基础（集群都运行在 Linux 上），重点掌握文本处理命令（grep、awk、sed）</li>
+<li>分布式概念较抽象，先初步了解，结合后续具体技术深入理解</li>
+</ol>
+<h3 id="阶段-2kafka-消息队列">阶段 2：Kafka 消息队列<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-2kafka-消息队列" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>大数据领域最流行的消息队列，也是实时计算的数据源。</p>
+<h4 id="知识点-1">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-1" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p><strong>Kafka 基础：</strong></p>
+<ul>
+<li>【必学】什么是消息队列？为什么需要 Kafka？</li>
+<li>【必学】架构：Broker、Topic、Partition、Producer、Consumer</li>
+<li>【必学】安装和配置</li>
+<li>【必学】基本操作：创建 Topic、生产消息、消费消息</li>
+</ul>
+<p><strong>核心概念：</strong></p>
+<ul>
+<li>【必学】分区（Partition）和副本（Replica）</li>
+<li>【必学】消费者组（Consumer Group）</li>
+<li>【必学】偏移量（Offset）</li>
+<li>【必学】ISR（In-Sync Replicas）</li>
+<li>【建议学】存储机制：日志段（Log Segment）</li>
+</ul>
+<p><strong>高级特性：</strong></p>
+<ul>
+<li>【必学】消息可靠性：ACK 机制、消息重试</li>
+<li>【必学】性能优化：批量发送、压缩、零拷贝</li>
+<li>【建议学】Kafka 事务</li>
+<li>【建议学】Kafka Streams：流处理 API</li>
+</ul>
+<h4 id="学习建议-1">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-1" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ol>
+<li>Kafka 是 Flink、Spark Streaming 的主要数据源，实时计算核心组件，重点学习</li>
+<li>分区机制是高吞吐的关键：消息按 Key 的 Hash 值分配到不同分区，实现并行处理</li>
+<li>消费者组：一个分区只能被一个消费者组中的一个消费者消费，但可被多个消费者组消费</li>
+<li>性能优化重点学批量发送和压缩，这是提高吞吐量的关键</li>
+<li>多动手：搭建单机伪分布式 Kafka 集群，编写 Producer 和 Consumer 程序</li>
+</ol>
+<h4 id="学习资源">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>⭐ <a href="https://kafka.apache.org/documentation/" class="external external-link">Kafka 官方文档<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：最权威的学习资料</li>
+<li>⭐ <a href="https://www.bilibili.com/video/BV1Gp421m7UN" class="external external-link">尚硅谷 Kafka 教程<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：讲解详细，适合零基础</li>
+<li><a href="https://book.douban.com/subject/27665114/" class="external external-link">《Kafka 权威指南》<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：经典书籍</li>
+<li><a href="https://github.com/yahoo/CMAK" class="external external-link">Kafka 可视化管理工具 CMAK<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：方便管理 Kafka 集群</li>
+</ul>
+<h3 id="阶段-3spark-离线计算">阶段 3：Spark 离线计算<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-3spark-离线计算" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>大数据离线计算的标准框架，已取代 MapReduce 成为主流。</p>
+<h4 id="知识点-2">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-2" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p><strong>Spark 基础：</strong></p>
+<ul>
+<li>【必学】什么是 Spark？Spark vs MapReduce</li>
+<li>【必学】架构：Driver、Executor、Cluster Manager</li>
+<li>【必学】安装配置：Standalone、YARN、K8s</li>
+<li>【必学】Spark Shell：交互式编程</li>
+</ul>
+<p><strong>Spark Core（核心）：</strong></p>
+<ul>
+<li>【必学】RDD（弹性分布式数据集）：Spark 的核心抽象</li>
+<li>【必学】RDD 操作：Transformation、Action</li>
+<li>【必学】RDD 持久化：cache、persist</li>
+<li>【必学】宽依赖和窄依赖</li>
+<li>【必学】Shuffle 机制</li>
+</ul>
+<p><strong>Spark SQL：</strong></p>
+<ul>
+<li>【必学】DataFrame 和 Dataset：结构化数据抽象</li>
+<li>【必学】基本操作：创建 DataFrame、查询、聚合</li>
+<li>【必学】数据源：Parquet、ORC、JSON、CSV、Hive</li>
+<li>【建议学】Catalyst 优化器：查询优化</li>
+</ul>
+<p><strong>性能优化：</strong></p>
+<ul>
+<li>【必学】数据倾斜问题和解决方案</li>
+<li>【必学】内存管理</li>
+<li>【必学】任务调度：Stage、Task</li>
+<li>【建议学】Shuffle 优化</li>
+<li>【建议学】广播变量和累加器</li>
+</ul>
+<p><strong>其他组件：</strong></p>
+<ul>
+<li>【建议学】Spark Streaming：旧版流处理 API（已被 Structured Streaming 取代）</li>
+<li>【建议学】Structured Streaming：新一代流处理 API</li>
+<li>【可不学】MLlib：机器学习库（AI 方向需要）</li>
+</ul>
+<h4 id="学习建议-2">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-2" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ol>
+<li>Spark 相比 MapReduce 快 10-100 倍，是离线计算的事实标准，重点学习</li>
+<li>RDD 是核心抽象：只读、分区、可并行计算的数据集合，理解其工作原理很重要</li>
+<li>Spark SQL 最常用，大部分数据处理任务可用其完成，重点学 DataFrame 和 Dataset</li>
+<li>数据倾斜是优化重点和面试高频考点（某些分区数据量远大于其他分区，导致部分 Task 执行过慢），方案：增加分区数、salting 技术、广播小表</li>
+<li>Spark Streaming 已被 Structured Streaming 取代，直接学新版</li>
+<li>集群管理器先学 Standalone，再学企业最常用的 YARN 模式</li>
+</ol>
+<h4 id="学习资源-1">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-1" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>⭐ <a href="https://spark.apache.org/docs/latest/" class="external external-link">Spark 官方文档<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：最权威的学习资料</li>
+<li>⭐ <a href="https://www.bilibili.com/video/BV12142167BL" class="external external-link">尚硅谷全新版本 Spark 教程<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：讲解详细，适合零基础</li>
+<li><a href="https://book.douban.com/subject/27035127/" class="external external-link">《Spark 权威指南》<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：经典书籍</li>
+<li><a href="https://spark.apache.org/docs/latest/tuning.html" class="external external-link">Spark 性能优化指南<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：官方性能优化指南</li>
+</ul>
+<h3 id="阶段-4flink-实时计算">阶段 4：Flink 实时计算<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-4flink-实时计算" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>大数据实时计算的标准框架，已超越 Spark Streaming 成为实时计算首选。</p>
+<h4 id="知识点-3">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-3" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p><strong>Flink 基础：</strong></p>
+<ul>
+<li>【必学】什么是 Flink？Flink vs Spark Streaming</li>
+<li>【必学】架构：JobManager、TaskManager</li>
+<li>【必学】安装配置：Standalone、YARN、K8s</li>
+<li>【必学】编程模型：DataStream API</li>
+</ul>
+<p><strong>核心概念：</strong></p>
+<ul>
+<li>【必学】DataStream：数据流抽象</li>
+<li>【必学】Transformation：数据转换操作</li>
+<li>【必学】时间语义：Event Time、Processing Time、Ingestion Time</li>
+<li>【必学】窗口（Window）：滚动窗口、滑动窗口、会话窗口</li>
+<li>【必学】水印（Watermark）：处理乱序数据</li>
+</ul>
+<p><strong>状态管理：</strong></p>
+<ul>
+<li>【必学】状态（State）：Keyed State、Operator State</li>
+<li>【必学】状态后端（State Backend）：Memory、FsStateBackend、RocksDBStateBackend</li>
+<li>【必学】检查点（Checkpoint）：故障恢复机制</li>
+<li>【建议学】保存点（Savepoint）：手动触发的 Checkpoint</li>
+</ul>
+<p><strong>Flink SQL：</strong></p>
+<ul>
+<li>【必学】Table API 和 SQL</li>
+<li>【必学】数据源：Kafka、MySQL、Elasticsearch</li>
+<li>【建议学】Flink CDC：实时捕获数据库变更</li>
+</ul>
+<p><strong>性能优化：</strong></p>
+<ul>
+<li>【必学】反压（Back Pressure）问题和解决方案</li>
+<li>【必学】并行度调优</li>
+<li>【建议学】内存管理</li>
+<li>【建议学】Checkpoint 优化</li>
+</ul>
+<h4 id="学习建议-3">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-3" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ol>
+<li>Flink 提供真正的流处理（而非微批处理），延迟更低、性能更好，是 2025 年最热门的大数据技术之一</li>
+<li>时间语义和水印是核心难点：Event Time 是事件真正发生的时间，Watermark 用于处理乱序数据，多看示例代码</li>
+<li>状态管理是 Flink 特色功能，可保存流处理中间状态，重点学最常用的 Keyed State</li>
+<li>Flink SQL 降低开发难度，重点学 Flink CDC（Change Data Capture），可实时捕获数据库增删改操作</li>
+<li>学习曲线比 Spark 略陡，先学 DataStream API，再学 Flink SQL</li>
+<li>多动手：搭建 Flink 集群，处理 Kafka 数据，将结果写入 MySQL 或 Elasticsearch</li>
+</ol>
+<h4 id="学习资源-2">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-2" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>⭐ <a href="https://flink.apache.org/zh/" class="external external-link">Flink 官方文档<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：最权威的学习资料（有中文版）</li>
+<li>⭐ <a href="https://www.bilibili.com/video/BV1eg4y1V7AN" class="external external-link">尚硅谷大数据 Flink 教程<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：讲解详细，适合零基础</li>
+</ul>
+<h3 id="阶段-5数据仓库建模">阶段 5：数据仓库建模<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-5数据仓库建模" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>数据仓库的设计和建模，大数据开发的核心技能。</p>
+<h4 id="知识点-4">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-4" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p><strong>数据仓库基础：</strong></p>
+<ul>
+<li>【必学】什么是数据仓库？数据仓库 vs 数据库</li>
+<li>【必学】分层架构：ODS、DWD、DWS、ADS</li>
+<li>【必学】事实表和维度表</li>
+<li>【必学】星型模型和雪花模型</li>
+</ul>
+<p><strong>维度建模：</strong></p>
+<ul>
+<li>【必学】核心概念：度量、维度、粒度</li>
+<li>【必学】缓慢变化维（SCD）：Type 1、Type 2、Type 3</li>
+<li>【必学】维度退化、维度一致性</li>
+<li>【建议学】多值维度、多值属性</li>
+</ul>
+<p><strong>数据仓库开发：</strong></p>
+<ul>
+<li>【必学】Hive：数据仓库工具（性能不如新工具，但仍是基础）</li>
+<li>【必学】ETL 流程：Extract、Transform、Load</li>
+<li>【必学】数据质量管理</li>
+<li>【建议学】数据血缘分析</li>
+</ul>
+<p><strong>范式建模（3NF）：</strong></p>
+<ul>
+<li>【建议学】第一范式（1NF）、第二范式（2NF）、第三范式（3NF）</li>
+<li>【建议学】范式建模 vs 维度建模</li>
+</ul>
+<h4 id="学习建议-4">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-4" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ol>
+<li>数仓建模是区分初级和高级工程师的关键，重点学维度建模（数据仓库建模的主流方法）</li>
+<li>分层架构是数仓设计的标准方法：ODS 存原始数据，DWD 存清洗后明细数据，DWS 存聚合数据，ADS 存面向应用的数据</li>
+<li>Hive 是最经典的数据仓库工具，先学 Hive 理解数仓基本概念，再学 ClickHouse、Doris 等新工具</li>
+<li>维度建模核心是识别度量和维度：度量是可量化指标（销售额、访问量），维度是描述度量的角度（时间、地区、用户）</li>
+<li>缓慢变化维（SCD）是难点：Type 2 最常用，通过版本号或有效时间记录维度的历史变化</li>
+</ol>
+<h4 id="学习资源-3">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-3" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li><a href="https://hive.apache.org/" class="external external-link">Hive 官方文档<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：Hive 学习资料</li>
+</ul>
+<h3 id="阶段-6olap-引擎重点">阶段 6：OLAP 引擎（重点）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-6olap-引擎重点" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>OLAP（在线分析处理）引擎，2025 年大数据领域的热点技术。</p>
+<h4 id="知识点-5">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-5" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p><strong>ClickHouse（推荐）：</strong></p>
+<ul>
+<li>【必学】什么是 ClickHouse？优势</li>
+<li>【必学】架构：分布式表、本地表</li>
+<li>【必学】表引擎：MergeTree、ReplicatedMergeTree</li>
+<li>【必学】SQL 语法</li>
+<li>【建议学】性能优化：分区、索引、物化视图</li>
+</ul>
+<p><strong>Apache Doris / StarRocks（推荐）：</strong></p>
+<ul>
+<li>【必学】什么是 Doris？优势</li>
+<li>【必学】架构：FE、BE</li>
+<li>【必学】数据模型：Aggregate、Unique、Duplicate</li>
+<li>【建议学】物化视图</li>
+<li>【建议学】实时数仓能力</li>
+</ul>
+<p><strong>其他 OLAP 引擎（了解）：</strong></p>
+<ul>
+<li>【可不学】Presto / Trino：分布式 SQL 查询引擎</li>
+<li>【可不学】Druid：实时 OLAP 引擎</li>
+<li>【可不学】Kylin：预计算 OLAP 引擎</li>
+</ul>
+<h4 id="学习建议-5">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-5" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ol>
+<li>OLAP 引擎相比 Hive 提供秒级甚至毫秒级查询响应，大幅提升数据分析效率</li>
+<li>ClickHouse 最流行，亿级数据单表查询秒级响应，重点学 MergeTree 表引擎</li>
+<li>Doris（原百度 Palo）是国内开源 OLAP 引擎，性能优秀、生态完善；StarRocks 是 Doris 分支，两者相似，学一个即可</li>
+<li>Hive 仍是数仓基础，先学 Hive 再学 ClickHouse 或 Doris</li>
+<li>学习重点是表设计和性能优化，多看官方文档和最佳实践</li>
+</ol>
+<h4 id="学习资源-4">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-4" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p><strong>ClickHouse：</strong></p>
+<ul>
+<li>⭐ <a href="https://clickhouse.com/docs/zh" class="external external-link">ClickHouse 官方文档<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：有中文版</li>
+<li><a href="https://www.bilibili.com/video/BV1Yh411z7os" class="external external-link">ClickHouse 从入门到实战<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><a href="https://book.douban.com/subject/35091211/" class="external external-link">《ClickHouse 原理解析与应用实践》<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：国内作者书籍</li>
+</ul>
+<p><strong>Apache Doris：</strong></p>
+<ul>
+<li>⭐ <a href="https://doris.apache.org/zh-CN/" class="external external-link">Apache Doris 官方文档<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：有中文版</li>
+<li><a href="https://www.bilibili.com/video/BV1FR4y1T7fQ" class="external external-link">黑马程序员大数据 Doris 教程<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+<h3 id="阶段-7数据湖新趋势">阶段 7：数据湖（新趋势）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-7数据湖新趋势" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>数据湖可统一管理结构化、半结构化和非结构化数据，是大数据领域的新趋势。</p>
+<h4 id="知识点-6">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-6" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p><strong>数据湖基础：</strong></p>
+<ul>
+<li>【建议学】什么是数据湖？数据湖 vs 数据仓库</li>
+<li>【建议学】架构：存储层、元数据层、计算层</li>
+<li>【建议学】优势和挑战</li>
+</ul>
+<p><strong>Apache Iceberg（推荐）：</strong></p>
+<ul>
+<li>【建议学】什么是 Iceberg？核心特性</li>
+<li>【建议学】表格式：Snapshot、Manifest、Data File</li>
+<li>【建议学】ACID 事务</li>
+<li>【建议学】与 Spark/Flink 集成</li>
+</ul>
+<p><strong>其他数据湖技术：</strong></p>
+<ul>
+<li>【建议学】Apache Hudi：实时数据湖</li>
+<li>【建议学】Delta Lake：Databricks 开源的数据湖</li>
+<li>【可不学】AWS Lake Formation、Azure Data Lake</li>
+</ul>
+<h4 id="学习建议-6">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-6" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ol>
+<li>数据湖比传统数仓更灵活，支持更多数据类型</li>
+<li>Iceberg 由 Netflix 开源、已是 Apache 顶级项目，重点学 ACID 事务和 Time Travel 功能</li>
+<li>数据湖技术较新、资料不如传统技术丰富，多看官方文档和博客</li>
+<li>数据湖不是替代数仓而是补充：数据湖存原始数据、数仓存结构化数据，实际项目中常结合使用</li>
+<li>非必须学习，但了解概念和技术趋势有助于提升技术视野和竞争力</li>
+</ol>
+<h4 id="学习资源-5">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-5" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>⭐ <a href="https://iceberg.apache.org/" class="external external-link">Apache Iceberg 官方文档<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：最权威的学习资料</li>
+</ul>
+<h3 id="阶段-8hadoop-生态可选">阶段 8：Hadoop 生态（可选）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-8hadoop-生态可选" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Hadoop 已非主流，但仍是大数据基础，了解它有助于理解大数据发展历史。</p>
+<h4 id="知识点-7">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-7" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p><strong>核心组件：</strong></p>
+<ul>
+<li>【可不学】HDFS：分布式文件系统</li>
+<li>【可不学】MapReduce：分布式计算框架（已被 Spark 取代）</li>
+<li>【可不学】YARN：资源管理器</li>
+</ul>
+<p><strong>生态其他组件：</strong></p>
+<ul>
+<li>【可不学】HBase：分布式 NoSQL 数据库（已被 Elasticsearch、ClickHouse 取代）</li>
+<li>【可不学】Flume：日志收集工具（已被 Filebeat、Logstash 取代）</li>
+<li>【可不学】Sqoop：数据导入导出工具（已被 DataX、Flink CDC 取代）</li>
+<li>【可不学】Oozie：工作流调度工具（已被 Airflow、DolphinScheduler 取代）</li>
+</ul>
+<h4 id="学习建议-7">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-7" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ol>
+<li>Hadoop 是开山鼻祖但已非主流：MapReduce 被 Spark 取代，HBase 被 Elasticsearch、ClickHouse 取代</li>
+<li>目标快速找工作可跳过 Hadoop，直接学 Spark、Flink 等现代技术；想系统学习可简单了解核心概念（HDFS、MapReduce、YARN）</li>
+<li>HDFS 仍是数据存储基础，了解 NameNode、DataNode、Block 基本概念</li>
+<li>YARN 是资源管理器，Spark 和 Flink 均可运行其上，了解 ResourceManager、NodeManager、ApplicationMaster</li>
+</ol>
+<h4 id="学习资源-6">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-6" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li><a href="https://hadoop.apache.org/docs/stable/" class="external external-link">Hadoop 官方文档<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：官方学习资料</li>
+<li><a href="https://www.bilibili.com/video/BV1WY4y197g7" class="external external-link">大数据开发 Hadoop、Hive 教程<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+<h3 id="阶段-9项目实战">阶段 9：项目实战<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-9项目实战" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>通过实际项目巩固所学知识。</p>
+<h4 id="学习建议-8">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-8" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ol>
+<li>从简单项目开始：离线数据统计项目（电商订单数据分析、网站日志分析），用 Spark + Hive 实现</li>
+<li>逐步增加复杂度：搭建实时数仓，用 Flink CDC 实时同步 MySQL 数据到 ClickHouse</li>
+<li>关注性能优化：数据倾斜处理、Checkpoint 优化、SQL 优化</li>
+<li>学习优秀项目：GitHub 上有大量开源项目，建议阅读源码学习</li>
+<li>结合业务场景：选择熟悉领域（电商、金融、社交）进行实战</li>
+<li>善用 AI 辅助开发：使用 ChatGPT、GitHub Copilot 等工具帮助写代码、调试</li>
+</ol>
+<h4 id="项目推荐">项目推荐<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#项目推荐" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>⭐ <a href="https://github.com/abeltavares/real-time-data-pipeline" class="external external-link">Real-time Data Pipeline with Kafka, Flink, Iceberg<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：整合 Kafka、Flink、Iceberg、Trino、MinIO 和 Superset 的实时数据管道项目</li>
+<li><a href="https://github.com/apache/flink-cdc" class="external external-link">Flink CDC<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：Flink 流式数据集成工具，实时同步数据库变更</li>
+<li><a href="https://github.com/raycad/stream-processing" class="external external-link">Stream Processing with Flink<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：Flink 流处理指南和示例项目</li>
+<li><a href="https://github.com/CheckChe0803/flink-recommandSystem-demo" class="external external-link">Flink 实时推荐系统<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：实时推荐项目</li>
+<li><a href="https://www.bilibili.com/video/BV1UN411j79o" class="external external-link">尚硅谷大数据项目【电商数仓6.0】<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><a href="https://www.bilibili.com/video/BV1Xb421E7jg" class="external external-link">尚硅谷大数据 Flink 实时数仓项目5.0教程<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+<h3 id="阶段-10求职备战">阶段 10：求职备战<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-10求职备战" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>准备大数据开发岗位的面试。</p>
+<h4 id="学习建议-9">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-9" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ol>
+<li>系统复习知识点：回顾 Kafka、Spark、Flink、数据仓库、OLAP 引擎等核心知识点，整理知识体系</li>
+<li>准备项目经历：项目介绍、技术选型、数据量级、性能优化、遇到的问题和解决方案</li>
+<li>准备算法题：刷 LeetCode 简单和中等难度题目（大数据开发对算法要求相对较低）</li>
+<li>了解公司技术栈：针对目标公司技术栈重点准备（如 Flink + ClickHouse）</li>
+<li>模拟面试：提前适应面试节奏</li>
+<li>完善简历：突出项目经验和技术能力</li>
+</ol>
+<h4 id="面试考察重点">面试考察重点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#面试考察重点" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ol>
+<li>Kafka：分区、消费者组、消息可靠性、性能优化</li>
+<li>Spark：RDD、DataFrame、Shuffle、数据倾斜、性能优化</li>
+<li>Flink：DataStream、时间语义、水印、状态管理、Checkpoint</li>
+<li>数据仓库：维度建模、分层架构、缓慢变化维</li>
+<li>OLAP：ClickHouse/Doris 的表设计、性能优化</li>
+<li>SQL：复杂 SQL 查询、窗口函数、性能优化</li>
+<li>Linux：常用命令、Shell 脚本</li>
+<li>项目经验：项目介绍、技术选型、性能优化、问题解决</li>
+</ol>
+<h4 id="经典面试题">经典面试题<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#经典面试题" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ol>
+<li>Kafka 如何保证消息不丢失？</li>
+<li>Spark 的数据倾斜问题如何解决？</li>
+<li>Flink 的 Checkpoint 机制是什么？如何保证 Exactly-Once 语义？</li>
+<li>数据仓库的分层架构是什么？各层的作用是什么？</li>
+<li>维度建模的核心概念是什么？星型模型和雪花模型有什么区别？</li>
+<li>ClickHouse 的 MergeTree 表引擎的工作原理是什么？</li>
+<li>Flink 的水印（Watermark）是什么？如何处理乱序数据？</li>
+<li>如何设计一个实时数仓？需要哪些技术？</li>
+</ol>
+<h2 id="写在最后">写在最后<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#写在最后" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>大数据开发技术栈庞大、学习难度较大，但也是一个充满挑战和机遇的方向，随着数据量爆炸式增长，大数据技术的需求只会越来越大。学习需要耐心和毅力，建议按照本路线的阶段一步步推进，重点掌握 Kafka、Spark、Flink、数据仓库建模、OLAP 引擎等核心技术。</p>
+<p>在 AI 时代，大数据是 AI 的基础，为 AI 模型提供训练数据。掌握大数据技能，并进一步结合 AI 技术，将打开更广阔的职业发展空间。</p></div></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="toc"><button type="button" class="toc-header" aria-controls="toc-31" aria-expanded="true"><h3>目录</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-0" class="toc-content overflow"><li class="depth-0"><a href="#大数据开发学习路线" data-for="大数据开发学习路线">大数据开发学习路线</a></li><li class="depth-1"><a href="#概述" data-for="概述">概述</a></li><li class="depth-1"><a href="#整体学习建议" data-for="整体学习建议">整体学习建议</a></li><li class="depth-1"><a href="#学习路线" data-for="学习路线">学习路线</a></li><li class="depth-2"><a href="#阶段-1大数据基础" data-for="阶段-1大数据基础">阶段 1：大数据基础</a></li><li class="depth-2"><a href="#阶段-2kafka-消息队列" data-for="阶段-2kafka-消息队列">阶段 2：Kafka 消息队列</a></li><li class="depth-2"><a href="#阶段-3spark-离线计算" data-for="阶段-3spark-离线计算">阶段 3：Spark 离线计算</a></li><li class="depth-2"><a href="#阶段-4flink-实时计算" data-for="阶段-4flink-实时计算">阶段 4：Flink 实时计算</a></li><li class="depth-2"><a href="#阶段-5数据仓库建模" data-for="阶段-5数据仓库建模">阶段 5：数据仓库建模</a></li><li class="depth-2"><a href="#阶段-6olap-引擎重点" data-for="阶段-6olap-引擎重点">阶段 6：OLAP 引擎（重点）</a></li><li class="depth-2"><a href="#阶段-7数据湖新趋势" data-for="阶段-7数据湖新趋势">阶段 7：数据湖（新趋势）</a></li><li class="depth-2"><a href="#阶段-8hadoop-生态可选" data-for="阶段-8hadoop-生态可选">阶段 8：Hadoop 生态（可选）</a></li><li class="depth-2"><a href="#阶段-9项目实战" data-for="阶段-9项目实战">阶段 9：项目实战</a></li><li class="depth-2"><a href="#阶段-10求职备战" data-for="阶段-10求职备战">阶段 10：求职备战</a></li><li class="depth-1"><a href="#写在最后" data-for="写在最后">写在最后</a></li><li class="overflow-end"></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v5.0.0</a> © 2026</p><ul><li><a href="https://github.com/xyf1111">GitHub</a></li></ul></footer></div></div></body><script src="../../static/resource-after-e13fffa1.js" type="application/javascript" data-persist="true"></script><script src="../../static/resource-after-8b336f9a.js" type="application/javascript" data-persist="true"></script><script src="../../static/resource-after-baba652b.js" type="application/javascript" data-persist="true"></script><script src="../../static/resource-after-5eb75950.js" type="module" data-persist="true"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript" data-persist="true"></script><script src="../../postscript-17915799.js" type="module" data-persist="true"></script></html>

@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr"><head><title>Java 43 - Spring AI 学习路线 · 后端开发笔记</title><meta charset="utf-8"/><link rel="preload" href="../../index-b754f97d.css" as="style"/><link rel="preload" href="../../prescript-2bfc6315.js" as="script"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="技术知识库"/><meta property="og:title" content="Java 43 - Spring AI 学习路线 · 后端开发笔记"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Java 43 - Spring AI 学习路线 · 后端开发笔记"/><meta name="twitter:description" content="Java 43 - Spring AI 学习路线 Spring AI 是 Spring 生态推出的 AI 应用开发框架，把 Spring 的设计理念与最佳实践带入 AI 领域，为 Java 开发者提供统一的 AI 模型访问 API，支持对话、Embedding、多模态、RAG、工具调用与智能体开发。本文梳理从 Spring Boot 基础到求职备战的完整学习路线，共 7 个阶段。 开篇介绍 Spring AI 是 Spring 生态系统推出的 AI 应用开发框架，它把 Spring 的设计理念和最佳实践带入了 AI 领域。作为 Java 开发者最熟悉的框架体系，Spring AI 让 Java..."/><meta property="og:description" content="Java 43 - Spring AI 学习路线 Spring AI 是 Spring 生态推出的 AI 应用开发框架，把 Spring 的设计理念与最佳实践带入 AI 领域，为 Java 开发者提供统一的 AI 模型访问 API，支持对话、Embedding、多模态、RAG、工具调用与智能体开发。本文梳理从 Spring Boot 基础到求职备战的完整学习路线，共 7 个阶段。 开篇介绍 Spring AI 是 Spring 生态系统推出的 AI 应用开发框架，它把 Spring 的设计理念和最佳实践带入了 AI 领域。作为 Java 开发者最熟悉的框架体系，Spring AI 让 Java..."/><meta property="og:image:alt" content="Java 43 - Spring AI 学习路线 Spring AI 是 Spring 生态推出的 AI 应用开发框架，把 Spring 的设计理念与最佳实践带入 AI 领域，为 Java 开发者提供统一的 AI 模型访问 API，支持对话、Embedding、多模态、RAG、工具调用与智能体开发。本文梳理从 Spring Boot 基础到求职备战的完整学习路线，共 7 个阶段。 开篇介绍 Spring AI 是 Spring 生态系统推出的 AI 应用开发框架，它把 Spring 的设计理念和最佳实践带入了 AI 领域。作为 Java 开发者最熟悉的框架体系，Spring AI 让 Java..."/><meta property="twitter:domain" content="xyf1111.github.io/tech-notes"/><meta property="og:url" content="https://xyf1111.github.io/tech-notes/java/路线/java-43---spring-ai-学习路线"/><meta property="twitter:url" content="https://xyf1111.github.io/tech-notes/java/路线/java-43---spring-ai-学习路线"/><link rel="icon" href="../../static/icon.png"/><meta name="description" content="Java 43 - Spring AI 学习路线 Spring AI 是 Spring 生态推出的 AI 应用开发框架，把 Spring 的设计理念与最佳实践带入 AI 领域，为 Java 开发者提供统一的 AI 模型访问 API，支持对话、Embedding、多模态、RAG、工具调用与智能体开发。本文梳理从 Spring Boot 基础到求职备战的完整学习路线，共 7 个阶段。 开篇介绍 Spring AI 是 Spring 生态系统推出的 AI 应用开发框架，它把 Spring 的设计理念和最佳实践带入了 AI 领域。作为 Java 开发者最熟悉的框架体系，Spring AI 让 Java..."/><meta name="generator" content="Quartz"/><link href="../../index-b754f97d.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-735924e0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-589c1cea.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-bbc3f7c0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-2911f5d1.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-e427079e.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-53b25b2b.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-c93c6a44.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-8a06014f.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-77d6a441.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-6ee21cee.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-1ea6ad18.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-788c9ca3.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-642859cd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-4abc06bd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-274a3dfe.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-94cb6c84.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-58d5ff56.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-7262b5a7.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../static/resource-style-a5c806d2.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../static/resource-style-6bd36952.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" data-persist="true"/><script src="../../prescript-2bfc6315.js" type="application/javascript" data-persist="true"></script><script type="application/javascript" data-persist="true">const fetchData = fetch("../../static/contentIndex.json").then(data => data.json())</script><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://xyf1111.github.io/tech-notes/java/路线/java-43---spring-ai-学习路线-og-image.webp"/><meta property="og:image:url" content="https://xyf1111.github.io/tech-notes/java/路线/java-43---spring-ai-学习路线-og-image.webp"/><meta name="twitter:image" content="https://xyf1111.github.io/tech-notes/java/路线/java-43---spring-ai-学习路线-og-image.webp"/><meta property="og:image:type" content="image/webp"/></head><body data-slug="java/路线/java-43---spring-ai-学习路线" data-basepath="/tech-notes"><div id="quartz-root" class="page" data-frame="default"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="../..">技术知识库</a></h2><div class="mobile-only"><div class="spacer"></div></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 0.5rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button" aria-label="搜索" aria-expanded="false"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>搜索</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="搜索内容..." placeholder="搜索内容..."/><div class="search-layout" data-preview="true" data-field-priority="[&quot;title&quot;,&quot;content&quot;,&quot;tags&quot;]"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode" aria-label="暗色模式"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="暗色模式"><title>暗色模式</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="亮色模式"><title>亮色模式</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode" aria-label="阅读模式"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="阅读模式"><title>阅读模式</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer nav-files-container" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a2, b2) => {\n    if (!a2.isFolder &amp;&amp; !b2.isFolder || a2.isFolder &amp;&amp; b2.isFolder) {\n      return (a2.displayName || \&quot;\&quot;).localeCompare(b2.displayName || \&quot;\&quot;, void 0, {\n        numeric: true,\n        sensitivity: \&quot;base\&quot;\n      });\n    }\n    if (!a2.isFolder &amp;&amp; b2.isFolder) {\n      return 1;\n    }\n    return -1;\n  }&quot;,&quot;filterFn&quot;:&quot;(node) => node.slugSegment !== \&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;(node) => {\n    return node;\n  }&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-293" aria-label="探索"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>探索</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-293" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#" class="nav-file-title tree-item-self"></a></li></template><template id="template-folder"><li><div class="folder-container nav-folder-title tree-item-self"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon nav-folder-collapse-indicator collapse-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content tree-item-children"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../java/">java</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../java/路线/">路线</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Java 43 - Spring AI 学习路线</a></div></nav><h1 class="article-title">Java 43 - Spring AI 学习路线</h1><details class="note-properties metadata-container" open data-collapsed="false"><summary class="note-properties-header"><span class="note-properties-title">Properties</span><span class="note-properties-count">1</span></summary><table class="note-properties-table"><tbody><tr class="note-properties-row metadata-property"><td class="note-properties-key metadata-property-key">tags</td><td class="note-properties-value metadata-property-value"><span class="note-properties-tags"><a href="../../tags/spring-ai" class="internal internal-link tag-link">spring-ai</a><span class="note-properties-separator">, </span><a href="../../tags/java" class="internal internal-link tag-link">java</a><span class="note-properties-separator">, </span><a href="../../tags/ai" class="internal internal-link tag-link">ai</a><span class="note-properties-separator">, </span><a href="../../tags/学习路线" class="internal internal-link tag-link">学习路线</a></span></td></tr></tbody></table></details><p show-comma="true" class="content-meta"><time datetime="2026-08-04T16:00:00.000Z">2026年8月05日</time><span>19分钟阅读</span></p></div></div><article class="popover-hint"><div class="markdown-preview-view markdown-rendered"><h1 id="java-43---spring-ai-学习路线">Java 43 - Spring AI 学习路线<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#java-43---spring-ai-学习路线" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<blockquote>
+<p>Spring AI 是 Spring 生态推出的 AI 应用开发框架，把 Spring 的设计理念与最佳实践带入 AI 领域，为 Java 开发者提供统一的 AI 模型访问 API，支持对话、Embedding、多模态、RAG、工具调用与智能体开发。本文梳理从 Spring Boot 基础到求职备战的完整学习路线，共 7 个阶段。</p>
+</blockquote>
+<h2 id="开篇介绍">开篇介绍<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#开篇介绍" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Spring AI 是 Spring 生态系统推出的 AI 应用开发框架，它把 Spring 的设计理念和最佳实践带入了 AI 领域。作为 Java 开发者最熟悉的框架体系，Spring AI 让 Java 程序员能够<strong>用熟悉的方式开发 AI 应用</strong>，无需学习全新的技术栈。</p>
+<h3 id="为什么学-spring-ai">为什么学 Spring AI<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#为什么学-spring-ai" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li><strong>上手成本低</strong>：设计理念和 API 风格与 Spring Boot 一脉相承，熟悉 Spring Boot 即可顺畅学习</li>
+<li><strong>统一 API</strong>：一套 API 访问各种 AI 模型（OpenAI、Anthropic、Azure、Google、DeepSeek、阿里云等），支持对话、Embedding、多模态图像生成等多种功能</li>
+<li><strong>高级特性完善</strong>：提供 RAG、工具调用（Function Calling）、结构化输出、观测性等开箱即用的能力</li>
+<li><strong>应用场景广泛</strong>：企业智能客服、文档问答系统、代码助手、内容创作工具等</li>
+<li><strong>国产化支持</strong>：国内大厂推出 Spring AI Alibaba，可轻松对接阿里云大模型，提供完整 AI 应用开发解决方案和清晰的中文文档</li>
+<li><strong>就业竞争力</strong>：同时掌握 Java 后端与 AI 开发，在求职上更有竞争力</li>
+</ol>
+<h3 id="学习前提">学习前提<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习前提" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li><strong>Java 基础</strong>：熟练掌握 Java 编程（Spring AI 要求 Java 17+，建议使用 Java 21）</li>
+<li><strong>Spring Boot 基础</strong>：项目创建、自动配置、依赖注入、RESTful API 开发（必学）</li>
+<li><strong>Spring 设计理念</strong>：熟悉 IoC、AOP 等思想，便于理解 Advisors 等机制</li>
+<li><strong>AI 基础概念</strong>：了解大模型、Prompt、Token 等基本概念（建议）</li>
+</ol>
+<h3 id="就业方向">就业方向<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#就业方向" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>Java AI 应用开发工程师：使用 Spring AI 开发各类 AI 应用，主要就业方向</li>
+<li>全栈 AI 工程师：能处理前端、后端、数据库等全栈工作</li>
+<li>企业 AI 架构师：负责企业 AI 系统的架构设计和技术选型</li>
+<li>AI 产品经理：理解 Spring AI 的能力边界，更好地规划产品功能</li>
+</ol>
+<h2 id="整体学习建议">整体学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#整体学习建议" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ol>
+<li><strong>先打基础</strong>：先回顾 Spring Boot 基础，熟悉 Spring 的设计理念和开发方式</li>
+<li><strong>理论结合实践</strong>：跟着官方文档动手实践，边学路线理论、边做项目实战，效果最佳</li>
+<li><strong>重点攻克 RAG</strong>：RAG 是 Spring AI 最重要的应用场景，投入最多精力</li>
+<li><strong>善用 AI 工具</strong>：辅助理解概念、调试代码</li>
+<li><strong>持续关注生态</strong>：Spring AI 生态发展迅速，API 和概念都可能变化，多关注官方文档与社区动态</li>
+</ol>
+<h2 id="阶段总览">阶段总览<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段总览" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>阶段</th><th>内容</th><th>建议时长</th></tr></thead><tbody><tr><td>阶段 1</td><td>Spring Boot 基础（回顾）</td><td>3-15 天</td></tr><tr><td>阶段 2</td><td>Spring AI 基础</td><td>10-30 天</td></tr><tr><td>阶段 3</td><td>RAG 开发</td><td>5-15 天</td></tr><tr><td>阶段 4</td><td>高级特性</td><td>5-15 天</td></tr><tr><td>阶段 5</td><td>Spring AI Alibaba</td><td>5-15 天</td></tr><tr><td>阶段 6</td><td>项目实战</td><td>30-45 天</td></tr><tr><td>阶段 7</td><td>求职备战</td><td>面试前突击</td></tr></tbody></table></div>
+<hr/>
+<h2 id="阶段-1spring-boot-基础回顾3-15-天">阶段 1：Spring Boot 基础（回顾，3-15 天）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-1spring-boot-基础回顾3-15-天" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="学习目标">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>本阶段按需学习，主要回顾 Spring Boot 基础知识，为 Spring AI 学习打下基础。</p>
+<h3 id="知识点">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>Spring Boot 基础（必学）</strong></p>
+<ul>
+<li>Spring Boot 项目创建</li>
+<li>自动配置原理</li>
+<li>依赖注入</li>
+<li>配置文件</li>
+<li>RESTful API 开发</li>
+</ul>
+<p><strong>Java 基础（必学）</strong></p>
+<ul>
+<li>Java 17+ 特性</li>
+<li>Lambda 表达式</li>
+<li>Stream API</li>
+<li>Record 类型</li>
+</ul>
+<h3 id="学习建议">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>Spring AI 要求 Java 17 或更高版本，建议使用 Java 21；如果 Java 版本较低，需要先升级</li>
+<li>已熟悉 Spring Boot 可快速过一遍本阶段；Spring Boot 新手建议先系统学习 Spring Boot 基础</li>
+</ol>
+<h3 id="学习资源">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><a href="https://docs.spring.io/spring-boot/" class="external external-link">Spring Boot 官方文档<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：权威参考</li>
+<li>网上的 Spring Boot 入门教程与学习路线均可作为补充</li>
+</ul>
+<hr/>
+<h2 id="阶段-2spring-ai-基础10-30-天">阶段 2：Spring AI 基础（10-30 天）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-2spring-ai-基础10-30-天" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="学习目标-1">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标-1" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>掌握 Spring AI 的核心概念和基本用法，能够开发简单的 AI 应用。</p>
+<h3 id="知识点-1">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-1" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>Spring AI 核心概念（必学）</strong></p>
+<ul>
+<li>Spring AI 架构</li>
+<li>模型抽象（Model API）</li>
+<li>ChatClient API</li>
+<li>Advisors 模式</li>
+<li>自动配置</li>
+</ul>
+<p><strong>Chat Model（必学）</strong></p>
+<ul>
+<li>ChatModel 接口</li>
+<li>模型配置</li>
+<li>同步调用 vs 流式调用</li>
+<li>多模态支持</li>
+</ul>
+<p><strong>Prompt 管理（必学）</strong></p>
+<ul>
+<li>Prompt Template</li>
+<li>系统消息（System Message）</li>
+<li>用户消息（User Message）</li>
+<li>消息历史管理</li>
+</ul>
+<p><strong>结构化输出（必学）</strong></p>
+<ul>
+<li>BeanOutputConverter</li>
+<li>MapOutputConverter</li>
+<li>JSON Schema</li>
+</ul>
+<h3 id="学习建议-1">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-1" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>Spring AI 的核心是 ChatClient API，它提供流畅的 API 与 AI 模型交互。ChatClient 的设计理念类似 WebClient 和 RestClient，熟悉这些 API 的话学习成本很低：</li>
+</ol>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="java" data-theme="github-light github-dark"><code data-language="java" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">@</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">RestController</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">class</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="property"> MyController</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation"> {</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">    private</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword"> final</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="keyword"> ChatClient chatClient;</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">    public</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function"> MyController</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">(ChatClient.Builder </span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;" data-token-type="important">chatClientBuilder</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">) {</span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value">        this</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">.chatClient </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="normal"> chatClientBuilder.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">build</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">();</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">    }</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">    @</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">GetMapping</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">&quot;/ai&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">)</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="keyword">    String </span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">generation</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">(String </span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;" data-token-type="important">userInput</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">) {</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">        return</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> this</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">.chatClient.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">prompt</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">()</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">            .</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">user</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">(userInput)</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">            .</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">call</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">()</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">            .</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">content</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">();</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">    }</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">}</span></span></code></pre></figure>
+<ol start="2">
+<li>Spring AI 支持多种 AI 模型提供商（OpenAI、Anthropic、Azure、Google、DeepSeek 等），通过统一 API 可以轻松切换模型，无需修改业务代码</li>
+<li>Advisors 是 Spring AI 的重要概念，类似 AOP 切面或拦截器，可在调用 AI 前后执行额外逻辑（添加上下文、过滤输出、记录日志等），一定要理解其工作原理和应用场景</li>
+<li>建议从官方文档开始学习，文档非常详细且提供了大量示例，跟着文档动手实践效果最好</li>
+<li>Spring AI Alibaba 是国内团队维护的版本，学完 Spring AI 后也建议学习一下，了解国产模型的快速集成方法</li>
+</ol>
+<h3 id="学习资源-1">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-1" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>⭐ <a href="https://docs.spring.io/spring-ai/reference/" class="external external-link">Spring AI 官方文档<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：最权威的学习资源</li>
+<li>⭐ <a href="https://java2ai.com/" class="external external-link">Spring AI Alibaba 官方文档<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：国内开发者友好</li>
+<li><a href="https://github.com/spring-projects/spring-ai" class="external external-link">Spring AI GitHub<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：源代码</li>
+<li><a href="https://github.com/spring-ai-community/awesome-spring-ai" class="external external-link">Awesome Spring AI<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：社区资源大全</li>
+<li><a href="https://www.bilibili.com/video/BV1xkJxzEEmD" class="external external-link">鱼皮的 Spring AI 特性讲解（B 站）<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：快速入门视频</li>
+<li><a href="https://www.bilibili.com/video/BV1i9Z8YhEja/" class="external external-link">鱼皮的保姆级 AI 指南（B 站）<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：程序员必知必会的 AI 概念与工具</li>
+</ul>
+<hr/>
+<h2 id="阶段-3rag-开发5-15-天">阶段 3：RAG 开发（5-15 天）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-3rag-开发5-15-天" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>RAG（Retrieval-Augmented Generation，检索增强生成）是一种结合信息检索技术和 AI 内容生成的混合架构，可以解决大模型的知识时效性限制和幻觉问题。简单来说，RAG 就像给 AI 配了一个”小抄本”，让 AI 回答问题前先查一查特定的知识库来获取知识，确保回答基于真实资料而不是凭空想象。</p>
+<h3 id="学习目标-2">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标-2" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>掌握使用 Spring AI 开发 RAG 应用，能够实现文档问答等功能。</p>
+<h3 id="知识点-2">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-2" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>文档处理（ETL）（必学）</strong></p>
+<ul>
+<li>DocumentReader（文档读取器）</li>
+<li>DocumentTransformer（文档转换器）</li>
+<li>DocumentWriter（文档写入器）</li>
+<li>文档切割策略</li>
+</ul>
+<p><strong>向量存储（必学）</strong></p>
+<ul>
+<li>VectorStore 接口</li>
+<li>向量数据库集成（PGVector、Redis、Milvus 等）</li>
+<li>相似度搜索</li>
+<li>元数据过滤</li>
+</ul>
+<p><strong>检索增强（必学）</strong></p>
+<ul>
+<li>QuestionAnswerAdvisor</li>
+<li>RetrievalAugmentationAdvisor</li>
+<li>DocumentRetriever</li>
+<li>查询转换和扩展</li>
+</ul>
+<p><strong>高级特性（建议学）</strong></p>
+<ul>
+<li>查询重写</li>
+<li>查询翻译</li>
+<li>多查询扩展</li>
+<li>重排序</li>
+</ul>
+<h3 id="学习建议-2">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-2" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>RAG 是 Spring AI 最重要的应用场景，要深入理解四大核心步骤：<strong>文档处理、向量化、检索、生成</strong>，Spring AI 为每个步骤都提供了完善的组件支持</li>
+<li>文档处理（ETL）是 RAG 的基础。Spring AI 提供多种 DocumentReader（如 PDFReader、MarkdownReader、JsonReader 等）处理各种格式的文档；要掌握文档切割策略，合理的切割能显著提升 RAG 效果</li>
+<li>向量存储的选择很重要：开发阶段可使用 SimpleVectorStore（内存存储），生产环境建议使用 PGVector（PostgreSQL 扩展）或专业向量数据库。PGVector 的优势是可以复用现有 PostgreSQL，成本低、维护简单</li>
+<li>Advisors 是 Spring AI 实现 RAG 的核心机制：QuestionAnswerAdvisor 简单易用，RetrievalAugmentationAdvisor 更加灵活，要理解两者的区别和应用场景，掌握配置方法</li>
+</ol>
+<h3 id="学习资源-2">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-2" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><a href="https://docs.spring.io/spring-ai/reference/api/retrieval-augmented-generation.html" class="external external-link">Spring AI RAG 官方文档<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：官方教程</li>
+<li><a href="https://docs.spring.io/spring-ai/reference/api/etl-pipeline.html" class="external external-link">Spring AI ETL 官方文档<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：文档处理</li>
+</ul>
+<hr/>
+<h2 id="阶段-4高级特性5-15-天">阶段 4：高级特性（5-15 天）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-4高级特性5-15-天" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="学习目标-3">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标-3" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>掌握 Spring AI 的高级特性，能够开发更复杂的 AI 应用。</p>
+<h3 id="知识点-3">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-3" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>工具调用（Function Calling）（必学）</strong></p>
+<ul>
+<li>工具定义</li>
+<li>工具注册</li>
+<li>工具执行</li>
+<li>工具链</li>
+</ul>
+<p><strong>Chat Memory（必学）</strong></p>
+<ul>
+<li>对话记忆管理</li>
+<li>MessageChatMemoryAdvisor</li>
+<li>多用户会话隔离</li>
+<li>持久化存储</li>
+</ul>
+<p><strong>多模态（建议学）</strong></p>
+<ul>
+<li>图像理解</li>
+<li>音频处理</li>
+<li>文档处理</li>
+<li>多模态组合</li>
+</ul>
+<p><strong>观测性（必学）</strong></p>
+<ul>
+<li>日志记录</li>
+<li>指标监控</li>
+<li>链路追踪</li>
+<li>调试工具</li>
+</ul>
+<p><strong>安全性（必学）</strong></p>
+<ul>
+<li>输入验证</li>
+<li>输出过滤</li>
+<li>提示词注入防护</li>
+<li>内容审核</li>
+</ul>
+<h3 id="学习建议-3">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-3" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>工具调用（Function Calling）是让 AI 能够执行实际任务的关键：通过工具调用，AI 可以查询数据库、调用 API、执行代码等。要掌握如何定义工具、如何让 AI 正确调用工具、如何处理工具返回结果（例如让 AI 调用联网搜索工具获取最新知识）</li>
+<li>Chat Memory 让 AI 能够记住历史对话、实现多轮对话。Spring AI 提供了 MessageChatMemoryAdvisor 轻松实现对话记忆，要理解如何配置记忆大小、如何实现多用户隔离、如何持久化存储</li>
+<li>可观测性在生产环境非常重要。Spring AI 提供完善的观测性支持（日志、指标、链路追踪等），要学会使用这些工具调试和监控 AI 应用；可参考 <a href="https://www.bilibili.com/video/BV1QPYDztEtW/" class="external external-link">Prometheus + Grafana + ARMS 大厂监控视频教程（B 站）<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li>AI 应用可能面临提示词注入攻击、输出不当内容等安全问题，要学习如何防范这些问题，保证应用安全</li>
+</ol>
+<h3 id="学习资源-3">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-3" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><a href="https://docs.spring.io/spring-ai/reference/api/chatclient.html#_chat_memory" class="external external-link">Spring AI Chat Memory 文档<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：对话记忆</li>
+<li><a href="https://docs.spring.io/spring-ai/reference/observability/index.html" class="external external-link">Spring AI 观测性文档<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：监控调试</li>
+</ul>
+<hr/>
+<h2 id="阶段-5spring-ai-alibaba5-15-天">阶段 5：Spring AI Alibaba（5-15 天）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-5spring-ai-alibaba5-15-天" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Spring AI Alibaba 是阿里巴巴团队维护的 Spring AI 扩展，为国内开发者提供更好的支持，不仅集成了国产大模型，还提供了很多额外功能。</p>
+<h3 id="学习目标-4">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标-4" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>掌握 Spring AI Alibaba 的使用，能够集成国产大模型和云服务。</p>
+<h3 id="知识点-4">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-4" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>Spring AI Alibaba 基础（必学）</strong></p>
+<ul>
+<li>Spring AI Alibaba 概述</li>
+<li>和 Spring AI 的关系</li>
+<li>阿里云模型集成</li>
+<li>配置和使用</li>
+</ul>
+<p><strong>阿里云服务集成（必学）</strong></p>
+<ul>
+<li>通义千问模型</li>
+<li>文心一言模型</li>
+<li>阿里云 Embedding 模型</li>
+<li>阿里云向量存储</li>
+</ul>
+<p><strong>扩展功能（建议学）</strong></p>
+<ul>
+<li>文档读取器扩展</li>
+<li>向量存储扩展</li>
+<li>工具集成</li>
+</ul>
+<h3 id="学习建议-4">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-4" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>阿里云百炼平台提供了丰富的 AI 服务，包括大模型、Embedding 模型、向量存储、知识库等，通过 Spring AI Alibaba 可以轻松使用这些服务</li>
+<li>Spring AI Alibaba 提供了很多扩展的 DocumentReader，如加载飞书文档、B 站视频字幕、GitHub 文档等，非常实用</li>
+</ol>
+<h3 id="学习资源-4">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-4" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>⭐ <a href="https://java2ai.com/" class="external external-link">Spring AI Alibaba 官方文档<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：官方文档</li>
+<li><a href="https://bailian.console.aliyun.com/" class="external external-link">阿里云百炼平台<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：云服务平台</li>
+</ul>
+<hr/>
+<h2 id="阶段-6项目实战30-45-天">阶段 6：项目实战（30-45 天）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-6项目实战30-45-天" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="学习目标-5">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标-5" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>通过完整的项目实践，综合运用所学知识，积累 Spring AI 开发经验。</p>
+<h3 id="学习建议-5">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-5" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>开发一个完整的 Spring AI 应用，推荐企业真实项目方向：企业知识库问答、智能客服系统、代码助手、文档分析工具、学习辅导系统</li>
+<li>项目要包含完整功能：用户界面、模型集成、RAG 实现、工具调用、对话记忆、日志监控。建议使用 Spring Boot + Spring AI + Vue/React 的技术栈</li>
+<li>关注项目的完成度和质量：一个简单但完整的项目比一个复杂但半成品的项目更有价值。要做好文档、写好 README、提供运行示例</li>
+</ol>
+<h3 id="项目推荐">项目推荐<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#项目推荐" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>Spring AI 技术栈：</strong></p>
+<ul>
+<li>AI 超级智能体项目：Spring Boot 3 + Spring AI，实战 AI 应用 + 拥有自主规划能力的超级智能体，涵盖 RAG、Tool Calling、MCP（模型上下文协议）、AI 智能体等核心技术</li>
+<li>AI 恋爱大师类应用：基于 Spring Boot 3 + Spring AI 的完整业务应用，涵盖自定义拦截器、上下文持久化、结构化输出、大模型接入与本地部署、Prompt 工程与多模态、向量数据库、AI 服务化与 Serverless 部署</li>
+</ul>
+<p><strong>其他 AI 技术栈（可作参考）：</strong></p>
+<ul>
+<li>LangChain4j + LangGraph4j：AI 智能体、工作流编排</li>
+<li>LangChain4j + SSE 实时推送 + RxJava 响应式编程：AI 应用开发</li>
+<li>LangChain4j + AI 图表生成 + 异步化 + 线程池 + RabbitMQ：智能 BI 类应用</li>
+</ul>
+<p><strong>其他项目方向：</strong></p>
+<ul>
+<li>企业知识库问答系统</li>
+<li>智能客服机器人</li>
+<li>技术文档助手</li>
+<li>代码生成和审查工具</li>
+</ul>
+<hr/>
+<h2 id="阶段-7求职备战">阶段 7：求职备战<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-7求职备战" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="学习目标-6">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标-6" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>熟练掌握 Spring AI 常见面试题，准备好简历和项目经历，顺利通过面试。</p>
+<h3 id="学习建议-6">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-6" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li><strong>准备 AI 项目</strong>：建议在简历上添加至少 1 个 AI 项目经历，最好是完整的、已经上线的 AI 应用</li>
+<li><strong>准备简历</strong>：写清楚项目职责、技术亮点与业务成果，突出 Spring AI 相关技术栈</li>
+<li><strong>多刷面试题</strong>：Spring AI 的面试题主要包括框架使用、RAG 技术、工具调用等方向，围绕这些方向系统复习</li>
+</ol>
+<h3 id="经典面试题">经典面试题<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#经典面试题" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>基础概念：</strong></p>
+<ol>
+<li>什么是 Spring AI？它解决了什么问题？</li>
+<li>Spring AI 和 LangChain 有什么区别？</li>
+<li>ChatClient API 的设计理念是什么？</li>
+<li>什么是 Advisors？有什么作用？</li>
+<li>Spring AI 支持哪些 AI 模型？</li>
+</ol>
+<p><strong>RAG 技术：</strong></p>
+<ol>
+<li>Spring AI 如何实现 RAG？</li>
+<li>QuestionAnswerAdvisor 和 RetrievalAugmentationAdvisor 有什么区别？</li>
+<li>如何使用 Spring AI 处理文档？</li>
+<li>如何集成向量数据库？</li>
+<li>如何优化 RAG 检索效果？</li>
+</ol>
+<p><strong>高级特性：</strong></p>
+<ol>
+<li>Spring AI 如何实现工具调用？</li>
+<li>如何实现对话记忆？</li>
+<li>Spring AI 如何支持多模态？</li>
+<li>如何监控 Spring AI 应用？</li>
+</ol>
+<p><strong>项目经验：</strong></p>
+<ol>
+<li>你开发过哪些 Spring AI 应用？</li>
+<li>项目中遇到过什么技术难点？</li>
+<li>Spring AI 和 Spring AI Alibaba 有什么区别？</li>
+<li>如何部署 Spring AI 应用？</li>
+</ol>
+<hr/>
+<h2 id="尾声">尾声<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#尾声" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Spring AI 是 Java 开发者的首选 AI 框架，掌握 Spring AI 将让你在 AI 浪潮中占据有利位置。从基础概念到高级特性，从简单对话到 RAG 应用，从工具调用到多模态处理，Spring AI 提供了完整的解决方案。</p>
+<p>学习 Spring AI 要先打好 Spring Boot 基础，熟悉 Spring 的设计理念和开发方式；深入学习 Spring AI 的核心概念和 API，掌握 ChatClient、Advisors 等核心组件；重点学习 RAG 开发，这是最重要的应用场景；掌握高级特性，如工具调用、对话记忆、多模态等；了解 Spring AI Alibaba，集成国产大模型和云服务；最后通过完整的项目实践，积累开发经验。</p>
+<p>Spring AI 和 Spring AI Alibaba 的生态系统在不断发展，新功能和集成不断加入，要持续学习、多关注官方文档和社区动态。学习时建议多看示例项目，多动手实践。</p></div></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="toc"><button type="button" class="toc-header" aria-controls="toc-293" aria-expanded="true"><h3>目录</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-0" class="toc-content overflow"><li class="depth-0"><a href="#java-43---spring-ai-学习路线" data-for="java-43---spring-ai-学习路线">Java 43 - Spring AI 学习路线</a></li><li class="depth-1"><a href="#开篇介绍" data-for="开篇介绍">开篇介绍</a></li><li class="depth-2"><a href="#为什么学-spring-ai" data-for="为什么学-spring-ai">为什么学 Spring AI</a></li><li class="depth-2"><a href="#学习前提" data-for="学习前提">学习前提</a></li><li class="depth-2"><a href="#就业方向" data-for="就业方向">就业方向</a></li><li class="depth-1"><a href="#整体学习建议" data-for="整体学习建议">整体学习建议</a></li><li class="depth-1"><a href="#阶段总览" data-for="阶段总览">阶段总览</a></li><li class="depth-1"><a href="#阶段-1spring-boot-基础回顾3-15-天" data-for="阶段-1spring-boot-基础回顾3-15-天">阶段 1：Spring Boot 基础（回顾，3-15 天）</a></li><li class="depth-2"><a href="#学习目标" data-for="学习目标">学习目标</a></li><li class="depth-2"><a href="#知识点" data-for="知识点">知识点</a></li><li class="depth-2"><a href="#学习建议" data-for="学习建议">学习建议</a></li><li class="depth-2"><a href="#学习资源" data-for="学习资源">学习资源</a></li><li class="depth-1"><a href="#阶段-2spring-ai-基础10-30-天" data-for="阶段-2spring-ai-基础10-30-天">阶段 2：Spring AI 基础（10-30 天）</a></li><li class="depth-2"><a href="#学习目标-1" data-for="学习目标-1">学习目标</a></li><li class="depth-2"><a href="#知识点-1" data-for="知识点-1">知识点</a></li><li class="depth-2"><a href="#学习建议-1" data-for="学习建议-1">学习建议</a></li><li class="depth-2"><a href="#学习资源-1" data-for="学习资源-1">学习资源</a></li><li class="depth-1"><a href="#阶段-3rag-开发5-15-天" data-for="阶段-3rag-开发5-15-天">阶段 3：RAG 开发（5-15 天）</a></li><li class="depth-2"><a href="#学习目标-2" data-for="学习目标-2">学习目标</a></li><li class="depth-2"><a href="#知识点-2" data-for="知识点-2">知识点</a></li><li class="depth-2"><a href="#学习建议-2" data-for="学习建议-2">学习建议</a></li><li class="depth-2"><a href="#学习资源-2" data-for="学习资源-2">学习资源</a></li><li class="depth-1"><a href="#阶段-4高级特性5-15-天" data-for="阶段-4高级特性5-15-天">阶段 4：高级特性（5-15 天）</a></li><li class="depth-2"><a href="#学习目标-3" data-for="学习目标-3">学习目标</a></li><li class="depth-2"><a href="#知识点-3" data-for="知识点-3">知识点</a></li><li class="depth-2"><a href="#学习建议-3" data-for="学习建议-3">学习建议</a></li><li class="depth-2"><a href="#学习资源-3" data-for="学习资源-3">学习资源</a></li><li class="depth-1"><a href="#阶段-5spring-ai-alibaba5-15-天" data-for="阶段-5spring-ai-alibaba5-15-天">阶段 5：Spring AI Alibaba（5-15 天）</a></li><li class="depth-2"><a href="#学习目标-4" data-for="学习目标-4">学习目标</a></li><li class="depth-2"><a href="#知识点-4" data-for="知识点-4">知识点</a></li><li class="depth-2"><a href="#学习建议-4" data-for="学习建议-4">学习建议</a></li><li class="depth-2"><a href="#学习资源-4" data-for="学习资源-4">学习资源</a></li><li class="depth-1"><a href="#阶段-6项目实战30-45-天" data-for="阶段-6项目实战30-45-天">阶段 6：项目实战（30-45 天）</a></li><li class="depth-2"><a href="#学习目标-5" data-for="学习目标-5">学习目标</a></li><li class="depth-2"><a href="#学习建议-5" data-for="学习建议-5">学习建议</a></li><li class="depth-2"><a href="#项目推荐" data-for="项目推荐">项目推荐</a></li><li class="depth-1"><a href="#阶段-7求职备战" data-for="阶段-7求职备战">阶段 7：求职备战</a></li><li class="depth-2"><a href="#学习目标-6" data-for="学习目标-6">学习目标</a></li><li class="depth-2"><a href="#学习建议-6" data-for="学习建议-6">学习建议</a></li><li class="depth-2"><a href="#经典面试题" data-for="经典面试题">经典面试题</a></li><li class="depth-1"><a href="#尾声" data-for="尾声">尾声</a></li><li class="overflow-end"></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v5.0.0</a> © 2026</p><ul><li><a href="https://github.com/xyf1111">GitHub</a></li></ul></footer></div></div></body><script src="../../static/resource-after-e13fffa1.js" type="application/javascript" data-persist="true"></script><script src="../../static/resource-after-8b336f9a.js" type="application/javascript" data-persist="true"></script><script src="../../static/resource-after-baba652b.js" type="application/javascript" data-persist="true"></script><script src="../../static/resource-after-5eb75950.js" type="module" data-persist="true"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript" data-persist="true"></script><script src="../../postscript-17915799.js" type="module" data-persist="true"></script></html>

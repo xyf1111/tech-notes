@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr"><head><title>MySQL 15 - 学习路线 · 后端开发笔记</title><meta charset="utf-8"/><link rel="preload" href="../../index-b754f97d.css" as="style"/><link rel="preload" href="../../prescript-2bfc6315.js" as="script"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="技术知识库"/><meta property="og:title" content="MySQL 15 - 学习路线 · 后端开发笔记"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="MySQL 15 - 学习路线 · 后端开发笔记"/><meta name="twitter:description" content="MySQL 15 - 学习路线 数据库是后端开发的必备核心技能。本路线从零基础到精通，分 5 个阶段，约 1~2 个月可完成入门到实战。 开篇介绍 数据库就是存放数据的库，负责存储、管理和检索数据。我们平时看到的网站数据，基本都是存放在数据库中，用户需要时再通过后端程序取出。 因此，数据库是后端开发的必备技能，也是核心技能！ 无论学什么语言的后端，数据库都要好好学，也是面试的重中之重。 数据库分为 关系型数据库 和 非关系型数据库：关系型数据库适合存储相互关联的数据（如学生、班级的一对多关系），典型代表是 MySQL；非关系型数据库主要用于存储零散、相互独立的数据，典型代表是 Redis。 M..."/><meta property="og:description" content="MySQL 15 - 学习路线 数据库是后端开发的必备核心技能。本路线从零基础到精通，分 5 个阶段，约 1~2 个月可完成入门到实战。 开篇介绍 数据库就是存放数据的库，负责存储、管理和检索数据。我们平时看到的网站数据，基本都是存放在数据库中，用户需要时再通过后端程序取出。 因此，数据库是后端开发的必备技能，也是核心技能！ 无论学什么语言的后端，数据库都要好好学，也是面试的重中之重。 数据库分为 关系型数据库 和 非关系型数据库：关系型数据库适合存储相互关联的数据（如学生、班级的一对多关系），典型代表是 MySQL；非关系型数据库主要用于存储零散、相互独立的数据，典型代表是 Redis。 M..."/><meta property="og:image:alt" content="MySQL 15 - 学习路线 数据库是后端开发的必备核心技能。本路线从零基础到精通，分 5 个阶段，约 1~2 个月可完成入门到实战。 开篇介绍 数据库就是存放数据的库，负责存储、管理和检索数据。我们平时看到的网站数据，基本都是存放在数据库中，用户需要时再通过后端程序取出。 因此，数据库是后端开发的必备技能，也是核心技能！ 无论学什么语言的后端，数据库都要好好学，也是面试的重中之重。 数据库分为 关系型数据库 和 非关系型数据库：关系型数据库适合存储相互关联的数据（如学生、班级的一对多关系），典型代表是 MySQL；非关系型数据库主要用于存储零散、相互独立的数据，典型代表是 Redis。 M..."/><meta property="twitter:domain" content="xyf1111.github.io/tech-notes"/><meta property="og:url" content="https://xyf1111.github.io/tech-notes/database/mysql/mysql-15---学习路线"/><meta property="twitter:url" content="https://xyf1111.github.io/tech-notes/database/mysql/mysql-15---学习路线"/><link rel="icon" href="../../static/icon.png"/><meta name="description" content="MySQL 15 - 学习路线 数据库是后端开发的必备核心技能。本路线从零基础到精通，分 5 个阶段，约 1~2 个月可完成入门到实战。 开篇介绍 数据库就是存放数据的库，负责存储、管理和检索数据。我们平时看到的网站数据，基本都是存放在数据库中，用户需要时再通过后端程序取出。 因此，数据库是后端开发的必备技能，也是核心技能！ 无论学什么语言的后端，数据库都要好好学，也是面试的重中之重。 数据库分为 关系型数据库 和 非关系型数据库：关系型数据库适合存储相互关联的数据（如学生、班级的一对多关系），典型代表是 MySQL；非关系型数据库主要用于存储零散、相互独立的数据，典型代表是 Redis。 M..."/><meta name="generator" content="Quartz"/><link href="../../index-b754f97d.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-735924e0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-589c1cea.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-bbc3f7c0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-2911f5d1.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-e427079e.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-53b25b2b.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-c93c6a44.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-8a06014f.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-77d6a441.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-6ee21cee.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-1ea6ad18.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-788c9ca3.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-642859cd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-4abc06bd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-274a3dfe.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-94cb6c84.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-58d5ff56.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-7262b5a7.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../static/resource-style-a5c806d2.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../static/resource-style-6bd36952.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" data-persist="true"/><script src="../../prescript-2bfc6315.js" type="application/javascript" data-persist="true"></script><script type="application/javascript" data-persist="true">const fetchData = fetch("../../static/contentIndex.json").then(data => data.json())</script><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://xyf1111.github.io/tech-notes/database/mysql/mysql-15---学习路线-og-image.webp"/><meta property="og:image:url" content="https://xyf1111.github.io/tech-notes/database/mysql/mysql-15---学习路线-og-image.webp"/><meta name="twitter:image" content="https://xyf1111.github.io/tech-notes/database/mysql/mysql-15---学习路线-og-image.webp"/><meta property="og:image:type" content="image/webp"/></head><body data-slug="database/mysql/mysql-15---学习路线" data-basepath="/tech-notes"><div id="quartz-root" class="page" data-frame="default"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="../..">技术知识库</a></h2><div class="mobile-only"><div class="spacer"></div></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 0.5rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button" aria-label="搜索" aria-expanded="false"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>搜索</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="搜索内容..." placeholder="搜索内容..."/><div class="search-layout" data-preview="true" data-field-priority="[&quot;title&quot;,&quot;content&quot;,&quot;tags&quot;]"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode" aria-label="暗色模式"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="暗色模式"><title>暗色模式</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="亮色模式"><title>亮色模式</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode" aria-label="阅读模式"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="阅读模式"><title>阅读模式</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer nav-files-container" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a2, b2) => {\n    if (!a2.isFolder &amp;&amp; !b2.isFolder || a2.isFolder &amp;&amp; b2.isFolder) {\n      return (a2.displayName || \&quot;\&quot;).localeCompare(b2.displayName || \&quot;\&quot;, void 0, {\n        numeric: true,\n        sensitivity: \&quot;base\&quot;\n      });\n    }\n    if (!a2.isFolder &amp;&amp; b2.isFolder) {\n      return 1;\n    }\n    return -1;\n  }&quot;,&quot;filterFn&quot;:&quot;(node) => node.slugSegment !== \&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;(node) => {\n    return node;\n  }&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-92" aria-label="探索"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>探索</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-92" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#" class="nav-file-title tree-item-self"></a></li></template><template id="template-folder"><li><div class="folder-container nav-folder-title tree-item-self"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon nav-folder-collapse-indicator collapse-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content tree-item-children"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../database/">database</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../database/mysql/">mysql</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>MySQL 15 - 学习路线</a></div></nav><h1 class="article-title">MySQL 15 - 学习路线</h1><details class="note-properties metadata-container" open data-collapsed="false"><summary class="note-properties-header"><span class="note-properties-title">Properties</span><span class="note-properties-count">1</span></summary><table class="note-properties-table"><tbody><tr class="note-properties-row metadata-property"><td class="note-properties-key metadata-property-key">tags</td><td class="note-properties-value metadata-property-value"><span class="note-properties-tags"><a href="../../tags/mysql" class="internal internal-link tag-link">mysql</a><span class="note-properties-separator">, </span><a href="../../tags/learning" class="internal internal-link tag-link">learning</a><span class="note-properties-separator">, </span><a href="../../tags/roadmap" class="internal internal-link tag-link">roadmap</a></span></td></tr></tbody></table></details><p show-comma="true" class="content-meta"><time datetime="2026-07-30T16:00:00.000Z">2026年7月31日</time><span>27分钟阅读</span></p></div></div><article class="popover-hint"><div class="markdown-preview-view markdown-rendered"><h1 id="mysql-15---学习路线">MySQL 15 - 学习路线<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#mysql-15---学习路线" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<blockquote>
+<p>数据库是后端开发的必备核心技能。本路线从零基础到精通，分 5 个阶段，约 1~2 个月可完成入门到实战。</p>
+</blockquote>
+<h2 id="开篇介绍">开篇介绍<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#开篇介绍" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>数据库就是存放数据的库，负责存储、管理和检索数据。我们平时看到的网站数据，基本都是存放在数据库中，用户需要时再通过后端程序取出。</p>
+<p><strong>因此，数据库是后端开发的必备技能，也是核心技能！</strong> 无论学什么语言的后端，数据库都要好好学，也是面试的重中之重。</p>
+<p>数据库分为 <strong>关系型数据库</strong> 和 <strong>非关系型数据库</strong>：关系型数据库适合存储相互关联的数据（如学生、班级的一对多关系），典型代表是 MySQL；非关系型数据库主要用于存储零散、相互独立的数据，典型代表是 Redis。</p>
+<p><strong>MySQL 是什么？</strong> MySQL 是目前最流行的开源关系型数据库管理系统之一，由瑞典 MySQL AB 公司开发，后被 Oracle 公司收购。它以高性能、高可靠性、易于使用著称，广泛应用于互联网 Web 应用、企业级应用等场景，从小型个人博客到大型电商平台，都是后端数据存储的首选方案。</p>
+<p><strong>为什么要学 MySQL？</strong> 无论是传统后端开发，还是 AI 应用开发，都离不开数据的存储和管理。掌握 MySQL，不仅能胜任后端开发工作，还能为数据分析、大数据开发、AI 工程等方向打下基础。而且 MySQL 学习成本相对较低、应用范围极广，性价比非常高。</p>
+<blockquote>
+<p>注意：MySQL 是一种数据库管理系统，但不能说数据库就是 MySQL！</p>
+</blockquote>
+<p>⭐ 推荐观看<a href="https://www.bilibili.com/video/BV1iJSLBbEyD/" class="external external-link">数据库导学视频<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>，快速了解 MySQL 学习路线和关键知识。</p>
+<h2 id="就业方向">就业方向<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#就业方向" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>数据库相关岗位不少，但每个岗位要学的都不止数据库，往往还需要行业特定技能。</p>
+<ol>
+<li><strong>数据库管理员（DBA）</strong>：负责数据库的管理维护，包括备份恢复、容量规划、性能优化等。小公司一般没有专职岗位，多由运维兼任。</li>
+<li><strong>数据库开发工程师</strong>：与后端开发有交集，擅长编写复杂业务 SQL，要求 SQL 编写能力非常强。</li>
+<li><strong>数据分析师</strong>：从数据库（数据仓库）提取数据并挖掘价值，主要工作是写 SQL 查库，需要一定数学和业务理解能力，相对较卷。</li>
+<li><strong>大数据开发工程师</strong>：与数据库开发类似，但面对的数据量更大、数据库更多样，性能和存储问题更复杂。</li>
+<li><strong>AI 数据工程师</strong>：负责数据的采集、清洗、存储和管理，为 AI 模型提供高质量数据，需掌握数据库 + 数据处理 + AI 知识。</li>
+</ol>
+<p>此外还有数据科学家、数据挖掘工程师、云数据库工程师等岗位，坑位相对更少、要求更高。</p>
+<h2 id="整体学习建议">整体学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#整体学习建议" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ol>
+<li><strong>边学边练是王道</strong>：数据库学习最忌讳只看不练。跟着教程把每个 SQL 语句都敲一遍，推荐使用 <a href="https://sqlmother.yupi.icu/" class="external external-link">SQL 自学网<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> 在线实战练习。</li>
+<li><strong>先会用再深入</strong>：先把前 3 个阶段（数据库理论、MySQL 基础、SQL 实战）学完即可满足日常开发；高级部分遇到性能问题时再深入学习，面试前突击八股文。</li>
+<li><strong>重点掌握两个核心能力</strong>：一是能根据业务场景独立设计库表（表结构设计、字段类型选择、索引设计等），二是熟练编写 SQL（尤其多表查询、子查询、聚合函数）。</li>
+<li><strong>善用 AI 工具辅助学习</strong>：可用 ChatGPT、Claude、豆包等辅助理解概念、生成 SQL、优化性能，遇到问题不要死磕。</li>
+<li><strong>多看实际案例</strong>：参考真实项目的库表设计案例，理解不同业务场景下的设计思路。</li>
+</ol>
+<h2 id="阶段总览">阶段总览<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段总览" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>阶段</th><th>内容</th><th>建议时长</th></tr></thead><tbody><tr><td>阶段 1</td><td>数据库理论和 MySQL 基础</td><td>15-20 天</td></tr><tr><td>阶段 2</td><td>SQL 实战和进阶</td><td>10-15 天</td></tr><tr><td>阶段 3</td><td>MySQL 高可用和生产实践</td><td>7-15 天</td></tr><tr><td>阶段 4</td><td>MySQL 底层原理和性能优化</td><td>10-15 天</td></tr><tr><td>阶段 5</td><td>MySQL 求职备战</td><td>面试前 1 个月突击</td></tr></tbody></table></div>
+<h2 id="阶段-1数据库理论和-mysql-基础15-20-天">阶段 1：数据库理论和 MySQL 基础（15-20 天）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-1数据库理论和-mysql-基础15-20-天" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>先讲理论再上手写代码容易枯燥，建议跟着”边实践边讲理论”的教程入门，更轻松、不枯燥。</p>
+<h3 id="学习目标">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>理解数据库的基本概念，掌握 MySQL 的安装和基本操作，能够通过控制台或可视化工具创建数据库、设计表结构、进行简单的增删改查操作。</p>
+<h3 id="知识点">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>数据库基本概念【必学】：</strong></p>
+<ul>
+<li>数据库（Database）：关系型数据库、非关系型数据库</li>
+<li>数据库管理系统（DBMS）、表（Table）、字段/列（Field/Column）、记录/行（Record/Row）</li>
+<li>主键（Primary Key）、外键（Foreign Key）、视图（View）、约束（Constraint）</li>
+<li>SQL 语言、查询（Query）</li>
+<li>索引（Index）【建议学】、事务（Transaction）【建议学】</li>
+</ul>
+<p><strong>SQL 语法分类【必学】：</strong></p>
+<ul>
+<li>DDL（数据定义语言）：CREATE、ALTER、DROP</li>
+<li>DML（数据操作语言）：INSERT、UPDATE、DELETE</li>
+<li>DQL（数据查询语言）：SELECT</li>
+<li>DCL（数据控制语言）：GRANT、REVOKE【可不学】</li>
+</ul>
+<p><strong>数据库设计【必学】：</strong></p>
+<ul>
+<li>数据库三大范式【建议学】</li>
+<li>表关联关系：一对一（1:1）、一对多（1:N）、多对多（N:N）</li>
+<li>E-R 图（实体关系图）【建议学】</li>
+</ul>
+<p><strong>MySQL 基础操作【必学】：</strong></p>
+<ul>
+<li>MySQL 安装和配置、常用命令</li>
+<li>数据库操作（创建、删除、选择）</li>
+<li>数据表操作（创建、修改、删除）</li>
+<li>数据类型（整型、浮点型、字符串、日期时间等）</li>
+<li>数据的增删改查（CRUD）：INSERT、DELETE、UPDATE、SELECT</li>
+<li>MySQL 关键字和函数【建议学】</li>
+<li>MySQL 约束（主键、外键、唯一、非空、默认值等）</li>
+<li>MySQL 存储引擎（InnoDB、MyISAM）【建议学】</li>
+<li>MySQL 视图（View）【建议学】、事务基础【建议学】</li>
+<li>客户端工具（Navicat、MySQL Workbench 等）</li>
+</ul>
+<h3 id="学习资源">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>⭐ <a href="https://www.bilibili.com/video/BV1Kr4y1i7ru" class="external external-link">黑马程序员 MySQL 数据库入门到精通<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：从安装到高级、优化全囊括（基础部分看 P1-P57 即可）</li>
+<li><a href="https://www.bilibili.com/video/BV1iq4y1u7vj" class="external external-link">尚硅谷 2024 新版 MySQL 速通教程<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：基于 MySQL 8.0，聚焦企业核心应用</li>
+<li><a href="https://dev.mysql.com/doc/" class="external external-link">MySQL 官方文档<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：权威参考资料</li>
+<li><a href="https://book.douban.com/subject/36230167/" class="external external-link">《MySQL 即学即用》<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：适合快速查阅</li>
+<li><a href="https://book.douban.com/subject/35670862/" class="external external-link">《MySQL 是怎样使用的：快速入门 MySQL》<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：国产良心书籍，适合入门</li>
+</ul>
+<h2 id="阶段-2sql-实战和进阶10-15-天">阶段 2：SQL 实战和进阶（10-15 天）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-2sql-实战和进阶10-15-天" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>很多速成的同学只会用框架操作数据库，缺少自己编写 SQL 的能力。这个阶段要熟练掌握 SQL 编写，能应对各种复杂的查询需求。</p>
+<h3 id="学习目标-1">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标-1" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>熟练掌握 SQL 的各种语法，能够独立编写复杂的多表查询、子查询、聚合查询，能根据业务需求快速写出高效的 SQL 语句。</p>
+<h3 id="知识点-1">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-1" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>SQL 基础概念【必学】：</strong></p>
+<ul>
+<li>什么是 SQL</li>
+<li>不同数据库的 SQL 差异【建议学】</li>
+</ul>
+<p><strong>SQL 基础语法【必学】：</strong></p>
+<ul>
+<li>选择（SELECT）：SELECT *、SELECT field、别名（AS）</li>
+<li>排序（ORDER BY）：升序（ASC）、降序（DESC）</li>
+<li>条件查询（WHERE）：逻辑运算符（AND、OR、NOT）、比较运算符（=、>、&lt;、>=、&lt;=、!=）、模糊查询（LIKE）、范围查询（IN、BETWEEN）、空值查询（IS NULL、IS NOT NULL）</li>
+<li>去重（DISTINCT）、限制结果数量（LIMIT）、分页（OFFSET）、条件分支（CASE WHEN）</li>
+</ul>
+<p><strong>分组聚合【必学】：</strong></p>
+<ul>
+<li>分组（GROUP BY）：单字段分组、多字段分组</li>
+<li>聚合函数：COUNT、SUM、AVG、MAX、MIN</li>
+<li>分组过滤（HAVING）</li>
+</ul>
+<p><strong>SQL 函数【建议学】：</strong></p>
+<ul>
+<li>字符串函数（CONCAT、SUBSTRING、LENGTH、UPPER、LOWER 等）</li>
+<li>时间函数（NOW、DATE、YEAR、MONTH、DAY 等）</li>
+<li>数学函数（ROUND、CEIL、FLOOR、ABS 等）</li>
+<li>开窗函数（ROW_NUMBER、RANK、DENSE_RANK、SUM OVER、AVG OVER、LAG、LEAD）【可不学】</li>
+</ul>
+<p><strong>多表查询【必学，面试重点】：</strong></p>
+<ul>
+<li>内连接（INNER JOIN）、左连接（LEFT JOIN）、右连接（RIGHT JOIN）</li>
+<li>全外连接（FULL OUTER JOIN）【可不学】、交叉连接（CROSS JOIN）【可不学】</li>
+<li>自连接（Self JOIN）【建议学】</li>
+</ul>
+<p><strong>子查询【必学】：</strong></p>
+<ul>
+<li>WHERE 子查询、FROM 子查询、SELECT 子查询</li>
+<li>EXISTS 子查询【建议学】</li>
+</ul>
+<p><strong>组合查询【建议学】：</strong></p>
+<ul>
+<li>UNION（去重合并）、UNION ALL（不去重合并）</li>
+</ul>
+<h3 id="学习资源-1">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-1" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>⭐ <a href="https://sqlmother.yupi.icu/" class="external external-link">SQL 自学网<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：在线刷 SQL 题，从入门到精通</li>
+<li><a href="https://www.bejson.com/runcode/sql/" class="external external-link">SQL 在线运行工具<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：在线验证 SQL 语句</li>
+<li><a href="https://leetcode.cn/problemset/database/" class="external external-link">LeetCode 数据库题目<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：适合刷题</li>
+</ul>
+<h2 id="阶段-3mysql-高可用和生产实践7-15-天">阶段 3：MySQL 高可用和生产实践（7-15 天）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-3mysql-高可用和生产实践7-15-天" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>学习 MySQL 在生产环境中的高可用架构和实践经验。</p>
+<h3 id="学习目标-2">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标-2" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>掌握 MySQL 的高可用架构设计，了解主从复制、读写分离、分库分表等核心技术，能够应对生产环境中的各种场景和问题，为深入学习底层原理打下实践基础。</p>
+<h3 id="知识点-2">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-2" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>慢查询分析【必学】：</strong></p>
+<ul>
+<li>什么是慢查询、如何开启慢查询日志</li>
+<li>使用 EXPLAIN 分析 SQL 执行计划</li>
+<li>慢查询优化思路（加索引、优化 SQL、调整表结构）</li>
+</ul>
+<p><strong>数据备份和恢复【建议学】：</strong></p>
+<ul>
+<li>为什么要备份数据</li>
+<li>全量备份（mysqldump、物理备份）、增量备份（binlog）</li>
+<li>备份策略（定期备份、异地备份）、数据恢复流程</li>
+<li>备份工具（Percona XtraBackup）【可不学】</li>
+</ul>
+<p><strong>主从复制【必学，面试重点】：</strong></p>
+<ul>
+<li>主从复制原理（binlog 同步）、主从复制配置</li>
+<li>一主多从架构、主从延迟问题及解决方案</li>
+<li>半同步复制【建议学】、GTID 复制【可不学】</li>
+</ul>
+<p><strong>读写分离【必学，面试重点】：</strong></p>
+<ul>
+<li>读写分离的原理和作用</li>
+<li>实现方式（应用层、中间件）、主从数据一致性问题</li>
+<li>常用中间件（MyCat、ShardingSphere）【建议学】</li>
+</ul>
+<p><strong>高可用架构【建议学】：</strong></p>
+<ul>
+<li>高可用方案概述、主从切换和故障转移</li>
+<li>MHA【可不学】、MySQL Group Replication【可不学】、MySQL InnoDB Cluster【可不学】、Keepalived + 双主架构【可不学】</li>
+</ul>
+<p><strong>分库分表【建议学，面试重点】：</strong></p>
+<ul>
+<li>为什么要分库分表（数据量大、并发高）</li>
+<li>垂直拆分 vs 水平拆分</li>
+<li>拆分策略（按范围、按哈希、按时间等）</li>
+<li>带来的问题（跨库 JOIN、分布式事务、全局 ID）</li>
+<li>分库分表中间件（ShardingSphere、MyCat）【建议学】</li>
+</ul>
+<p><strong>云数据库服务【建议学】：</strong></p>
+<ul>
+<li>云数据库优势（高可用、自动备份、弹性扩展）</li>
+<li>主流服务（阿里云 RDS、腾讯云 CDB、AWS RDS）</li>
+<li>云数据库 vs 自建数据库的选择</li>
+<li>使用和配置【可不学】</li>
+</ul>
+<p><strong>MySQL 运维实践【建议学】：</strong></p>
+<ul>
+<li>权限控制和安全管理</li>
+<li>监控和性能指标（QPS、TPS、连接数等）</li>
+<li>常见问题排查（连接数耗尽、慢查询、死锁等）</li>
+<li>生产环境最佳实践</li>
+</ul>
+<h3 id="学习重点">学习重点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习重点" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li><strong>备份是生产环境的生命线</strong>：一定要养成定期备份的习惯，建议采用”全量备份 + 增量备份”策略。记住：<strong>没有备份，就没有生产环境！</strong></li>
+<li>高可用架构的核心是<strong>保证数据不丢失、服务不中断</strong>。主从复制是基础，读写分离提升性能，分库分表解决海量数据问题，三者是递进关系，要按顺序学习。</li>
+<li>主从复制、读写分离的原理先简单了解即可（主库写入同步到从库），重点是学会怎么配置、怎么使用；底层原理（binlog、GTID 等）下个阶段深入学习。</li>
+<li>分库分表是解决海量数据的终极方案，但会带来跨库 JOIN、分布式事务、数据迁移等问题。建议先通过优化 SQL、加索引、读写分离等方式解决性能问题，实在撑不住再考虑分库分表。</li>
+<li>云数据库（如阿里云 RDS、腾讯云 CDB）是中小型公司的首选，提供开箱即用的高可用、自动备份、监控告警，能大幅降低运维成本，强烈推荐。</li>
+<li>这部分知识偏实战，建议结合实际项目学习。有条件可以自己搭建主从复制环境，实操备份恢复、故障切换等流程。</li>
+</ol>
+<p>学完这个阶段，你就能应对绝大多数生产环境的问题了！</p>
+<h3 id="经典面试题">经典面试题<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#经典面试题" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>备份恢复：</strong></p>
+<ol>
+<li>MySQL 有哪些备份方式？各有什么优缺点？</li>
+<li>如何实现 MySQL 的增量备份？</li>
+<li>如果数据库误删了数据，如何恢复？</li>
+<li>生产环境的备份策略是怎样的？</li>
+</ol>
+<p><strong>主从复制：</strong></p>
+<ol>
+<li>MySQL 主从复制的原理是什么？</li>
+<li>主从复制有哪些模式（异步、半同步、同步）？</li>
+<li>什么是主从延迟？如何解决主从延迟问题？</li>
+<li>如何保证主从数据的一致性？</li>
+</ol>
+<p><strong>读写分离：</strong></p>
+<ol>
+<li>什么是读写分离？有什么作用？</li>
+<li>读写分离是如何实现的？</li>
+<li>读写分离会带来哪些问题？如何解决？</li>
+<li>有哪些读写分离的中间件？</li>
+</ol>
+<p><strong>分库分表：</strong></p>
+<ol>
+<li>什么情况下需要分库分表？</li>
+<li>垂直拆分和水平拆分有什么区别？</li>
+<li>分库分表有哪些拆分策略？</li>
+<li>分库分表会带来哪些问题？如何解决跨库 JOIN 和分布式事务？</li>
+<li>如何生成全局唯一 ID（雪花算法、数据库自增等）？</li>
+</ol>
+<p><strong>高可用：</strong></p>
+<ol>
+<li>MySQL 有哪些高可用方案？</li>
+<li>如何实现 MySQL 的故障自动切换？</li>
+<li>什么是脑裂问题？如何避免？</li>
+</ol>
+<h3 id="学习资源-2">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-2" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>⭐ <a href="https://www.bilibili.com/video/BV1Kr4y1i7ru" class="external external-link">黑马程序员 MySQL 高级篇<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：P196-P250，主从复制、分库分表、读写分离</li>
+<li>⭐ <a href="https://www.bilibili.com/video/BV1iq4y1u7vj" class="external external-link">尚硅谷 MySQL 高级篇<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：P200-P240，深入讲解高可用架构</li>
+<li><a href="https://shardingsphere.apache.org/document/current/cn/overview/" class="external external-link">ShardingSphere 官方文档<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：分库分表中间件</li>
+<li><a href="https://help.aliyun.com/product/26090.html" class="external external-link">阿里云 RDS 文档<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：云数据库服务</li>
+<li><a href="https://book.douban.com/subject/26630834/" class="external external-link">《高可用 MySQL》<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：高可用架构经典书籍</li>
+</ul>
+<h2 id="阶段-4mysql-底层原理和性能优化10-15-天">阶段 4：MySQL 底层原理和性能优化（10-15 天）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-4mysql-底层原理和性能优化10-15-天" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>上个阶段解决了”怎么做”（加索引、主从复制、读写分离等），这个阶段解决”为什么”——为什么索引能加快查询？为什么会出现主从延迟？为什么会发生死锁？理解原理，才能更好地优化性能、解决问题。</p>
+<blockquote>
+<p>💡 如果你是一名后端开发，还没把框架学完、还不能独立开发完整项目，可以先跳过这部分，等有实际项目经验再回来学；但准备面试的话，这部分必学！</p>
+</blockquote>
+<h3 id="知识点-3">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-3" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>MySQL 架构和执行原理【建议学，面试重点】：</strong></p>
+<ul>
+<li>MySQL 体系架构（连接层、服务层、引擎层、存储层）</li>
+<li>SQL 执行流程（连接器、查询缓存、分析器、优化器、执行器）</li>
+<li>存储引擎：InnoDB【必学】、MyISAM【建议学】</li>
+<li>MySQL 数据文件【可不学】</li>
+</ul>
+<p><strong>索引原理和优化【必学，面试重点】：</strong></p>
+<ul>
+<li>索引的数据结构（B+ 树）</li>
+<li>为什么用 B+ 树而不是 B 树、红黑树、哈希表</li>
+<li>索引类型（主键索引、唯一索引、普通索引、全文索引、组合索引）</li>
+<li>聚簇索引和非聚簇索引</li>
+<li>最左匹配原则、索引失效场景、索引优化策略</li>
+<li>回表和覆盖索引【建议学】</li>
+</ul>
+<p><strong>事务和隔离级别【建议学，面试重点】：</strong></p>
+<ul>
+<li>事务的 ACID 特性</li>
+<li>隔离级别（读未提交、读已提交、可重复读、串行化）</li>
+<li>脏读、不可重复读、幻读</li>
+<li>MVCC（多版本并发控制）原理</li>
+<li>undo log 和 redo log 的作用</li>
+<li>binlog 和两阶段提交</li>
+</ul>
+<p><strong>锁机制【建议学，面试重点】：</strong></p>
+<ul>
+<li>表锁和行锁、共享锁（S 锁）和排他锁（X 锁）</li>
+<li>意向锁（意向共享锁、意向排他锁）</li>
+<li>间隙锁（Gap Lock）、临键锁（Next-Key Lock）</li>
+<li>死锁的产生原因及解决方案</li>
+</ul>
+<p><strong>MySQL 性能优化【建议学】：</strong></p>
+<ul>
+<li>SQL 优化（避免全表扫描、优化 JOIN、减少子查询等）</li>
+<li>索引优化（合理建索引、避免索引失效）</li>
+<li>表结构设计优化（字段类型选择、范式和反范式）</li>
+<li>配置优化（连接数、缓冲区大小等）</li>
+<li>查询优化器的工作原理【建议学】、硬件优化【可不学】</li>
+</ul>
+<h3 id="学习建议">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li><strong>带着问题学原理</strong>：回顾上阶段的问题——为什么加了索引查询就快了？为什么会出现主从延迟？为什么事务能保证数据一致性？带着问题学理解更深刻。</li>
+<li>索引的 B+ 树结构是面试必考点：B+ 树高度低（减少磁盘 I/O）、叶子节点有序（支持范围查询）、叶子节点用链表连接（提高扫描效率）。</li>
+<li>理解不同隔离级别解决了什么问题（脏读、不可重复读、幻读），以及 MySQL 默认的可重复读级别是如何通过 MVCC 实现的。</li>
+<li>锁机制的重点是：为什么需要锁（并发控制）、不同锁的作用（表锁、行锁、间隙锁等）、如何避免死锁。间隙锁和临键锁是可重复读级别下防止幻读的关键。</li>
+<li>三种日志要分清：binlog 用于主从复制和数据恢复，redo log 保证事务持久性，undo log 保证事务原子性并实现 MVCC。</li>
+<li>性能优化是系统工程，要从多维度考虑：SQL 层面（避免全表扫描、减少回表）、索引层面（合理建索引、避免失效）、架构层面（读写分离、分库分表）、配置层面（连接池、缓冲池）。</li>
+<li><strong>这部分偏理论，但不要死记硬背！</strong> 建议结合实际场景理解，比如看到一条慢 SQL，先用 EXPLAIN 分析，再从索引、锁、事务等角度优化。</li>
+<li>推荐阅读《MySQL 是怎样运行的》（通俗易懂，把复杂原理讲得很清楚）和《高性能 MySQL》（进阶读物，适合系统学习）。</li>
+</ol>
+<h3 id="学习资源-3">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-3" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>⭐ <a href="https://www.bilibili.com/video/BV1KW411u7vy/" class="external external-link">2025 最新 MySQL 调优实战全套教程<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：MySQL 性能优化、索引调优、SQL 调优，面试热点</li>
+<li>⭐ <a href="https://www.bilibili.com/video/BV1Kr4y1i7ru" class="external external-link">黑马程序员 MySQL 高级篇<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：P58-P195，深入讲解 MySQL 高级知识</li>
+<li><a href="https://www.bilibili.com/video/BV1iq4y1u7vj" class="external external-link">尚硅谷 MySQL 高级篇<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：P96-P199，理论扎实</li>
+<li><a href="https://www.bilibili.com/video/BV1NssAzcENd/" class="external external-link">2025 新版 MySQL 数据库教程<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：MySQL 索引 + 调优 + SQL 优化</li>
+<li><a href="https://book.douban.com/subject/35231266/" class="external external-link">《MySQL 是怎样运行的》<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：国产良心书籍，通俗易懂</li>
+<li><a href="https://book.douban.com/subject/36096578/" class="external external-link">《高性能 MySQL》<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>：领域经典，适合深入学习</li>
+</ul>
+<h2 id="阶段-5mysql-求职备战面试前-1-个月突击">阶段 5：MySQL 求职备战（面试前 1 个月突击）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-5mysql-求职备战面试前-1-个月突击" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<blockquote>
+<p>重要提示：不到面试前一个月，不要急着背面试题！应先把前 4 个阶段的知识学扎实（基础 → SQL → 生产实践 → 底层原理），有了实际项目经验后再来突击面试题，效果更好。</p>
+</blockquote>
+<h3 id="学习目标-3">学习目标<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习目标-3" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>熟练掌握 MySQL 常见面试题，能够流畅回答面试官的提问，准备好简历上的项目经历，顺利通过 MySQL 相关的面试环节。</p>
+<h3 id="学习建议-1">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-1" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>提前做规划：至少提前 3 个月开始准备，先看目标公司的招聘要求，了解对 MySQL 的要求。</li>
+<li>打磨简历：简历上一定要有能体现 MySQL 能力的项目经历——做过什么系统、设计了哪些表、写过哪些复杂 SQL、遇到过什么性能问题、是如何优化的。</li>
+<li>面试题要理解而不是死记硬背：MySQL 核心考点就那么些（索引、事务、锁、优化等），先理解原理再看面试题，即使遇到没见过的题也能答出大概。</li>
+<li>刷题要有针对性：后端开发岗位重点考察 SQL 编写能力和基本原理；DBA 岗位会深入考察性能优化、高可用等内容。</li>
+<li>多看真实面经：了解不同公司的面试风格和常考题目，提前做好准备。</li>
+<li>善用 AI 模拟面试：用 AI 模拟真实面试场景，练习回答 MySQL 面试题，获取打分和反馈，发现问题并改进。</li>
+<li>看面试题讲解视频：关注 B 站上 MySQL 面试题讲解类视频，学习答题思路。</li>
+</ol>
+<h3 id="经典面试题-1">经典面试题<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#经典面试题-1" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>基础理论：</strong></p>
+<ol>
+<li>什么是数据表、字段、主键、外键、视图？</li>
+<li>什么是数据库的三大范式？</li>
+<li>MySQL 支持哪些存储引擎？默认使用哪个？</li>
+<li>InnoDB 和 MyISAM 有什么区别，各有什么优缺点？</li>
+</ol>
+<p><strong>SQL 相关：</strong></p>
+<ol>
+<li>SQL 的 JOIN 有哪几种类型？它们的区别是什么？</li>
+<li>如何编写一个复杂的多表查询 SQL？</li>
+<li>如何使用 EXPLAIN 分析 SQL 执行计划？</li>
+<li>一条 SQL 语句在 MySQL 中的执行过程是怎样的？</li>
+</ol>
+<p><strong>索引相关：</strong></p>
+<ol>
+<li>什么是数据库索引，使用索引有什么优缺点？</li>
+<li>MySQL 中的索引是怎么实现的？为什么使用 B+ 树？</li>
+<li>聚簇索引和非聚簇索引有什么区别？</li>
+<li>什么情况下数据库索引会失效？</li>
+<li>什么是索引的最左匹配原则？</li>
+<li>如何优化 SQL 和索引？</li>
+</ol>
+<p><strong>事务相关：</strong></p>
+<ol>
+<li>什么是数据库事务？事务的 ACID 特性是什么？</li>
+<li>MySQL 事务有哪些隔离级别，分别有什么特点？</li>
+<li>什么是 MVCC？InnoDB 引擎是如何实现 MVCC 的？</li>
+<li>binlog、redo log 和 undo log 有什么区别？</li>
+<li>什么是两阶段提交？</li>
+</ol>
+<p><strong>锁相关：</strong></p>
+<ol>
+<li>MySQL 中表级锁和行级锁有什么区别？</li>
+<li>什么是共享锁、排他锁、意向锁？</li>
+<li>什么是间隙锁和临键锁？</li>
+<li>什么是死锁？如何避免和解决死锁？</li>
+</ol>
+<p><strong>性能优化：</strong></p>
+<ol>
+<li>有哪些数据库性能优化的方法？</li>
+<li>如何定位 MySQL 慢查询？</li>
+<li>如何设计高性能的数据库表结构？</li>
+<li>查询优化器是如何工作的？</li>
+</ol>
+<p><strong>高可用和生产实践：</strong></p>
+<ol>
+<li>MySQL 有哪些备份方式？如何实现增量备份？</li>
+<li>MySQL 主从复制的原理是什么？如何解决主从延迟？</li>
+<li>什么是读写分离？如何实现读写分离？</li>
+<li>什么情况下需要分库分表？有哪些拆分策略？</li>
+<li>分库分表会带来哪些问题？如何解决？</li>
+<li>MySQL 有哪些高可用方案？</li>
+<li>云数据库和自建数据库有什么区别？</li>
+</ol>
+<hr/>
+<p>加油 💪🏻</p></div></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="toc"><button type="button" class="toc-header" aria-controls="toc-92" aria-expanded="true"><h3>目录</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-0" class="toc-content overflow"><li class="depth-0"><a href="#mysql-15---学习路线" data-for="mysql-15---学习路线">MySQL 15 - 学习路线</a></li><li class="depth-1"><a href="#开篇介绍" data-for="开篇介绍">开篇介绍</a></li><li class="depth-1"><a href="#就业方向" data-for="就业方向">就业方向</a></li><li class="depth-1"><a href="#整体学习建议" data-for="整体学习建议">整体学习建议</a></li><li class="depth-1"><a href="#阶段总览" data-for="阶段总览">阶段总览</a></li><li class="depth-1"><a href="#阶段-1数据库理论和-mysql-基础15-20-天" data-for="阶段-1数据库理论和-mysql-基础15-20-天">阶段 1：数据库理论和 MySQL 基础（15-20 天）</a></li><li class="depth-2"><a href="#学习目标" data-for="学习目标">学习目标</a></li><li class="depth-2"><a href="#知识点" data-for="知识点">知识点</a></li><li class="depth-2"><a href="#学习资源" data-for="学习资源">学习资源</a></li><li class="depth-1"><a href="#阶段-2sql-实战和进阶10-15-天" data-for="阶段-2sql-实战和进阶10-15-天">阶段 2：SQL 实战和进阶（10-15 天）</a></li><li class="depth-2"><a href="#学习目标-1" data-for="学习目标-1">学习目标</a></li><li class="depth-2"><a href="#知识点-1" data-for="知识点-1">知识点</a></li><li class="depth-2"><a href="#学习资源-1" data-for="学习资源-1">学习资源</a></li><li class="depth-1"><a href="#阶段-3mysql-高可用和生产实践7-15-天" data-for="阶段-3mysql-高可用和生产实践7-15-天">阶段 3：MySQL 高可用和生产实践（7-15 天）</a></li><li class="depth-2"><a href="#学习目标-2" data-for="学习目标-2">学习目标</a></li><li class="depth-2"><a href="#知识点-2" data-for="知识点-2">知识点</a></li><li class="depth-2"><a href="#学习重点" data-for="学习重点">学习重点</a></li><li class="depth-2"><a href="#经典面试题" data-for="经典面试题">经典面试题</a></li><li class="depth-2"><a href="#学习资源-2" data-for="学习资源-2">学习资源</a></li><li class="depth-1"><a href="#阶段-4mysql-底层原理和性能优化10-15-天" data-for="阶段-4mysql-底层原理和性能优化10-15-天">阶段 4：MySQL 底层原理和性能优化（10-15 天）</a></li><li class="depth-2"><a href="#知识点-3" data-for="知识点-3">知识点</a></li><li class="depth-2"><a href="#学习建议" data-for="学习建议">学习建议</a></li><li class="depth-2"><a href="#学习资源-3" data-for="学习资源-3">学习资源</a></li><li class="depth-1"><a href="#阶段-5mysql-求职备战面试前-1-个月突击" data-for="阶段-5mysql-求职备战面试前-1-个月突击">阶段 5：MySQL 求职备战（面试前 1 个月突击）</a></li><li class="depth-2"><a href="#学习目标-3" data-for="学习目标-3">学习目标</a></li><li class="depth-2"><a href="#学习建议-1" data-for="学习建议-1">学习建议</a></li><li class="depth-2"><a href="#经典面试题-1" data-for="经典面试题-1">经典面试题</a></li><li class="overflow-end"></li></ul></div><div class="backlinks"><h3>反向链接</h3><ul id="list-0" class="overflow"><li><a href="../../tools/前端/工具-34---编程学习网站与资源推荐" class="internal">工具 34 - 编程学习网站与资源推荐</a></li><li class="overflow-end"></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v5.0.0</a> © 2026</p><ul><li><a href="https://github.com/xyf1111">GitHub</a></li></ul></footer></div></div></body><script src="../../static/resource-after-e13fffa1.js" type="application/javascript" data-persist="true"></script><script src="../../static/resource-after-8b336f9a.js" type="application/javascript" data-persist="true"></script><script src="../../static/resource-after-baba652b.js" type="application/javascript" data-persist="true"></script><script src="../../static/resource-after-5eb75950.js" type="module" data-persist="true"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript" data-persist="true"></script><script src="../../postscript-17915799.js" type="module" data-persist="true"></script></html>

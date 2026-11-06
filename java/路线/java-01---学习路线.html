@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr"><head><title>Java 01 - 学习路线 · 后端开发笔记</title><meta charset="utf-8"/><link rel="preload" href="../../index-b754f97d.css" as="style"/><link rel="preload" href="../../prescript-2bfc6315.js" as="script"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="技术知识库"/><meta property="og:title" content="Java 01 - 学习路线 · 后端开发笔记"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Java 01 - 学习路线 · 后端开发笔记"/><meta name="twitter:description" content="Java 学习路线（零基础到精通） 开篇介绍 Java 是拥有 20 多年历史的老牌编程语言，以”一次编写，到处运行”为特性，是企业级应用开发的首选语言之一。 应用场景 企业管理系统、电商平台、社交应用、游戏后台、大数据处理系统、AI 应用（智能客服、AI 助手等）。 就业方向 Java 后端开发工程师：负责服务端业务逻辑开发，最主流的就业方向 Java 全栈开发工程师：后端 + 前端，能独立完成完整项目 安卓开发工程师：使用 Java/Kotlin 开发安卓应用 大数据开发工程师：使用 Java 进行大数据处理（Hadoop、Spark、Flink） 架构师：负责系统整体设计和技术选型 AI..."/><meta property="og:description" content="Java 学习路线（零基础到精通） 开篇介绍 Java 是拥有 20 多年历史的老牌编程语言，以”一次编写，到处运行”为特性，是企业级应用开发的首选语言之一。 应用场景 企业管理系统、电商平台、社交应用、游戏后台、大数据处理系统、AI 应用（智能客服、AI 助手等）。 就业方向 Java 后端开发工程师：负责服务端业务逻辑开发，最主流的就业方向 Java 全栈开发工程师：后端 + 前端，能独立完成完整项目 安卓开发工程师：使用 Java/Kotlin 开发安卓应用 大数据开发工程师：使用 Java 进行大数据处理（Hadoop、Spark、Flink） 架构师：负责系统整体设计和技术选型 AI..."/><meta property="og:image:alt" content="Java 学习路线（零基础到精通） 开篇介绍 Java 是拥有 20 多年历史的老牌编程语言，以”一次编写，到处运行”为特性，是企业级应用开发的首选语言之一。 应用场景 企业管理系统、电商平台、社交应用、游戏后台、大数据处理系统、AI 应用（智能客服、AI 助手等）。 就业方向 Java 后端开发工程师：负责服务端业务逻辑开发，最主流的就业方向 Java 全栈开发工程师：后端 + 前端，能独立完成完整项目 安卓开发工程师：使用 Java/Kotlin 开发安卓应用 大数据开发工程师：使用 Java 进行大数据处理（Hadoop、Spark、Flink） 架构师：负责系统整体设计和技术选型 AI..."/><meta property="twitter:domain" content="xyf1111.github.io/tech-notes"/><meta property="og:url" content="https://xyf1111.github.io/tech-notes/java/路线/java-01---学习路线"/><meta property="twitter:url" content="https://xyf1111.github.io/tech-notes/java/路线/java-01---学习路线"/><link rel="icon" href="../../static/icon.png"/><meta name="description" content="Java 学习路线（零基础到精通） 开篇介绍 Java 是拥有 20 多年历史的老牌编程语言，以”一次编写，到处运行”为特性，是企业级应用开发的首选语言之一。 应用场景 企业管理系统、电商平台、社交应用、游戏后台、大数据处理系统、AI 应用（智能客服、AI 助手等）。 就业方向 Java 后端开发工程师：负责服务端业务逻辑开发，最主流的就业方向 Java 全栈开发工程师：后端 + 前端，能独立完成完整项目 安卓开发工程师：使用 Java/Kotlin 开发安卓应用 大数据开发工程师：使用 Java 进行大数据处理（Hadoop、Spark、Flink） 架构师：负责系统整体设计和技术选型 AI..."/><meta name="generator" content="Quartz"/><link href="../../index-b754f97d.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-735924e0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-589c1cea.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-bbc3f7c0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-2911f5d1.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-e427079e.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-53b25b2b.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-c93c6a44.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-8a06014f.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-77d6a441.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-6ee21cee.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-1ea6ad18.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-788c9ca3.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-642859cd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-4abc06bd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-274a3dfe.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-94cb6c84.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-58d5ff56.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-7262b5a7.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../static/resource-style-a5c806d2.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../static/resource-style-6bd36952.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" data-persist="true"/><script src="../../prescript-2bfc6315.js" type="application/javascript" data-persist="true"></script><script type="application/javascript" data-persist="true">const fetchData = fetch("../../static/contentIndex.json").then(data => data.json())</script><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://xyf1111.github.io/tech-notes/java/路线/java-01---学习路线-og-image.webp"/><meta property="og:image:url" content="https://xyf1111.github.io/tech-notes/java/路线/java-01---学习路线-og-image.webp"/><meta name="twitter:image" content="https://xyf1111.github.io/tech-notes/java/路线/java-01---学习路线-og-image.webp"/><meta property="og:image:type" content="image/webp"/></head><body data-slug="java/路线/java-01---学习路线" data-basepath="/tech-notes"><div id="quartz-root" class="page" data-frame="default"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="../..">技术知识库</a></h2><div class="mobile-only"><div class="spacer"></div></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 0.5rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button" aria-label="搜索" aria-expanded="false"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>搜索</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="搜索内容..." placeholder="搜索内容..."/><div class="search-layout" data-preview="true" data-field-priority="[&quot;title&quot;,&quot;content&quot;,&quot;tags&quot;]"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode" aria-label="暗色模式"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="暗色模式"><title>暗色模式</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="亮色模式"><title>亮色模式</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode" aria-label="阅读模式"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="阅读模式"><title>阅读模式</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer nav-files-container" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a2, b2) => {\n    if (!a2.isFolder &amp;&amp; !b2.isFolder || a2.isFolder &amp;&amp; b2.isFolder) {\n      return (a2.displayName || \&quot;\&quot;).localeCompare(b2.displayName || \&quot;\&quot;, void 0, {\n        numeric: true,\n        sensitivity: \&quot;base\&quot;\n      });\n    }\n    if (!a2.isFolder &amp;&amp; b2.isFolder) {\n      return 1;\n    }\n    return -1;\n  }&quot;,&quot;filterFn&quot;:&quot;(node) => node.slugSegment !== \&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;(node) => {\n    return node;\n  }&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-290" aria-label="探索"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>探索</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-290" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#" class="nav-file-title tree-item-self"></a></li></template><template id="template-folder"><li><div class="folder-container nav-folder-title tree-item-self"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon nav-folder-collapse-indicator collapse-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content tree-item-children"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../java/">java</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../java/路线/">路线</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Java 01 - 学习路线</a></div></nav><h1 class="article-title">Java 01 - 学习路线</h1><details class="note-properties metadata-container" open data-collapsed="false"><summary class="note-properties-header"><span class="note-properties-title">Properties</span><span class="note-properties-count">1</span></summary><table class="note-properties-table"><tbody><tr class="note-properties-row metadata-property"><td class="note-properties-key metadata-property-key">tags</td><td class="note-properties-value metadata-property-value"><span class="note-properties-tags"><a href="../../tags/java" class="internal internal-link tag-link">java</a><span class="note-properties-separator">, </span><a href="../../tags/learning" class="internal internal-link tag-link">learning</a><span class="note-properties-separator">, </span><a href="../../tags/roadmap" class="internal internal-link tag-link">roadmap</a><span class="note-properties-separator">, </span><a href="../../tags/backend" class="internal internal-link tag-link">backend</a></span></td></tr></tbody></table></details><p show-comma="true" class="content-meta"><time datetime="2026-07-19T16:00:00.000Z">2026年7月20日</time><span>29分钟阅读</span></p></div></div><article class="popover-hint"><div class="markdown-preview-view markdown-rendered"><h1 id="java-学习路线零基础到精通">Java 学习路线（零基础到精通）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#java-学习路线零基础到精通" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<h2 id="开篇介绍">开篇介绍<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#开篇介绍" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Java 是拥有 20 多年历史的老牌编程语言，以”一次编写，到处运行”为特性，是企业级应用开发的首选语言之一。</p>
+<h3 id="应用场景">应用场景<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#应用场景" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>企业管理系统、电商平台、社交应用、游戏后台、大数据处理系统、AI 应用（智能客服、AI 助手等）。</p>
+<h3 id="就业方向">就业方向<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#就业方向" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li><strong>Java 后端开发工程师</strong>：负责服务端业务逻辑开发，最主流的就业方向</li>
+<li><strong>Java 全栈开发工程师</strong>：后端 + 前端，能独立完成完整项目</li>
+<li><strong>安卓开发工程师</strong>：使用 Java/Kotlin 开发安卓应用</li>
+<li><strong>大数据开发工程师</strong>：使用 Java 进行大数据处理（Hadoop、Spark、Flink）</li>
+<li><strong>架构师</strong>：负责系统整体设计和技术选型</li>
+<li><strong>AI 应用开发工程师</strong>：Java + AI 框架（LangChain4j 等）开发 AI 应用</li>
+</ol>
+<hr/>
+<h2 id="阶段-1编程语言基础">阶段 1：编程语言基础<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-1编程语言基础" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p><strong>目标</strong>：培养兴趣、快速上手，能运行和编写简单的 Java 程序。</p>
+<h3 id="java-编程基础45-天">Java 编程基础（45 天）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#java-编程基础45-天" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<h4 id="知识点">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>Java 特点与环境搭建</li>
+<li>IDEA 开发工具（新建项目、运行调试、界面配置、插件管理）</li>
+<li><strong>Java 基础语法</strong>：数据类型、流程控制</li>
+<li>数组</li>
+<li><strong>面向对象</strong>：方法、重载、封装、继承、多态</li>
+<li>抽象类、接口、枚举</li>
+<li>常用类：String、日期时间</li>
+<li>集合类、泛型、注解</li>
+<li>异常处理、多线程、IO 流、反射</li>
+</ul>
+<h4 id="学习建议">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ol>
+<li>坚持每天学习 2-3 小时，保持连贯性</li>
+<li>多敲代码，不要只看视频不动手</li>
+<li>学会使用 Debug 调试，学会看报错信息</li>
+<li>善用 AI 工具辅助学习，但不要完全依赖</li>
+<li>不要死记硬背语法和 API，理解为主，多用自然记住</li>
+</ol>
+<h4 id="经典面试题">经典面试题<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#经典面试题" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ol>
+<li>为什么重写 equals 还要重写 hashcode？</li>
+<li>== 和 equals 比较的区别</li>
+<li>为什么有时会出现 4.0 - 3.6 = 0.40000001 的现象？</li>
+<li>final 关键字的作用</li>
+<li>介绍 Java 的集合类</li>
+<li>ArrayList 和 LinkedList 的区别</li>
+</ol>
+<h4 id="学习资源">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>韩顺平 — 零基础 30 天学会 Java（B 站 900 集）</li>
+<li>廖雪峰 Java 教程（图文教程）</li>
+<li>《Head First Java》：经典入门书籍</li>
+<li>IDEA 中文教程（GitHub）</li>
+</ul>
+<hr/>
+<h3 id="java-8-及新版本特性3-天">Java 8 及新版本特性（3 天）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#java-8-及新版本特性3-天" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<h4 id="知识点-1">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-1" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p><strong>Java 8 核心特性（必学）：</strong></p>
+<ul>
+<li>Stream API</li>
+<li>Lambda 表达式</li>
+<li>新日期时间 API</li>
+<li>接口默认方法</li>
+<li>Optional 类</li>
+</ul>
+<p><strong>Java 新版本特性（了解）：</strong></p>
+<ul>
+<li>Java 17：Record 类、Sealed Classes、模式匹配增强</li>
+<li>Java 21（LTS）：虚拟线程（Virtual Threads）、序列集合</li>
+<li>Java 21 之后：更多语法糖和性能优化</li>
+</ul>
+<h4 id="学习建议-1">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-1" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>Java 8 是企业开发中最主流的稳定版本，Lambda 和 Stream API 能让代码更简洁优雅。新版本特性可在掌握 Java 8 核心后按需了解，特别是虚拟线程对 I/O 密集型应用的提升显著。</p>
+<p><strong>为什么大量存量项目仍停留在 Java 8（版本选择考量）：</strong></p>
+<ul>
+<li><strong>版本分布现状</strong>：JetBrains 的调查显示，Java 8 长期是最受欢迎的 LTS 版本，占比高达 70% 以上；Java 11 作为另一个 LTS 稳定版本排名第 2，约占 30%——两个版本加起来基本覆盖了全部 Java 开发者，即使更新的 LTS（如 Java 17）发布，愿意升级的企业也很少。</li>
+<li><strong>兼容性</strong>：企业存量项目与第三方类库大多基于 Java 8 及以下，强升 JDK 难保证行为完全一致（真实案例：JDK 8 升 11 后项目能跑，但 Excel 导出功能部分字符乱码，折腾很久）——谨记「程序能运行，就不要动它」。</li>
+<li><strong>稳定性</strong>：Java 8 已经过成千上万个企业项目检验；换新版本可能遇到莫名其妙的线上问题，规模较大的项目慎用太新的东西。</li>
+<li><strong>生态与资料</strong>：网上教程、Bug 解决方案几乎都基于 Java 8，高版本哪怕同样的代码可能跑不起来，且搜不到现成方案，对经验不足的同学很致命（冷门语言同理）。</li>
+<li><strong>升级收益不明显</strong>：新版本多是依赖升级与锦上添花（如 Spring Boot 3.0 的 GraalVM 原生镜像、可观测性提升），不足以成为改变开发习惯的契机。</li>
+<li><strong>补充</strong>：以上是存量项目的保守视角；新项目可直接上 Java 17 / 21（LTS），Spring Boot 3 已是当前主流，详见 <a href="../../java/路线/java-44---spring-boot-学习路线" class="internal internal-link alias" data-slug="java/路线/java-44---spring-boot-学习路线">Java 44 - Spring Boot 学习路线</a>。</li>
+</ul>
+<h4 id="经典面试题-1">经典面试题<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#经典面试题-1" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ol>
+<li>Java 8 有哪些新特性？</li>
+<li>Lambda 表达式的原理是什么？</li>
+<li>Stream API 和传统循环有什么区别？</li>
+<li>HashMap 在 JDK 1.7 和 1.8 的区别？</li>
+<li>Optional 类的作用和使用方法</li>
+</ol>
+<h4 id="学习资源-1">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-1" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>宋红康 — 全网最全 Java 零基础入门教程（看 Java 8 部分）</li>
+<li>《Java 8 实战》</li>
+<li>在线编写运行 Java 8（Tutorialspoint）</li>
+</ul>
+<hr/>
+<h3 id="练手项目阶段-1">练手项目（阶段 1）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#练手项目阶段-1" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>一本糊涂账（记账系统）</li>
+<li>Java GUI 图书馆管理系统</li>
+<li>Java 坦克大战小游戏</li>
+<li>Swing 俄罗斯方块</li>
+<li>小小记账本</li>
+</ul>
+<hr/>
+<h2 id="阶段-2巩固基础30-天">阶段 2：巩固基础（30+ 天）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-2巩固基础30-天" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p><strong>目标</strong>：熟练使用 Java 编写程序，掌握计算机基础理论，为后续学习打基础。</p>
+<h3 id="java-基础巩固30-天">Java 基础巩固（30 天）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#java-基础巩固30-天" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<h4 id="学习建议-2">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-2" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>阅读《Java 核心技术卷 1》复习巩固 Java 基础。刷网上免费的 Java 练习题，检验自己的水平。</p>
+<h4 id="学习资源-2">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-2" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>《Java 核心技术卷 1》—— 经典书籍，必读</li>
+</ul>
+<hr/>
+<h3 id="数据结构与算法">数据结构与算法<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#数据结构与算法" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>程序员的基本功，大厂面试必考内容。</p>
+<h4 id="学习建议-3">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-3" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>结合动画教程学习算法，在 LeetCode 刷题。建议刷上百道算法题目后再去面试。</p>
+<h4 id="经典面试题-2">经典面试题<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#经典面试题-2" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ol>
+<li>数组和链表的区别</li>
+<li>什么是时间复杂度和空间复杂度</li>
+<li>什么是栈和队列，应用场景</li>
+<li>二叉树的遍历方式</li>
+<li>排序算法的时间复杂度和稳定性</li>
+</ol>
+<h4 id="学习资源-3">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-3" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>算法学习动画教程</li>
+<li>LeetCode</li>
+</ul>
+<hr/>
+<h3 id="操作系统">操作系统<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#操作系统" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<h4 id="知识点-2">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-2" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>操作系统组成</li>
+<li>进程与线程</li>
+<li>进程/线程间通讯方式</li>
+<li>进程调度算法</li>
+<li>进程/线程同步方式</li>
+<li>死锁</li>
+<li>内存管理</li>
+<li>局部性原理</li>
+</ul>
+<h4 id="经典面试题-3">经典面试题<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#经典面试题-3" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ol>
+<li>什么是死锁？死锁产生的条件？</li>
+<li>线程有哪几种状态？</li>
+<li>有哪些进程调度算法？</li>
+<li>什么是缓冲区溢出？</li>
+</ol>
+<h4 id="学习资源-4">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-4" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>《清华操作系统原理》（B 站）</li>
+<li>《编码》—— 深入浅出的好书</li>
+<li>《图解 HTTP》</li>
+</ul>
+<hr/>
+<h3 id="计算机网络">计算机网络<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#计算机网络" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>后端开发的重点知识。</p>
+<h4 id="知识点-3">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-3" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>网络分层模型</li>
+<li>网络传输过程</li>
+<li>IP、端口</li>
+<li>HTTP/HTTPS 协议</li>
+<li>UDP/TCP 协议</li>
+<li>ARP 地址解析协议</li>
+<li>网络安全</li>
+<li>DNS 域名解析</li>
+</ul>
+<h4 id="经典面试题-4">经典面试题<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#经典面试题-4" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ol>
+<li>计算机网络各层有哪些协议？</li>
+<li>TCP 和 UDP 协议的区别？</li>
+<li>TCP 为什么需要三次握手和四次挥手？</li>
+<li>HTTP 和 HTTPS 协议的区别？</li>
+</ol>
+<h4 id="学习资源-5">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-5" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>《计算机网络微课堂》（B 站）</li>
+<li>《图解 HTTP》—— 经典入门书籍</li>
+<li>《图解 TCP/IP》—— 深入理解网络协议</li>
+</ul>
+<hr/>
+<h2 id="阶段-3企业开发基础60-天">阶段 3：企业开发基础（60+ 天）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-3企业开发基础60-天" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p><strong>目标</strong>：学习实际后台开发的基础技术和框架，能独立开发具有完整功能的 Java Web 项目。</p>
+<h3 id="mysql-数据库7-天">MySQL 数据库（7 天）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#mysql-数据库7-天" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>企业中大部分业务数据使用关系型数据库存储，MySQL 是主流也是面试重点。</p>
+<h4 id="知识点-4">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-4" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>基本概念、MySQL 搭建</li>
+<li><strong>SQL 语句编写（必学）</strong>：DDL、DML、DQL、DCL</li>
+<li>约束：主键、外键、唯一、非空</li>
+<li><strong>索引（必学）</strong>：索引类型、原理、优化</li>
+<li><strong>事务（必学）</strong>：ACID 特性、隔离级别</li>
+<li><strong>锁机制</strong>：行锁/表锁、乐观锁/悲观锁</li>
+<li><strong>设计数据库表（必学）</strong>：三大范式、表关联设计</li>
+<li>性能优化</li>
+</ul>
+<h4 id="经典面试题-5">经典面试题<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#经典面试题-5" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ol>
+<li>MySQL 索引的最左原则</li>
+<li>InnoDB 和 MyIsam 引擎的区别？</li>
+<li>有哪些优化数据库性能的方法？</li>
+<li>如何定位慢查询？</li>
+<li>MySQL 支持行锁还是表锁？优缺点？</li>
+</ol>
+<h4 id="学习资源-6">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-6" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>2024 黑马 MySQL 教程（B 站）</li>
+<li>尚硅谷 MySQL 基础教程（B 站）</li>
+<li>闯关式 SQL 自学网（sqlmother.yupi.icu）</li>
+</ul>
+<hr/>
+<h3 id="开发框架60-天">开发框架（60 天）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#开发框架60-天" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<h4 id="知识点-5">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-5" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<h5 id="java-web">Java Web<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#java-web" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+<ul>
+<li>前端基础（HTML/CSS/JS）</li>
+<li>XML、JSON</li>
+<li>Servlet、Filter、Listener</li>
+<li>JSP、JSTL</li>
+<li>Cookie、Session</li>
+</ul>
+<h5 id="spring-5">Spring 5<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#spring-5" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+<ul>
+<li>IOC 控制反转</li>
+<li>AOP 面向切面编程</li>
+<li>事务管理</li>
+</ul>
+<h5 id="springmvc">SpringMVC<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#springmvc" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+<ul>
+<li>MVC 架构</li>
+<li>请求和响应</li>
+<li>Restful API</li>
+<li>拦截器</li>
+</ul>
+<h5 id="mybatis">MyBatis<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#mybatis" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+<ul>
+<li>增删改查、全局配置</li>
+<li>动态 SQL</li>
+<li>缓存机制</li>
+<li>逆向工程</li>
+</ul>
+<h5 id="mybatis-plus">MyBatis Plus<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#mybatis-plus" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+<ul>
+<li>MyBatis 增强工具</li>
+<li>通用 CRUD、条件构造器</li>
+<li>代码生成器</li>
+</ul>
+<h5 id="springboot-2">SpringBoot 2<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#springboot-2" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+<ul>
+<li>简化 Spring 应用搭建</li>
+<li>常用注解、资源整合</li>
+<li>高级特性、热部署</li>
+</ul>
+<h5 id="spring-security--shiro">Spring Security / Shiro<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#spring-security--shiro" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+<ul>
+<li>用户认证、权限管理</li>
+</ul>
+<h5 id="maven--gradle">Maven / Gradle<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#maven--gradle" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+<ul>
+<li>构建、依赖管理</li>
+<li>子父工程、多模块打包</li>
+<li>Nexus 私服搭建</li>
+</ul>
+<h4 id="学习建议-4">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-4" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ol>
+<li>选择同一系列教程，保证学习连续性</li>
+<li>多记笔记、手敲代码，不要复制粘贴</li>
+<li>按推荐顺序学习：Java Web → Spring → SpringMVC → MyBatis → MyBatis Plus → SpringBoot</li>
+<li>Maven/Gradle 当工具用即可，面试基本不问</li>
+</ol>
+<h4 id="经典面试题-6">经典面试题<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#经典面试题-6" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ol>
+<li>Spring 的 IOC 和 AOP 是什么，有哪些优点？</li>
+<li>Spring 框架用到了哪些设计模式？</li>
+<li>介绍 Spring Bean 的生命周期</li>
+<li>MyBatis 如何实现延迟加载？</li>
+<li>介绍 MyBatis 的多级缓存机制</li>
+</ol>
+<h4 id="学习资源-7">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-7" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p><strong>速成视频（同类任意选 1 个）：</strong></p>
+<ul>
+<li>2024 黑马 JavaWeb（B 站，前端到 SpringBoot 全栈）</li>
+<li>尚硅谷 SSM + MyBatis Plus 整合学习（B 站）</li>
+<li>黑马 Spring Boot 2（B 站）</li>
+</ul>
+<p><strong>非速成视频（系统学习）：</strong></p>
+<ul>
+<li>尚硅谷 JavaWeb 全套教程（B 站）</li>
+<li>尚硅谷 Spring 5 框架最新版教程（B 站）</li>
+<li>尚硅谷 SpringMVC 2021 最新教程（B 站）</li>
+<li>尚硅谷 MyBatis 实战教程（B 站）</li>
+<li>尚硅谷 MyBatisPlus 教程（B 站）</li>
+<li>雷丰阳 2021 版 SpringBoot2 零基础入门（B 站）</li>
+</ul>
+<hr/>
+<h3 id="开发规范3-天">开发规范（3 天）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#开发规范3-天" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<h4 id="知识点-6">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-6" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>代码规范：风格、命名、其他规则</li>
+<li>代码校验（CheckStyle）</li>
+<li>提交规范</li>
+</ul>
+<h4 id="学习资源-8">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-8" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>《阿里巴巴 Java 开发手册》</li>
+<li>Google Java Style Guide</li>
+</ul>
+<hr/>
+<h3 id="git3-天">Git（3 天）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#git3-天" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<h4 id="知识点-7">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-7" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>工作区、分支</li>
+<li>代码提交、推送、拉取、回退、重置</li>
+<li>代码合并、解决冲突</li>
+<li>cherry-pick、Git Flow</li>
+</ul>
+<h4 id="经典面试题-7">经典面试题<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#经典面试题-7" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ol>
+<li>如何解决提交冲突？</li>
+<li>提交误操作如何撤销？</li>
+<li>什么是 Git Flow，有什么好处？</li>
+</ol>
+<h4 id="学习资源-9">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-9" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>尚硅谷 — 5h 打通 Git 全套教程（B 站）</li>
+<li>猴子都能懂的 Git 入门（图文）</li>
+<li>Learning Git Branching（游戏化学习）</li>
+</ul>
+<hr/>
+<h3 id="linux10-天">Linux（10 天）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#linux10-天" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>后端开发必备技能，项目基本部署在 Linux 服务器上。</p>
+<h4 id="知识点-8">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-8" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>常用命令（cd、ls、cat、grep、ps、top、vi 等）</li>
+<li>常用环境搭建（MySQL、Redis、Nginx）</li>
+<li>Shell 脚本编程</li>
+<li>VIM 使用</li>
+<li>文件管理、用户管理、进程管理、网络管理</li>
+</ul>
+<h4 id="经典面试题-8">经典面试题<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#经典面试题-8" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ol>
+<li>如何查看某个进程的运行状态？</li>
+<li>如何在 Linux 上查看 2G 的大文件？</li>
+<li>Linux 软链接和硬链接的区别</li>
+</ol>
+<h4 id="学习资源-10">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-10" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>韩顺平 — 一周学会 Linux（B 站）</li>
+<li>《鸟哥的 Linux 私房菜》</li>
+<li>蓝桥云课 — Linux 基础入门（在线实战）</li>
+</ul>
+<hr/>
+<h3 id="前端基础14-天">前端基础（14 天）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#前端基础14-天" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<h4 id="知识点-9">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-9" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>HTML、CSS</li>
+<li>JavaScript + Ajax</li>
+<li>Vue（建议学习，能独立开发前后端分离项目）</li>
+</ul>
+<h4 id="学习建议-5">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-5" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>后端开发者不需要学太深，熟悉三件套和前后端数据交互方式即可。时间充裕建议学 Vue，配合 SpringBoot 做全栈项目。</p>
+<hr/>
+<h3 id="练手项目阶段-3">练手项目（阶段 3）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#练手项目阶段-3" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>推荐做 1-2 个完整的全栈项目：</p>
+<ul>
+<li>用户中心项目（前后端完整项目）</li>
+<li>伙伴匹配系统（移动端网站，Redis、事务、并发）</li>
+<li>HotelSystem（酒店管理系统）</li>
+<li>Mall4j（Spring Boot 电商系统）</li>
+<li>newbee-mall（Spring Boot 2.X 全栈电商系统）</li>
+<li>forum-java（Spring Boot 社区系统）</li>
+</ul>
+<hr/>
+<h2 id="阶段-4企业开发进阶">阶段 4：企业开发进阶<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-4企业开发进阶" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p><strong>目标</strong>：学习更多企业级开发技术和编程思想，能独立开发架构合理的完整系统。</p>
+<h3 id="软件工程">软件工程<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#软件工程" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<h4 id="知识点-10">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-10" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>软件开发原则：开闭原则、里氏替换、依赖倒置、单一职责、接口隔离、迪米特法则</li>
+<li>敏捷开发、软件过程模型</li>
+<li>设计模式、UML</li>
+<li>软件测试：单元测试、集成测试、压力测试</li>
+</ul>
+<h4 id="学习资源-11">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-11" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>《软件工程：实践者的研究方法》</li>
+<li>北京大学软件工程公开课（B 站）</li>
+</ul>
+<hr/>
+<h3 id="设计模式21-天">设计模式（21 天）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#设计模式21-天" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>设计模式是解决一类问题的通用方法，能写出更优雅可维护的代码。</p>
+<h4 id="知识点-11">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-11" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p><strong>创建型模式：</strong> 单例模式、工厂方法模式、抽象工厂、建造者模式、原型模式
+<strong>结构型模式：</strong> 适配器模式、组合模式、装饰器模式、代理模式、享元模式、外观模式、桥接模式
+<strong>行为型模式：</strong> 迭代器模式、模板方法模式、策略模式、命令模式、状态模式、责任链模式、观察者模式</p>
+<h4 id="经典面试题-9">经典面试题<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#经典面试题-9" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ol>
+<li>单例模式有哪些实现方式？优缺点？请手写一种</li>
+<li>你用过哪些设计模式，为什么用它？</li>
+<li>工厂模式和抽象工厂模式的区别？</li>
+<li>代理模式的应用场景有哪些？</li>
+<li>策略模式如何消除 if-else？</li>
+</ol>
+<h4 id="学习资源-12">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-12" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>《图解设计模式》—— 强烈推荐，Java 实现</li>
+<li>《Head First 设计模式》</li>
+<li>尚硅谷图解 Java 设计模式（B 站）</li>
+</ul>
+<hr/>
+<h3 id="redis14-天">Redis（14 天）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#redis14-天" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>缓存是高并发系统不可或缺的技术，Redis 是实现缓存的主流技术。</p>
+<h4 id="知识点-12">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-12" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>Redis 基础与数据类型</li>
+<li>本地缓存（Caffeine）</li>
+<li>多级缓存</li>
+<li>Java 操作 Redis：Spring Boot Redis Template、Redisson</li>
+<li>主从模型、哨兵集群</li>
+<li>缓存应用场景：数据共享、单点登录、计数器、限流、分布式锁</li>
+<li>缓存问题：缓存雪崩、缓存击穿、缓存穿透、缓存更新一致性</li>
+</ul>
+<h4 id="经典面试题-10">经典面试题<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#经典面试题-10" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ol>
+<li>Redis 为什么快？</li>
+<li>Redis 有哪些常用的数据结构？</li>
+<li>Redis RDB 和 AOF 持久化的区别，如何选择？</li>
+<li>如何解决缓存击穿、缓存穿透、雪崩问题？</li>
+<li>如何用 Redis 实现点赞功能，如何设计 Key/Value？</li>
+</ol>
+<h4 id="学习资源-13">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-13" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>黑马 Redis 从基础到原理实战教程（B 站）</li>
+<li>尚硅谷 Redis 6 入门到精通教程（B 站）</li>
+<li>《Redis 实战》</li>
+</ul>
+<hr/>
+<h3 id="消息队列14-天">消息队列（14 天）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#消息队列14-天" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>大型分布式系统常用技术，解决应用耦合、异步消息、流量削锋问题。</p>
+<h4 id="知识点-13">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-13" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p><strong>RabbitMQ：</strong> 生产消费模型、交换机模型、死信队列、延迟队列、消息持久化、集群搭建
+<strong>相关技术：</strong> Kafka、RocketMQ</p>
+<h4 id="学习建议-6">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-6" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>初学者建议先学 RabbitMQ，比 Kafka 好理解，企业中也很常用。</p>
+<h4 id="经典面试题-11">经典面试题<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#经典面试题-11" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ol>
+<li>使用消息队列有哪些优缺点？</li>
+<li>如何保证消息消费的幂等性？</li>
+<li>消息队列有哪些路由模型？</li>
+<li>你是否用过消息队列，解决过什么问题？</li>
+</ol>
+<h4 id="学习资源-14">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-14" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>2024 黑马 RabbitMQ 消息队列教程（B 站）</li>
+<li>尚硅谷 RabbitMQ 教程（B 站）</li>
+<li>RabbitMQ 中文文档</li>
+</ul>
+<hr/>
+<h3 id="nginx14-天">Nginx（14 天）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#nginx14-天" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>高性能 HTTP 和反向代理 Web 服务器。</p>
+<h4 id="知识点-14">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-14" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>正向代理与反向代理（负载均衡）</li>
+<li>常用命令与配置</li>
+<li>动静分离（网站部署）</li>
+<li>集群搭建</li>
+</ul>
+<h4 id="经典面试题-12">经典面试题<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#经典面试题-12" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ol>
+<li>Nginx 有哪些作用？</li>
+<li>Nginx 为什么支持高并发？</li>
+<li>Nginx 有哪些负载均衡策略？</li>
+</ol>
+<h4 id="学习资源-15">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-15" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>尚硅谷 Nginx 教程（B 站）</li>
+<li>Nginx 配置在线生成工具</li>
+</ul>
+<hr/>
+<h3 id="netty-网络编程21-天">Netty 网络编程（21 天）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#netty-网络编程21-天" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>开源的 Java 网络编程框架，用于开发高性能网络服务器和客户端。</p>
+<h4 id="知识点-15">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-15" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>IO 模型（BIO/NIO）</li>
+<li>Channel、Buffer、Selector</li>
+<li>Netty 模型</li>
+<li>WebSocket 编程</li>
+</ul>
+<h4 id="学习建议-7">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-7" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>Netty 学习成本较高，对于大多数同学来说了解基本用法和核心概念即可。实际工作中直接使用 Netty 的场景不多。</p>
+<h4 id="经典面试题-13">经典面试题<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#经典面试题-13" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ol>
+<li>Netty 有哪些优点？</li>
+<li>什么是 NIO？</li>
+<li>介绍 Netty 的零拷贝机制</li>
+</ol>
+<h4 id="学习资源-16">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-16" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>尚硅谷 Netty 教程（B 站）</li>
+<li>《Netty 实战》</li>
+</ul>
+<hr/>
+<h3 id="微服务60-天">微服务（60 天）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#微服务60-天" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>随着系统复杂度增加，将巨石项目拆分成功能独立的细小模块，部署在多台服务器上协作。</p>
+<h4 id="知识点-16">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-16" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p><strong>Dubbo：</strong> RPC 框架、Zookeeper、服务提供者/消费者
+<strong>Spring Cloud：</strong> 服务注册与发现（Eureka/Nacos）、Ribbon 负载均衡、Feign/OpenFeign 服务调用、Hystrix/Sentinel 限流降级熔断、Gateway 网关、Config/Nacos 配置中心、Sleuth+Zipkin 链路追踪
+<strong>分布式事务：</strong> Seata
+<strong>接口管理：</strong> Swagger、Postman</p>
+<h4 id="经典面试题-14">经典面试题<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#经典面试题-14" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ol>
+<li>什么是微服务，有哪些优缺点？</li>
+<li>什么是注册中心，能解决什么问题？</li>
+</ol>
+<h4 id="学习资源-17">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-17" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>2025 尚硅谷 SpringCloud 最新教程（B 站）</li>
+<li>黑马 Spring Cloud 视频教程（B 站）</li>
+<li>尚硅谷 Dubbo 教程（B 站）</li>
+</ul>
+<hr/>
+<h3 id="容器化7-天">容器化（7 天）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#容器化7-天" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>将应用和环境封装，相互隔离独立部署。</p>
+<h4 id="知识点-17">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-17" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p><strong>Docker：</strong> 容器概念、镜像、部署服务、Dockerfile、Docker Compose
+<strong>K8S（了解）：</strong> K8S 架构、Pod、部署应用、集群管理</p>
+<h4 id="学习建议-8">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-8" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>Docker 是后端开发标配，必须学。K8S 学习成本较高，可先不学。</p>
+<h4 id="经典面试题-15">经典面试题<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#经典面试题-15" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ol>
+<li>什么是容器？</li>
+<li>使用 Docker 有哪些好处？</li>
+</ol>
+<h4 id="学习资源-18">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-18" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>狂神说 Docker 最新超详细版教程（B 站）</li>
+<li>《深入浅出 Docker》</li>
+<li>Docker — 从入门到实践</li>
+</ul>
+<hr/>
+<h3 id="cicd3-天">CI/CD（3 天）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#cicd3-天" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>持续集成/持续交付，贯穿研发到项目上线过程。</p>
+<h4 id="知识点-18">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-18" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>CI/CD 的概念与好处</li>
+<li>使用任一 CI/CD 平台（Jenkins、GitLab）</li>
+</ul>
+<hr/>
+<h3 id="练手项目阶段-4">练手项目（阶段 4）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#练手项目阶段-4" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>进阶项目推荐：</strong></p>
+<ul>
+<li>API 开放平台（Dubbo + Gateway 网关）</li>
+<li>OJ 判题系统（设计模式 + 微服务改造 + Docker 代码沙箱）</li>
+<li>智能 BI 项目（线程池 + RabbitMQ）</li>
+<li>聚合搜索平台（爬虫 + Elasticsearch + 设计模式）</li>
+</ul>
+<p><strong>开源项目：</strong></p>
+<ul>
+<li>miaosha（秒杀系统）</li>
+<li>Mall（SpringBoot + MyBatis 电商系统）</li>
+<li>mall-swarm（微服务商城系统）</li>
+<li>jeecg-boot（低代码开发平台）</li>
+<li>PassJava（面试刷题平台）</li>
+</ul>
+<hr/>
+<h2 id="阶段-5项目实战">阶段 5：项目实战<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-5项目实战" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p><strong>目标</strong>：综合所学技术从 0 到 1 开发上线一个完整的个人项目，可写入简历。</p>
+<h3 id="学习建议-9">学习建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习建议-9" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>至少做 2 个完整项目：1 个简单（如管理系统）+ 1 个复杂（含微服务、缓存、消息队列等）</li>
+<li>必须从 0 到 1 手写，不要只下载源码跑一遍</li>
+<li>边做边记录问题和解决方案，面试时能派上用场</li>
+</ul>
+<h3 id="项目推荐">项目推荐<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#项目推荐" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>入门级：</strong></p>
+<ol>
+<li>用户中心项目：前后端完整项目，学习项目开发流程和上线方法</li>
+<li>伙伴匹配系统：移动端网站，Redis、事务、并发编程</li>
+<li>AI 编程助手：入门 AI 应用开发，LangChain4j</li>
+</ol>
+<p><strong>进阶级：</strong>
+4. 智能协同云图库：文件存管、权限控制、实时协同
+5. AI 答题应用平台：分库分表、分布式锁、响应式编程
+6. 智能面试刷题平台：Redis 多级缓存、Elasticsearch、Sentinel 流控
+7. 代码生成器共享平台：命令行开发、模板引擎、设计模式</p>
+<p><strong>架构进阶：</strong>
+8. API 开放平台：SDK 开发 + API 签名认证 + Dubbo + Gateway
+9. OJ 判题系统：多种设计模式 + 微服务改造 + Docker 代码沙箱
+10. 手写 RPC 框架：从 0 到 1 开发轮子，提升架构设计能力</p>
+<p><strong>公开视频项目：</strong></p>
+<ul>
+<li>尚硅谷谷粒学院（微服务+全栈在线教育）</li>
+<li>黑马电商项目、传智健康、万信金融、好客租房</li>
+</ul>
+<h3 id="常用工具类库">常用工具类库<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#常用工具类库" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>Guava</strong>：谷歌 Java 工具库</li>
+<li><strong>Hutool</strong>：Java 工具集</li>
+<li><strong>Lombok</strong>：自动生成 getter/setter</li>
+<li><strong>OkHttp</strong>：HTTP 客户端</li>
+<li><strong>EasyExcel</strong>：Excel 处理库</li>
+<li><strong>JUnit + Mockito</strong>：单元测试</li>
+<li><strong>Arthas</strong>：Java 诊断工具</li>
+<li><strong>Caffeine</strong>：高性能缓存库</li>
+</ul>
+<hr/>
+<h2 id="阶段-6java-高级">阶段 6：Java 高级<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-6java-高级" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p><strong>目标</strong>：不满足于能用，深入和广泛学习，实现高质量代码和优秀架构。</p>
+<h3 id="并发编程21-天">并发编程（21 天）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#并发编程21-天" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>利用有限的系统资源提高系统性能，大厂面试考察重点。</p>
+<h4 id="知识点-19">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-19" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p><strong>传统并发编程（必学）：</strong></p>
+<ul>
+<li>线程和进程、线程状态</li>
+<li>并行/并发、同步/异步</li>
+<li>Synchronized、Volatile、Lock 锁</li>
+<li>死锁、可重入锁</li>
+<li>线程安全、线程池</li>
+<li>JUC 使用、AQS、CAS、ForkJoin</li>
+</ul>
+<p><strong>新特性（了解）：</strong></p>
+<ul>
+<li>虚拟线程（Java 21，轻量级线程，提升 I/O 密集型应用并发性能）</li>
+<li>结构化并发</li>
+</ul>
+<h4 id="经典面试题-16">经典面试题<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#经典面试题-16" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ol>
+<li>volatile 关键字的作用</li>
+<li>使用线程池有哪些好处？</li>
+<li>线程池参数如何设置？</li>
+<li>什么是线程安全问题，如何解决？</li>
+<li>介绍 synchronized 的锁升级机制</li>
+<li>CopyOnWriteArrayList 适用于哪种场景？</li>
+</ol>
+<h4 id="学习资源-19">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-19" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>尚硅谷 JUC 并发编程（B 站，短精新）</li>
+<li>黑马 Java 并发编程（B 站，全面深入）</li>
+<li>《Java 并发编程实战》</li>
+<li>《Java 并发编程艺术》</li>
+</ul>
+<hr/>
+<h3 id="jvm30-天">JVM（30 天）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#jvm30-天" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>深入了解 Java 虚拟机，掌握性能调优方法。</p>
+<h4 id="知识点-20">知识点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#知识点-20" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>JVM 内存结构</li>
+<li>类加载机制（类加载器、双亲委派模型）</li>
+<li>垃圾回收（回收器、策略、算法、StopTheWorld）</li>
+<li>字节码</li>
+<li>JVM 性能调优（工具、参数设置）</li>
+<li>线上故障分析</li>
+</ul>
+<h4 id="经典面试题-17">经典面试题<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#经典面试题-17" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ol>
+<li>介绍 JVM 的内存模型？</li>
+<li>JVM 内存为什么要分代？</li>
+<li>介绍一次完整的 GC 流程</li>
+<li>介绍双亲委派模型，为什么需要它？</li>
+</ol>
+<h4 id="学习资源-20">学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习资源-20" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>尚硅谷宋红康 JVM 全套教程（B 站）</li>
+<li>狂神说 Java JVM 快速入门篇（B 站，适合面试速成）</li>
+<li>《深入理解 Java 虚拟机（第三版）》—— JVM 神书</li>
+<li>Arthas 开源 Java 诊断工具</li>
+</ul>
+<hr/>
+<h3 id="java-高级知识">Java 高级知识<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#java-高级知识" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>动态代理</li>
+<li>Java 探针</li>
+<li>字节码</li>
+<li>UnSafe 类</li>
+</ul>
+<h3 id="架构设计">架构设计<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#架构设计" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<h4 id="分布式">分布式<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#分布式" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p><strong>分布式理论：</strong> CAP、BASE
+<strong>一致性算法：</strong> Raft、Paxos、一致性哈希
+<strong>分布式事务：</strong> 2PC、3PC、TCC、本地消息表、MQ 事务消息
+<strong>分布式实践：</strong> 分布式 ID（Leaf）、分布式任务调度（XXL-JOB）、分布式协调（Zookeeper）、分布式消息队列（Kafka/RabbitMQ/Pulsar）、分布式搜索（Elasticsearch）、分布式链路追踪（SkyWalking）</p>
+<h4 id="高可用">高可用<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#高可用" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>限流、降级熔断、冷备、双机热备、同城双活、异地多活、容灾备份</p>
+<h4 id="高并发">高并发<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#高并发" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>数据库：分库分表（ShardingSphere/MyCat）、读写分离</li>
+<li>缓存：缓存雪崩、缓存击穿、缓存穿透</li>
+<li>负载均衡：负载均衡算法、软硬件负载均衡</li>
+</ul>
+<hr/>
+<h2 id="阶段-7java-求职">阶段 7：Java 求职<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-7java-求职" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p><strong>目标</strong>：找到好工作。</p>
+<h3 id="准备建议">准备建议<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#准备建议" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li><strong>提前规划</strong>：至少提前 3 个月准备，查看目标岗位 JD 了解要求</li>
+<li><strong>打磨简历</strong>：突出技术栈和项目亮点，量化成果</li>
+<li><strong>多刷面试题</strong>：重点刷 Java 集合、并发、JVM、Spring、MySQL、Redis、微服务</li>
+<li><strong>刷算法</strong>：坚持 LeetCode，每天 1-2 道</li>
+<li><strong>多看面经</strong>：了解真实面试被问的内容</li>
+<li><strong>多参加面试</strong>：先拿不太想去的公司练手，每次面试后复盘总结</li>
+</ol>
+<h3 id="经典面试题汇总">经典面试题汇总<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#经典面试题汇总" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>Java 基础：</strong></p>
+<ul>
+<li>== 和 equals 的区别</li>
+<li>final 关键字</li>
+<li>ArrayList vs LinkedList</li>
+<li>HashMap 原理（JDK 7 vs 8）</li>
+</ul>
+<p><strong>并发编程：</strong></p>
+<ul>
+<li>volatile 关键字</li>
+<li>synchronized 锁升级</li>
+<li>线程池参数设置</li>
+<li>CAS 和 AQS</li>
+</ul>
+<p><strong>JVM：</strong></p>
+<ul>
+<li>JVM 内存模型</li>
+<li>GC 流程</li>
+<li>双亲委派模型</li>
+<li>类加载过程</li>
+</ul>
+<p><strong>Spring：</strong></p>
+<ul>
+<li>IOC 和 AOP</li>
+<li>Bean 生命周期</li>
+<li>设计模式应用</li>
+</ul>
+<p><strong>MySQL：</strong></p>
+<ul>
+<li>索引最左原则</li>
+<li>InnoDB vs MyIsam</li>
+<li>慢查询定位</li>
+<li>事务隔离级别</li>
+</ul>
+<p><strong>Redis：</strong></p>
+<ul>
+<li>缓存三大问题（穿透/击穿/雪崩）</li>
+<li>数据结构</li>
+<li>持久化方式</li>
+</ul>
+<p><strong>消息队列：</strong></p>
+<ul>
+<li>消息队列优缺点</li>
+<li>幂等性</li>
+</ul>
+<p><strong>微服务：</strong></p>
+<ul>
+<li>注册中心的作用</li>
+<li>网关的作用</li>
+<li>分布式事务</li>
+</ul>
+<hr/>
+<h2 id="阶段-8持续学习">阶段 8：持续学习<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阶段-8持续学习" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p><strong>目标</strong>：追求技术深度和广度，培养核心竞争力和不可替代性。</p>
+<h3 id="学习方向">学习方向<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习方向" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>框架源码：</strong> Spring、SpringBoot、MyBatis、Netty、Dubbo、SpringCloud
+<strong>计算机原理：</strong> 《算法导论》《现代操作系统》《深入理解计算机系统》
+<strong>数据库/中间件：</strong> MySQL、PostgreSQL、Redis、Kafka、Elasticsearch、Docker、K8S
+<strong>前沿技术：</strong> 云原生、服务网格（Istio）、ZGC、GraalVM</p>
+<h3 id="推荐资源">推荐资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#推荐资源" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>编程导航（codefather.cn）</li>
+<li>GitHub Java 专区</li>
+<li>StackOverflow（解决问题必备）</li>
+<li>美团技术团队博客</li>
+<li>Netflix TechBlog（微服务架构实践）</li>
+</ul>
+<hr/>
+<blockquote>
+<p>来源：鱼皮·编程导航 / codefather</p>
+</blockquote></div></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="toc"><button type="button" class="toc-header" aria-controls="toc-290" aria-expanded="true"><h3>目录</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-0" class="toc-content overflow"><li class="depth-0"><a href="#java-学习路线零基础到精通" data-for="java-学习路线零基础到精通">Java 学习路线（零基础到精通）</a></li><li class="depth-1"><a href="#开篇介绍" data-for="开篇介绍">开篇介绍</a></li><li class="depth-2"><a href="#应用场景" data-for="应用场景">应用场景</a></li><li class="depth-2"><a href="#就业方向" data-for="就业方向">就业方向</a></li><li class="depth-1"><a href="#阶段-1编程语言基础" data-for="阶段-1编程语言基础">阶段 1：编程语言基础</a></li><li class="depth-2"><a href="#java-编程基础45-天" data-for="java-编程基础45-天">Java 编程基础（45 天）</a></li><li class="depth-2"><a href="#java-8-及新版本特性3-天" data-for="java-8-及新版本特性3-天">Java 8 及新版本特性（3 天）</a></li><li class="depth-2"><a href="#练手项目阶段-1" data-for="练手项目阶段-1">练手项目（阶段 1）</a></li><li class="depth-1"><a href="#阶段-2巩固基础30-天" data-for="阶段-2巩固基础30-天">阶段 2：巩固基础（30+ 天）</a></li><li class="depth-2"><a href="#java-基础巩固30-天" data-for="java-基础巩固30-天">Java 基础巩固（30 天）</a></li><li class="depth-2"><a href="#数据结构与算法" data-for="数据结构与算法">数据结构与算法</a></li><li class="depth-2"><a href="#操作系统" data-for="操作系统">操作系统</a></li><li class="depth-2"><a href="#计算机网络" data-for="计算机网络">计算机网络</a></li><li class="depth-1"><a href="#阶段-3企业开发基础60-天" data-for="阶段-3企业开发基础60-天">阶段 3：企业开发基础（60+ 天）</a></li><li class="depth-2"><a href="#mysql-数据库7-天" data-for="mysql-数据库7-天">MySQL 数据库（7 天）</a></li><li class="depth-2"><a href="#开发框架60-天" data-for="开发框架60-天">开发框架（60 天）</a></li><li class="depth-2"><a href="#开发规范3-天" data-for="开发规范3-天">开发规范（3 天）</a></li><li class="depth-2"><a href="#git3-天" data-for="git3-天">Git（3 天）</a></li><li class="depth-2"><a href="#linux10-天" data-for="linux10-天">Linux（10 天）</a></li><li class="depth-2"><a href="#前端基础14-天" data-for="前端基础14-天">前端基础（14 天）</a></li><li class="depth-2"><a href="#练手项目阶段-3" data-for="练手项目阶段-3">练手项目（阶段 3）</a></li><li class="depth-1"><a href="#阶段-4企业开发进阶" data-for="阶段-4企业开发进阶">阶段 4：企业开发进阶</a></li><li class="depth-2"><a href="#软件工程" data-for="软件工程">软件工程</a></li><li class="depth-2"><a href="#设计模式21-天" data-for="设计模式21-天">设计模式（21 天）</a></li><li class="depth-2"><a href="#redis14-天" data-for="redis14-天">Redis（14 天）</a></li><li class="depth-2"><a href="#消息队列14-天" data-for="消息队列14-天">消息队列（14 天）</a></li><li class="depth-2"><a href="#nginx14-天" data-for="nginx14-天">Nginx（14 天）</a></li><li class="depth-2"><a href="#netty-网络编程21-天" data-for="netty-网络编程21-天">Netty 网络编程（21 天）</a></li><li class="depth-2"><a href="#微服务60-天" data-for="微服务60-天">微服务（60 天）</a></li><li class="depth-2"><a href="#容器化7-天" data-for="容器化7-天">容器化（7 天）</a></li><li class="depth-2"><a href="#cicd3-天" data-for="cicd3-天">CI/CD（3 天）</a></li><li class="depth-2"><a href="#练手项目阶段-4" data-for="练手项目阶段-4">练手项目（阶段 4）</a></li><li class="depth-1"><a href="#阶段-5项目实战" data-for="阶段-5项目实战">阶段 5：项目实战</a></li><li class="depth-2"><a href="#学习建议" data-for="学习建议">学习建议</a></li><li class="depth-2"><a href="#项目推荐" data-for="项目推荐">项目推荐</a></li><li class="depth-2"><a href="#常用工具类库" data-for="常用工具类库">常用工具类库</a></li><li class="depth-1"><a href="#阶段-6java-高级" data-for="阶段-6java-高级">阶段 6：Java 高级</a></li><li class="depth-2"><a href="#并发编程21-天" data-for="并发编程21-天">并发编程（21 天）</a></li><li class="depth-2"><a href="#jvm30-天" data-for="jvm30-天">JVM（30 天）</a></li><li class="depth-2"><a href="#java-高级知识" data-for="java-高级知识">Java 高级知识</a></li><li class="depth-2"><a href="#架构设计" data-for="架构设计">架构设计</a></li><li class="depth-1"><a href="#阶段-7java-求职" data-for="阶段-7java-求职">阶段 7：Java 求职</a></li><li class="depth-2"><a href="#准备建议" data-for="准备建议">准备建议</a></li><li class="depth-2"><a href="#经典面试题汇总" data-for="经典面试题汇总">经典面试题汇总</a></li><li class="depth-1"><a href="#阶段-8持续学习" data-for="阶段-8持续学习">阶段 8：持续学习</a></li><li class="depth-2"><a href="#学习方向" data-for="学习方向">学习方向</a></li><li class="depth-2"><a href="#推荐资源" data-for="推荐资源">推荐资源</a></li><li class="overflow-end"></li></ul></div><div class="backlinks"><h3>反向链接</h3><ul id="list-0" class="overflow"><li><a href="../../java/工具/java-工具-18---hutool-工具类库入门" class="internal">Java 工具 18 - Hutool 工具类库入门</a></li><li><a href="../../java/路线/java-47---java-学习资源与项目汇总" class="internal">Java 47 - Java 学习资源与项目汇总</a></li><li class="overflow-end"></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v5.0.0</a> © 2026</p><ul><li><a href="https://github.com/xyf1111">GitHub</a></li></ul></footer></div></div></body><script src="../../static/resource-after-e13fffa1.js" type="application/javascript" data-persist="true"></script><script src="../../static/resource-after-8b336f9a.js" type="application/javascript" data-persist="true"></script><script src="../../static/resource-after-baba652b.js" type="application/javascript" data-persist="true"></script><script src="../../static/resource-after-5eb75950.js" type="module" data-persist="true"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript" data-persist="true"></script><script src="../../postscript-17915799.js" type="module" data-persist="true"></script></html>
