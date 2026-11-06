@@ -1,0 +1,31 @@
+# Obsidian
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/plugins/
+.obsidian/themes/
+.trash/
+.DS_Store
+
+# Sensitive / local config
+.env
+*.token
+*.secret
+*.log
+
+# Claude / agents internal
+.agents/
+.claude/
+
+# codefather - 包含 GitHub Token 示例的文件，避免触发 secret scanning
+codefather/知识碎片/《贯穿设计模式》第三方登录实践[附前后端完整过程及测试].md
+codefather/知识碎片/Java 实现 GitHub 第三方登录详解.md
+
+# Quartz build output
+quartz/public/
+quartz/.quartz/
+quartz/node_modules/
+
+node_modules/
+.quartz/
+public/
+.DS_Store
