@@ -6,65 +6,65 @@
       <description>Last 10 notes on 技术知识库</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
-    <title>源码</title>
-    <link>https://xyf1111.github.io/tech-notes/tags/%E6%BA%90%E7%A0%81</link>
-    <guid>https://xyf1111.github.io/tech-notes/tags/%E6%BA%90%E7%A0%81</guid>
+    <title>ai</title>
+    <link>https://xyf1111.github.io/tech-notes/ai/</link>
+    <guid>https://xyf1111.github.io/tech-notes/ai/</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Fri, 06 Nov 2026 12:23:25 GMT</pubDate>
+    <pubDate>Fri, 06 Nov 2026 12:27:07 GMT</pubDate>
   </item><item>
-    <title>frontend</title>
-    <link>https://xyf1111.github.io/tech-notes/tags/frontend</link>
-    <guid>https://xyf1111.github.io/tech-notes/tags/frontend</guid>
+    <title>algorithm</title>
+    <link>https://xyf1111.github.io/tech-notes/algorithm/</link>
+    <guid>https://xyf1111.github.io/tech-notes/algorithm/</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Fri, 06 Nov 2026 12:23:25 GMT</pubDate>
+    <pubDate>Fri, 06 Nov 2026 12:27:07 GMT</pubDate>
   </item><item>
-    <title>rabbitmq</title>
-    <link>https://xyf1111.github.io/tech-notes/tags/rabbitmq</link>
-    <guid>https://xyf1111.github.io/tech-notes/tags/rabbitmq</guid>
+    <title>analysis</title>
+    <link>https://xyf1111.github.io/tech-notes/bigdata/analysis/</link>
+    <guid>https://xyf1111.github.io/tech-notes/bigdata/analysis/</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Fri, 06 Nov 2026 12:23:25 GMT</pubDate>
+    <pubDate>Fri, 06 Nov 2026 12:27:07 GMT</pubDate>
   </item><item>
-    <title>grpc</title>
-    <link>https://xyf1111.github.io/tech-notes/tags/grpc</link>
-    <guid>https://xyf1111.github.io/tech-notes/tags/grpc</guid>
+    <title>bigdata</title>
+    <link>https://xyf1111.github.io/tech-notes/bigdata/</link>
+    <guid>https://xyf1111.github.io/tech-notes/bigdata/</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Fri, 06 Nov 2026 12:23:25 GMT</pubDate>
+    <pubDate>Fri, 06 Nov 2026 12:27:07 GMT</pubDate>
   </item><item>
-    <title>消息队列</title>
-    <link>https://xyf1111.github.io/tech-notes/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97</link>
-    <guid>https://xyf1111.github.io/tech-notes/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97</guid>
+    <title>bi</title>
+    <link>https://xyf1111.github.io/tech-notes/bigdata/bi/</link>
+    <guid>https://xyf1111.github.io/tech-notes/bigdata/bi/</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Fri, 06 Nov 2026 12:23:25 GMT</pubDate>
+    <pubDate>Fri, 06 Nov 2026 12:27:07 GMT</pubDate>
   </item><item>
-    <title>canal</title>
-    <link>https://xyf1111.github.io/tech-notes/tags/canal</link>
-    <guid>https://xyf1111.github.io/tech-notes/tags/canal</guid>
+    <title>ds</title>
+    <link>https://xyf1111.github.io/tech-notes/bigdata/ds/</link>
+    <guid>https://xyf1111.github.io/tech-notes/bigdata/ds/</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Fri, 06 Nov 2026 12:23:25 GMT</pubDate>
+    <pubDate>Fri, 06 Nov 2026 12:27:07 GMT</pubDate>
   </item><item>
-    <title>数据同步</title>
-    <link>https://xyf1111.github.io/tech-notes/tags/%E6%95%B0%E6%8D%AE%E5%90%8C%E6%AD%A5</link>
-    <guid>https://xyf1111.github.io/tech-notes/tags/%E6%95%B0%E6%8D%AE%E5%90%8C%E6%AD%A5</guid>
+    <title>dw</title>
+    <link>https://xyf1111.github.io/tech-notes/bigdata/dw/</link>
+    <guid>https://xyf1111.github.io/tech-notes/bigdata/dw/</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Fri, 06 Nov 2026 12:23:25 GMT</pubDate>
+    <pubDate>Fri, 06 Nov 2026 12:27:07 GMT</pubDate>
   </item><item>
-    <title>binlog</title>
-    <link>https://xyf1111.github.io/tech-notes/tags/binlog</link>
-    <guid>https://xyf1111.github.io/tech-notes/tags/binlog</guid>
+    <title>flink</title>
+    <link>https://xyf1111.github.io/tech-notes/bigdata/flink/</link>
+    <guid>https://xyf1111.github.io/tech-notes/bigdata/flink/</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Fri, 06 Nov 2026 12:23:25 GMT</pubDate>
+    <pubDate>Fri, 06 Nov 2026 12:27:07 GMT</pubDate>
   </item><item>
-    <title>nacos</title>
-    <link>https://xyf1111.github.io/tech-notes/tags/nacos</link>
-    <guid>https://xyf1111.github.io/tech-notes/tags/nacos</guid>
+    <title>spark</title>
+    <link>https://xyf1111.github.io/tech-notes/bigdata/spark/</link>
+    <guid>https://xyf1111.github.io/tech-notes/bigdata/spark/</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Fri, 06 Nov 2026 12:23:25 GMT</pubDate>
+    <pubDate>Fri, 06 Nov 2026 12:27:07 GMT</pubDate>
   </item><item>
-    <title>middleware</title>
-    <link>https://xyf1111.github.io/tech-notes/tags/middleware</link>
-    <guid>https://xyf1111.github.io/tech-notes/tags/middleware</guid>
+    <title>路线</title>
+    <link>https://xyf1111.github.io/tech-notes/bigdata/%E8%B7%AF%E7%BA%BF/</link>
+    <guid>https://xyf1111.github.io/tech-notes/bigdata/%E8%B7%AF%E7%BA%BF/</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Fri, 06 Nov 2026 12:23:25 GMT</pubDate>
+    <pubDate>Fri, 06 Nov 2026 12:27:07 GMT</pubDate>
   </item>
     </channel>
   </rss>
