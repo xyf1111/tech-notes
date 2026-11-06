@@ -29,3 +29,5 @@ node_modules/
 .quartz/
 public/
 .DS_Store
+quartz/node_modules
+quartz/.quartz
