@@ -5,7 +5,7 @@ configuration:
   enablePopovers: true
   analytics: null
   locale: zh-CN
-  baseUrl: example.com
+  baseUrl: xyf1111.github.io/tech-notes
   ignorePatterns:
     - private
     - "ai/AI 面试*"
@@ -208,7 +208,7 @@ plugins:
     enabled: true
     options:
       links:
-        GitHub: https://github.com/cecil777
+        GitHub: https://github.com/xyf1111
   - source: github:quartz-community/recent-notes
     enabled: false
   - source: github:quartz-community/spacer
