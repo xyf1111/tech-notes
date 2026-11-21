@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr"><head><title>AI 智能客服 01 - Go 多渠道客服系统与 SSE 流式对话 · 后端开发笔记</title><meta charset="utf-8"/><link rel="preload" href="../index-b754f97d.css" as="style"/><link rel="preload" href="../prescript-2bfc6315.js" as="script"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="技术知识库"/><meta property="og:title" content="AI 智能客服 01 - Go 多渠道客服系统与 SSE 流式对话 · 后端开发笔记"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="AI 智能客服 01 - Go 多渠道客服系统与 SSE 流式对话 · 后端开发笔记"/><meta name="twitter:description" content="AI 智能客服 01 - Go 多渠道客服系统与 SSE 流式对话 用 Go 写一个能接多渠道的 AI 客服：网页、公众号、飞书共用同一套对话逻辑，大模型通过 OpenAI 兼容协议接入（DeepSeek / 通义 / 智谱 / Kimi 换 BaseURL 即可），回复走 SSE 逐字吐出来。这是 RAG 01 - 学习路线 和 AI 大模型 01 - 应用开发学习路线 的落地实践——Phase 1 只做流式对话，RAG 检索留给 Phase 2。 一、技术选型 层选型说明Web 框架Gin路由 + 中间件大模型DeepSeekOpenAI 兼容协议，换 BaseURL 即可切通义/智谱/K..."/><meta property="og:description" content="AI 智能客服 01 - Go 多渠道客服系统与 SSE 流式对话 用 Go 写一个能接多渠道的 AI 客服：网页、公众号、飞书共用同一套对话逻辑，大模型通过 OpenAI 兼容协议接入（DeepSeek / 通义 / 智谱 / Kimi 换 BaseURL 即可），回复走 SSE 逐字吐出来。这是 RAG 01 - 学习路线 和 AI 大模型 01 - 应用开发学习路线 的落地实践——Phase 1 只做流式对话，RAG 检索留给 Phase 2。 一、技术选型 层选型说明Web 框架Gin路由 + 中间件大模型DeepSeekOpenAI 兼容协议，换 BaseURL 即可切通义/智谱/K..."/><meta property="og:image:alt" content="AI 智能客服 01 - Go 多渠道客服系统与 SSE 流式对话 用 Go 写一个能接多渠道的 AI 客服：网页、公众号、飞书共用同一套对话逻辑，大模型通过 OpenAI 兼容协议接入（DeepSeek / 通义 / 智谱 / Kimi 换 BaseURL 即可），回复走 SSE 逐字吐出来。这是 RAG 01 - 学习路线 和 AI 大模型 01 - 应用开发学习路线 的落地实践——Phase 1 只做流式对话，RAG 检索留给 Phase 2。 一、技术选型 层选型说明Web 框架Gin路由 + 中间件大模型DeepSeekOpenAI 兼容协议，换 BaseURL 即可切通义/智谱/K..."/><meta property="twitter:domain" content="xyf1111.github.io/tech-notes"/><meta property="og:url" content="https://xyf1111.github.io/tech-notes/ai/ai-智能客服-01---go-多渠道客服系统与-sse-流式对话"/><meta property="twitter:url" content="https://xyf1111.github.io/tech-notes/ai/ai-智能客服-01---go-多渠道客服系统与-sse-流式对话"/><link rel="icon" href="../static/icon.png"/><meta name="description" content="AI 智能客服 01 - Go 多渠道客服系统与 SSE 流式对话 用 Go 写一个能接多渠道的 AI 客服：网页、公众号、飞书共用同一套对话逻辑，大模型通过 OpenAI 兼容协议接入（DeepSeek / 通义 / 智谱 / Kimi 换 BaseURL 即可），回复走 SSE 逐字吐出来。这是 RAG 01 - 学习路线 和 AI 大模型 01 - 应用开发学习路线 的落地实践——Phase 1 只做流式对话，RAG 检索留给 Phase 2。 一、技术选型 层选型说明Web 框架Gin路由 + 中间件大模型DeepSeekOpenAI 兼容协议，换 BaseURL 即可切通义/智谱/K..."/><meta name="generator" content="Quartz"/><link href="../index-b754f97d.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-735924e0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-589c1cea.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-bbc3f7c0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-2911f5d1.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-e427079e.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-53b25b2b.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-c93c6a44.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-8a06014f.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-77d6a441.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-6ee21cee.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-1ea6ad18.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-788c9ca3.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-642859cd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-4abc06bd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-274a3dfe.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-94cb6c84.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-58d5ff56.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-7262b5a7.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../static/resource-style-a5c806d2.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../static/resource-style-6bd36952.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" data-persist="true"/><script src="../prescript-2bfc6315.js" type="application/javascript" data-persist="true"></script><script type="application/javascript" data-persist="true">const fetchData = fetch("../static/contentIndex.json").then(data => data.json())</script><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://xyf1111.github.io/tech-notes/ai/ai-智能客服-01---go-多渠道客服系统与-sse-流式对话-og-image.webp"/><meta property="og:image:url" content="https://xyf1111.github.io/tech-notes/ai/ai-智能客服-01---go-多渠道客服系统与-sse-流式对话-og-image.webp"/><meta name="twitter:image" content="https://xyf1111.github.io/tech-notes/ai/ai-智能客服-01---go-多渠道客服系统与-sse-流式对话-og-image.webp"/><meta property="og:image:type" content="image/webp"/></head><body data-slug="ai/ai-智能客服-01---go-多渠道客服系统与-sse-流式对话" data-basepath="/tech-notes"><div id="quartz-root" class="page" data-frame="default"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="..">技术知识库</a></h2><div class="mobile-only"><div class="spacer"></div></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 0.5rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button" aria-label="搜索" aria-expanded="false"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>搜索</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="搜索内容..." placeholder="搜索内容..."/><div class="search-layout" data-preview="true" data-field-priority="[&quot;title&quot;,&quot;content&quot;,&quot;tags&quot;]"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode" aria-label="暗色模式"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="暗色模式"><title>暗色模式</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="亮色模式"><title>亮色模式</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode" aria-label="阅读模式"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="阅读模式"><title>阅读模式</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer nav-files-container" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a2, b2) => {\n    if (!a2.isFolder &amp;&amp; !b2.isFolder || a2.isFolder &amp;&amp; b2.isFolder) {\n      return (a2.displayName || \&quot;\&quot;).localeCompare(b2.displayName || \&quot;\&quot;, void 0, {\n        numeric: true,\n        sensitivity: \&quot;base\&quot;\n      });\n    }\n    if (!a2.isFolder &amp;&amp; b2.isFolder) {\n      return 1;\n    }\n    return -1;\n  }&quot;,&quot;filterFn&quot;:&quot;(node) => node.slugSegment !== \&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;(node) => {\n    return node;\n  }&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-9" aria-label="探索"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>探索</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-9" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#" class="nav-file-title tree-item-self"></a></li></template><template id="template-folder"><li><div class="folder-container nav-folder-title tree-item-self"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon nav-folder-collapse-indicator collapse-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content tree-item-children"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../ai/">ai</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>AI 智能客服 01 - Go 多渠道客服系统与 SSE 流式对话</a></div></nav><h1 class="article-title">AI 智能客服 01 - Go 多渠道客服系统与 SSE 流式对话</h1><details class="note-properties metadata-container" open data-collapsed="false"><summary class="note-properties-header"><span class="note-properties-title">Properties</span><span class="note-properties-count">1</span></summary><table class="note-properties-table"><tbody><tr class="note-properties-row metadata-property"><td class="note-properties-key metadata-property-key">tags</td><td class="note-properties-value metadata-property-value"><span class="note-properties-tags"><a href="../tags/ai" class="internal internal-link tag-link">ai</a><span class="note-properties-separator">, </span><a href="../tags/大模型" class="internal internal-link tag-link">大模型</a><span class="note-properties-separator">, </span><a href="../tags/golang" class="internal internal-link tag-link">golang</a><span class="note-properties-separator">, </span><a href="../tags/gin" class="internal internal-link tag-link">gin</a><span class="note-properties-separator">, </span><a href="../tags/sse" class="internal internal-link tag-link">sse</a><span class="note-properties-separator">, </span><a href="../tags/项目实战" class="internal internal-link tag-link">项目实战</a></span></td></tr></tbody></table></details><p show-comma="true" class="content-meta"><time datetime="2026-11-20T16:00:00.000Z">2026年11月21日</time><span>6分钟阅读</span></p></div></div><article class="popover-hint"><div class="markdown-preview-view markdown-rendered"><h1 id="ai-智能客服-01---go-多渠道客服系统与-sse-流式对话">AI 智能客服 01 - Go 多渠道客服系统与 SSE 流式对话<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#ai-智能客服-01---go-多渠道客服系统与-sse-流式对话" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<blockquote>
+<p>用 Go 写一个能接多渠道的 AI 客服：网页、公众号、飞书共用同一套对话逻辑，大模型通过 OpenAI 兼容协议接入（DeepSeek / 通义 / 智谱 / Kimi 换 BaseURL 即可），回复走 SSE 逐字吐出来。这是 <a href="../ai/rag-01---学习路线" class="internal internal-link alias" data-slug="ai/rag-01---学习路线">RAG 01 - 学习路线</a> 和 <a href="../ai/ai-大模型-01---应用开发学习路线" class="internal internal-link alias" data-slug="ai/ai-大模型-01---应用开发学习路线">AI 大模型 01 - 应用开发学习路线</a> 的落地实践——Phase 1 只做流式对话，RAG 检索留给 Phase 2。</p>
+</blockquote>
+<h2 id="一技术选型">一、技术选型<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#一技术选型" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>层</th><th>选型</th><th>说明</th></tr></thead><tbody><tr><td>Web 框架</td><td>Gin</td><td>路由 + 中间件</td></tr><tr><td>大模型</td><td>DeepSeek</td><td>OpenAI 兼容协议，换 BaseURL 即可切通义/智谱/Kimi</td></tr><tr><td>SDK</td><td><code>sashabaranov/go-openai</code></td><td>用官方兼容客户端，不手写 SSE 解析</td></tr><tr><td>流式输出</td><td>SSE</td><td>浏览器 <code>fetch</code> + <code>ReadableStream</code> 逐段渲染</td></tr><tr><td>配置</td><td><code>joho/godotenv</code></td><td><code>.env</code> 读取，缺密钥直接启动失败</td></tr><tr><td>向量库</td><td>Qdrant（Phase 2）</td><td>尚未接入</td></tr></tbody></table></div>
+<h2 id="二目录结构与职责">二、目录结构与职责<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#二目录结构与职责" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<pre><code>ai-customer-service/
+├── cmd/server/main.go          # 入口：加载配置 → 组装依赖 → 注册路由
+├── internal/
+│   ├── config/                 # 环境变量 → Config 结构体，必填项校验
+│   ├── llm/                    # 大模型统一抽象
+│   │   ├── model.go            #   Model 接口 + Message/ChatRequest
+│   │   └── openai_compat.go    #   OpenAI 兼容实现（流式 Recv 循环）
+│   ├── agent/agent.go          # 对话编排：拼 system prompt → 调模型
+│   ├── channel/channel.go      # 渠道无关消息模型 + Channel 接口
+│   ├── channel/web/handler.go  # 网页渠道：POST /api/chat，SSE 下发
+│   └── middleware/ratelimit.go # 按 IP 滑动窗口限流（防刷额度）
+└── web/index.html              # 单文件前端，无构建步骤
+</code></pre>
+<h2 id="三三个关键抽象">三、三个关键抽象<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#三三个关键抽象" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>抽象</th><th>位置</th><th>解决什么问题</th></tr></thead><tbody><tr><td><code>llm.Model</code> 接口</td><td><code>internal/llm/model.go</code></td><td>模型供应商可换（OpenAI 兼容 → 其他协议只需加实现），上层零改动</td></tr><tr><td><code>channel.Message</code> / <code>Channel</code> 接口</td><td><code>internal/channel/channel.go</code></td><td>渠道无关统一消息，网页/公众号/飞书共用同一套对话逻辑</td></tr><tr><td><code>agent.Agent</code></td><td><code>internal/agent/agent.go</code></td><td>编排层，RAG 检索、工具调用只在这一层插入</td></tr></tbody></table></div>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="go" data-theme="github-light github-dark"><code data-language="go" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;" data-token-type="comment">// 流式核心：每收到增量就回调 onDelta，前端边收边渲染</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">type</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="property"> Model</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword"> interface</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation"> {</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">    StreamChat</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">(</span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;" data-token-type="important">ctx</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="property"> context</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="property">Context</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">, </span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;" data-token-type="important">req</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="property"> ChatRequest</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">, </span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;" data-token-type="important">onDelta</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword"> func</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">(</span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;" data-token-type="important">delta</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword"> string</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">) </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">error</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">) (</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">string</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">, </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">error</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">)</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">}</span></span></code></pre></figure>
+<h2 id="四请求链路">四、请求链路<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#四请求链路" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<pre><code>浏览器 index.html
+  └─POST /api/chat {message}
+      └─ 限流中间件（20 次/分钟/IP）→ 长度校验（≤2000 字）
+          └─ web.Handler.Chat：写 SSE 头 → 建 history
+              └─ agent.Chat：加 system prompt → model.StreamChat
+                  └─ DeepSeek 流式返回 → onDelta 写 `data: {&quot;delta&quot;:&quot;…&quot;}` → flush
+                      └─ 结束写 `data: [DONE]`
+</code></pre>
+<p><strong>注意</strong>：当前 <code>history</code> 只有本次 user 消息——服务端无状态，多轮上下文尚未实现（Phase 4）。</p>
+<h2 id="五部署事实阿里云-ecs">五、部署事实（阿里云 ECS）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#五部署事实阿里云-ecs" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>项</th><th>值</th></tr></thead><tbody><tr><td>部署目录</td><td><code>/opt/ai-customer-service/</code>（<code>acs</code> 二进制 + <code>web/</code> + <code>.env</code>）</td></tr><tr><td>端口</td><td><code>:8081</code>（8080 已被商城后端占用）</td></tr><tr><td>进程托管</td><td>PM2，进程名 <code>ai-customer-service</code>，<code>pm2 save</code> 已固化</td></tr><tr><td>服务器环境</td><td>无 Go 工具链、无 nginx、2 核 1.8G 内存</td></tr><tr><td>访问方式</td><td>公网直连 8081（需安全组放行）</td></tr></tbody></table></div>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;" data-token-type="comment"># 本地交叉编译（服务器是 x86_64）</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="normal">GOOS</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">linux</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="normal"> GOARCH</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">amd64</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="normal"> CGO_ENABLED</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">0</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function"> go</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> build</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -ldflags=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">&quot;-s -w&quot;</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -o</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> /tmp/acs</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> ./cmd/server</span></span>
+<span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;" data-token-type="comment"># 上传 + 重启（直接 scp 覆盖运行中的二进制会报 Text file busy）</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">scp</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> /tmp/acs</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> root@host:/opt/ai-customer-service/acs.new</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">ssh</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> root@host</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> 'pm2 stop ai-customer-service; mv -f /opt/ai-customer-service/acs.new /opt/ai-customer-service/acs;</span></span>
+<span data-line><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">  pm2 start acs --name ai-customer-service --cwd /opt/ai-customer-service'</span></span></code></pre></figure>
+<h2 id="六公网防滥用">六、公网防滥用<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#六公网防滥用" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>网页渠道本身<strong>没有鉴权</strong>，公网可达即等于把大模型额度敞开，因此设两道闸门：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>闸门</th><th>实现</th><th>默认</th></tr></thead><tbody><tr><td>按 IP 限流</td><td><code>middleware.PerIP</code>，内存滑动窗口 + map 超 1 万条整体清空防膨胀</td><td>20 次/分钟</td></tr><tr><td>单条长度</td><td><code>handler.go</code> 常量 <code>maxMessageLen</code></td><td>2000 字</td></tr></tbody></table></div>
+<p>单机内存限流只防误伤，网关级限流/鉴权应放到 Nginx 或 API 网关层。</p>
+<h2 id="七踩坑记录">七、踩坑记录<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#七踩坑记录" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>现象</th><th>原因</th><th>处理</th></tr></thead><tbody><tr><td><code>scp: Text file busy</code></td><td>二进制被 PM2 进程占用</td><td>先传 <code>acs.new</code>，停进程后 <code>mv -f</code> 覆盖</td></tr><tr><td><code>.env</code> 里改 <code>GIN_MODE=release</code> 不生效</td><td>gin 的 mode 在包 init 时读取，早于 <code>godotenv.Load()</code></td><td>main 里显式 <code>gin.SetMode(os.Getenv(&quot;GIN_MODE&quot;))</code></td></tr><tr><td><code>ssh: kex_exchange_identification: Connection closed</code></td><td>短时间大量 SSH 连接被限流</td><td>用 <code>ControlMaster</code> 复用单连接，或间隔 20s 重试</td></tr><tr><td>外网连 8081 超时、服务器自连正常</td><td>阿里云安全组只放行了旧端口</td><td>控制台加规则，服务器本机 iptables 是空的</td></tr><tr><td>PM2 日志涨到 6.7 G</td><td>崩溃循环的服务每秒打印堆栈且从不轮转</td><td><code>pm2 delete</code> 重复进程 + <code>pm2 flush</code> + <code>pm2-logrotate</code></td></tr></tbody></table></div>
+<h2 id="八路线图">八、路线图<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#八路线图" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ul class="contains-task-list">
+<li class="task-list-item is-checked" data-task="x"><input type="checkbox" checked class="checkbox-toggle"/> Phase 1 网页流式对话（已上线）</li>
+<li class="task-list-item" data-task=" "><input type="checkbox" class="checkbox-toggle"/> Phase 2 RAG：文档导入 → 向量检索（Qdrant）→ 带引用回答</li>
+<li class="task-list-item" data-task=" "><input type="checkbox" class="checkbox-toggle"/> Phase 3 微信公众号 / 飞书 / 钉钉适配器</li>
+<li class="task-list-item" data-task=" "><input type="checkbox" class="checkbox-toggle"/> Phase 4 会话历史、多轮改写、工具调用、降级兜底</li>
+</ul>
+<h2 id="九可迁移的工程经验">九、可迁移的工程经验<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#九可迁移的工程经验" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ol>
+<li><strong>先定接口再写实现</strong>：<code>Model</code> / <code>Channel</code> 两个接口让「换模型」和「加渠道」变成新增文件，而不是改老代码。</li>
+<li><strong>流式 = 回调</strong>：底层 <code>StreamChat(onDelta)</code> + 上层 SSE 写出，协议细节收敛在一个函数里。</li>
+<li><strong>无工具链的服务器就交叉编译</strong>：<code>CGO_ENABLED=0</code> 出静态二进制，比在服务器装 Go 干净得多。</li>
+<li><strong>公网接口先想额度</strong>：限流和长度上限是上线前的最低成本保险。</li>
+</ol></div></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="toc"><button type="button" class="toc-header" aria-controls="toc-9" aria-expanded="true"><h3>目录</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-0" class="toc-content overflow"><li class="depth-0"><a href="#ai-智能客服-01---go-多渠道客服系统与-sse-流式对话" data-for="ai-智能客服-01---go-多渠道客服系统与-sse-流式对话">AI 智能客服 01 - Go 多渠道客服系统与 SSE 流式对话</a></li><li class="depth-1"><a href="#一技术选型" data-for="一技术选型">一、技术选型</a></li><li class="depth-1"><a href="#二目录结构与职责" data-for="二目录结构与职责">二、目录结构与职责</a></li><li class="depth-1"><a href="#三三个关键抽象" data-for="三三个关键抽象">三、三个关键抽象</a></li><li class="depth-1"><a href="#四请求链路" data-for="四请求链路">四、请求链路</a></li><li class="depth-1"><a href="#五部署事实阿里云-ecs" data-for="五部署事实阿里云-ecs">五、部署事实（阿里云 ECS）</a></li><li class="depth-1"><a href="#六公网防滥用" data-for="六公网防滥用">六、公网防滥用</a></li><li class="depth-1"><a href="#七踩坑记录" data-for="七踩坑记录">七、踩坑记录</a></li><li class="depth-1"><a href="#八路线图" data-for="八路线图">八、路线图</a></li><li class="depth-1"><a href="#九可迁移的工程经验" data-for="九可迁移的工程经验">九、可迁移的工程经验</a></li><li class="overflow-end"></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v5.0.0</a> © 2026</p><ul><li><a href="https://github.com/xyf1111">GitHub</a></li></ul></footer></div></div></body><script src="../static/resource-after-e13fffa1.js" type="application/javascript" data-persist="true"></script><script src="../static/resource-after-8b336f9a.js" type="application/javascript" data-persist="true"></script><script src="../static/resource-after-baba652b.js" type="application/javascript" data-persist="true"></script><script src="../static/resource-after-5eb75950.js" type="module" data-persist="true"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript" data-persist="true"></script><script src="../postscript-17915799.js" type="module" data-persist="true"></script></html>
